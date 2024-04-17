@@ -1,10 +1,11 @@
 ---
+import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Logic Moon">
   <main>
-    <div id="overlay-menu" class="md:hidden">
+    <!-- <div id="overlay-menu" class="md:hidden">
       <div class="flex justify-end md:hidden" id="overlay-close">
         <div class="button-nav-block">
           <button
@@ -78,7 +79,25 @@ import Layout from "../layouts/Layout.astro";
           ></path>
         </svg>
       </button>
-    </div>
+    </div> -->
+
+    <!-- Hero -->
+    <section
+      class="h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center md:bg-fixed hero-bg">
+      <h1 class="cinzel hero">Logic Moon</h1>
+      <h2
+        class="hero"
+        data-aos="fade-up"
+        data-aos-delay="500">
+        music
+      </h2>
+      <div class="mt-24" data-aos="fade-down" data-aos-delay="800">
+        <a href="#service" class="scroller" title="scrolldown">
+          <ChevronDownIcon class="w-12 text-secondary-600" />
+        </a>
+      </div>
+    </section>
+    <!-- Hero Ende -->
 
     <section
       class="cover-container flex w-full px-3 py-3 mx-auto flex-col slide-in-bck-center"

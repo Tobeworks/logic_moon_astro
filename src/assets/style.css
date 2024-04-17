@@ -24,12 +24,45 @@ h2{
 }
 
 .hero-bg{
-    background-image: url('berge_01.webp');
+    background-image: url('img/logic_moon_hero01.webp');
 }
+
+
+h1.hero {
+    font-size: 12vw;
+    text-transform: uppercase;
+    margin: 0 0 -4% 0;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    mix-blend-mode: screen;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.1); /* black background with 50% opacity */
+}
+h2.hero {
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin: 0 0 -4% 0;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 1);
+    mix-blend-mode: screen;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
 @media (max-width: 768px) {
     .hero-bg{
-        background-image: url('berge_bg_mobile.jpg');
+        background-image: url('img/logic_moon_hero_mobile01.webp');
     }
+h1.hero {
+    font-size: 12vw;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);
+
+    color: rgba(0, 0, 0, 0.5);
+}
+h2.hero {
+    font-size: 5vw;
+    margin-top: 5px;
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.6); 
+}
 }
 
 a{
