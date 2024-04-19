@@ -58,7 +58,6 @@ const modalPlayerReleaseId = ref();
 
 onMounted(() => {
     getLatestRelease();
-    klickDisco();
 });
 
 const getLatestRelease = () => {
