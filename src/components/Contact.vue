@@ -37,13 +37,12 @@
 
 <script setup>
 import axios from 'axios'
-import { onMounted, ref } from 'vue';
-import releases from '../releases';
-
 
 const form_email = ref(null);
 const form_disabled = ref(false);
 const form_name = ref(null);
 const form_message = ref(null);
 const uid = 'AzzoyqsYxvPH338XZRvm3Wgar';
+
+
 </script>

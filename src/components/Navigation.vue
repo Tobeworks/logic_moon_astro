@@ -60,8 +60,8 @@ const prefix = ref('')
 const navigation = computed(() => [
     { name: 'Home', href: `${prefix.value}#` },
     { name: 'About', href: `${prefix.value}#about` },
-    { name: 'Music', href: `${prefix.value}#music` },
-    { name: 'Mastering', href: `${prefix.value}#mastering` },
+    // { name: 'Music', href: `${prefix.value}#music` },
+    // { name: 'Mastering', href: `${prefix.value}#mastering` },
     { name: 'Discography', href: `${prefix.value}#disco` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
