@@ -3,6 +3,7 @@ import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 import portrait from "../assets/img/portrait.webp";
 import Navigation from "../components/Navigation.vue";
 import Discography from "../components/Discography.vue";
+import Contact from "../components/Contact.vue";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -175,8 +176,7 @@ import Footer from "../components/Footer.astro";
     </section> -->
 
     <Discography client:load />
-
-
-  </main>
-   <Footer /> 
-</Layout>
+    <Contact client:load />
+      <Footer />
+    </Contact>
+  </main></Layout>
