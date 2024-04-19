@@ -17,7 +17,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="../assets/img/TWBlack.png" alt="Tobeworks Logo" width="120" /><br />
+                        <img src="/images/TWBlack.png" alt="Tobeworks Logo" width="120" /><br />
                         <strong>Tobeworks - Tobias Lorsbach<br /> </strong>
                         Neue Universitätsstraße 7<br />
                         55116 Mainz<br /><br />
