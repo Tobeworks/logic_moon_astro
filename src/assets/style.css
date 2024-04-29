@@ -27,6 +27,12 @@ h2{
     background-image: url('img/logic_moon_hero01.webp');
 }
 
+.reverseaddr {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+}
+
 .grid-item img {
   filter: grayscale(70%);
   overflow: hidden;
@@ -77,7 +83,7 @@ h2.hero {
 }
 
 .main-section{
-    @apply p-12
+    @apply p-5 md:p-12
 }
 
 @media (max-width: 768px) {

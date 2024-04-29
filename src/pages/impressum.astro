@@ -1,0 +1,61 @@
+---
+import { ChevronDownIcon } from "@heroicons/vue/24/solid";
+import portrait from "../assets/img/portrait.webp";
+import Navigation from "../components/Navigation.vue";
+import Discography from "../components/Discography.vue";
+import Contact from "../components/Contact.vue";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Logic Moon">
+  <main>
+    <Navigation client:load />
+    <section class="main-section bg-secondary-400 mt-16" id="impressum">
+      <div
+        class="modal fade"
+        id="modalimpressum"
+        tabindex="-1"
+        aria-labelledby="impressumLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="impressumLabel">Impressum</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="/images/TWBlack.png"
+                alt="Tobeworks Logo"
+                width="120"
+              /><br />
+              <strong>Tobeworks - Tobias Lorsbach<br /> </strong>
+              Neue Universitätsstraße 7<br />
+              55116 Mainz<br /><br />
+              Mobil: 0179/1259004 <br />
+              <p class="reverseaddr">ed.skrowebot@ollah</p>
+
+              Geschäftsführung: Tobias Lorsbach<br />
+
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
+              Umsatzsteuergesetz: DE 021 843 01420<br />
+              <br />
+              Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen
+              wir keine Haftung für die Inhalte externer Links.<br />
+              Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber
+              verantwortlich.<p></p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Contact client:load />
+  <Footer />
+</Layout>

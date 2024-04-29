@@ -2,8 +2,8 @@
 
     <div id="subfooter" class=" text-secondary-400">
         <nav class="flex justify-center space-x-4">
-            <a class="px-2 py-1" @click="openModal1 = true" href="#!" id="InputImpressum">Impressum</a>
-            <a class="px-2 py-1" href="#!" @click="openModal2 = true">Datenschutz</a>
+            <a class="px-2 py-1" @click="openModal1 = true" href="/impressum" id="InputImpressum">Impressum</a>
+            <a class="px-2 py-1" href="/datenschutz" @click="openModal2 = true">Datenschutz</a>
             <a class="px-2 py-1" href="https://tobeworks.de">Made with ❤ by Tobeworks</a>
         </nav>
     </div>

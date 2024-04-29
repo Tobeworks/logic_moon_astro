@@ -1,6 +1,6 @@
 <template>
     <section class="main-section bg-primary-500 text-secondary-400" id="disco">
-        <div class="grid grid-cols-1 w-2/3 mx-auto">
+        <div class="grid grid-cols-1 w-full md:w-2/3 mx-auto">
             <div class="mobile-bg">
                 <h2 class="text-left xl:text-start" id="headline-disco">Discography</h2>
                 <div class="mx-auto my-12">
