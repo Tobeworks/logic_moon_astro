@@ -52,7 +52,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/vue/24/outline'
+//import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/vue/24/outline'
 
 const mobileMenuOpen = ref(false)
 const prefix = ref('')
