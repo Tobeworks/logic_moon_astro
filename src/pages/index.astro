@@ -10,131 +10,52 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="Logic Moon">
   <main>
-    <Navigation client:load />
-    <!-- <div id="overlay-menu" class="bg-primary-50">
-      <div class="flex justify-end" id="overlay-close">
-        <div class="button-nav-block">
-          <button
-            class="btn btn-hamburger overlayMenuClose"
-            id="overlay-close-button">
-            <svg
-              width="2em"
-              height="2em"
-              viewBox="0 0 16 16"
-              class="bi bi-x-circle"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="overlay-middle">
-        <nav class="nav flex-column" id="fullscreen-menu">
-          <a class="nav-link active overlayMenuClose" href="#">Home</a>
-          <a class="nav-link overlayMenuClose" href="#about">About</a>
-          <a class="nav-link overlayMenuClose" href="#music">Music</a>
-          <a class="nav-link overlayMenuClose" href="#mastering">Mastering</a>
-          <a class="nav-link overlayMenuClose" href="#disco">Discography</a>
-          <a class="nav-link overlayMenuClose" href="#contact">Contact</a>
-        </nav>
-      </div>
-    </div> -->
-
-    <!-- <div class="flex justify-end md:hidden" id="hamburger-nav-sticky">
-      <div class="button-nav-block">
-        <button class="btn btn-hamburger" id="hamburger-nav-button">
-          <svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            class="bi bi-list text-light"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div> -->
-
-    <!-- 
-    <div id="scrollToTop" class="hidden">
-      <button class="btn" id="scrollToTop-button">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fas"
-          data-icon="sort-up"
-          class="svg-inline--fa fa-sort-up fa-w-10"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 320 512">
-          <path
-            fill="currentColor"
-            d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
-          ></path>
-        </svg>
-      </button>
-    </div>  -->
+    <Navigation client:visible />
 
     <!-- Hero -->
     <section
       class="h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center md:bg-fixed hero-bg">
       <h1 class="cinzel hero">Logic Moon</h1>
-      <h2 class="hero" data-aos="fade-up" data-aos-delay="500">music</h2>
+      <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">music</h2>
       <div class="mt-24" data-aos="fade-down" data-aos-delay="800">
-        <a href="#service" class="scroller" title="scrolldown">
-          <ChevronDownIcon class="w-12 text-secondary-600" />
+        <a
+          href="#about"
+          class="scroller"
+          title="scrolldown"       
+          aria-label="about">
+          <ChevronDownIcon
+            class="w-12 text-secondary-600"
+            title="about"
+            aria-label="about"
+          />
         </a>
       </div>
     </section>
-    <!-- Hero Ende -->
-    <!-- 
-    <section
-      class="cover-container flex w-full px-3 py-3 mx-auto flex-col slide-in-bck-center"
-      id="cover-container">
-      <header class="hidden sm:block">
-        <nav class="nav nav-masthead justify-center" id="topnavi">
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#music">Music</a>
-          <a class="nav-link" href="#mastering">Mastering</a>
-          <a class="nav-link" href="#disco">Discography</a>
-          <a class="nav-link" href="#contact">Contact</a>
-        </nav>
-      </header>
-
-      <div class="px-3" id="title-container">
-        <div class="overlay"></div>
-        <div class="flicker-in-1">
-          <h1>Logic Moon</h1>
-        </div>
-        <div id="subheadline" class="hidden sm:block">music</div>
-      </div>
-    </section> -->
 
     <section class="main-section bg-secondary-400" id="about">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-2/3 mx-auto">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-2/3 mx-auto">
         <div>
           <img
             src={portrait.src}
             alt="portrait"
             class="img-fluid hidden sm:block"
+            data-aos="fade-up"
+            loading="lazy"
           />
         </div>
         <div>
-          <h2 class="text-start xl:text-start" id="headline-about">About</h2>
-          <p class="text text-start xl:text-start">
+          <h2
+            class="text-start xl:text-start"
+            id="headline-about"
+            data-aos="fade-up">
+            About
+          </h2>
+          <p
+            class="text
+            text-start
+            xl:text-start"
+            data-aos="fade-up">
             Tobias Lorsbach is a Mainz, Germany-based artist known as Logic
             Moon. His earlier work has been released on labels such as Archives,
             Archipel, and his own spontanMusik imprint in both physical and
@@ -159,23 +80,8 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
 
-    <!-- <section class="main-section bg-primary-500 text-secondary-400" id="music">
-      <div class="overlay"></div>
-
-        <div class="grid grid-cols-1">
-          <div class="mobile-bg">
-            <h2 class="text-left" id="headline-music">Music</h2>
-            <p class="text text-left">
-              On international labels, 11 albums, 15 EPs and singles, and
-              several contributions to compilations have been released to date.
-              There are other contributions and productions in the film and
-              advertising industries.
-            </p>
-          </div>
-      </div>
-    </section> -->
-
     <Discography client:load />
     <Contact client:load />
-      <Footer />
-  </main></Layout>
+    <Footer />
+  </main></Layout
+>
