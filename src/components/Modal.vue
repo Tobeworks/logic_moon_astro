@@ -53,7 +53,7 @@ function setIsOpen(value) {
 }
 
 function handleOutsideClick() {
-        setIsOpen(false);
+    setIsOpen(false);
 }
 
 watch(isOpenRef, (newValue) => {

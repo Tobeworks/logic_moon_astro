@@ -83,7 +83,7 @@ h2.hero {
 }
 
 .main-section{
-    @apply p-5 md:p-12
+    @apply p-5 md:p-20
 }
 
 @media (max-width: 768px) {
