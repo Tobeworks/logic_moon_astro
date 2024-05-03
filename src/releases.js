@@ -236,7 +236,7 @@ const releases = [
         cover: 'floating_garden.jpg',
         year: '2024',
         release_id: '1648869892',
-        title: 'Logic Moon - Floating Garden',
+        title: 'Logic Moon - The Floating Garden',
         text: 'In "The Floating Garden," I`ve ventured into a realm where generative synths and the spirit of ambient music converge to create a magical, calming oasis.This single is a reflection of my journey, infused with a tiny touch of neoclassical elegance amidst the vast expanse of classic ambient landscapes.I aimed to cultivate an environment that invites listeners to float away into a serene, ethereal garden of their own making.I hope it brings you the same solace and wonder it brought me during its creation.',
         spotify:'',
         amazon:'',

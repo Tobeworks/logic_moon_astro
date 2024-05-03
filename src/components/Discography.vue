@@ -6,19 +6,20 @@
 
                 <div class="mx-auto my-12">
                     <div class="flex flex-wrap -mx-4">
-                        <div class="w-full px-4">
-                            <h2 class="text-left text-2xl" data-aos="fade-up">Latest release</h2>
+                        <div class="w-full px-4" v-if="last_release">
+                            <h3 class="text-left text-xl" data-aos="fade-up">Latest release</h3>
+                            <h2 class="text-left text-2xl my-2" data-aos="fade-up">{{ last_release.title }}</h2>
                             <p class="text-left" data-aos="fade-up" v-if="last_release">{{ last_release.text }}</p>
                             <div class="text-left my-8">
-                                <div class="mx-auto" v-if="last_release">
+                                <div class="mx-auto">
                                     <div class="flex flex-wrap -mx-4">
                                         <div class="w-full sm:w-1/2 px-4">
                                             <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full" data-aos="fade-up" />
                                         </div>
                                         <div class="w-full sm:w-1/2 px-4 flex flex-col justify-end">
-                                            <h3 class="text-left text-2xl my-2" data-aos="fade-up">{{ last_release.title }}</h3>
+
                                             <div>
-                                                <iframe style="border: 0; width: 100%; height: 241px;" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`" seamless data-aos="fade-up">
+                                                <iframe class="border-0 w-full h-60" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`" seamless data-aos="fade-up" title="Bandcamp Player">
                                                 </iframe>
                                             </div>
                                         </div>
@@ -55,7 +56,7 @@
 
     <Modal :is-open="openPlayer" @close="openPlayer = false">
         <div class="mt-10">
-            <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class=" w-auto"></iframe>
+            <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class=" w-auto" title="Bandcamp Player Modal"></iframe>
         </div>
     </Modal>
 </template>
