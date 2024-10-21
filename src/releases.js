@@ -241,6 +241,39 @@ const releases = [
         spotify:'',
         amazon:'',
     },
+    {
+        id: 36,
+        cover: 'last_days.jpg',
+        year: '2024',
+        release_id: '856601488',
+        title: 'Logic Moon - Last Days',
+        text: '"Last Days" is my latest EP, moving away from classic drone ambient and closer to neoclassical and melancholic soundscapes. It creates a cinematic journey, showcasing my ability to blend ambient and neoclassical elements into an immersive and emotionally resonant movie score experience.',
+        spotify: 'https://open.spotify.com/intl-de/album/7HNZpT01rztep9iULy0C2o?si=1aDxLnnzRXanpcIPNaPRCw',
+        amazon: '',
+        apple: ''
+    },
+    {
+        id: 37,
+        cover: 'lifelines.jpg',
+        year: '2024',
+        release_id: '1549285738',
+        title: 'Logic Moon - Lifelines',
+        text: 'In "Lifelines," I explore the warmth of analog sound through minimal, ambient compositions. I have crafted each track to glow with a gentle radiance, embracing the subtle textures of tape and the flow of modern Drone and Ambient music.This EP is my journey into soothing soundscapes, where each piece pulses with a soft, comforting energy.I hope you enjoy this sonic experience.',
+        spotify: 'https://open.spotify.com/intl-de/album/61wpnTaWdMGISScA2Spzdq?si=8io0IGYjStS-LF97Uemhfw',
+        amazon: '',
+        apple: ''
+    },
+    {
+        id: 38,
+        cover: 'tothesea.jpg',
+        year: '2024',
+        release_id: '1600080049',
+        title: 'Logic Moon - To The Sea',
+        text: 'To The Sea',
+        spotify: '',
+        amazon: '',
+        apple: ''
+    },
 
 ];
 export default releases;
