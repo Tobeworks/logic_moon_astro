@@ -1,7 +1,7 @@
 {
   "name": "logicmoon_astro",
   "type": "module",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vue": "^4.1.0",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vue": "^4.5.2",
     "@fontsource-variable/assistant": "^5.0.17",
     "@fontsource-variable/cinzel": "^5.0.12",
     "@headlessui/vue": "^1.7.20",
@@ -19,7 +19,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "animejs": "^3.2.2",
     "aos": "^2.3.4",
-    "astro": "^4.6.1",
+    "astro": "^4.16.7",
     "astro-imagetools": "^0.9.0",
     "astro-seo": "^0.8.3",
     "axios": "^1.6.8",

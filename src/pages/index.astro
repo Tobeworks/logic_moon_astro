@@ -3,6 +3,7 @@ import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 import portrait from "../assets/img/portrait.webp";
 import Navigation from "../components/Navigation.vue";
 import Discography from "../components/Discography.vue";
+import Playlists from "../components/Playlists.astro";
 import Contact from "../components/Contact.vue";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
@@ -18,11 +19,7 @@ import Footer from "../components/Footer.astro";
       <h1 class="cinzel hero">Logic Moon</h1>
       <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">music</h2>
       <div class="mt-24" data-aos="fade-down" data-aos-delay="800">
-        <a
-          href="#about"
-          class="scroller"
-          title="scrolldown"       
-          aria-label="about">
+        <a href="#about" class="scroller" title="scrolldown" aria-label="about">
           <ChevronDownIcon
             class="w-12 text-secondary-600"
             title="about"
@@ -81,6 +78,7 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <Discography client:load />
+    <Playlists /> 
     <Contact client:load />
     <Footer />
   </main></Layout

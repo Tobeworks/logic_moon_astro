@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import aeterna from "../assets/img/playlists/aeterna_cover2.jpg";
+import dark from "../assets/img/playlists/dark cover.jpg";
+import home from "../assets/img/playlists/home_cover_01.jpg";
+---
+
+<section class="main-section bg-secondary-400" id="playlists">
+    <div class="grid grid-cols-1 w-full md:w-2/3 mx-auto" data-aos="fade-up">
+        <h2 class="text-left xl:text-start" id="g">Playlists</h2>
+        <div>
+            I am currently curating mainly three ambient playlists exclusively
+            on Spotify.
+        </div>
+
+        <div class="flex sm:flex-row flex-col flex-wrap w-full my-6">
+            <div class="w-full md:w-1/3 p-2">
+                <a href="/spotify-playlist/aeterna-ambient-soundscapes">
+                    <Image
+                        src={aeterna}
+                        alt="AETERNA - Ambient Soundscapes"
+                        class="aspect-square"
+                        width="500"
+                        height="500"
+                    />
+                </a>
+                <div class="font-medium">AETERNA - Ambient Soundscapes</div>
+                <div class="text-sm">
+                    From classic ambient to neoclassical soundscape and ethereal
+                    drone with evolving intensity.
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-2">
+                <a href="/spotify-playlist/dark-ambient-drone">
+                    <Image
+                        src={dark}
+                        alt="DARK - Dark Ambient"
+                        class="aspect-square"
+                        width="500"
+                        height="500"
+                    />
+                </a>
+                <div class="font-medium">DARK -Dark Ambient</div>
+                <div class="text-sm">
+                    Drone, Melancholia, Blackness, Fog, Abyss, Gloom, Escape
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-2">
+                <a href="/spotify-playlist/home-ambient-fieldrecordings">
+                    <Image
+                        src={home}
+                        alt="HOME"
+                        class="aspect-square"
+                        width="500"
+                        height="500"
+                    />
+                </a>
+                <div class="font-medium">HOME</div>
+                <div class="text-sm">
+                    Ambient, Lofi, Cassette, Fieldrecording, Texture,
+                    Experimental, Ambience, Asian
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

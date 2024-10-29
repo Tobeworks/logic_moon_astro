@@ -260,8 +260,8 @@ const releases = [
         title: 'Logic Moon - Lifelines',
         text: 'In "Lifelines," I explore the warmth of analog sound through minimal, ambient compositions. I have crafted each track to glow with a gentle radiance, embracing the subtle textures of tape and the flow of modern Drone and Ambient music.This EP is my journey into soothing soundscapes, where each piece pulses with a soft, comforting energy.I hope you enjoy this sonic experience.',
         spotify: 'https://open.spotify.com/intl-de/album/61wpnTaWdMGISScA2Spzdq?si=8io0IGYjStS-LF97Uemhfw',
-        amazon: '',
-        apple: ''
+        amazon: 'https://music.amazon.de/albums/B0DHW3479P?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_nh88DnaBgziJmy192pMh5qWoO',
+        apple: 'https://music.apple.com/de/album/lifelines-ep/1770292736'
     },
     {
         id: 38,
@@ -274,6 +274,18 @@ const releases = [
         amazon: '',
         apple: ''
     },
+    {
+        id: 39,
+        cover: 'this_is_not_the_end.jpg',
+        year: '2024',
+        release_id: '1198976225',
+        title: 'Logic Moon - This Is Not The End',
+        text: 'This Is Not The End is a ballad of hope.',
+        spotify: '',
+        amazon: '',
+        apple: ''
+    },
+
 
 ];
 export default releases;

@@ -1,0 +1,45 @@
+---
+import Navigation from "../../components/Navigation.vue";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
+import cover from "../../assets/img/playlists/dark cover.jpg";
+---
+
+<Layout title="Logic Moon">
+    <main>
+        <Navigation client:visible />
+
+        <section class="main-section bg-secondary-400" id="playlists">
+            <div class="grid grid-cols-1 w-full md:w-2/3 mx-auto">
+                <h1 class="text-center text-4xl" id="g" data-aos="fade-up">
+                    DARK - Dark Ambient
+                </h1>
+                <h2 class="text-xl text-center assistant">Spotify Playlist</h2>
+                <div class="flex text-center justify-center">
+                    <Image
+                        src={cover}
+                        alt="DARK - Dark Ambient"
+                        class="aspect-square"
+                        width="500"
+                        height="500"
+                    />
+                </div>
+                <div class="my-6 text-center">
+                    Drone, Melancholia, Blackness, Fog, Abyss, Gloom, Escape
+                </div>
+                <div>
+                    <iframe
+                        style="border-radius:12px"
+                        src="https://open.spotify.com/embed/playlist/0Hz6L9elW1DN4fPTVvb1uz?utm_source=generator&theme=0"
+                        width="100%"
+                        height="600"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+        <Footer />
+    </main>
+</Layout>
