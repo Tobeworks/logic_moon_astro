@@ -14,13 +14,13 @@
                                 <div class="mx-auto">
                                     <div class="flex flex-wrap -mx-4">
                                         <div class="w-full sm:w-1/2 px-4">
-                                            <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full" data-aos="fade-up" />
+                                            <div class="relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                                                <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
+                                            </div>
                                         </div>
                                         <div class="w-full sm:w-1/2 px-4 flex flex-col justify-end">
-
                                             <div>
-                                                <iframe class="border-0 w-full h-60" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`" seamless data-aos="fade-up" title="Bandcamp Player">
-                                                </iframe>
+                                                <iframe class="border-0 w-full h-60" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`" seamless data-aos="fade-up" title="Bandcamp Player"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -32,8 +32,8 @@
 
                 <div v-if="!showAllReleases">
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id)">
-                            <img :src="`/images/covers/${release.cover}`" :alt="release.title" data-aos="fade-up" />
+                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id)">
+                            <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
                         </a>
                     </div>
                     <div class="flex justify-center">
@@ -45,8 +45,8 @@
 
                 <div v-else>
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id)">
-                            <img :src="`/images/covers/${release.cover}`" :alt="release.title" data-aos="fade-up" />
+                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id)">
+                            <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
                         </a>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
 
     <Modal :is-open="openPlayer" @close="openPlayer = false">
         <div class="mt-10">
-            <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class=" w-auto" title="Bandcamp Player Modal"></iframe>
+            <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class="w-auto" title="Bandcamp Player Modal"></iframe>
         </div>
     </Modal>
 </template>
@@ -70,7 +70,7 @@ const last_release = ref();
 const openPlayer = ref(false);
 const modalPlayerReleaseId = ref();
 const showAllReleases = ref(false);
-const showitems = 10
+const showitems = 10;
 
 onMounted(() => {
     getLatestRelease();
