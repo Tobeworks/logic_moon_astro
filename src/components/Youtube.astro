@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import escape from "../assets/img/youtube_covers/escape_cover.jpg";
+import horizon from "../assets/img/youtube_covers/logic moon horizon cover.jpg";
+import luminos from "../assets/img/youtube_covers/luminos_cover.jpg";
+import metropolis from "../assets/img/youtube_covers/metropolis_cover.jpg";
+import arcadia from "../assets/img/youtube_covers/new arcadia cover.jpg";
+import quantum from "../assets/img/youtube_covers/the_quantam_sea.jpg";
+---
+
+<section class="main-section bg-primary-500 text-secondary-400" id="youtube">
+    <div class="px-4 py-12">
+        <div
+            class="grid grid-cols-1 w-full md:w-2/3 mx-auto mb-8"
+            data-aos="fade-up">
+            <h2 class="">Youtube</h2>
+            <p class="text-lg">
+                Since the middle of the year 2024, I run a <a
+                    href="https://www.youtube.com/@LogicMoonMusic"
+                    target="_blank">YouTube channel</a
+                > where I accompany my music with cinematic images from the sci-fi
+                genre.
+            </p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:w-2/3 mx-auto"
+            data-aos="fade-up">
+            {/* Escape Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=fnMJi1SRLBQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={escape}
+                        alt="Escape Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+
+            {/* Horizon Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=0TC4qRclno8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={horizon}
+                        alt="Logic Moon Horizon Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+
+            {/* Luminos Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=ik8Yc05pvbY"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={luminos}
+                        alt="Luminos Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+
+            {/* Metropolis Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=kiVdVITiGKU"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={metropolis}
+                        alt="Metropolis Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+
+            {/* Arcadia Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=U9l-qVb5lQs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={arcadia}
+                        alt="New Arcadia Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+
+            {/* Quantum Cover */}
+            <a
+                href="https://www.youtube.com/watch?v=JC6BoKPIQzI"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="relative w-full pt-[56.25%]">
+                    <Image
+                        src={quantum}
+                        alt="The Quantum Sea Cover"
+                        class="absolute top-0 left-0 w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:brightness-100"
+                        format="webp"
+                        quality={80}
+                        width={500}
+                    />
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
