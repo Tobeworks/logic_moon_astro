@@ -66,6 +66,7 @@ import { onMounted, ref, computed } from 'vue';
 import releases from '../releases.js';
 import Modal from './Modal.vue';
 
+
 const last_release = ref();
 const openPlayer = ref(false);
 const modalPlayerReleaseId = ref();
