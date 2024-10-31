@@ -70,7 +70,7 @@ const last_release = ref();
 const openPlayer = ref(false);
 const modalPlayerReleaseId = ref();
 const showAllReleases = ref(false);
-const showitems = 10;
+const showitems = 12;
 
 onMounted(() => {
     getLatestRelease();
