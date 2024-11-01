@@ -32,7 +32,7 @@
 
                 <div v-if="!showAllReleases">
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id)">
+                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id, release)">
                             <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
                         </a>
                     </div>
@@ -45,7 +45,7 @@
 
                 <div v-else>
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id)">
+                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id,release)">
                             <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
                         </a>
                     </div>
@@ -55,6 +55,8 @@
     </section>
 
     <Modal :is-open="openPlayer" @close="openPlayer = false">
+        
+     <AlbumLinks :url="modalPlayer_bandcampurl" v-if="modalPlayer_bandcampurl"  />
         <div class="mt-10">
             <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class="w-auto" title="Bandcamp Player Modal"></iframe>
         </div>
@@ -65,12 +67,13 @@
 import { onMounted, ref, computed } from 'vue';
 import releases from '../releases.js';
 import Modal from './Modal.vue';
-
+import AlbumLinks from './Album-Links.vue';
 
 const last_release = ref();
 const openPlayer = ref(false);
 const modalPlayerReleaseId = ref();
 const showAllReleases = ref(false);
+const modalPlayer_bandcampurl = ref();
 const showitems = 12;
 
 onMounted(() => {
@@ -83,10 +86,13 @@ const getLatestRelease = () => {
     return res;
 };
 
-const openModalPlayer = (release_id) => {
+const openModalPlayer = (release_id, release) => {
+
     if (release_id === '') return (openPlayer.value = false);
     openPlayer.value = true;
     modalPlayerReleaseId.value = release_id;
+    
+    modalPlayer_bandcampurl.value = release.bandcamp ? release.bandcamp : false;
 };
 
 const sortedReleases = computed(() => {

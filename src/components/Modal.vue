@@ -35,6 +35,7 @@ import { ref, watch } from 'vue';
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue';
 import { XMarkIcon } from '@heroicons/vue/24/outline';
 
+
 const props = defineProps({
     isOpen: {
         type: Boolean,

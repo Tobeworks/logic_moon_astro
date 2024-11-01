@@ -221,7 +221,8 @@ const releases = [
         cover: 'ewiger_wald.jpg',
         year: '2024',
         release_id: '3324823902',
-        title: 'Logic Moon & Henrik Meierkord - Ewiger Wald'
+        title: 'Logic Moon & Henrik Meierkord - Ewiger Wald',
+        bandcamp:'https://dronarivm.bandcamp.com/album/ewiger-wald'
     },
 
     {
@@ -230,7 +231,8 @@ const releases = [
         year: '2024',
         release_id: '1881628841',
         title: 'Logic Moon & Henrik Meierkord - Ewiger Wald Addendum',
-        text: 'We are excited to present "Ewiger Wald Addendum," a continuation of our journey with the mini-album "Ewiger Wald," released in January on Dronarivm.This new release, a collaboration between Logic Moon, and the Swedish cellist and composer Henrik Meierkord, explores modern neoclassical ambient music through three distinct versions of the track "Bosch." In "Ewiger Wald Addendum," we blend Henrik`s emotive cello playing with Logic Moon`s signature drones and synths, inviting you into a deeper exploration of our sonic landscape. This release expands our artistic expression and further connects us with our listeners.'
+        text: 'We are excited to present "Ewiger Wald Addendum," a continuation of our journey with the mini-album "Ewiger Wald," released in January on Dronarivm.This new release, a collaboration between Logic Moon, and the Swedish cellist and composer Henrik Meierkord, explores modern neoclassical ambient music through three distinct versions of the track "Bosch." In "Ewiger Wald Addendum," we blend Henrik`s emotive cello playing with Logic Moon`s signature drones and synths, inviting you into a deeper exploration of our sonic landscape. This release expands our artistic expression and further connects us with our listeners.',
+        bandcamp:'https://logicmoon.bandcamp.com/album/logic-moon-henrik-meierkord-ewiger-wald-addendum'
     }, {
         id: 35,
         cover: 'floating_garden.jpg',
@@ -238,8 +240,7 @@ const releases = [
         release_id: '1648869892',
         title: 'Logic Moon - The Floating Garden',
         text: 'In "The Floating Garden," I`ve ventured into a realm where generative synths and the spirit of ambient music converge to create a magical, calming oasis.This single is a reflection of my journey, infused with a tiny touch of neoclassical elegance amidst the vast expanse of classic ambient landscapes.I aimed to cultivate an environment that invites listeners to float away into a serene, ethereal garden of their own making.I hope it brings you the same solace and wonder it brought me during its creation.',
-        spotify:'',
-        amazon:'',
+        bandcamp:'https://logicmoon.bandcamp.com/album/the-floating-garden'
     },
     {
         id: 36,
@@ -248,9 +249,8 @@ const releases = [
         release_id: '856601488',
         title: 'Logic Moon - Last Days',
         text: '"Last Days" is my latest EP, moving away from classic drone ambient and closer to neoclassical and melancholic soundscapes. It creates a cinematic journey, showcasing my ability to blend ambient and neoclassical elements into an immersive and emotionally resonant movie score experience.',
+        bandcamp:'https://logicmoon.bandcamp.com/album/last-days',
         spotify: 'https://open.spotify.com/intl-de/album/7HNZpT01rztep9iULy0C2o?si=1aDxLnnzRXanpcIPNaPRCw',
-        amazon: '',
-        apple: ''
     },
     {
         id: 37,
@@ -259,6 +259,7 @@ const releases = [
         release_id: '1549285738',
         title: 'Logic Moon - Lifelines',
         text: 'In "Lifelines," I explore the warmth of analog sound through minimal, ambient compositions. I have crafted each track to glow with a gentle radiance, embracing the subtle textures of tape and the flow of modern Drone and Ambient music.This EP is my journey into soothing soundscapes, where each piece pulses with a soft, comforting energy.I hope you enjoy this sonic experience.',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/lifelines',
         spotify: 'https://open.spotify.com/intl-de/album/61wpnTaWdMGISScA2Spzdq?si=8io0IGYjStS-LF97Uemhfw',
         amazon: 'https://music.amazon.de/albums/B0DHW3479P?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_nh88DnaBgziJmy192pMh5qWoO',
         apple: 'https://music.apple.com/de/album/lifelines-ep/1770292736'
@@ -270,9 +271,7 @@ const releases = [
         release_id: '1600080049',
         title: 'Logic Moon - To The Sea',
         text: 'To The Sea',
-        spotify: '',
-        amazon: '',
-        apple: ''
+        bandcamp: 'https://logicmoon.bandcamp.com/album/to-the-sea'
     },
     {
         id: 39,
@@ -281,9 +280,7 @@ const releases = [
         release_id: '1198976225',
         title: 'Logic Moon - This Is Not The End',
         text: 'This Is Not The End is a ballad of hope.',
-        spotify: '',
-        amazon: '',
-        apple: ''
+        bandcamp:'https://logicmoon.bandcamp.com/album/this-is-not-the-end'
     },
 
 
