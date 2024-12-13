@@ -14,8 +14,8 @@
                                 <div class="mx-auto">
                                     <div class="flex flex-wrap -mx-4">
                                         <div class="w-full sm:w-1/2 px-4">
-                                            <div class="relative overflow-hidden transition-transform duration-300 hover:scale-105">
-                                                <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
+                                            <div class="relative overflow-hidden transition-all duration-300 hover:scale-105 hover:brightness-100  brightness-90">
+                                                <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full transition-all  " data-aos="fade-up" />
                                             </div>
                                         </div>
                                         <div class="w-full sm:w-1/2 px-4 flex flex-col justify-end">
@@ -55,8 +55,8 @@
     </section>
 
     <Modal :is-open="openPlayer" @close="openPlayer = false">
-        
-     <AlbumLinks :url="modalPlayer_bandcampurl" v-if="modalPlayer_bandcampurl"  />
+
+        <AlbumLinks :url="modalPlayer_bandcampurl" v-if="modalPlayer_bandcampurl" />
         <div class="mt-10">
             <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${modalPlayerReleaseId}/size=large/bgcol=000000/linkcol=ffffff/artwork=small/transparent=true/`" height="300" class="w-auto" title="Bandcamp Player Modal"></iframe>
         </div>

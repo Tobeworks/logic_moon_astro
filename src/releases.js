@@ -282,7 +282,15 @@ const releases = [
         text: 'This Is Not The End is a ballad of hope.',
         bandcamp:'https://logicmoon.bandcamp.com/album/this-is-not-the-end'
     },
-
+    {
+        id: 40,
+        cover: 'music for film.jpg',
+        year: '2024',
+        release_id: '2996898458',
+        title: 'Logic Moon - Music For Film Vol.1',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/music-for-film-vol-1'
+    },
 
 ];
 export default releases;
