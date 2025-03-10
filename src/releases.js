@@ -291,6 +291,24 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/music-for-film-vol-1'
     },
+    {
+        id: 41,
+        cover: 'glow.webp',
+        year: '2025',
+        release_id: '3316897320',
+        title: 'Logic Moon - GLOW',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/glow'
+    },
+    {
+        id: 42,
+        cover: 'atlas.webp',
+        year: '2025',
+        release_id: '638784917',
+        title: 'Logic Moon - Atlas',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/atlas'
+    },
 
 ];
 export default releases;
