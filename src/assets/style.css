@@ -3,7 +3,7 @@ body {
   @apply bg-primary-600;
 }
 h1, h2{
-	  font-family: 'Cinzel Variable', sans-serif;
+    font-family: 'Assistant Variable', sans-serif;
 }
 h3, h4, h5, h6{
       font-family: 'Assistant Variable', sans-serif;
@@ -16,15 +16,18 @@ h2{
      @apply text-3xl md:text-5xl mt-6 md:mt-0 mb-4;
 }
 
+p{
+    @apply my-4;
+}
 .cinzel{
-    font-family: 'Cinzel Variable', sans-serif;
+    font-family: 'Assistant Variable', sans-serif;
 }
 .assistant{
     font-family: 'Assistant Variable', sans-serif;
 }
 
 .hero-bg{
-    background-image: url('img/logic_moon_hero01.webp');
+    background-image: url('img/cover2.webp');
 }
 
 .reverseaddr {
@@ -68,16 +71,15 @@ h1.hero {
     font-size: 12vw;
     text-transform: uppercase;
     margin: 0 0 -4% 0;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
     mix-blend-mode: screen;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px #ab9f83;
     background-color: rgba(0, 0, 0, 0.1); /* black background with 50% opacity */
 }
 h2.hero {
     font-size: 3vw;
     text-transform: uppercase;
     margin: 0 0 -4% 0;
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 1);
+    text-shadow: 0px 0px 3px #ab9f83;
     mix-blend-mode: screen;
     background-color: rgba(0, 0, 0, 0.6); 
 }
@@ -88,7 +90,7 @@ h2.hero {
 
 @media (max-width: 768px) {
     .hero-bg{
-        background-image: url('img/logic_moon_hero_mobile01.webp');
+        background-image: url('img/cover_mobile2.webp');
     }
 h1.hero {
     font-size: 12vw;

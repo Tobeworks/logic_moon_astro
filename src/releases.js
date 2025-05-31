@@ -309,6 +309,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/atlas'
     },
+    {
+        id: 43,
+        cover: 'metamorphosis_cover.webp',
+        year: '2025',
+        release_id: '3345105927',
+        title: 'Logic Moon - Metamorphosis',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/metamorphosis'
+    },
 
 ];
 export default releases;
