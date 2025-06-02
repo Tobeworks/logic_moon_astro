@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CoverArtGallery from "../components/Coverart-Gallery.vue";
 import Navigation from "../components/Navigation.vue";
+import Footer from "../components/Footer.astro";
 
 const coverArtModules = import.meta.glob(
   "../assets/cover_art/*.{jpeg,jpg,png,gif,webp}",
@@ -25,7 +26,7 @@ const images = Object.entries(coverArtModules).map(([path, module], index) => {
 <Layout title="Logic Moon Cover Art Gallery">
   <Layout title="Logic Moon">
     <Navigation client:visible />
-    <main class="max-w-6xl md:mx-auto text-secondary-200 mt-16 mx-4">
+    <main class="max-w-6xl md:mx-auto text-secondary-200 my-16 mx-4">
       <section>
         <h1
           class="text-4xl font-bold text-center mb-8 text-gray-800"
@@ -40,5 +41,6 @@ const images = Object.entries(coverArtModules).map(([path, module], index) => {
         <CoverArtGallery images={images} client:load />
       </section>
     </main>
+    <Footer />
   </Layout>
 </Layout>
