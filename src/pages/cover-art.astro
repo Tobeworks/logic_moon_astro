@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CoverArtGallery from "../components/Coverart-Gallery.vue";
+import Navigation from "../components/Navigation.vue";
+
+const coverArtModules = import.meta.glob(
+  "../assets/cover_art/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true }
+);
+
+const images = Object.entries(coverArtModules).map(([path, module], index) => {
+  const filename = path.split("/").pop().split(".")[0];
+  return {
+    src: module.default.src,
+    alt: `Cover Art: ${filename}`,
+    title: filename
+      .replace(/[-_]/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase()),
+    filename: filename,
+    index: index,
+  };
+});
+---
+
+<Layout title="Logic Moon Cover Art Gallery">
+  <Layout title="Logic Moon">
+    <Navigation client:visible />
+    <main class="max-w-6xl md:mx-auto text-secondary-200 mt-16 mx-4">
+      <section>
+        <h1
+          class="text-4xl font-bold text-center mb-8 text-gray-800"
+          data-aos="fade-up">
+          Cover Art Collection
+        </h1>
+        <p class="text-center" data-aos="fade-up">
+          Sometimes I`m designing cover arts for other artists and labels, too.
+          If you’re interested in a cover design for your project, just get in
+          touch with me.
+        </p>
+        <CoverArtGallery images={images} client:load />
+      </section>
+    </main>
+  </Layout>
+</Layout>
