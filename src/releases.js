@@ -318,6 +318,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/metamorphosis'
     },
+    {
+        id: 44,
+        cover: 'memories of tomorow_sm.jpg',
+        year: '2025',
+        release_id: '3392045544',
+        title: 'Logic Moon - Memories Of Tomorrow',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/memories-of-tomorrow'
+    },
 
 ];
 export default releases;

@@ -20,7 +20,9 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="message" data-aos="fade-up">Message</label>
                             <textarea aria-label="Message" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" rows="3" name="message" v-model="form_message" required :disabled="form_disabled" data-aos="fade-up" id="message"></textarea>
                         </div>
-                        <button type="submit" class="bg-primary-500 hover:bg-blue-700 text-white font-bold py-2 px-4" :disabled="form_disabled" data-aos="fade-up">Send me a message</button>
+                        <button type="submit" class="bg-primary-500 hover:bg-secondary-700 transition-all duration-500 ease-in-out text-white font-bold py-2 px-4 rounded" :disabled="form_disabled" data-aos="fade-up">
+                            Send me a message
+                        </button>
                     </form>
                     <div class="bg-secondary-400 border border-gray-400 text-gray-700 px-4 py-3 relative m-3" role="alert" id="mail-alert" style="display: none;">
                     </div>
