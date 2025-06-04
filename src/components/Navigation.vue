@@ -64,6 +64,7 @@ const navigation = computed(() => [
     { name: 'Playlists', href: `${prefix.value}#playlists` },
     { name: 'Discography', href: `${prefix.value}#disco` },
     { name: 'Cover Art', href: `/cover-art` },
+    { name: 'Sounds', href: `/sounds` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
 
