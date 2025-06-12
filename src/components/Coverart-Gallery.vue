@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-            <div v-for="(image, index) in images" :key="index" @click="openLightbox(index)" class="bg-white  shadow-lg hover:shadow-2xl transform transition-all duration-300 cursor-pointer group" data-aos="fade-up">
-                <img :src="image.src" :alt="image.alt" :title="image.title" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div v-for="(image, index) in images" :key="index" @click="openLightbox(index)" class="bg-white shadow-lg hover:shadow-2xl transform transition-all duration-300 cursor-pointer group" data-aos="fade-up">
+                <img :src="image.src" :alt="image.alt" :title="image.title" class="w-full h-64 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-300 aspect-square" loading="lazy" />
             </div>
         </div>
 
@@ -11,7 +11,7 @@
                 &times;
             </button>
 
-            <img :src="images[currentIndex].src" :alt="images[currentIndex].alt" class="max-w-4xl max-h-4xl object-contain rounded-lg shadow-2xl" @click.stop />
+            <img :src="images[currentIndex].src" :alt="images[currentIndex].alt" class="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl aspect-square" @click.stop />
 
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center">
                 <div class="bg-black bg-opacity-70 px-6 py-3 rounded-lg backdrop-blur-md">
