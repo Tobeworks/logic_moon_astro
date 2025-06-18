@@ -21,7 +21,8 @@ const { title } = Astro.props;
     />
     <meta
       name="description"
-      content="Logic Moon is the ambient music project of Tobias Lorsbach. His music is a blend of ambient, drone, and neoclassical music." />
+      content="Logic Moon is the ambient music project of Tobias Lorsbach. His music is a blend of ambient, drone, and neoclassical music."
+    />
     <meta name="author" content="Tobias Lorsbach" />
     <meta name="viewport" content="width=device-width" />
     <link
@@ -48,6 +49,23 @@ const { title } = Astro.props;
       document.onreadystatechange = function () {
         AOS.init();
       };
+    </script>
+
+    <script>
+      var _paq = (window._paq = window._paq || []);
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//matomo.tobeworks.de/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "2"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
     </script>
   </head>
   <body>
