@@ -1,6 +1,5 @@
 ---
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
-import portrait from "../assets/img/cinetobe_full.webp";
 import Navigation from "../components/Navigation.vue";
 import Discography from "../components/Discography.vue";
 import Playlists from "../components/Playlists.astro";
@@ -8,6 +7,7 @@ import Youtube from "../components/Youtube.astro";
 import Contact from "../components/Contact.vue";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+import About from "../components/About.astro";
 import LatestNews from "../components/LatestNews.astro";
 ---
 
@@ -34,89 +34,7 @@ import LatestNews from "../components/LatestNews.astro";
       </div>
     </section>
     <LatestNews />
-    <section class="main-section bg-secondary-400" id="about">
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-2/3 mx-auto">
-        <div>
-          <img
-            src={portrait.src}
-            alt="portrait"
-            class="img-fluid hidden sm:block"
-            data-aos="fade-up"
-            loading="lazy"
-          />
-        </div>
-        <div>
-          <h2
-            class="text-start xl:text-start"
-            id="headline-about"
-            data-aos="fade-up">
-            About
-          </h2>
-          <p
-            class="text
-            text-start
-            xl:text-start"
-            data-aos="fade-up">
-            <p>
-              Tobias Lorsbach is a Mainz, Germany-based artist known as <span
-                class="artist-name">Logic Moon</span
-              >. His previous releases have appeared on internationally
-              recognized labels such as Whitelabrecs, Archives, Archipel,
-              DRONARIVM, Ambientologist, Shimmering Moods, and his own Logic
-              Moon Music imprint across both physical and digital formats. He
-              spent many years in the minimal techno scenes since the early
-              2000s, and whilst out on a field recording excursion, he fell upon
-              the idea of layering some ambient drones. From here, his debut
-              album as <span class="artist-name">Logic Moon</span> was born - "Herbst11".
-            </p>
-
-            <p>
-              Tobias' musical background has drawn in a widescreen of genres,
-              with him having performed guitar in a death metal band, embarked
-              on a DJ career, and now established himself as an ambient
-              musician. His varied experiences have only served to give birth to
-              a range of ideas which are evident in his acclaimed albums,
-              including "I See Planets" (2019) and his most recent release
-              "Music For Film Vol.1" (2024), alongside numerous collaborative
-              works.
-            </p>
-
-            <div class="highlight">
-              Logic Moon has become well known for his mastering and
-              post-production work for internationally recognized labels like
-              Whitelabrecs, DRONARIVM, Archives, and many artists all over the
-              globe.
-            </div>
-
-            <p>
-              Recent collaborative projects include works with Swedish cellist
-              Henrik Meierkord on albums such as "Inseln" (2022) and "Ewiger
-              Wald" (2024), as well as partnerships with artists like Sven Laux
-              and Scarless Arms, showcasing his ability to seamlessly blend
-              classical instrumentation with electronic soundscapes.
-            </p>
-
-            <p>
-              Logic Moon's style is frequently regarded as lively and
-              emotionally engaging, with his compositions striking a delicate
-              balance between classical accessibility and adventurous
-              exploration. His work spans from cinematic ambient pieces to deep
-              drone compositions, often incorporating field recordings and
-              creating atmospheric journeys that transport listeners to
-              otherworldly realms.
-            </p>
-            <p>
-              <a
-                href="/logic-moon-bio"
-                class="bg-primary-500 hover:bg-secondary-700 transition-all duration-500 ease-in-out text-white font-bold py-2 px-4 rounded my-2 hover:no-underline"
-                title="Logic Moon biographical info">Biographical Info</a
-              >
-            </p>
-          </p>
-        </div>
-      </div>
-    </section>
+    <About />
 
     <Discography client:load />
 
