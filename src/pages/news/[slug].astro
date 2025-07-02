@@ -1,0 +1,134 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.vue";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} - Logic Moon`}>
+  <Navigation client:visible />
+  <main class="min-h-screen bg-secondary-400">
+    <section class="main-section">
+      <div class="container mx-auto px-4 py-16 max-w-4xl">
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <header
+            class="text-center p-8 bg-gradient-to-b from-secondary-100 to-white">
+            {
+              post.data.image && (
+                <div class="mb-8">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                  />
+                </div>
+              )
+            }
+            <h1 class="cinzel text-3xl md:text-5xl mb-6 text-primary-500">
+              {post.data.title}
+            </h1>
+            <div
+              class="flex justify-center items-center gap-4 text-grey-600 mb-4">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {
+                  post.data.pubDate.toLocaleDateString("de-DE", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }
+              </time>
+            </div>
+            <p class="text-lg text-grey-700 italic max-w-2xl mx-auto">
+              {post.data.description}
+            </p>
+          </header>
+
+          <div class="prose prose-lg max-w-none p-8">
+            <Content />
+          </div>
+        </article>
+
+        <div class="mt-12 text-center">
+          <a
+            href="/news"
+            class="bg-primary-500 hover:bg-primary-400 text-white font-bold py-3 px-6 rounded transition-colors duration-200 inline-flex items-center gap-2">
+            ← Zurück zu News
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .main-section {
+    min-height: calc(100vh - 80px);
+  }
+
+  .prose :global(h2) {
+    @apply text-2xl font-semibold text-primary-500 mt-8 mb-4;
+  }
+
+  .prose :global(h3) {
+    @apply text-xl font-semibold text-primary-400 mt-6 mb-3;
+  }
+
+  .prose :global(p) {
+    @apply text-grey-700 leading-relaxed mb-6;
+  }
+
+  .prose :global(a) {
+    @apply text-primary-500 hover:text-primary-400 transition-colors duration-200;
+  }
+
+  .prose :global(img) {
+    @apply rounded-lg shadow-md mx-auto;
+  }
+
+  .prose :global(blockquote) {
+    @apply border-l-4 border-primary-300 pl-6 py-2 bg-secondary-50 rounded-r-lg my-6 italic text-grey-700;
+  }
+
+  .prose :global(code) {
+    @apply bg-secondary-100 text-primary-600 px-2 py-1 rounded text-sm;
+  }
+
+  .prose :global(pre) {
+    @apply bg-primary-900 text-white p-4 rounded-lg overflow-x-auto my-6;
+  }
+
+  .prose :global(pre code) {
+    @apply text-white px-0 py-0;
+    background: none;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    @apply text-grey-700 mb-6;
+  }
+
+  .prose :global(li) {
+    @apply mb-2;
+  }
+
+  .prose :global(strong) {
+    @apply text-primary-600 font-semibold;
+  }
+</style>

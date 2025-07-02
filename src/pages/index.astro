@@ -8,6 +8,7 @@ import Youtube from "../components/Youtube.astro";
 import Contact from "../components/Contact.vue";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+import LatestNews from "../components/LatestNews.astro";
 ---
 
 <Layout title="Logic Moon">
@@ -118,6 +119,7 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <Discography client:load />
+    <LatestNews />
     <Playlists />
     <Youtube />
     <Contact client:load />

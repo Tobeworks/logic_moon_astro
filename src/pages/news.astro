@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.vue';
+import Footer from '../components/Footer.astro';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const postsPerPage = 10;
+const totalPages = Math.ceil(posts.length / postsPerPage);
+const currentPagePosts = posts.slice(0, postsPerPage);
+---
+
+<Layout title="News - Logic Moon">
+  <Navigation client:visible />
+  <main class="min-h-screen bg-secondary-400">
+    <section class="main-section">
+      <div class="container mx-auto px-4 py-16">
+        <h1 class="cinzel text-4xl md:text-6xl text-center mb-12 text-primary-500">News</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {currentPagePosts.map(post => (
+            <article class="post-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              {post.data.image && (
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src={post.data.image} 
+                    alt={post.data.title}
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div class="p-6">
+                <h2 class="text-xl font-semibold mb-3 text-primary-500">
+                  <a 
+                    href={`/news/${post.slug}`}
+                    class="hover:text-primary-400 transition-colors duration-200"
+                  >
+                    {post.data.title}
+                  </a>
+                </h2>
+                <p class="text-grey-500 text-sm mb-3">
+                  {post.data.pubDate.toLocaleDateString('de-DE', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </p>
+                <p class="text-grey-600 leading-relaxed">{post.data.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <nav class="flex items-center justify-center gap-4 mt-16">
+            <div class="flex gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
+                <a 
+                  href={num === 1 ? '/news' : `/news/page/${num}`}
+                  class={`w-10 h-10 flex items-center justify-center rounded transition-colors duration-200 ${
+                    num === 1
+                      ? 'bg-primary-500 text-white' 
+                      : 'bg-white text-primary-500 hover:bg-primary-100'
+                  }`}
+                >
+                  {num}
+                </a>
+              ))}
+            </div>
+
+            {totalPages > 1 && (
+              <a 
+                href="/news/page/2" 
+                class="bg-primary-500 hover:bg-primary-400 text-white px-6 py-2 rounded transition-colors duration-200"
+              >
+                Nächste →
+              </a>
+            )}
+          </nav>
+        )}
+
+        <p class="text-center text-grey-600 mt-8">
+          Seite 1 von {totalPages} 
+          (Artikel 1-{Math.min(postsPerPage, posts.length)} von {posts.length})
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .main-section {
+    min-height: calc(100vh - 80px);
+  }
+</style>
