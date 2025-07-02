@@ -25,7 +25,7 @@ const { Content } = await post.render();
   <main class="min-h-screen bg-secondary-400">
     <section class="main-section">
       <div class="container mx-auto px-4 py-16 max-w-4xl">
-        <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <article class="bg-white  shadow-lg overflow-hidden">
           <header
             class="text-center p-8 bg-gradient-to-b from-secondary-100 to-white">
             {
@@ -34,7 +34,7 @@ const { Content } = await post.render();
                   <img
                     src={post.data.image}
                     alt={post.data.title}
-                    class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                    class="w-full max-w-2xl mx-auto  shadow-md"
                   />
                 </div>
               )
@@ -67,7 +67,7 @@ const { Content } = await post.render();
         <div class="mt-12 text-center">
           <a
             href="/news"
-            class="bg-primary-500 hover:bg-primary-400 text-white font-bold py-3 px-6 rounded transition-colors duration-200 inline-flex items-center gap-2">
+            class="bg-primary-500 hover:bg-primary-400 text-white font-bold py-3 px-6 transition-colors duration-200 inline-flex items-center gap-2">
             ← Zurück zu News
           </a>
         </div>
@@ -99,19 +99,19 @@ const { Content } = await post.render();
   }
 
   .prose :global(img) {
-    @apply rounded-lg shadow-md mx-auto;
+    @apply  shadow-md mx-auto;
   }
 
   .prose :global(blockquote) {
-    @apply border-l-4 border-primary-300 pl-6 py-2 bg-secondary-50 rounded-r-lg my-6 italic text-grey-700;
+    @apply border-l-4 border-primary-300 pl-6 py-2 bg-secondary-50 my-6 italic text-grey-700;
   }
 
   .prose :global(code) {
-    @apply bg-secondary-100 text-primary-600 px-2 py-1 rounded text-sm;
+    @apply bg-secondary-100 text-primary-600 px-2 py-1  text-sm;
   }
 
   .prose :global(pre) {
-    @apply bg-primary-900 text-white p-4 rounded-lg overflow-x-auto my-6;
+    @apply bg-primary-900 text-white p-4 overflow-x-auto my-6;
   }
 
   .prose :global(pre code) {
