@@ -24,7 +24,7 @@
                     <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
                         <div class="fixed inset-0 bg-gray-900/80" />
                     </TransitionChild>
-                    <TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-y-full" enter-to="translate-y-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-y-0" leave-to="-translate-y-full">
+                    <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
 
                         <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-primary-600 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div class="w-10 h-10 absolute md:hidden top-6 right-6">
@@ -59,6 +59,7 @@ const prefix = ref('')
 
 const navigation = computed(() => [
     { name: 'Home', href: `/` },
+    { name: 'News', href: '/news' },
     { name: 'About', href: `${prefix.value}#about` },
     // { name: 'Music', href: `${prefix.value}#music` },
     { name: 'Playlists', href: `${prefix.value}#playlists` },
