@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 
 const posts = (await getCollection('blog'))
   .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
 const postsPerPage = 10;
 const totalPages = Math.ceil(posts.length / postsPerPage);
@@ -15,14 +15,14 @@ const currentPagePosts = posts.slice(0, postsPerPage);
 
 <Layout title="News - Logic Moon">
   <Navigation client:visible />
-  <main class="min-h-screen bg-secondary-400">
+  <main class="min-h-screen bg-primary">
     <section class="main-section">
       <div class="container mx-auto px-4 py-16">
-        <h1 class="cinzel text-4xl md:text-6xl text-center mb-12 text-primary-500">News</h1>
+        <h1 class="cinzel text-4xl md:text-6xl text-center mb-12 text-secondary-500">News</h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {currentPagePosts.map(post => (
-            <article class="post-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <article class="post-card bg-primary-800 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               {post.data.image && (
                 <div class="aspect-video overflow-hidden">
                   <img 
@@ -33,7 +33,7 @@ const currentPagePosts = posts.slice(0, postsPerPage);
                 </div>
               )}
               <div class="p-6">
-                <h2 class="text-xl font-semibold mb-3 text-primary-500">
+                <h2 class="text-xl font-semibold mb-3 text-primary-100">
                   <a 
                     href={`/news/${post.slug}`}
                     class="hover:text-primary-400 transition-colors duration-200"

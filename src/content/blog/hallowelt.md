@@ -2,7 +2,7 @@
 title: "Mein erster Blog-Beitrag"
 description: "Ein Beispiel für einen Blog-Post mit Astro 5 und Content Collections"
 pubDate: 2025-06-30
-image: "/assets/blog/erster-beitrag.jpg"
+image: "/blog/ashes_cover.webp"
 draft: false
 ---
 
