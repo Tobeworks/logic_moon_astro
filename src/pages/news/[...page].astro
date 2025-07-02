@@ -30,8 +30,10 @@ const { page } = Astro.props;
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {
             page.data.map((post) => (
-              <article class="post-card bg-primary-200 overflow-hidden shadow-lg group cursor-pointer transition-colors duration-300 hover:bg-secondary-100">
-                <a href={`/news/${post.slug}`} class="block hover:no-underline focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg" aria-label={`Read more about ${post.data.title}`}>
+              <article class="post-card bg-primary-200 overflow-hidden shadow-lg group relative cursor-pointer transition-colors duration-300 hover:bg-secondary-100">
+                <a href={`/news/${post.slug}`} class="absolute inset-0 block hover:no-underline focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg" aria-label={`Read more about ${post.data.title}`}>
+                  <span class="sr-only">Read more about {post.data.title}</span>
+                </a>
                   {post.data.image && (
                     <div class="aspect-video overflow-hidden">
                       <img
@@ -56,7 +58,6 @@ const { page } = Astro.props;
                       {post.data.description}
                     </p>
                   </div>
-                </a>
               </article>
             ))
           }
