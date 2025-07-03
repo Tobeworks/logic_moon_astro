@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/tailwind": "^5.1.5",
     "@astrojs/vue": "^5.1.0",
     "@fontsource-variable/assistant": "^5.0.17",
     "@fontsource-variable/cinzel": "^5.0.12",
@@ -25,7 +25,7 @@
     "axios": "^1.6.8",
     "rehype-raw": "^7.0.0",
     "scrollreveal": "^4.0.9",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.17",
     "vue": "^3.4.22"
   }
 }
