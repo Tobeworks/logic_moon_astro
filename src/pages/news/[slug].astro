@@ -24,10 +24,10 @@ const { Content } = await post.render();
   <Navigation client:visible />
   <main class="min-h-screen bg-primary-500">
     <section class="main-section">
-      <div class="container mx-auto px-4 py-16 max-w-4xl">
-        <article class="bg-secondary-400  shadow-lg overflow-hidden">
+      <div class="container mx-auto md:px-4 md:py-16 max-w-4xl">
+        <article class="bg-secondary-400 overflow-hidden">
           <header
-            class="text-center p-8">
+            class="text-center md:p-8">
             {
               post.data.image && (
                 <div class="mb-8">
@@ -46,7 +46,7 @@ const { Content } = await post.render();
               class="flex justify-center items-center gap-4 text-grey-600 mb-4">
               <time datetime={post.data.pubDate.toISOString()}>
                 {
-                  post.data.pubDate.toLocaleDateString("de-DE", {
+                  post.data.pubDate.toLocaleDateString("en-EN", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -59,7 +59,7 @@ const { Content } = await post.render();
             </p>
           </header>
 
-          <div class="prose prose-lg max-w-none p-8">
+          <div class="prose prose-lg max-w-none p-4 md:p-8">
             <Content />
           </div>
         </article>
@@ -67,7 +67,7 @@ const { Content } = await post.render();
         <div class="mt-12 text-center">
           <a
             href="/news"
-            class="bg-primary-500 hover:bg-primary-400 text-secondary-200 font-bold py-3 px-6 transition-colors duration-200 inline-flex items-center gap-2">
+            class="bg-primary-500 hover:bg-primary-400 text-secondary-400 font-bold py-3 px-6 transition-colors duration-200 inline-flex items-center gap-2">
             ← Back
           </a>
         </div>

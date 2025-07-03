@@ -10,14 +10,15 @@ const latestPost = posts[0];
 
 {
   latestPost && (
-    <section class="main-section bg-primary-500 text-secondary-400" id="news">
+    <section class="p-0 md:p-20 bg-primary-500 text-secondary-400" id="news">
       <div class="grid grid-cols-1 w-full md:w-2/3 mx-auto" data-aos="fade-up">
-        <h2 class="text-4xl md:text-5xl text-start mb-12 text-secondary-400">
+
+        <h2 class="hidden md:block text-3xl md:text-5xl text-start md:mb-12 mx-3 text-secondary-400">
           Latest News
         </h2>
 
         <div class="mx-auto">
-          <article class="bg-secondary-300 shadow-xl overflow-hidden">
+          <article class="bg-secondary-300  overflow-hidden">
             {latestPost.data.image && (
               <div class="aspect-video overflow-hidden">
                 <img
@@ -27,7 +28,7 @@ const latestPost = posts[0];
                 />
               </div>
             )}
-            <div class="p-8">
+            <div class="p-4 md:p-8">
               <div class="flex justify-between items-start mb-4">
                 <h3 class="text-2xl md:text-3xl font-semibold text-primary-500 leading-tight">
                   <a
@@ -54,15 +55,15 @@ const latestPost = posts[0];
               <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
                 <a
                   href={`/news/${latestPost.slug}`}
-                  class="bg-primary-500 hover:bg-primary-400 text-white font-bold py-3 px-6 rounded transition-colors duration-200 inline-block">
-                  read
+                  class="bg-primary-500 hover:bg-primary-400 text-white font-bold py-2 px-4 rounded transition-colors duration-200 inline-block">
+                  read the post
                 </a>
 
-                <a
+                {/* <a
                   href="/news"
                   class="text-primary-500 hover:text-primary-400 transition-colors duration-200 font-medium">
                   Show all →
-                </a>
+                </a> */}
               </div>
             </div>
           </article>
