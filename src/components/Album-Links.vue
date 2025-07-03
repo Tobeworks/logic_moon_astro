@@ -1,18 +1,19 @@
 <template>
     <div class="flex flex-col items-center gap-4 p-4">
         <!-- Loading Spinner -->
-        <div v-if="loading" class="flex justify-center items-center">
+        <div v-if="loading" class="flex justify-center items-center" aria-live="polite">
             <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-100"></div>
+            <span class="sr-only">Loading...</span>
         </div>
 
         <!-- Error Message -->
-        <div v-if="error" class="text-red-500">
+        <div v-if="error" class="text-red-500" aria-live="assertive">
             {{ error }}
         </div>
 
         <!-- Result -->
         <div v-if="pageUrl" class="w-full max-w-md">
-            <a :href="pageUrl" target="_blank" class="break-all hover:underline">
+            <a :href="pageUrl" target="_blank" class="break-all hover:underline" aria-label="View album on other platforms">
                 Links to all other platforms
             </a>
         </div>

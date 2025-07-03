@@ -32,9 +32,9 @@
 
                 <div v-if="!showAllReleases">
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id, release)">
+                        <button type="button" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border-0 p-0" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release.release_id, release)" :aria-label="`Play album ${release.title}`">
                             <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
-                        </a>
+                        </button>
                     </div>
                     <div class="flex justify-center">
                         <button @click="showAllReleases = true" class="bg-primary hover:bg-primary text-secondary-400 font-bold py-2 px-4 rounded">
@@ -45,9 +45,9 @@
 
                 <div v-else>
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id,release)">
+                        <button type="button" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border-0 p-0" data-year="2022" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release.release_id,release)" :aria-label="`Play album ${release.title}`">
                             <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,7 @@ const currentPagePosts = posts.slice(0, postsPerPage);
                     </div>
                   )}
                   <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-3 text-primary-50 group-hover:text-secondary-300 transition-colors duration-200">
+                    <h2 class="text-xl font-semibold mb-3 text-secondary group-hover:text-secondary-300 transition-colors duration-200">
                       {post.data.title}
                     </h2>
                     <p class="text-grey-500 group-hover:text-secondary-500 text-sm mb-3 transition-colors duration-200">
@@ -51,7 +51,7 @@ const currentPagePosts = posts.slice(0, postsPerPage);
                         day: "numeric",
                       })}
                     </p>
-                    <p class="text-primary-50 group-hover:text-secondary-500 leading-relaxed transition-colors duration-200">
+                    <p class="text-secondary group-hover:text-secondary-500 leading-relaxed transition-colors duration-200">
                       {post.data.description}
                     </p>
                   </div>
@@ -63,7 +63,7 @@ const currentPagePosts = posts.slice(0, postsPerPage);
 
         {
           totalPages > 1 && (
-            <nav class="flex items-center justify-center gap-4 mt-16">
+            <nav class="flex items-center justify-center gap-4 mt-16" aria-label="Pagination">
               <div class="flex gap-2">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                   (num) => (
@@ -72,8 +72,10 @@ const currentPagePosts = posts.slice(0, postsPerPage);
                       class={`w-10 h-10 flex items-center justify-center transition-colors duration-200 ${
                         num === 1
                           ? "bg-primary-500 text-white"
-                          : "bg-secondary-150 text-primary-500 hover:bg-primary-100"
-                      }`}>
+                          : "bg-secondary-150 text-secondary0 hover:bg-primary-100"
+                      }`}
+                      aria-label={`Go to page ${num}`}
+                      aria-current={num === 1 ? "page" : undefined}>
                       {num}
                     </a>
                   )
@@ -83,7 +85,8 @@ const currentPagePosts = posts.slice(0, postsPerPage);
               {totalPages > 1 && (
                 <a
                   href="/news/page/2"
-                  class="bg-primary-500 hover:bg-primary-400 text-white px-6 py-2 transition-colors duration-200">
+                  class="bg-primary-500 hover:bg-primary-400 text-white px-6 py-2 transition-colors duration-200"
+                  aria-label="Go to next page">
                   Nächste →
                 </a>
               )}

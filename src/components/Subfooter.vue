@@ -2,14 +2,14 @@
 
     <div id="subfooter" class=" text-secondary-400">
         <nav class="flex justify-center space-x-4">
-            <a class="px-2 py-1" @click="openModal1 = true" href="/impressum" id="InputImpressum">Impressum</a>
-            <a class="px-2 py-1" href="/datenschutz" @click="openModal2 = true">Datenschutz</a>
-            <a class="px-2 py-1" href="https://tobeworks.de">Made with ❤ by Tobeworks</a>
+            <button type="button" class="px-2 py-1" @click="openModal1 = true" aria-label="Open impressum modal">Impressum</button>
+            <button type="button" class="px-2 py-1" @click="openModal2 = true" aria-label="Open datenschutz modal">Datenschutz</button>
+            <a class="px-2 py-1" href="https://tobeworks.de" target="_blank" rel="noopener noreferrer">Made with ❤ by Tobeworks</a>
         </nav>
     </div>
 
     <Modal :is-open="openModal1" @close="openModal1 = false">
-        <div class="modal fade" id="modalimpressum" tabindex="-1" aria-labelledby="impressumLabel" aria-hidden="true">
+        <div class="modal fade" id="modalimpressum" tabindex="-1" aria-labelledby="impressumLabel">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -44,7 +44,7 @@
 
 
     <Modal :is-open="openModal2" @close="openModal2 = false">
-        <div aria-labelledby="datenschutzLabel" aria-hidden="true">
+        <div aria-labelledby="datenschutzLabel">
 
             <h5 class="modal-title" id="datenschutzLabel">Datenschutz</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
