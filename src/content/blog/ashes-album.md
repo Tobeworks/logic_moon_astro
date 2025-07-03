@@ -13,7 +13,7 @@ This album is a meditative journey through dark tales, with ambient reflections 
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2120639838&color=%238b8080&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/logic-moon" title="Logic Moon" target="_blank" style="color: #cccccc; text-decoration: none;">Logic Moon</a> · <a href="https://soundcloud.com/logic-moon/ascent-chitra" title="Ascent" target="_blank" style="color: #cccccc; text-decoration: none;">Ascent</a></div>
 
-As Logic Moon, I've always been drawn to creating ethereal and introspective soundscapes. My music blends ambient textures, haunting melodies, and intricate rhythms, often incorporating field recordings to create a cinematic experience. "Ashes" continues this exploration, delving into the profound themes of life, death, and what comes after.
+As Logic Moon, I've always been drawn to creating ethereal and introspective soundscapes. My music blends ambient textures, haunting melodies, and intricate rhythms, often incorporating field recordings to create a cinematic experience. "Ashes" continues this exploration.
 
 The tracklist is as follows:
 
