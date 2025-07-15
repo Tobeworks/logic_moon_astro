@@ -26,8 +26,7 @@ const { Content } = await post.render();
     <section class="main-section">
       <div class="container mx-auto md:px-4 md:py-10 max-w-4xl">
         <article class="bg-secondary-400 overflow-hidden">
-          <header
-            class="text-center md:p-8">
+          <header class="text-center md:p-8">
             {
               post.data.image && (
                 <div class="mb-8">
@@ -52,7 +51,7 @@ const { Content } = await post.render();
                     day: "numeric",
                   })
                 }
-              </time>
+              </time>Tobias Lorsbach
             </div>
             <p class="text-lg text-grey-700 italic max-w-2xl mx-auto">
               {post.data.description}
@@ -99,7 +98,7 @@ const { Content } = await post.render();
   }
 
   .prose :global(img) {
-    @apply  shadow-md mx-auto;
+    @apply shadow-md mx-auto;
   }
 
   .prose :global(blockquote) {

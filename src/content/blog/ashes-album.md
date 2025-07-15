@@ -1,7 +1,7 @@
 ---
 title: "New Album: Ashes"
 description: "My new album Ashes will be released on Chitra Records this month."
-pubDate: 2025-07-01
+pubDate: 2025-07-15
 image: "/blog/ashes_cover.webp"
 draft: false
 ---
