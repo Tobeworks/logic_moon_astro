@@ -1,12 +1,12 @@
 ---
 title: "AI Music: Between Technological Progress and Sonic Limitations"
-description: "An analysis of AI-generated music, its technical limitations, and the flooding of streaming platforms with algorithmically created content in 2025"
+description: "An analysis of AI-generated music, its technical limitations, and the flooding of streaming platforms with algorithmically created music content in 2025"
 pubDate: 2025-07-01
 image: "/blog/ai_music_analysis.webp"
 draft: false
 ---
 
-Lately, AI-generated music is appearing more and more frequently on social media platforms and even on Spotify. As someone interested in technology, I find this development quite fascinating. In principle, complete musical pieces are created from white noise - including invented lyrics, different keys and musical styles that can even be mixed together. On YouTube, I've discovered really funny interpretations with API music, and I think this technology has its place, especially when you approach it creatively and humorously.
+Lately, AI-generated music is appearing more and more frequently on social media platforms and even on Spotify. As someone interested in technology, I find this development quite fascinating. In principle, complete musical pieces are created from white noise - including invented lyrics, different keys and musical styles that can even be mixed together. On YouTube, I've discovered really funny interpretations with AI generated music, and I think this technology has its place, especially when you approach it creatively and/or humorously.
 
 However, what I cannot understand is the emotional and sonic approach to this music. Because AI music simply sounds terrible. The sound is comparable to an MP3 file compressed at the lowest quality level. Even when trying to master AI pieces, you can immediately recognize the white noise from which they originated. I find it extremely unpleasant to listen to this music, as it usually sounds terrible due to lack of detail accuracy.
 
@@ -18,16 +18,20 @@ In 2024, AI actually produced more songs than all human musicians combined - pla
 
 ## Technical Quality Problems
 
-My perception of poor sound quality is confirmed by experts. Music producer Thomas Foster describes it aptly: "It's the technical quality, how the audio material sounds - it's not at one hundred percent yet, it sounds like a bad MP3." Professor Dr. Heike Adel-Vu from Stuttgart Media University adds: "But if you listen to the pieces in detail, you find artifacts and there are some things that AI cannot do well."
+My perception of poor sound quality is confirmed by other experts. Music producer Thomas Foster describes it aptly: "It's the technical quality, how the audio material sounds - it's not at one hundred percent yet, it sounds like a bad MP3." Professor Dr. Heike Adel-Vu from Stuttgart Media University adds: "But if you listen to the pieces in detail, you find artifacts and there are some things that AI cannot do well."
 
-The specific problems are diverse: words are hallucinated, syllables are strangely pronounced, parts of a verse suddenly become the chorus. Users report "metallic background noises that sound like a reverb plugin from the 90s was used." When you break down an AI song into individual tracks, often "creepy sound structures" emerge.
+The specific problems are diverse: words are hallucinated, syllables are strangely pronounced, parts of a verse suddenly become the chorus. Users report "metallic background noises that sound like a cheap digital reverb plugin from the 90s was used." When you break down an AI song into individual tracks, often "creepy sound structures" emerge.
 
 ## Fundamental Limitations
 
-The basic problem is that AI has no understanding of music theory or melody. It cannot remain consistent over longer periods and produces voices that sound "artificial like sung into a plastic bucket." These structural problems cannot be fixed through subsequent mastering, as the artifacts already arise during generation.
+The basic problem is that AI has no understanding of music theory or melody nor emotional transportation. It cannot remain consistent over longer periods and produces voices that sound "artificial like sung into a plastic bucket." These structural problems cannot be fixed through subsequent mastering, as the artifacts already arise during generation.
+
+## The Loss of Artistic Originality
+
+While AI-generated music may initially appear professionally produced, it lacks any originality and specificity. The artistic aspect of AI music has completely disappeared. Instead, the music sounds very stereotypical and boring. AI can replicate existing patterns but fails to create anything genuinely new or emotionally meaningful.
 
 ## An Ambivalent Conclusion
 
-While AI music can certainly be useful as a tool for inspiration and brainstorming, sound quality and detail accuracy remain a significant problem. The technology may be impressive, but the listening experience suffers from technical limitations. It becomes interesting when AI music stands unmarked alongside human-produced music - as shown by the case of the band "The Velvet Sundown," which collected over a million streams before it was revealed that it was completely AI-generated. Laypeople often don't notice this at all, but every trained listener spotted it immediately.
+While AI music can certainly be useful as a tool for inspiration and brainstorming, sound quality, detail accuracy and emotional transport remain significant problems. The technology may be impressive, but the listening experience suffers from these limitations. It becomes interesting when AI music stands unmarked alongside human-produced music - as shown by the case of the band "The Velvet Sundown," which collected over a million streams before it was revealed that it was completely AI-generated. Laypeople often don't notice this at all, but every trained listener spotted it immediately.
 
 The flooding of the music market with inferior AI music is no longer a future vision but already reality. While the technology certainly has its justification as a creative tool, we should be aware that it cannot yet achieve the emotional depth and sonic quality of details of human-created music.

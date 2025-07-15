@@ -62,7 +62,7 @@ const { page } = Astro.props;
           }
         </div>
 
-        <nav class="flex items-center justify-center gap-4 mt-16">
+        <nav class="flex items-center justify-center gap-4 my-16">
           {
             page.url.prev && (
               <a
@@ -102,7 +102,7 @@ const { page } = Astro.props;
           }
         </nav>
 
-        <p class="text-center text-grey-600 mt-8">
+        <p class="text-center text-grey-600 my-8">
           Seite {page.currentPage} von {page.lastPage}
           (Artikel {page.start + 1}-{page.end + 1} von {page.total})
         </p>
