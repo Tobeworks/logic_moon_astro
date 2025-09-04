@@ -327,6 +327,25 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/memories-of-tomorrow'
     },
+    {
+        id: 45,
+        cover: 'ashes_cover.webp',
+        year: '2025',
+        release_id: '2147690593',
+        title: 'Logic Moon - Ashes',
+        text: '',
+        bandcamp: ''
+    },
+    {
+        id: 46,
+        cover: 'Reminiscence_sm.webp',
+        year: '2025',
+        release_id: '2754878701',
+        title: 'Logic Moon - Reminiscence',
+        text: '',
+        bandcamp: ''
+    },
+
 
 ];
 export default releases;
