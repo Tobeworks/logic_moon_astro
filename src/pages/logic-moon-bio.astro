@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.vue";
+import releases from '../releases.js';
 ---
 
 <Layout title="Logic Moon Biography (2025)">
@@ -35,26 +36,26 @@ import Navigation from "../components/Navigation.vue";
               Tobias' musical background has drawn in a widescreen of genres, with him having performed guitar in a death metal band, embarked on a DJ career, and now established himself as an ambient musician. His varied experiences have only served to give birth to a range of ideas which are evident in his acclaimed albums, including "I See Planets" (2019) and his most recent release "Music For Film Vol.1" (2024), alongside numerous collaborative works.
             </p>
             <p>
-              Tobias <em class="font-light italic text-secondary-400"
-                >"Logic Moon"</em
-              > Lorsbach comes from Mainz, Germany. He began his musical career as
+              Tobias <em class="font-light italic text-secondary-400">
+                "Logic Moon"
+              </em> Lorsbach comes from Mainz, Germany. He began his musical career as
               a DJ and was active in the minimal techno scene in the early 2000s.
               At the same time, he played guitar in a death metal band until he increasingly
               turned to ambient music.
             </p>
             <p>
-              During a <strong class="font-medium text-secondary-400"
-                >field recording trip</strong
-              >, the idea arose to combine ambient drone elements with his
+              During a <strong class="font-medium text-secondary-400">
+                field recording trip
+              </strong>, the idea arose to combine ambient drone elements with his
               recordings – this resulted in his debut album <em
                 class="italic text-secondary-400">Herbst11</em
               > as Logic Moon in 2013. His compositions often begin with a guitar
               sketch, followed by synthesizers and other layers.
             </p>
             <p>
-              This <strong class="font-medium text-secondary-400"
-                >cross-genre background</strong
-              > (techno, metal, ambient) shapes his stylistic approach: The press
+              This <strong class="font-medium text-secondary-400">
+                cross-genre background
+              </strong> (techno, metal, ambient) shapes his stylistic approach: The press
               describes that Tobias as Logic Moon makes "guitar-oriented ambient
               and drone music" and his music is often perceived as "lively" and as
               a balance between classical accessibility and experimental discovery.
@@ -73,237 +74,19 @@ import Navigation from "../components/Navigation.vue";
           </p>
 
           <div class="space-y-1 mb-12" role="list">
+            {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release) => (
             <div
               class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2013</div>
+              <div class="col-span-1 text-secondary-600 font-light">{release.year}</div>
               <div class="col-span-8 text-secondary-400 font-light italic">
-                Herbst11
+                {release.title}
               </div>
               <div class="col-span-3 text-secondary-700 font-light text-xs">
                 Logic Moon Records
               </div>
             </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2015</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Altrhein
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2019</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Phoenix
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Tehnofonika Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2020</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                2017
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Music
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2020</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                I See Planets
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                WhiteLabelRec
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2020</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Tales
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2021</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Star Mapping
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2022</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                The Unavoidable Death of Loneliness
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                w/ Sven Laux
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2022</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Philia – Fountain
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2022</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Eden & Aura
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2023</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Sun
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2023</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Lumen
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2023</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Lux
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2024</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Last Days
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2024</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                To The Sea
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2024</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Music For Film Vol.1
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2024</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Lifelines
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2024</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                This Is Not The End
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2025</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Glow
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                The Moon Records
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2025</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Atlas
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                The Moon Records
-              </div>
-            </div>
-            <div class="grid grid-cols-12 gap-4 py-3 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2025</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Metamorphosis
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                The Moon Records
-              </div>
-            </div>
-            <div class="grid grid-cols-12 gap-4 py-3 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">2025</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                Memories Of Tomorrow
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                The Moon Records
-              </div>
-            </div>
+            ))}
           </div>
-
-          <p class="text-secondary-600 text-sm leading-relaxed">
-            Additionally, Logic Moon released various split releases and mini
-            albums, for example with Henrik Meierkord (<em
-              class="italic text-secondary-500">Ewiger Wald</em
-            > and <em class="italic text-secondary-500">Ewiger Wald Addendum</em
-            >, 2024) as well as with Scarless Arms (<em
-              class="italic text-secondary-500">Moon Scars</em
-            > EP, 2023). His titles appeared on renowned ambient labels, including
-            the Dutch Ambientologist or Dronarivm, and some even appeared as vinyl
-            editions.
-          </p>
         </section>
 
         <section class="border-l border-secondary-800 pl-8">
@@ -548,7 +331,8 @@ import Navigation from "../components/Navigation.vue";
               In sum, Logic Moon is considered an <strong
                 class="font-medium text-secondary-400"
                 >important representative of the German ambient movement</strong
-              >, whose works are regularly presented through specialized
+              >,
+              whose works are regularly presented through specialized
               channels.
             </p>
           </div>
