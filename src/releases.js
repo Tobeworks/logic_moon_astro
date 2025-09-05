@@ -334,7 +334,7 @@ const releases = [
         release_id: '2147690593',
         title: 'Logic Moon - Ashes',
         text: '',
-        bandcamp: ''
+        bandcamp: 'https://chitrarecords.bandcamp.com/album/ashes'
     },
     {
         id: 46,
@@ -343,7 +343,7 @@ const releases = [
         release_id: '2754878701',
         title: 'Logic Moon - Reminiscence',
         text: '',
-        bandcamp: ''
+        bandcamp: 'https://logicmoon.bandcamp.com/album/reminiscence'
     },
 
 

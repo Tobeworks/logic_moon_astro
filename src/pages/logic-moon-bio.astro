@@ -70,22 +70,31 @@ import releases from '../releases.js';
           </h2>
           <p class="text-secondary-500 leading-relaxed mb-12">
             Logic Moon has released numerous albums, EPs and singles since 2012.
-            Important releases include (year and label respectively):
           </p>
 
           <div class="space-y-1 mb-12" role="list">
-            {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release) => (
-            <div
-              class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm" role="listitem">
-              <div class="col-span-1 text-secondary-600 font-light">{release.year}</div>
-              <div class="col-span-8 text-secondary-400 font-light italic">
-                {release.title}
-              </div>
-              <div class="col-span-3 text-secondary-700 font-light text-xs">
-                Logic Moon Records
-              </div>
-            </div>
-            ))}
+            {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release) => {
+                const link = release.bandcamp || release.spotify || release.apple || release.amazon;
+                const coverPath = `/images/covers/${release.cover}`;
+
+                return (
+                    <div class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm items-center" role="listitem">
+                        <div class="col-span-1">
+                            <img src={coverPath} alt={`Cover for ${release.title}`} class="w-full aspect-square object-cover rounded-sm" />
+                        </div>
+                        <div class="col-span-1 text-secondary-600 font-light">{release.year}</div>
+                        <div class="col-span-10 text-secondary-400 font-light italic">
+                            {link ? (
+                                <a href={link} target="_blank" rel="noopener noreferrer" class="hover:text-secondary-200 transition-colors duration-300">
+                                    {release.title}
+                                </a>
+                            ) : (
+                                <span>{release.title}</span>
+                            )}
+                        </div>
+                    </div>
+                );
+            })}
           </div>
         </section>
 
