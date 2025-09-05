@@ -46,7 +46,7 @@ const releases = [
         cover: 'oblivion.jpg',
         year: '2016',
         release_id: '',
-        title: 'Logic Moon & Fiction Surprise - Oblivion'
+        title: 'Logic Moon - Oblivion'
     },
     {
         id: 8,
