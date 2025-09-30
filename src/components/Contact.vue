@@ -1,39 +1,35 @@
 <template>
     <section class="main-section bg-secondary-400" id="contact">
         <div class="container mx-auto">
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                    <h2 class="text-right text-2xl font-bold" id="headline-contact">Contact</h2>
+            <div class=" md:w-[50%] mx-auto">
+                <h2 class="text-center text-3xl font-bold" id="headline-contact">Contact</h2>
+                <form id="contactform" name="contact-form" @submit.prevent="sendForm" action="#contact" method="post">
+                    <div class="mb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email" data-aos="fade-up">Email address</label>
+                        <input type="email" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" name="email" v-model="form_email" id="email" required :disabled="form_disabled" data-aos="fade-up" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name" data-aos="fade-up">Name</label>
+                        <input type="text" class="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" name="name" v-model="form_name" required :disabled="form_disabled" data-aos="fade-up" id="name" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message" data-aos="fade-up">Message</label>
+                        <textarea class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" rows="3" name="message" v-model="form_message" required :disabled="form_disabled" data-aos="fade-up" id="message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary-500 hover:bg-secondary-700 transition-all duration-500 ease-in-out text-white font-bold py-2 px-4 rounded" :disabled="form_disabled" data-aos="fade-up">
+                        Send me a message
+                    </button>
+                </form>
+                <div id="msg_success" v-if="msg_success" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3  relative my-2" role="alert">
+                    Your Message has been sent
                 </div>
-                <div>
-                    <form id="contactform" name="contact-form" @submit.prevent="sendForm" action="#contact" method="post">
-                        <div class="mb-3">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email" data-aos="fade-up">Email address</label>
-                            <input type="email" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" name="email" v-model="form_email" id="email" required :disabled="form_disabled" data-aos="fade-up" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name" data-aos="fade-up">Name</label>
-                            <input type="text" class="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" name="name" v-model="form_name" required :disabled="form_disabled" data-aos="fade-up" id="name" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message" data-aos="fade-up">Message</label>
-                            <textarea class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-secondary-200" rows="3" name="message" v-model="form_message" required :disabled="form_disabled" data-aos="fade-up" id="message"></textarea>
-                        </div>
-                        <button type="submit" class="bg-primary-500 hover:bg-secondary-700 transition-all duration-500 ease-in-out text-white font-bold py-2 px-4 rounded" :disabled="form_disabled" data-aos="fade-up">
-                            Send me a message
-                        </button>
-                    </form>
-                    <div id="msg_success" v-if="msg_success" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3  relative my-2" role="alert">
-                        Your Message has been sent
-                    </div>
-                    <div id="msg_error" v-if="msg_error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative my-2" role="alert">
-                        Error sending your message
-                    </div>
+                <div id="msg_error" v-if="msg_error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative my-2" role="alert">
+                    Error sending your message
                 </div>
             </div>
-
         </div>
+
+
     </section>
 </template>
 
