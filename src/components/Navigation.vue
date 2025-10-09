@@ -67,6 +67,7 @@ const navigation = computed(() => [
     { name: 'Discography', href: `${prefix.value}#disco` },
     { name: 'Cover Art', href: `/cover-art` },
     { name: 'Sounds', href: `/sounds` },
+    { name: 'Label', href: `/label/the-moon-records` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
 

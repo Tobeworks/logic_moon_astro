@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.vue";
+---
+
+<Layout title="News - Logic Moon">
+  <Navigation client:visible />
+  <main>
+    <section class="min-h-screen w-full relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-40">
+      </div>
+
+      <div
+        class="w-full mx-auto px-4 flex flex-col items-center justify-center min-h-screen relative z-10">
+        <h1 class="cinzel hero logic-moon-title">
+          <span class="word" data-word="logic">The Moon</span>
+        </h1>
+
+        <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">
+          Records
+        </h2>
+
+        <p
+          class="text-secondary-400 text-xl md:text-2xl md:mt-32"
+          data-aos="fade-up"
+          data-aos-delay="700">
+          Coming Soon
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

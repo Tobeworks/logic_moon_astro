@@ -26,10 +26,18 @@ p{
     font-family: 'Assistant Variable', sans-serif;
 }
 
-.hero-bg{
-    background-image: url('img/cover2.webp');
+.hero-bg {
+    background-image: image-set(
+        url('img/hero_03.webp') 1x,
+        url('img/hero_03_big.webp') 2x
+    );
 }
 
+@media (min-width: 1600px) {
+    .hero-bg {
+        background-image: url('img/hero_03_big.webp');
+    }
+}
 .reverseaddr {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -49,7 +57,7 @@ p{
 }
 footer {
   background-color: black;
-  background: url(../assets/img/bg01.webp);
+
   background-size: cover;
   background-attachment: fixed;
   min-height: 300px;
@@ -72,16 +80,15 @@ h1.hero {
     text-transform: uppercase;
     margin: 0 0 -4% 0;
     mix-blend-mode: screen;
-    text-shadow: 0 0 10px #ab9f83;
+    text-shadow: 0 0 10px #706957;
     background-color: rgba(0, 0, 0, 0.1); /* black background with 50% opacity */
 }
 h2.hero {
     font-size: 3vw;
     text-transform: uppercase;
     margin: 0 0 -4% 0;
-    text-shadow: 0px 0px 3px #ab9f83;
+    text-shadow: 0px 0px 3px #706957;
     mix-blend-mode: screen;
-    background-color: rgba(0, 0, 0, 0.6); 
 }
 
 .main-section{

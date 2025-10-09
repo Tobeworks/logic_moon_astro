@@ -15,23 +15,33 @@ import LatestNews from "../components/LatestNews.astro";
   <Navigation client:visible />
   <main>
     <!-- Hero -->
-    <section
-      class="h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center md:bg-fixed hero-bg">
-      <h1 class="cinzel hero logic-moon-title">
-        <span class="word" data-word="logic">Logic</span>
-        <span class="word" data-word="moon">Moon</span>
-      </h1>
+    <section class="min-h-screen w-full relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-40">
+      </div>
 
-      <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">music</h2>
-      <div class="mt-24" data-aos="fade-down" data-aos-delay="800">
-        <a href="#about" class="scroller" title="scrolldown" aria-label="about">
-          <ChevronDownIcon
-            class="w-12 text-secondary-600 -ml-2 md:ml-6"
-          />
-        </a>
+      <div
+        class="w-full mx-auto px-4 flex flex-col items-center justify-center min-h-screen relative z-10">
+        <h1 class="cinzel hero logic-moon-title">
+          <span class="word" data-word="logic">Logic</span>
+          <span class="word" data-word="moon">Moon</span>
+        </h1>
+
+        <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">
+          music
+        </h2>
+
+        <div class="mt-40" data-aos="fade-down" data-aos-delay="800">
+          <a
+            href="#about"
+            class="scroller"
+            title="scrolldown"
+            aria-label="about">
+            <ChevronDownIcon class="w-12 text-primary-200" />
+          </a>
+        </div>
       </div>
     </section>
-
     <LatestNews />
     <About />
 
@@ -44,7 +54,7 @@ import LatestNews from "../components/LatestNews.astro";
   </main>
 
   <style>
-    .logic-moon-title {
+    /* .logic-moon-title {
       opacity: 0;
       animation: titleReveal 0.5s ease-out 1s forwards;
     }
@@ -99,7 +109,7 @@ import LatestNews from "../components/LatestNews.astro";
       to {
         color: #ffffff;
       }
-    }
+    } */
   </style>
 
   <script>
