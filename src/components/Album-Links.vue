@@ -44,7 +44,12 @@ const fetchSongLink = async () => {
     pageUrl.value = ''
 
     try {
-        const apiUrl = `https://api.song.link/v1-alpha.1/links?url=${encodeURIComponent(props.url)}`
+        const isDev = import.meta.env.DEV
+
+        const apiUrl = isDev
+            ? `https://api.song.link/v1-alpha.1/links?url=${encodeURIComponent(props.url)}`
+            : `https://twapi1-358632560159.europe-west6.run.app/public/songlink-proxy?url=${encodeURIComponent(props.url)}`
+
         const response = await fetch(apiUrl)
 
         if (!response.ok) {
