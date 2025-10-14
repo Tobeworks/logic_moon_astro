@@ -345,6 +345,24 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/reminiscence'
     },
+    {
+        id: 47,
+        cover: 'aethery_fields_debut.webp',
+        year: '2025',
+        release_id: '1921716763',
+        title: 'Aethery Fields - Debut',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/-'
+    },
+    {
+        id: 48,
+        cover: 'cover_helheim_sm.webp',
+        year: '2025',
+        release_id: '2930370107',
+        title: 'Logic Moon - Heim',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/heim'
+    },
 
 
 ];

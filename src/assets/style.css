@@ -38,6 +38,22 @@ p{
         background-image: url('img/hero_03_big.webp');
     }
 }
+
+
+.hero-bg2 {
+    background-image: image-set(
+        url('img/the moon label background_sm.webp') 1x,
+        url('img/the moon label background.webp') 2x
+    );
+}
+
+@media (min-width: 1600px) {
+    .hero-bg2 {
+        background-image: url('img/the moon label background.webp');
+    }
+}
+
+
 .reverseaddr {
   unicode-bidi: bidi-override;
   direction: rtl;
