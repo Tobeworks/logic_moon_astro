@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 // https://astro.build/config
 export default defineConfig({
   integrations: [vue(), tailwind()],
+  site:'https://logic-moon.de',
   markdown: {
     rehypePlugins: [rehypeRaw]
   }
