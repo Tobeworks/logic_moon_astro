@@ -30,7 +30,7 @@ const { Content } = await post.render();
   <main class="min-h-screen bg-primary-500">
     <section class="main-section_">
       <div class="container mx-auto md:px-4 md:py-10 max-w-4xl mt-20 md:mt-16">
-        <article class="bg-secondary-300 overflow-hidden p-1">
+        <article class="bg-secondary-300 overflow-hidden">
           <header class="text-center md:p-8">
             {
               post.data.image && (
@@ -69,9 +69,13 @@ const { Content } = await post.render();
         </article>
 
         <div class="my-12 text-center">
-         <a href="/news" class="bg-primary-500 hover:bg-primary-400
+          <a
+            href="/news"
+            class="bg-primary-500 hover:bg-primary-400
           text-secondary-400 font-bold py-3 px-6 transition-colors duration-200
-          inline-flex items-center gap-2"> ← Back</a>
+          inline-flex items-center gap-2">
+            More Posts</a
+          >
         </div>
       </div>
     </section>

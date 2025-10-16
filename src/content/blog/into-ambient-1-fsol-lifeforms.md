@@ -1,5 +1,5 @@
 ---
-title: "Into Ambient 1 - Lifeforms – Future Sound of London"
+title: "Into Ambient 1 - Lifeforms – The Future Sound of London"
 description: "A personal journey to the albums that introduced me to ambient music and shaped my musical identity."
 pubDate: 2025-10-15
 image: "/blog/lifeforms_fsol.webp"
@@ -14,7 +14,7 @@ This blog series is a journey to those albums that shaped me. I want to give you
 
 Before I could make music, I was a collector of moods. I searched for sounds that expressed more than words could – for atmospheres that opened spaces instead of filling them. Ambient was always more than a genre to me: it was a way of perceiving the world, a form of meditation, a soundtrack for inner landscapes.
 
-I want to begin with an album that represented a turning point for me: "Lifeforms" by Future Sound of London.
+I want to begin with an album that represented a turning point for me: "Lifeforms" by The Future Sound of London.
 
 ---
 
@@ -29,7 +29,7 @@ This cassette became my constant companion. It was there when I walked through t
 
 But who had created this incredible music, I didn't know. Years passed. The cassette continued to accompany me, became part of my inner soundtrack, but the creator remained in the dark – a nameless mystery.
 
-Until that coincidence in a record store. I was browsing through the CDs, and suddenly I held it in my hands: I didn't recognize the cover, but when I put the CD in and heard the first notes, I knew immediately. This was it. After all those years, the music had a name: **Lifeforms** by **Future Sound of London**.
+Until that coincidence in a record store. I was browsing through the CDs, and suddenly I held it in my hands: I didn't recognize the cover, but when I put the CD in and heard the first notes, I knew immediately. This was it. After all those years, the music had a name: **Lifeforms** by **The Future Sound of London**.
 
 ---
 
@@ -47,7 +47,7 @@ And then there were the field recordings – a concept that was completely forei
 
 ## Global Sound Palette – The World as Instrument
 
-What also makes "Lifeforms" such a rich listening experience is the incredibly diverse approach to sampling and sound selection. Future Sound of London acted like musical archaeologists and ethnologists at once – they dug into the world's sound archives and wove from them a fascinating sonic tapestry that connected continents and cultures.
+What also makes "Lifeforms" such a rich listening experience is the incredibly diverse approach to sampling and sound selection. The Future Sound of London acted like musical archaeologists and ethnologists at once – they dug into the world's sound archives and wove from them a fascinating sonic tapestry that connected continents and cultures.
 
 Percussion elements from Africa, Asia, and the Middle East merge with the pulsating oscillations of analog modular synths. A tabla rhythm can suddenly connect with the metallic hiss of a Roland TR-909 hi-hat, organic wooden sounds meet synthetic drones that seem to come from the depths of a modular synthesizer. This cultural collage never feels touristy or pandering.
 
