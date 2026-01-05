@@ -363,7 +363,24 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/heim'
     },
-
+    {
+        id: 49,
+        cover: 'hello.jpg',
+        year: '2025',
+        release_id: '2635118830',
+        title: 'Aethery Fields - hello.',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/hello'
+    },
+    {
+        id: 50,
+        cover: 'imncb.jpg',
+        year: '2026',
+        release_id: '3902752845',
+        title: 'Logic Moon - It May Never Coming Back',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/it-may-never-coming-back'
+    },
 
 ];
 export default releases;
