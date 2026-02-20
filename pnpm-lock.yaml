@@ -20,6 +20,12 @@ importers:
       '@fontsource-variable/cinzel':
         specifier: ^5.0.12
         version: 5.2.5
+      '@fontsource-variable/geist':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource-variable/geist-mono':
+        specifier: ^5.2.7
+        version: 5.2.7
       '@headlessui/vue':
         specifier: ^1.7.20
         version: 1.7.23(vue@3.5.16(typescript@5.8.3))
@@ -464,6 +470,12 @@ packages:
 
   '@fontsource-variable/cinzel@5.2.5':
     resolution: {integrity: sha512-h3IcwaWgbCeylbOMRYUmqrEGK2jluuY0VSqFsg3vzt2DKcyBDPcirkNegho1H+qfboEZnkJo0sjfQ+URIHdaVw==}
+
+  '@fontsource-variable/geist-mono@5.2.7':
+    resolution: {integrity: sha512-ZKlZ5sjtalb2TwXKs400mAGDlt/+2ENLNySPx0wTz3bP3mWARCsUW+rpxzZc7e05d2qGch70pItt3K4qttbIYA==}
+
+  '@fontsource-variable/geist@5.2.8':
+    resolution: {integrity: sha512-cJ6m9e+8MQ5dCYJsLylfZrgBh6KkG4bOLckB35Tr9J/EqdkEM6QllH5PxqP1dhTvFup+HtMRPuz9xOjxXJggxw==}
 
   '@headlessui/vue@1.7.23':
     resolution: {integrity: sha512-JzdCNqurrtuu0YW6QaDtR2PIYCKPUWq28csDyMvN4zmGccmE7lz40Is6hc3LA4HFeCI7sekZ/PQMTNmn9I/4Wg==}
@@ -3764,6 +3776,10 @@ snapshots:
   '@fontsource-variable/assistant@5.2.7': {}
 
   '@fontsource-variable/cinzel@5.2.5': {}
+
+  '@fontsource-variable/geist-mono@5.2.7': {}
+
+  '@fontsource-variable/geist@5.2.8': {}
 
   '@headlessui/vue@1.7.23(vue@3.5.16(typescript@5.8.3))':
     dependencies:

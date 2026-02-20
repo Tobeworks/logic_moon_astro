@@ -5,70 +5,63 @@ const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const latestPost = posts[0];
+const latestPosts = posts.slice(0, 3);
 ---
 
 {
-  latestPost && (
-    <section class="p-4 md:p-20 bg-secondary text-secondary-400" id="news">
-      <div class="container mx-auto">
-        <div
-          class="grid grid-cols-1 w-full md:w-2/3 mx-auto"
-          data-aos="fade-up">
-          <h2 class="block text-3xl md:text-5xl text-start md:mb-12 mx-0 text-primary">
-            Latest News
-          </h2>
+  latestPosts.length > 0 && (
+    <section class="section dark" id="news">
+      <div class="container">
+        <div data-aos="fade-up">
+          <div class="section-header">
+            <div class="eyebrow">Latest News</div>
+            <h2>New releases, updates and features.</h2>
+          </div>
 
-          <div class="mx-auto">
-            <article class="bg-secondary-300  overflow-hidden">
-              {latestPost.data.image && (
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={latestPost.data.image}
-                    alt={latestPost.data.title}
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-              <div class="p-4 md:p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h3 class="text-2xl md:text-3xl font-semibold text-primary-500 leading-tight">
-                    <a
-                      href={`/news/${latestPost.slug}`}
-                      class="hover:text-primary-400 transition-colors duration-200">
-                      {latestPost.data.title}
-                    </a>
-                  </h3>
-                  <time
-                    datetime={latestPost.data.pubDate.toISOString()}
-                    class="text-grey-500 text-sm whitespace-nowrap ml-4">
-                    {latestPost.data.pubDate.toLocaleDateString("en-EN", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </time>
-                </div>
+          <div class="grid">
+            {latestPosts.map((post) => (
+              <article class="card">
+                {post.data.image && (
+                  <div class="card-media">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div class="card-body">
+                  <div class="flex justify-between items-start mb-3">
+                    <h3 class="card-title text-secondary-200 leading-tight">
+                      <a
+                        href={`/news/${post.slug}`}
+                        class="hover:text-primary-400 transition-colors duration-200">
+                        {post.data.title}
+                      </a>
+                    </h3>
+                    <time
+                      datetime={post.data.pubDate.toISOString()}
+                      class="card-meta whitespace-nowrap ml-4">
+                      {post.data.pubDate.toLocaleDateString("en-EN", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </div>
 
-                <p class="text-grey-700 text-lg leading-relaxed mb-6">
-                  {latestPost.data.description}
-                </p>
+                  <p class="text-secondary-500 leading-relaxed mb-6 clamp-3">
+                    {post.data.description}
+                  </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
                   <a
-                    href={`/news/${latestPost.slug}`}
-                    class="bg-primary-500 hover:bg-primary-400 text-secondary-50 font-bold py-2 px-4 rounded transition-colors duration-200 inline-block hover:no-underline">
+                    href={`/news/${post.slug}`}
+                    class="card-link text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline mono uppercase tracking-[0.25em] text-xs">
                     read the post
                   </a>
-
-                  {/* <a
-                  href="/news"
-                  class="text-primary-500 hover:text-primary-400 transition-colors duration-200 font-medium">
-                  Show all →
-                </a> */}
                 </div>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </div>

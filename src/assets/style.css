@@ -1,12 +1,12 @@
 body {
-  font-family: 'Assistant Variable', sans-serif;
+  font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
   @apply bg-primary-600;
 }
 h1, h2{
-    font-family: 'Assistant Variable', sans-serif;
+    font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
 }
 h3, h4, h5, h6{
-      font-family: 'Assistant Variable', sans-serif;
+      font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
 }
 h1{
     font-size: 3.5rem;
@@ -20,10 +20,14 @@ p{
     @apply my-4;
 }
 .cinzel{
-    font-family: 'Assistant Variable', sans-serif;
+    font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
 }
 .assistant{
-    font-family: 'Assistant Variable', sans-serif;
+    font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
+}
+
+.mono{
+    font-family: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .hero-bg {
@@ -96,14 +100,14 @@ h1.hero {
     text-transform: uppercase;
     margin: 0 0 -4% 0;
     mix-blend-mode: screen;
-    text-shadow: 0 0 10px #706957;
+    text-shadow: 0 0 10px #9e8d79;
     background-color: rgba(0, 0, 0, 0.1); /* black background with 50% opacity */
 }
 h2.hero {
     font-size: 3vw;
     text-transform: uppercase;
     margin: 0 0 -4% 0;
-    text-shadow: 0px 0px 3px #706957;
+    text-shadow: 0px 0px 3px #9e8d79;
     mix-blend-mode: screen;
 }
 
@@ -140,7 +144,7 @@ input[type='submit']:hover {
 } 
 
 .btn-primary {
-    @apply bg-primary-500 text-secondary-600 py-2 px-4 hover:bg-opacity-80 hover:no-underline uppercase border border-secondary-800 border-opacity-20;
+    @apply bg-accent-500 text-primary-900 py-2 px-4 hover:bg-accent-600 hover:no-underline uppercase border border-accent-700 border-opacity-40;
 }
 .btn-secondary {
     @apply bg-secondary-600 text-primary py-2 px-4 hover:bg-opacity-80 hover:no-underline uppercase border border-secondary-800 border-opacity-20;
@@ -154,4 +158,187 @@ input[type='submit']:hover {
 }
 .kasten-grau{
     @apply bg-primary-500 px-8 py-8 md:py-12 md:px-10 shadow-lg text-secondary-700 hover:no-underline h-full md:h-80 w-full md:w-96 bg-opacity-90 my-4;
+}
+
+.container {
+    width: min(1200px, 90vw);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 88px 0;
+}
+
+.section.light {
+    background: #f6f0e6;
+    color: #1f1a15;
+}
+
+.section.dark {
+    background: #15100c;
+    color: #f2e9dc;
+}
+
+.section-header h2 {
+    margin: 10px 0 28px;
+    font-size: clamp(22px, 3.2vw, 30px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.eyebrow {
+    font-family: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #f97316;
+    text-transform: uppercase;
+}
+
+.eyebrow.accent-dark { color: #b45309; }
+
+.split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.image-block {
+    background: #e6ded2;
+    border: 1px solid #d2c6b5;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.link-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 16px;
+    font-family: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: #b45309;
+    letter-spacing: 1px;
+}
+
+.card {
+    background: #1d1510;
+    border: 1px solid #2e2118;
+    border-radius: 10px;
+    padding: 20px;
+    color: #f2e9dc;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card { max-width: 560px; }
+
+.card-media {
+    height: 180px;
+    background: #251b14;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.card-title { font-weight: 700; margin-bottom: 6px; }
+
+.card-meta {
+    font-family: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: #9e8d79;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-link {
+    margin-top: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+    .news-grid { grid-template-columns: 1fr; }
+}
+
+.triplet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 16px;
+}
+
+.contact-form label {
+    font-family: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: #9e8d79;
+    display: grid;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #1d1510;
+    border: 1px solid #2e2118;
+    color: #f2e9dc;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
+    width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .split { grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr; }
 }

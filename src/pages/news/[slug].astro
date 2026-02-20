@@ -47,7 +47,7 @@ const { Content } = await post.render();
               {post.data.title}
             </h1>
             <div
-              class="flex justify-center items-center gap-4 text-grey-600 mb-4">
+              class="flex justify-center items-center gap-4 text-grey-600 mb-4 mono uppercase tracking-[0.2em] text-xs">
               <time datetime={post.data.pubDate.toISOString()}>
                 {
                   post.data.pubDate.toLocaleDateString("en-EN", {
@@ -71,8 +71,8 @@ const { Content } = await post.render();
         <div class="my-12 text-center">
           <a
             href="/news"
-            class="bg-primary-500 hover:bg-primary-400
-          text-secondary-400 font-bold py-3 px-6 transition-colors duration-200
+            class="bg-accent-500 hover:bg-accent-600
+          text-primary-900 font-bold py-3 px-6 transition-colors duration-200
           inline-flex items-center gap-2">
             More Posts</a
           >
@@ -113,7 +113,7 @@ const { Content } = await post.render();
   }
 
   .prose :global(code) {
-    @apply bg-secondary-100 text-primary-600 px-2 py-1  text-sm;
+    @apply bg-secondary-100 text-primary-600 px-2 py-1 text-sm mono uppercase tracking-[0.2em];
   }
 
   .prose :global(pre) {

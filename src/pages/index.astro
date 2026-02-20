@@ -13,31 +13,54 @@ import LatestNews from "../components/LatestNews.astro";
 
 <Layout title="Logic Moon">
   <Navigation client:visible />
-  <main>
+  <main class="bg-primary-500 text-secondary-300">
     <!-- Hero -->
     <section class="min-h-screen w-full relative overflow-hidden">
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-40">
-      </div>
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-25"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-500/80 via-primary-500/70 to-primary-500"></div>
 
-      <div
-        class="w-full mx-auto px-4 flex flex-col items-center justify-center min-h-screen relative z-10">
-        <h1 class="cinzel hero logic-moon-title">
-          <span class="word" data-word="logic">Logic</span>
-          <span class="word" data-word="moon">Moon</span>
-        </h1>
+      <div class="w-full mx-auto px-4 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
+        <div>
+          <div class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 mono">Ambient / Cinematic / Electronic</div>
+          <h1 class="cinzel hero logic-moon-title text-secondary-200 text-[clamp(48px,7vw,72px)] leading-[1.05]">
+            <span class="word" data-word="logic">Logic</span>
+            <span class="word" data-word="moon">Moon</span>
+          </h1>
+          <h2 class="hero mt-4 mb-6 text-secondary-400 text-[clamp(18px,2.4vw,24px)]" data-aos="fade-up" data-aos-delay="500">
+            Atmospheric soundscapes, cinematic textures and deep electronic moods.
+          </h2>
+          <p class="max-w-[34ch] text-secondary-500 leading-relaxed text-lg">
+            A curated space for releases, playlists and immersive sessions.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#playlists" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline mono">Listen</a>
+            <a href="#contact" class="border border-accent-700 text-accent-200 hover:text-accent-100 px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline mono">Contact</a>
+          </div>
+          <div class="mt-16 flex items-center gap-6 text-secondary-500 text-xs uppercase tracking-[0.25em] mono">
+            <span>Berlin</span>
+            <span class="h-px w-12 bg-secondary-700"></span>
+            <span>Since 2005</span>
+          </div>
+        </div>
 
-        <h2 class="hero my-12" data-aos="fade-up" data-aos-delay="500">
-          music
-        </h2>
+        <div class="bg-primary-700/80 border border-secondary-800 rounded-2xl p-6 backdrop-blur-sm shadow-2xl">
+          <div class="text-xs uppercase tracking-[0.3em] text-secondary-500 mb-4 mono">Featured</div>
+          <div class="bg-primary-800 rounded-xl border border-secondary-800 h-56 flex items-center justify-center text-secondary-600 mb-6 mono text-xs uppercase tracking-[0.2em]">
+            Visual / Artwork
+          </div>
+          <div class="text-lg text-secondary-200 font-semibold mb-2">Latest Release</div>
+          <p class="text-secondary-500 text-sm mb-4">
+            Deep, nocturnal textures and slow-burning harmonics.
+          </p>
+          <div class="flex gap-3">
+            <a href="#playlists" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-4 py-2 rounded text-sm hover:no-underline mono">Listen</a>
+            <a href="#about" class="border border-secondary-700 text-secondary-300 px-4 py-2 rounded text-sm hover:no-underline mono">About</a>
+          </div>
+        </div>
 
-        <div class="mt-40" data-aos="fade-down" data-aos-delay="800">
-          <a
-            href="#about"
-            class="scroller"
-            title="scrolldown"
-            aria-label="about">
-            <ChevronDownIcon class="w-12 text-secondary mr-2" />
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2" data-aos="fade-down" data-aos-delay="800">
+          <a href="#about" class="scroller" title="scrolldown" aria-label="about">
+            <ChevronDownIcon class="w-10 text-accent-500" />
           </a>
         </div>
       </div>
@@ -73,8 +96,8 @@ import LatestNews from "../components/LatestNews.astro";
       left: 0;
       width: 100%;
       height: 100%;
-      color: #5f5f5f;
-      text-shadow: 0 0 8px #5f5f5f;
+      color: #9e8d79;
+      text-shadow: 0 0 8px #9e8d79;
       clip-path: inset(0 100% 0 0);
       animation: textReveal 2.5s ease-in-out forwards;
     }
@@ -108,7 +131,7 @@ import LatestNews from "../components/LatestNews.astro";
 
     @keyframes textFinalize {
       to {
-        color: #ffffff;
+        color: #f2e9dc;
       }
     } */
   </style>

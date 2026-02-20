@@ -1,29 +1,32 @@
 <template>
-    <section class="main-section bg-primary-500 text-secondary-400" id="disco">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 w-full md:w-2/3 mx-auto">
+    <section class="section light" id="disco">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="eyebrow accent-dark">Discography</div>
+                <h2>Releases and singles.</h2>
+            </div>
+            <div class="grid grid-cols-1 w-full mx-auto">
                 <div class="mobile-bg">
-                    <h2 class="text-left xl:text-start" id="headline-disco" data-aos="fade-up">Discography</h2>
 
                     <div class="mx-auto my-12">
                         <div class="flex flex-wrap -mx-4">
                             <div class="w-full px-4" v-if="last_release">
-                                <h3 class="text-left text-xl" data-aos="fade-up">Latest release</h3>
-                                <h2 class="text-left text-2xl my-2" data-aos="fade-up">{{ last_release.title }}</h2>
-                                <p class="text-left" data-aos="fade-up" v-if="last_release.text">{{ last_release.text }}</p>
+                                <div class="eyebrow accent-dark" data-aos="fade-up">Latest Release</div>
+                                <h2 class="text-left text-2xl md:text-3xl my-2" data-aos="fade-up">{{ last_release.title }}</h2>
+                                <p class="text-left text-secondary-500 leading-relaxed max-w-2xl" data-aos="fade-up" v-if="last_release.text">{{ last_release.text }}</p>
                                 <div class="text-left my-8">
                                     <div class="mx-auto">
-                                        <div class="flex flex-wrap -mx-4">
-                                            <div class="w-full sm:w-1/2 px-4">
-                                                <div class="relative overflow-hidden transition-all duration-300 hover:scale-105 hover:brightness-100 brightness-90">
-                                                    <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full transition-all" data-aos="fade-up" />
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div>
+                                                <div class="relative overflow-hidden transition-all duration-300 hover:scale-105 hover:brightness-100 brightness-90 bg-secondary-100 border border-secondary-200/60 rounded-lg">
+                                                    <img :src="`/images/covers/${last_release.cover}`" alt="Cover image" class="w-full transition-all aspect-square object-cover" data-aos="fade-up" />
                                                 </div>
                                             </div>
-                                            <div class="w-full sm:w-1/2 px-4 flex flex-col justify-end space-y-4">
+                                            <div class="flex flex-col justify-end space-y-4">
                                                 <div v-if="last_release.bandcamp" data-aos="fade-up">
                                                     <AlbumLinks :url="last_release.bandcamp" />
                                                 </div>
-                                                <div>
+                                                <div class="bg-secondary-100 border border-secondary-200/60 rounded-lg p-2">
                                                     <iframe class="border-0 w-full h-60" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`" seamless data-aos="fade-up" title="Bandcamp Player"></iframe>
                                                 </div>
                                             </div>
@@ -35,22 +38,22 @@
                     </div>
 
                     <div v-if="!showAllReleases">
-                        <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                            <button type="button" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border-0 p-0" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release)" :aria-label="`Play album ${release.title}`">
-                                <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
+                        <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-start">
+                            <button type="button" class="grid-item pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border border-secondary-200/50 p-0 bg-secondary-100 rounded-md" :data-year="release.year" :data-release-id="release.release_id" v-for="(release, index) in sortedReleases.slice(0, showitems)" :key="release.id" @click="openModalPlayer(release)" :aria-label="`Play album ${release.title}`">
+                                <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100 aspect-square object-cover" data-aos="fade-up" />
                             </button>
                         </div>
-                        <div class="flex justify-center">
-                            <button @click="showAllReleases = true" class="bg-primary hover:bg-primary text-secondary-400 font-bold py-2 px-4 rounded">
+                        <div class="flex justify-center mt-6">
+                            <button @click="showAllReleases = true" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold py-2 px-4 rounded mono uppercase tracking-[0.2em] text-sm">
                                 {{ `Show all ${sortedReleases.length} releases` }}
                             </button>
                         </div>
                     </div>
 
                     <div v-else>
-                        <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                            <button type="button" class="grid-item m-2 pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border-0 p-0" :data-year="release.year" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release)" :aria-label="`Play album ${release.title}`">
-                                <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100" data-aos="fade-up" />
+                        <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-start">
+                            <button type="button" class="grid-item pointer relative overflow-hidden transition-transform duration-300 hover:scale-105 border border-secondary-200/50 p-0 bg-secondary-100 rounded-md" :data-year="release.year" :data-release-id="release.release_id" v-for="release in sortedReleases" :key="release.id" @click="openModalPlayer(release)" :aria-label="`Play album ${release.title}`">
+                                <img :src="`/images/covers/${release.cover}`" :alt="release.title" class="w-full brightness-75 transition-all duration-300 group-hover:brightness-100 aspect-square object-cover" data-aos="fade-up" />
                             </button>
                         </div>
                     </div>
@@ -71,7 +74,7 @@
             <div class="order-2 flex flex-col space-y-6">
 
                 <div>
-                    <div class="text-sm text-secondary-400/70 mb-2">{{ selectedRelease.year }}</div>
+                    <div class="text-sm text-secondary-400/70 mb-2 mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
                     <h2 class="text-2xl md:text-3xl font-bold text-secondary-400 mb-4">{{ selectedRelease.title }}</h2>
 
                     <div v-if="selectedRelease.bandcamp" class="mb-6">
