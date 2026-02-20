@@ -9,26 +9,25 @@ import releases from '../releases.js';
   <Navigation client:visible />
 
   <main class="bg-primary-500 min-h-screen">
-    <section class="max-w-4xl mx-auto px-6 py-20">
-      <div class="text-center mb-20">
-        <div class="w-1 h-20 bg-secondary-500 mx-auto mb-8"></div>
-        <h1
-          class="text-6xl md:text-8xl font-light tracking-wider mb-6 text-secondary-200">
-          LOGIC MOON
+    <section class="section dark">
+      <div class="container text-center">
+        <div class="eyebrow">Biography</div>
+        <h1 class="text-[clamp(48px,7vw,72px)] font-semibold tracking-tight mb-4 text-secondary-200">
+          Logic Moon
         </h1>
-        <p class="text-xl font-light text-secondary-400 tracking-wide">
+        <p class="text-secondary-400 mono uppercase tracking-[0.25em] text-xs">
           Tobias Lorsbach
         </p>
-        <div class="w-32 h-px bg-secondary-700 mx-auto mt-8"></div>
       </div>
+    </section>
 
-      <div class="space-y-16">
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Biographical Information
-          </h2>
-          <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
+    <section class="section light">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow accent-dark">Biographical Information</div>
+          <h2>Origins and background.</h2>
+        </div>
+        <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>
               Tobias Lorsbach is a Mainz, Germany-based artist known as <span class="artist-name">Logic Moon</span>. His previous releases have appeared on internationally recognized labels such as Whitelabrecs, Archives, Archipel, DRONARIVM, Ambientologist, Shimmering Moods, and his own Logic Moon Music imprint across both physical and digital formats. He spent many years in the minimal techno scenes since the early 2000s, and whilst out on a field recording excursion, he fell upon the idea of layering some ambient drones. From here, his debut album as <span class="artist-name">Logic Moon</span> was born - "Herbst11".
             </p>
@@ -36,7 +35,7 @@ import releases from '../releases.js';
               Tobias' musical background has drawn in a widescreen of genres, with him having performed guitar in a death metal band, embarked on a DJ career, and now established himself as an ambient musician. His varied experiences have only served to give birth to a range of ideas which are evident in his acclaimed albums, including "I See Planets" (2019) and his most recent release "Music For Film Vol.1" (2024), alongside numerous collaborative works.
             </p>
             <p>
-              Tobias <em class="font-light italic text-secondary-400">
+              Tobias <em class="font-light italic">
                 "Logic Moon"
               </em> Lorsbach comes from Mainz, Germany. He began his musical career as
               a DJ and was active in the minimal techno scene in the early 2000s.
@@ -44,16 +43,16 @@ import releases from '../releases.js';
               turned to ambient music.
             </p>
             <p>
-              During a <strong class="font-medium text-secondary-400">
+              During a <strong class="font-medium">
                 field recording trip
               </strong>, the idea arose to combine ambient drone elements with his
               recordings – this resulted in his debut album <em
-                class="italic text-secondary-400">Herbst11</em
+                class="italic">Herbst11</em
               > as Logic Moon in 2013. His compositions often begin with a guitar
               sketch, followed by synthesizers and other layers.
             </p>
             <p>
-              This <strong class="font-medium text-secondary-400">
+              This <strong class="font-medium">
                 cross-genre background
               </strong> (techno, metal, ambient) shapes his stylistic approach: The press
               describes that Tobias as Logic Moon makes "guitar-oriented ambient
@@ -61,31 +60,34 @@ import releases from '../releases.js';
               a balance between classical accessibility and experimental discovery.
             </p>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Discography
-          </h2>
-          <p class="text-secondary-500 leading-relaxed mb-12">
-            Logic Moon has released numerous albums, EPs and singles since 2012.
-          </p>
+    <section class="section dark">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Discography</div>
+          <h2>Releases and singles.</h2>
+        </div>
+        <p class="text-secondary-500 leading-relaxed mb-8">
+          Logic Moon has released numerous albums, EPs and singles since 2012.
+        </p>
 
-          <div class="space-y-1 mb-12" role="list">
+        <div class="grid" role="list">
             {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release) => {
                 const link = release.bandcamp || release.spotify || release.apple || release.amazon;
                 const coverPath = `/images/covers/${release.cover}`;
 
                 return (
-                    <div class="grid grid-cols-12 gap-4 py-3 border-b border-secondary-900 text-sm items-center" role="listitem">
-                        <div class="col-span-1">
-                            <img src={coverPath} alt={`Cover for ${release.title}`} class="w-full aspect-square object-cover rounded-sm" />
+                    <div class="card" role="listitem">
+                        <div class="card-media">
+                            <img src={coverPath} alt={`Cover for ${release.title}`} class="w-full h-full object-cover" />
                         </div>
-                        <div class="col-span-1 text-secondary-600 font-light">{release.year}</div>
-                        <div class="col-span-10 text-secondary-400 font-light italic">
+                        <div class="card-meta mono uppercase tracking-[0.2em]">{release.year}</div>
+                        <div class="card-title text-secondary-200">
                             {link ? (
-                                <a href={link} target="_blank" rel="noopener noreferrer" class="hover:text-secondary-200 transition-colors duration-300">
+                                <a href={link} target="_blank" rel="noopener noreferrer" class="text-accent-700 hover:text-accent-600 transition-colors duration-300">
                                     {release.title}
                                 </a>
                             ) : (
@@ -95,22 +97,24 @@ import releases from '../releases.js';
                     </div>
                 );
             })}
-          </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Musical Style
-          </h2>
-          <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
+    <section class="section light">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow accent-dark">Musical Style</div>
+          <h2>Sound and aesthetics.</h2>
+        </div>
+        <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>
               Logic Moon's music merges <strong
-                class="font-medium text-secondary-400"
+                class="font-medium"
                 >ambient, drone and neoclassical</strong
               >
               influences. Typical are <strong
-                class="font-medium text-secondary-400"
+                class="font-medium"
                 >sound-painterly, cinematic soundscapes</strong
               > with electronic and acoustic elements. His pieces often begin with
               guitar or piano motifs, overlaid with flowing synthesizer drones, strings
@@ -118,45 +122,47 @@ import releases from '../releases.js';
             </p>
             <p>
               An example of this is the album <em
-                class="italic text-secondary-400"
+                class="italic"
                 >The Unavoidable Death of Loneliness</em
               >: It weaves "melodic piano and guitar lines" with dark string
               sounds and hammering rhythms, supported by old tube amplifiers and
               tape noise for warmth and humanity. Neoclassical components also
               appear – for example, the collaboration album <em
-                class="italic text-secondary-400">The Quiet Companion</em
+                class="italic">The Quiet Companion</em
               > (2023) is characterized by <strong
-                class="font-medium text-secondary-400"
+                class="font-medium"
                 >"gentle neoclassical pieces with piano, synthesizer pads and
                 strings"</strong
               >.
             </p>
             <p>
-              His <em class="italic text-secondary-400">Lux</em> EP (2023), for example,
+              His <em class="italic">Lux</em> EP (2023), for example,
               is described as an "atmospheric sound tapestry" that combines contemporary
               ambient electronics with subtle neoclassical touches. Critics consistently
-              praise the <strong class="font-medium text-secondary-400"
+              praise the <strong class="font-medium"
                 >dense atmosphere</strong
               > and the mixture of organic and synthetic sounds – from bright guitar
               picking to texturally rich drone surfaces to quiet bird and nature
               recordings.
             </p>
-          </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Special Works
-          </h2>
-          <p class="text-secondary-500 leading-relaxed mb-8">
-            Several works by Logic Moon found particular attention in the
-            ambient community:
-          </p>
+    <section class="section dark">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Special Works</div>
+          <h2>Highlighted releases and collaborations.</h2>
+        </div>
+        <p class="text-secondary-500 leading-relaxed mb-8">
+          Several works by Logic Moon found particular attention in the
+          ambient community:
+        </p>
 
-          <div class="space-y-8">
+        <div class="space-y-8">
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-400 mb-3">
+              <h3 class="font-medium text-secondary-300 mb-3">
                 "The Unavoidable Death of Loneliness" (2022)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
@@ -170,7 +176,7 @@ import releases from '../releases.js';
             </div>
 
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-400 mb-3">
+              <h3 class="font-medium text-secondary-300 mb-3">
                 "The Quiet Companion" (2023)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
@@ -183,68 +189,70 @@ import releases from '../releases.js';
             </div>
 
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-400 mb-3">
+              <h3 class="font-medium text-secondary-300 mb-3">
                 "Ewiger Wald" (2024) and "Ewiger Wald Addendum" (2024)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
                 two experimental mini albums with Swedish cellist Henrik
                 Meierkord. In this project, Logic Moon and Meierkord explore a <em
-                  class="italic text-secondary-500"
+                  class="italic"
                   >"modern neoclassical ambient"</em
                 > aesthetic by interweaving his emotional cello passages with Logic
                 Moon's characteristic drones and synths. This double album (originally
-                <em class="italic text-secondary-500">Ewiger Wald</em> on Dronarivm,
-                and the <em class="italic text-secondary-500">Addendum</em> version
+                <em class="italic">Ewiger Wald</em> on Dronarivm,
+                and the <em class="italic">Addendum</em> version
                 with remixes) shows the fusion of electroacoustic elements with classical
                 instrumentation.
               </p>
             </div>
-          </div>
+        </div>
 
           <p class="text-secondary-600 text-sm leading-relaxed mt-8">
             Other noteworthy releases include <em
-              class="italic text-secondary-500">I See Planets</em
+              class="italic">I See Planets</em
             > (2020, WhiteLabelRec),
-            <em class="italic text-secondary-500">Philia – Fountain</em> (2022) or
-            <em class="italic text-secondary-500">Sun</em> (2023), which resonated
+            <em class="italic">Philia – Fountain</em> (2022) or
+            <em class="italic">Sun</em> (2023), which resonated
             with fans and on various ambient playlists. Logic Moon also maintains
             an active YouTube channel with his music videos (mostly with sci-fi images)
             and curates ambient playlists, which additionally showcases his projects.
           </p>
-        </section>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Collaborations
-          </h2>
-          <p class="text-secondary-500 leading-relaxed mb-8">
-            Logic Moon frequently works with other artists and labels.
-            Significant collaborations include:
-          </p>
+    <section class="section light">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow accent-dark">Collaborations</div>
+          <h2>Artists and labels.</h2>
+        </div>
+        <p class="text-primary-700 leading-relaxed mb-8">
+          Logic Moon frequently works with other artists and labels.
+          Significant collaborations include:
+        </p>
 
-          <div class="space-y-6">
+          <div class="space-y-6 text-primary-700">
             <div>
-              <h3 class="font-medium text-secondary-400 mb-2">Sven Laux</h3>
-              <p class="text-secondary-600 text-sm leading-relaxed">
+              <h3 class="font-medium text-primary-800 mb-2">Sven Laux</h3>
+              <p class="text-primary-700 text-sm leading-relaxed">
                 Several albums were released together: <em
-                  class="italic text-secondary-500"
+                  class="italic"
                   >The Unavoidable Death of Loneliness</em
                 > (2022, Ambientologist) and <em
-                  class="italic text-secondary-500">The Quiet Companion</em
+                  class="italic">The Quiet Companion</em
                 > (2023, Shimmering Moods). Both albums show the close musical partnership
                 of the two composers.
               </p>
             </div>
 
             <div>
-              <h3 class="font-medium text-secondary-400 mb-2">
+              <h3 class="font-medium text-primary-800 mb-2">
                 Henrik Meierkord
               </h3>
-              <p class="text-secondary-600 text-sm leading-relaxed">
+              <p class="text-primary-700 text-sm leading-relaxed">
                 The Swedish cellist appeared on the mini albums <em
-                  class="italic text-secondary-500">Ewiger Wald</em
-                > and <em class="italic text-secondary-500"
+                  class="italic">Ewiger Wald</em
+                > and <em class="italic"
                   >Ewiger Wald Addendum</em
                 > (2024). Logic Moon mixes his electronic drones with Meierkord's
                 cello into neoclassical ambient studies here.
@@ -252,19 +260,19 @@ import releases from '../releases.js';
             </div>
 
             <div>
-              <h3 class="font-medium text-secondary-400 mb-2">
+              <h3 class="font-medium text-primary-800 mb-2">
                 Scarless Arms (Tyve Oben)
               </h3>
-              <p class="text-secondary-600 text-sm leading-relaxed">
+              <p class="text-primary-700 text-sm leading-relaxed">
                 With this producer, Logic Moon shared the <em
-                  class="italic text-secondary-500">Moon Scars</em
+                  class="italic">Moon Scars</em
                 > EP in 2023, a six-track collaboration in cinematic ambient style.
               </p>
             </div>
 
             <div>
-              <h3 class="font-medium text-secondary-400 mb-2">Labels</h3>
-              <p class="text-secondary-600 text-sm leading-relaxed">
+              <h3 class="font-medium text-primary-800 mb-2">Labels</h3>
+              <p class="text-primary-700 text-sm leading-relaxed">
                 In addition to the already mentioned labels Ambientologist and
                 Shimmering Moods, he released on Archipel (D DR), Archives (GB),
                 DE_ST_REC, Dronarivm (D), Whitelabrecs (JP) and his own label
@@ -274,19 +282,21 @@ import releases from '../releases.js';
               </p>
             </div>
           </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Reviews and Criticism
-          </h2>
-          <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
+    <section class="section dark">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Reviews and Criticism</div>
+          <h2>Press and reception.</h2>
+        </div>
+        <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
             <p>
               Logic Moon received positive response in the trade press and
               ambient blogs. For example, Ambientblog praises the cinematic
               character of his work, such as the album <em
-                class="italic text-secondary-400"
+                class="italic"
                 >The Unavoidable Death of Loneliness</em
               >, which "combines post-classical arrangements and ambient
               soundscapes into adventurous, cinematic compositions."
@@ -294,7 +304,7 @@ import releases from '../releases.js';
               complements his partners.
             </p>
             <p>
-              Headphone Commute describes <em class="italic text-secondary-400"
+              Headphone Commute describes <em class="italic"
                 >The Quiet Companion</em
               > as a collection of "gentle, neoclassical pieces with piano, synthesizer
               pads and strings" that harmoniously grow together despite spatial distance.
@@ -307,21 +317,23 @@ import releases from '../releases.js';
               atmosphere of his albums, as fan reviews and blog features
               repeatedly confirm. Overall, Logic Moon is considered a seasoned
               producer with consistently high quality: His releases are usually
-              perceived as <strong class="font-medium text-secondary-400"
+              perceived as <strong class="font-medium"
                 >"expressive"</strong
-              > and <strong class="font-medium text-secondary-400"
+              > and <strong class="font-medium"
                 >"finely balanced"</strong
               >.
             </p>
-          </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="border-l border-secondary-800 pl-8">
-          <h2
-            class="text-2xl font-light tracking-wide mb-8 text-secondary-300 uppercase">
-            Influence and Significance
-          </h2>
-          <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
+    <section class="section light">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow accent-dark">Influence and Significance</div>
+          <h2>Impact on the scene.</h2>
+        </div>
+        <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>
               Logic Moon is among the active players in the contemporary ambient
               and experimental scene. Through numerous releases on international
@@ -338,17 +350,14 @@ import releases from '../releases.js';
             </p>
             <p>
               In sum, Logic Moon is considered an <strong
-                class="font-medium text-secondary-400"
+                class="font-medium"
                 >important representative of the German ambient movement</strong
               >,
               whose works are regularly presented through specialized
               channels.
             </p>
-          </div>
-        </section>
+        </div>
       </div>
-
-      <div class="w-32 h-px bg-secondary-700 mx-auto mt-20"></div>
     </section>
   </main>
 

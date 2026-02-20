@@ -2,6 +2,52 @@ body {
   font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
   @apply bg-primary-600;
 }
+
+@font-face {
+    font-family: 'Geist Pixel Circle';
+    src: url('fonts/GeistPixel-Circle.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Pixel Grid';
+    src: url('fonts/GeistPixel-Grid.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Pixel Line';
+    src: url('fonts/GeistPixel-Line.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Pixel Square';
+    src: url('fonts/GeistPixel-Square.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Pixel Triangle';
+    src: url('fonts/GeistPixel-Triangle.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.geist-pixel-circle { font-family: 'Geist Pixel Circle', 'Geist Variable', sans-serif; }
+.geist-pixel-grid { font-family: 'Geist Pixel Grid', 'Geist Variable', sans-serif; }
+.geist-pixel-line { font-family: 'Geist Pixel Line', 'Geist Variable', sans-serif; }
+.geist-pixel-square { font-family: 'Geist Pixel Square', 'Geist Variable', sans-serif; }
+.geist-pixel-triangle { font-family: 'Geist Pixel Triangle', 'Geist Variable', sans-serif; }
 h1, h2{
     font-family: 'Geist Variable', 'Assistant Variable', sans-serif;
 }
@@ -240,7 +286,7 @@ input[type='submit']:hover {
 .news-card { max-width: 560px; }
 
 .card-media {
-    height: 180px;
+    height: 280px;
     background: #251b14;
     border-radius: 6px;
     margin-bottom: 14px;
@@ -329,6 +375,87 @@ input[type='submit']:hover {
     outline: none;
     border-color: #f97316;
     box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+.featured-release {
+    background: #1d1510;
+    border: 1px solid #2e2118;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.featured-float {
+    position: fixed;
+    top: 140px;
+    right: 5vw;
+    width: 280px;
+    z-index: 40;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: featuredIn 0.6s ease-out 1.5s forwards;
+}
+
+@media (max-width: 1100px) {
+    .featured-float { display: none; }
+}
+
+.hide-featured .featured-float {
+    display: none !important;
+}
+
+.featured-float.is-hiding {
+    animation: featuredOut 0.35s ease-in forwards;
+}
+
+@keyframes featuredIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes featuredOut {
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.featured-card {
+    background: #221913;
+    border: 1px solid #2e2118;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.featured-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid #2e2118;
+    background: #221913;
+    color: #c9bba6;
+    font-size: 18px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.featured-release {
+    position: relative;
 }
 
 .clamp-3 {
