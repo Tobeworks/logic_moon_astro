@@ -6,14 +6,14 @@ const coverPath = latest?.cover ? `/images/covers/${latest.cover}` : null;
 const primaryLink = latest?.bandcamp || latest?.spotify || latest?.apple || latest?.amazon || "#";
 ---
 
-<div class="featured-release" id="featured-release">
-  <button class="featured-close" type="button" aria-label="Close featured release">×</button>
-  <div class="text-xs uppercase tracking-[0.3em] text-secondary-500 mb-4 mono">Featured</div>
-  <div class="featured-card">
+<div class="relative bg-primary-800 border border-primary-700 rounded-2xl p-5 shadow-2xl" id="featured-release">
+  <button class="absolute top-2 right-3 w-7 h-7 rounded-full border border-primary-700 bg-primary-900 text-secondary-500 text-lg leading-none grid place-items-center" type="button" aria-label="Close featured release">×</button>
+  <div class="text-xs uppercase text-secondary-500 mb-4 font-mono">Featured</div>
+  <div class="bg-primary-900 border border-primary-700 rounded-xl overflow-hidden mb-4">
     {coverPath ? (
-      <img src={coverPath} alt={latest?.title ?? "Latest release"} class="featured-cover" loading="lazy" />
+      <img src={coverPath} alt={latest?.title ?? "Latest release"} class="w-full aspect-square object-cover block" loading="lazy" />
     ) : (
-      <div class="featured-cover placeholder">Visual / Artwork</div>
+      <div class="w-full aspect-square grid place-items-center text-xs uppercase tracking-[0.2em] text-secondary-500 font-mono">Visual / Artwork</div>
     )}
   </div>
   <div class="text-lg text-secondary-200 font-semibold mb-2">Latest Release</div>
@@ -21,8 +21,8 @@ const primaryLink = latest?.bandcamp || latest?.spotify || latest?.apple || late
     {latest?.title ?? "New release"}
   </div>
   <div class="flex gap-3">
-    <a href={primaryLink} class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-4 py-2 rounded text-sm hover:no-underline mono">Listen</a>
-    <a href="#disco" class="border border-secondary-700 text-secondary-300 px-4 py-2 rounded text-sm hover:no-underline mono">Discography</a>
+    <a href={primaryLink} class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-4 py-2 rounded text-sm hover:no-underline font-mono uppercase">Listen</a>
+    <a href="#disco" class="border border-accent-500 text-secondary-300 px-4 py-2 rounded text-sm hover:no-underline font-mono uppercase">Discography</a>
   </div>
 </div>
 

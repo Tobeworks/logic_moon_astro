@@ -8,24 +8,24 @@ import releases from '../releases.js';
 <Layout title="Logic Moon Biography (2025)">
   <Navigation client:visible />
 
-  <main class="bg-primary-500 min-h-screen">
-    <section class="section dark">
-      <div class="container text-center">
-        <div class="eyebrow">Biography</div>
+  <main class="bg-primary-600 min-h-screen">
+    <section class="py-24 bg-primary-600 text-secondary-200">
+      <div class="w-[min(1200px,90vw)] mx-auto text-center">
+        <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Biography</div>
         <h1 class="text-[clamp(48px,7vw,72px)] font-semibold tracking-tight mb-4 text-secondary-200">
           Logic Moon
         </h1>
-        <p class="text-secondary-400 mono uppercase tracking-[0.25em] text-xs">
+        <p class="text-secondary-400 font-mono uppercase tracking-[0.25em] text-xs">
           Tobias Lorsbach
         </p>
       </div>
     </section>
 
-    <section class="section light">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow accent-dark">Biographical Information</div>
-          <h2>Origins and background.</h2>
+    <section class="py-24 bg-secondary-500 text-primary-900">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Biographical Information</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Origins and background.</h2>
         </div>
         <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>
@@ -64,28 +64,28 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">Discography</div>
-          <h2>Releases and singles.</h2>
+    <section class="py-24 bg-primary-600 text-secondary-200">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Discography</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Releases and singles.</h2>
         </div>
         <p class="text-secondary-500 leading-relaxed mb-8">
           Logic Moon has released numerous albums, EPs and singles since 2012.
         </p>
 
-        <div class="grid" role="list">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
             {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release) => {
                 const link = release.bandcamp || release.spotify || release.apple || release.amazon;
                 const coverPath = `/images/covers/${release.cover}`;
 
                 return (
-                    <div class="card" role="listitem">
-                        <div class="card-media">
+                    <div class="bg-primary-500 border border-primary-700 rounded-[10px] p-5 text-secondary-200 flex flex-col" role="listitem">
+                        <div class="h-44 bg-primary-900 rounded-md mb-4 overflow-hidden">
                             <img src={coverPath} alt={`Cover for ${release.title}`} class="w-full h-full object-cover" />
                         </div>
-                        <div class="card-meta mono uppercase tracking-[0.2em]">{release.year}</div>
-                        <div class="card-title text-secondary-200">
+                        <div class="font-mono text-xs tracking-[0.2em] uppercase text-secondary-500">{release.year}</div>
+                        <div class="font-semibold text-secondary-200 mt-2">
                             {link ? (
                                 <a href={link} target="_blank" rel="noopener noreferrer" class="text-accent-700 hover:text-accent-600 transition-colors duration-300">
                                     {release.title}
@@ -101,11 +101,11 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section light">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow accent-dark">Musical Style</div>
-          <h2>Sound and aesthetics.</h2>
+    <section class="py-24 bg-secondary-500 text-primary-900">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Musical Style</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Sound and aesthetics.</h2>
         </div>
         <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>
@@ -149,11 +149,11 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">Special Works</div>
-          <h2>Highlighted releases and collaborations.</h2>
+    <section class="py-24 bg-primary-600 text-secondary-200">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Special Works</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Highlighted releases and collaborations.</h2>
         </div>
         <p class="text-secondary-500 leading-relaxed mb-8">
           Several works by Logic Moon found particular attention in the
@@ -162,7 +162,7 @@ import releases from '../releases.js';
 
         <div class="space-y-8">
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-300 mb-3">
+              <h3 class="font-medium text-secondary-200 mb-3">
                 "The Unavoidable Death of Loneliness" (2022)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
@@ -176,7 +176,7 @@ import releases from '../releases.js';
             </div>
 
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-300 mb-3">
+              <h3 class="font-medium text-secondary-200 mb-3">
                 "The Quiet Companion" (2023)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
@@ -189,7 +189,7 @@ import releases from '../releases.js';
             </div>
 
             <div class="border-l-2 border-secondary-800 pl-6">
-              <h3 class="font-medium text-secondary-300 mb-3">
+              <h3 class="font-medium text-secondary-200 mb-3">
                 "Ewiger Wald" (2024) and "Ewiger Wald Addendum" (2024)
               </h3>
               <p class="text-secondary-600 text-sm leading-relaxed">
@@ -207,7 +207,7 @@ import releases from '../releases.js';
             </div>
         </div>
 
-          <p class="text-secondary-600 text-sm leading-relaxed mt-8">
+          <p class="text-secondary-500 text-sm leading-relaxed mt-8">
             Other noteworthy releases include <em
               class="italic">I See Planets</em
             > (2020, WhiteLabelRec),
@@ -220,11 +220,11 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section light">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow accent-dark">Collaborations</div>
-          <h2>Artists and labels.</h2>
+    <section class="py-24 bg-secondary-500 text-primary-900">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Collaborations</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Artists and labels.</h2>
         </div>
         <p class="text-primary-700 leading-relaxed mb-8">
           Logic Moon frequently works with other artists and labels.
@@ -285,11 +285,11 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">Reviews and Criticism</div>
-          <h2>Press and reception.</h2>
+    <section class="py-24 bg-primary-600 text-secondary-200">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Reviews and Criticism</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Press and reception.</h2>
         </div>
         <div class="prose-lg text-secondary-500 leading-relaxed space-y-6">
             <p>
@@ -327,11 +327,11 @@ import releases from '../releases.js';
       </div>
     </section>
 
-    <section class="section light">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow accent-dark">Influence and Significance</div>
-          <h2>Impact on the scene.</h2>
+    <section class="py-24 bg-secondary-500 text-primary-900">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Influence and Significance</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Impact on the scene.</h2>
         </div>
         <div class="prose-lg text-primary-700 leading-relaxed space-y-6">
             <p>

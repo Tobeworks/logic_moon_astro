@@ -3,12 +3,12 @@
         <header class="fixed inset-x-0 top-0 z-50 bg-primary-500/70 backdrop-blur-md border-b border-secondary-800 text-secondary-500" data-aos="fade-down">
 
             <nav class="flex items-center justify-between px-6 py-5 lg:px-10" aria-label="Main">
-                <a href="/" class="flex items-center gap-3 text-secondary-200 hover:text-accent-400 transition-colors no-underline mono">
+                <a href="/" class="flex items-center gap-3 text-secondary-200 hover:text-accent-400 transition-colors no-underline font-mono">
                     <span class="w-9 h-9 rounded-full border border-accent-600 bg-primary-800/60 shadow-inner"></span>
                     <span class="text-xs tracking-[0.4em] uppercase text-accent-500">Logic Moon</span>
                 </a>
                 <div class="hidden md:flex md:flex-1 md:justify-end">
-                    <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" class="flex items-center text-xs font-semibold tracking-[0.25em] leading-6 text-secondary-400 uppercase ml-5 hover:text-accent-400 scroller hover:no-underline mono">
+                    <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" class="flex items-center text-xs font-semibold tracking-[0.25em] leading-6 text-secondary-400 uppercase ml-5 hover:text-accent-400 scroller hover:no-underline font-mono">
                         <span>{{ item.name }}</span>
                         <div v-if="index < navigation.length - 1" class="h-4 ml-5"></div>
                     </a>
@@ -42,7 +42,7 @@
                             <div class="flex flex-col items-center justify-center text-center h-screen">
                                 <div class="-my-6 divide-y divide-secondary-800/30">
                                     <div class="py-6">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href" class="scroller -mx-3 block rounded-lg px-3 py-2 font-semibold text-secondary-300 hover:text-accent-300 uppercase text-lg tracking-[0.2em] mono" @click="mobileMenuOpen = false">{{ item.name }}</a>
+                                <a v-for="item in navigation" :key="item.name" :href="item.href" class="scroller -mx-3 block rounded-lg px-3 py-2 font-semibold text-secondary-300 hover:text-accent-300 uppercase text-lg tracking-[0.2em] font-mono" @click="mobileMenuOpen = false">{{ item.name }}</a>
                             </div>
                         </div>
                     </div>

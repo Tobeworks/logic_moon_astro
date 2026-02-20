@@ -18,43 +18,47 @@ const { page } = Astro.props;
 
 <Layout title="News - Logic Moon">
   <Navigation client:visible />
-  <main class="min-h-screen bg-secondary-400">
-    <section class="main-section">
-      <div class="container mx-auto md:px-4 md:py-16">
-        <h1
-          class="cinzel text-4xl md:text-6xl text-center mb-12 text-primary-500 mono uppercase tracking-[0.25em]">
-          News
-        </h1>
+  <main class="min-h-screen bg-primary-600">
+    <section class="py-24 bg-primary-600 text-secondary-200">
+      <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="mb-8">
+          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Latest News</div>
+          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">New releases, updates and features.</h2>
+        </div>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {
             page.data.map((post) => (
-              <article class="post-card bg-primary-200 overflow-hidden shadow-lg group cursor-pointer transition-colors duration-300 hover:bg-secondary-100">
-                <a href={`/news/${post.slug}`} class="block hover:no-underline focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg" aria-label={`Read more about ${post.data.title}`}>
+              <article class="bg-primary-800 border border-primary-700 rounded-[10px] p-5 text-secondary-200 flex flex-col">
+                <a href={`/news/${post.slug}`} class="block hover:no-underline" aria-label={`Read more about ${post.data.title}`}>
                   {post.data.image && (
-                    <div class="aspect-video overflow-hidden">
+                    <div class="h-64 bg-primary-900 rounded-md mb-4 overflow-hidden">
                       <img
                         src={post.data.image}
                         alt={post.data.title}
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        class="w-full h-full object-cover"
                       />
                     </div>
                   )}
-                  <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-3 text-primary-500 group-hover:text-secondary-900 transition-colors duration-200">
+                  <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-3 gap-3">
+                      <h3 class="font-semibold mb-1 text-secondary-200 leading-tight">
                         {post.data.title}
-                    </h2>
-                    <p class="text-grey-500 group-hover:text-secondary-700 text-sm mb-3 transition-colors duration-200 mono uppercase tracking-[0.2em]">
-                      {post.data.pubDate.toLocaleDateString("de-DE", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                    <p class="text-grey-600 group-hover:text-secondary-800 leading-relaxed transition-colors duration-200">
+                      </h3>
+                      <time class="font-mono text-xs tracking-[0.2em] uppercase text-secondary-500 whitespace-nowrap">
+                        {post.data.pubDate.toLocaleDateString("de-DE", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </time>
+                    </div>
+                    <p class="text-secondary-500 leading-relaxed mb-6 min-h-[72px] max-h-[72px] overflow-hidden">
                       {post.data.description}
                     </p>
+                    <span class="mt-auto text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline font-mono uppercase tracking-[0.25em] text-xs">
+                      read the post
+                    </span>
                   </div>
                 </a>
               </article>
@@ -67,7 +71,7 @@ const { page } = Astro.props;
             page.url.prev && (
               <a
                 href={page.url.prev}
-                class="bg-accent-500 hover:bg-accent-600 text-primary-900 px-6 py-2 rounded transition-colors duration-200">
+                class="bg-accent-500 hover:bg-accent-600 text-primary-900 px-6 py-2 rounded transition-colors duration-200 font-mono uppercase tracking-[0.2em] text-xs">
                 ← Back
               </a>
             )
@@ -102,7 +106,7 @@ const { page } = Astro.props;
           }
         </nav>
 
-        <p class="text-center text-grey-600 my-8 mono uppercase tracking-[0.2em] text-xs">
+        <p class="text-center text-grey-600 my-8 font-mono uppercase tracking-[0.2em] text-xs">
           Seite {page.currentPage} von {page.lastPage}
           (Artikel {page.start + 1}-{page.end + 1} von {page.total})
         </p>
@@ -111,106 +115,3 @@ const { page } = Astro.props;
   </main>
   <Footer />
 </Layout>
-
-<style>
-  .main-section {
-    min-height: calc(100vh - 80px);
-  }
-</style>
-
-<style>
-  /* main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-
-  .post-card {
-    border: 1px solid #d2c6b5;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .post-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .post-content {
-    padding: 1.5rem;
-  }
-
-  .post-content h2 {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .post-content h2 a {
-    text-decoration: none;
-    color: #1f1a15;
-  }
-
-  .post-content h2 a:hover {
-    color: #f97316;
-  }
-
-  .post-meta {
-    color: #9e8d79;
-    font-size: 0.9rem;
-    margin: 0 0 1rem 0;
-  }
-
-  .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 3rem 0 1rem 0;
-  }
-
-  .pagination-numbers {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .pagination-btn,
-  .pagination-number {
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border: 1px solid #d2c6b5;
-    border-radius: 4px;
-    color: #1f1a15;
-    transition: all 0.2s;
-  }
-
-  .pagination-btn:hover,
-  .pagination-number:hover {
-    background-color: #f6f0e6;
-    border-color: #f97316;
-  }
-
-  .pagination-number.active {
-    background-color: #f97316;
-    color: white;
-    border-color: #f97316;
-  }
-
-  .pagination-info {
-    text-align: center;
-    color: #9e8d79;
-    font-size: 0.9rem;
-  } */
-</style>

@@ -62,7 +62,7 @@
             </div>
         </section>
 
-        <section class="main-section" id="about">
+        <section class="py-20" id="about">
             <div class="container">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -83,7 +83,7 @@
             </div>
         </section>
 
-        <section class="main-section bg-dark" id="music">
+        <section class="py-20 bg-primary-600" id="music">
             <div class="overlay"></div>
             <div class="container">
                 <div class="grid grid-cols-1">
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-        <section class="main-section" id="latest_release">
+        <section class="py-20" id="latest_release">
             <div class="container">
                 <div class="grid grid-cols-1">
                     <div>
@@ -125,7 +125,7 @@
             </div>
         </section>
 
-        <section class="main-section bg-dark" id="disco">
+        <section class="py-20 bg-primary-600" id="disco">
             <div class="container">
                 <div class="grid grid-cols-1">
                     <div class="mobile-bg">
@@ -134,7 +134,7 @@
                             To listen to the release, click the cover to open the player.
                         </p>
                         <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                            <a href="#!" class="grid-item m-2 pointer" data-year="2022" :data-release-id="release.release_id" v-for="release in releases.sort((a, b) => (a.id > b.id) ? -1 : 1)" :key="release.id">
+                            <a href="#!" class="grid-item m-2 block overflow-hidden transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0" data-year="2022" :data-release-id="release.release_id" v-for="release in releases.sort((a, b) => (a.id > b.id) ? -1 : 1)" :key="release.id">
                                 <img :src="require(`@/assets/img/covers/${release.cover}`)" :alt="release.title">
                             </a>
                             <div class="js-shuffle-sizer"></div>
@@ -144,7 +144,7 @@
             </div>
         </section>
 
-        <section class="main-section" id="contact">
+        <section class="py-20" id="contact">
             <div class="container">
                 <div id="msg_success" v-if="msg_success" class="alert alert-success" role="alert">
                     Your Message has been sent

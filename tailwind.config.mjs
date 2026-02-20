@@ -2,50 +2,55 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ['"Geist Variable"', '"Assistant Variable"', 'sans-serif'],
+				mono: ['"Geist Mono Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+			},
+		},
 		colors:{
 			'white': '#FFFFFF',
-			'accent': {
-				DEFAULT: '#f97316',
-				50: '#fff7f6',
-				100: '#fef2ef',
-				200: '#fde3dd',
-				300: '#fcd1c6',
-				400: '#fbb09a',
-				500: '#f97316',
-				600: '#da6510',
-				700: '#b45309',
-				800: '#954409',
-				900: '#703208',
-				dark: '#b45309'
+			accent: {
+				DEFAULT: '#F97316',
+				50: '#FEDFC9',
+				100: '#FDD3B5',
+				200: '#FCBB8D',
+				300: '#FBA366',
+				400: '#FA8B3E',
+				500: '#F97316',
+				600: '#D25905',
+				700: '#9B4204',
+				800: '#642B03',
+				900: '#2D1301',
+				950: '#120800'
 			},
-			'primary': {
-				DEFAULT: '#0f0b08',
-				50: '#ebe5dc',
-				100: '#d9d3cb',
-				200: '#bdb8b0',
-				300: '#9b9690',
-				400: '#726f6a',
-				500: '#0f0b08',
-				600: '#0e0a07',
-				700: '#0c0907',
-				800: '#0a0706',
-				900: '#080605',
-				950: '#070604'
+			primary: {
+				DEFAULT: '#0F0B08',
+				50: '#876348',
+				100: '#795941',
+				200: '#5F4633',
+				300: '#443224',
+				400: '#2A1F16',
+				500: '#0F0B08',
+				600: '#000000',
+				700: '#000000',
+				800: '#000000',
+				900: '#000000',
+				950: '#000000'
 			},
-			'secondary': {
-				DEFAULT: '#f2e9dc',
-				50: '#fef8f1',
-				100: '#fcf6ee',
-				200: '#f9f3e9',
-				300: '#f7efe4',
-				400: '#f4ece0',
-				500: '#f2e9dc',
-				600: '#e6dccf',
-				700: '#d9cfc1',
-				800: '#c5b9aa',
-				900: '#b3a594',
-				950: '#a99a87'
+			secondary: {
+				DEFAULT: '#F2E9DC',
+				50: '#FFFFFF',
+				100: '#FFFFFF',
+				200: '#FFFFFF',
+				300: '#FFFFFF',
+				400: '#FDFCFA',
+				500: '#F2E9DC',
+				600: '#E3CFB3',
+				700: '#D4B68A',
+				800: '#C49C61',
+				900: '#AD8140',
+				950: '#997239'
 			},
 			'grey': {
 				DEFAULT: '#9e8d79',

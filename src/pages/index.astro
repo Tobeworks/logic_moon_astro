@@ -26,7 +26,7 @@ import FeaturedRelease from "../components/FeaturedRelease.astro";
   </script>
   <Navigation client:visible />
   <main class="bg-primary-500 text-secondary-300">
-    <div class="featured-float">
+    <div id="featured-float" class="fixed top-[140px] right-[5vw] w-[280px] z-40 hidden xl:block">
       <FeaturedRelease />
     </div>
     <!-- Hero -->
@@ -36,7 +36,7 @@ import FeaturedRelease from "../components/FeaturedRelease.astro";
 
       <div class="w-full mx-auto px-4 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
         <div>
-          <div class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 mono">Ambient / Cinematic / Electronic</div>
+          <div class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 font-mono">Ambient / Cinematic / Electronic</div>
           <h1 class="cinzel hero logic-moon-title text-secondary-200 text-[clamp(48px,7vw,72px)] leading-[1.05]">
             <span class="word" data-word="logic">Logic</span>
             <span class="word" data-word="moon">Moon</span>
@@ -47,11 +47,11 @@ import FeaturedRelease from "../components/FeaturedRelease.astro";
           <p class="max-w-[34ch] text-secondary-500 leading-relaxed text-lg">
             A curated space for releases, playlists and immersive sessions.
           </p>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#playlists" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline mono">Listen</a>
-            <a href="#contact" class="border border-accent-700 text-accent-200 hover:text-accent-100 px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline mono">Contact</a>
-          </div>
-          <div class="mt-16 flex items-center gap-6 text-secondary-500 text-xs uppercase tracking-[0.25em] mono">
+          <!-- <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#playlists" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline font-mono">Listen</a>
+            <a href="#contact" class="border border-accent-700 text-accent-200 hover:text-accent-100 px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline font-mono">Contact</a>
+          </div> -->
+          <div class="mt-16 flex items-center gap-6 text-secondary-500 text-xs uppercase tracking-[0.25em] font-mono">
             <span>Mainz</span>
             <span class="h-px w-12 bg-secondary-700"></span>
             <span>Since 2011</span>

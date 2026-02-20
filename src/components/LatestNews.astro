@@ -10,19 +10,19 @@ const latestPosts = posts.slice(0, 3);
 
 {
   latestPosts.length > 0 && (
-    <section class="section dark" id="news">
-      <div class="container">
+    <section class="py-24 bg-primary-600 text-secondary-200" id="news">
+      <div class="w-[min(1200px,90vw)] mx-auto">
         <div data-aos="fade-up">
-          <div class="section-header">
-            <div class="eyebrow">Latest News</div>
-            <h2>New releases, updates and features.</h2>
+          <div class="mb-8">
+            <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Latest News</div>
+            <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">New releases, updates and features.</h2>
           </div>
 
-          <div class="grid">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {latestPosts.map((post) => (
-              <article class="card">
+              <article class="bg-primary-500 border border-primary-700 rounded-[10px] p-5 text-secondary-200 flex flex-col">
                 {post.data.image && (
-                  <div class="card-media">
+                  <div class="h-64 bg-primary-900 rounded-md mb-4 overflow-hidden">
                     <img
                       src={post.data.image}
                       alt={post.data.title}
@@ -30,18 +30,18 @@ const latestPosts = posts.slice(0, 3);
                     />
                   </div>
                 )}
-                <div class="card-body">
-                  <div class="flex justify-between items-start mb-3">
-                    <h3 class="card-title text-secondary-200 leading-tight">
+                <div class="flex flex-col h-full">
+                  <div class="flex justify-between items-start mb-3 gap-3">
+                    <h3 class="font-semibold mb-1 text-secondary-200 leading-tight">
                       <a
                         href={`/news/${post.slug}`}
-                        class="hover:text-primary-400 transition-colors duration-200">
+                        class=" hover:text-accent-500 transition-colors duration-200">
                         {post.data.title}
                       </a>
                     </h3>
                     <time
                       datetime={post.data.pubDate.toISOString()}
-                      class="card-meta whitespace-nowrap ml-4">
+                      class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-accent-700 whitespace-nowrap">
                       {post.data.pubDate.toLocaleDateString("en-EN", {
                         year: "numeric",
                         month: "short",
@@ -50,13 +50,13 @@ const latestPosts = posts.slice(0, 3);
                     </time>
                   </div>
 
-                  <p class="text-secondary-500 leading-relaxed mb-6 clamp-3">
+                  <p class="text-secondary-500 leading-relaxed mb-6 min-h-[72px] max-h-[72px] overflow-hidden">
                     {post.data.description}
                   </p>
 
                   <a
                     href={`/news/${post.slug}`}
-                    class="card-link text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline mono uppercase tracking-[0.25em] text-xs">
+                    class="mt-auto text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline font-mono uppercase tracking-[0.25em] text-xs">
                     read the post
                   </a>
                 </div>
@@ -68,9 +68,3 @@ const latestPosts = posts.slice(0, 3);
     </section>
   )
 }
-
-<style>
-  .main-section {
-    min-height: 60vh;
-  }
-</style>

@@ -3,15 +3,15 @@ import { Picture } from "astro:assets";
 import portrait from "../assets/img/Logic Woods 3.webp";
 ---
 
-<section class="section light" id="about">
-  <div class="container split">
+<section class="py-24 bg-secondary-500 text-primary-900" id="about">
+  <div class="w-[min(1200px,90vw)] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr,0.9fr] gap-12 items-start">
     <div>
-      <div class="eyebrow accent-dark" data-aos="fade-up">About</div>
-      <h2 class="text-start xl:text-start" id="headline-about" data-aos="fade-up">
+      <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700" data-aos="fade-up">About</div>
+      <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight" id="headline-about" data-aos="fade-up">
         About
       </h2>
-      <div class="text text-start xl:text-start text-md" data-aos="fade-up">
-          <p>
+      <div class="text-start text-base text-primary-700 leading-relaxed space-y-6" data-aos="fade-up">
+        <p>
             Tobias Lorsbach is a Mainz, Germany-based artist known as <span
               class="artist-name">Logic Moon</span
             >. His previous releases have appeared on internationally recognized
@@ -35,7 +35,7 @@ import portrait from "../assets/img/Logic Woods 3.webp";
             (2024), alongside numerous collaborative works.
           </p>
 
-          <div class="highlight">
+          <div class="bg-secondary-100 border border-secondary-200/60 rounded-md p-4 text-primary-800">
             Logic Moon has become well known for his mastering and
             post-production work for internationally recognized labels like
             Whitelabrecs, DRONARIVM, Archives, and many artists all over the
@@ -60,19 +60,19 @@ import portrait from "../assets/img/Logic Woods 3.webp";
             otherworldly realms.
           </p>
 
-          <div class="link-row">
-            <a href="/logic-moon-bio" class="cursor-pointer" title="Logic Moon biographical info">Biographical Info</a>
+          <div class="flex gap-4 mt-4 font-mono text-xs uppercase tracking-[0.2em] text-accent-700">
+            <a href="/logic-moon-bio" class="hover:text-accent-600" title="Logic Moon biographical info">Biographical Info</a>
           </div>
         </div>
       </div>
-    <div class="image-block">
+    <div class="bg-secondary-100 border border-secondary-200/60 rounded-lg p-3">
       <Picture
         src={portrait}
         alt="portrait"
         widths={[400, 800, 1200]}
         sizes={"(min-width: 768px) 34vw, 50vw"}
         formats={["avif", "webp"]}
-        class="img-fluid hidden sm:block"
+        class="hidden sm:block w-full rounded-md"
         data-aos="fade-up"
         loading="lazy"
       />
