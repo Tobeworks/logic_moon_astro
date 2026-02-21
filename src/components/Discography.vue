@@ -1,6 +1,6 @@
 <template>
     <section class="py-24 bg-secondary-500 text-primary-900" id="disco">
-        <div class="w-[min(1200px,90vw)] mx-auto">
+        <div class="container mx-auto">
             <div class="mb-8" data-aos="fade-up">
                 <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Discography</div>
                 <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] leading-tight font-light">Releases and singles.</h2>

@@ -1,6 +1,6 @@
 <template>
     <section class="py-24 bg-primary-600 text-secondary-200" id="contact">
-        <div class="w-[min(1200px,90vw)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
                 <div class="mb-8">
                     <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Contact</div>
