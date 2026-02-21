@@ -4,7 +4,7 @@
             <div>
                 <div class="mb-8">
                     <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Contact</div>
-                    <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Get in touch for collaborations or licensing.</h2>
+                    <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] leading-tight font-light">Get in touch for collaborations or licensing.</h2>
                 </div>
             </div>
             <div>

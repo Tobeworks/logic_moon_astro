@@ -3,7 +3,7 @@
         <div class="w-[min(1200px,90vw)] mx-auto">
             <div class="mb-8" data-aos="fade-up">
                 <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700">Discography</div>
-                <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-bold leading-tight">Releases and singles.</h2>
+                <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] leading-tight font-light">Releases and singles.</h2>
             </div>
             <div class="grid grid-cols-1 w-full mx-auto">
                 <div class="mobile-bg">

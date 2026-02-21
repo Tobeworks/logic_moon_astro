@@ -1,5 +1,4 @@
 ---
-import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 import Navigation from "../components/Navigation.vue";
 import Discography from "../components/Discography.vue";
 import Playlists from "../components/Playlists.astro";
@@ -10,6 +9,7 @@ import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import LatestNews from "../components/LatestNews.astro";
 import FeaturedRelease from "../components/FeaturedRelease.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="Logic Moon">
@@ -24,126 +24,19 @@ import FeaturedRelease from "../components/FeaturedRelease.astro";
       } catch (e) {}
     })();
   </script>
+
   <Navigation client:visible />
   <main class="bg-primary-500 text-secondary-300">
-    <div id="featured-float" class="fixed top-[140px] right-[5vw] w-[280px] z-40 hidden xl:block">
+    <div class="fixed top-[140px] right-[5vw] w-[280px] z-40 hidden 2xl:block">
       <FeaturedRelease />
     </div>
-    <!-- Hero -->
-    <section class="min-h-screen w-full relative overflow-hidden">
-      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-25"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-500/80 via-primary-500/70 to-primary-500"></div>
-
-      <div class="w-full mx-auto px-4 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
-        <div>
-          <div class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 font-mono">Ambient / Cinematic / Electronic</div>
-          <h1 class="cinzel hero logic-moon-title text-secondary-200 text-[clamp(48px,7vw,72px)] leading-[1.05]">
-            <span class="word" data-word="logic">Logic</span>
-            <span class="word" data-word="moon">Moon</span>
-          </h1>
-          <h2 class="hero mt-4 mb-6 text-secondary-400 text-[clamp(18px,2.4vw,24px)]" data-aos="fade-up" data-aos-delay="500">
-            Atmospheric soundscapes, cinematic textures and deep electronic moods.
-          </h2>
-          <p class="max-w-[34ch] text-secondary-500 leading-relaxed text-lg">
-            A curated space for releases, playlists and immersive sessions.
-          </p>
-          <!-- <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#playlists" class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline font-mono">Listen</a>
-            <a href="#contact" class="border border-accent-700 text-accent-200 hover:text-accent-100 px-6 py-3 rounded tracking-wide uppercase text-sm hover:no-underline font-mono">Contact</a>
-          </div> -->
-          <div class="mt-16 flex items-center gap-6 text-secondary-500 text-xs uppercase tracking-[0.25em] font-mono">
-            <span>Mainz</span>
-            <span class="h-px w-12 bg-secondary-700"></span>
-            <span>Since 2011</span>
-          </div>
-        </div>
-
-
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2" data-aos="fade-down" data-aos-delay="800">
-          <a href="#about" class="scroller" title="scrolldown" aria-label="about">
-            <ChevronDownIcon class="w-10 text-accent-500" />
-          </a>
-        </div>
-      </div>
-    </section>
-    
+    <Hero />
     <About />
     <LatestNews />
-
     <Discography client:load />
-
     <Playlists />
     <Youtube />
     <Contact client:load />
     <Footer />
   </main>
-
-  <style>
-    /* .logic-moon-title {
-      opacity: 0;
-      animation: titleReveal 0.5s ease-out 1s forwards;
-    }
-
-    .logic-moon-title .word {
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logic-moon-title .word::before {
-      content: attr(data-word);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      color: #9e8d79;
-      text-shadow: 0 0 8px #9e8d79;
-      clip-path: inset(0 100% 0 0);
-      animation: textReveal 2.5s ease-in-out forwards;
-    }
-
-    .logic-moon-title .word[data-word="logic"]::before {
-      animation-delay: 1.3s;
-    }
-
-    .logic-moon-title .word[data-word="moon"]::before {
-      animation-delay: 1.8s;
-    }
-
-    @keyframes titleReveal {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes textReveal {
-      0% {
-        clip-path: inset(100% 0 0 0);
-      }
-      100% {
-        clip-path: inset(0 0 0 0);
-      }
-    }
-
-    .logic-moon-title .word {
-      animation: textFinalize 0.4s ease-out 4s forwards;
-    }
-
-    @keyframes textFinalize {
-      to {
-        color: #f2e9dc;
-      }
-    } */
-  </style>
-
-  <script>
-    function initTextAnimation() {
-      const title = document.querySelector(".logic-moon-title");
-      if (!title) return;
-    }
-
-    document.addEventListener("DOMContentLoaded", initTextAnimation);
-    document.addEventListener("astro:page-load", initTextAnimation);
-  </script>
 </Layout>

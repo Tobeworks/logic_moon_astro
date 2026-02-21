@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <header class="fixed inset-x-0 top-0 z-50 bg-primary-500/70 backdrop-blur-md border-b border-secondary-800 text-secondary-500" data-aos="fade-down">
+        <header class="fixed inset-x-0 top-0 z-50 bg-primary-500/70 backdrop-blur-md border-b border-accent-500 text-secondary-500" data-aos="fade-down">
 
             <nav class="flex items-center justify-between px-6 py-5 lg:px-10" aria-label="Main">
                 <a href="/" class="flex items-center gap-3 text-secondary-200 hover:text-accent-400 transition-colors no-underline font-mono">
@@ -65,13 +65,13 @@ const prefix = ref('')
 const navigation = computed(() => [
     { name: 'Home', href: `/` },
     { name: 'News', href: '/news' },
-    { name: 'About', href: `${prefix.value}#about` },
+    { name: 'About', href: `/logic-moon-bio` },
     // { name: 'Music', href: `${prefix.value}#music` },
     { name: 'Playlists', href: `${prefix.value}#playlists` },
     { name: 'Discography', href: `${prefix.value}#disco` },
     { name: 'Cover Art', href: `/cover-art` },
     { name: 'Sounds', href: `/sounds` },
-    { name: 'Label', href: `/label/the-moon-records` },
+    // { name: 'Label', href: `/label/the-moon-records` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
 
