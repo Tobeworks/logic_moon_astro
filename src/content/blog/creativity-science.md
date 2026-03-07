@@ -1,5 +1,5 @@
 ---
-title: "The Science of Creativity: What Happens in the Brain and How to Ignite the Creative Spark"
+title: "The Science of Creativity and why you should use less equipment and not more"
 description: "Creativity is not a mystical gift — it is a measurable neural process. Neuroscience, psychology, and practical triggers explored."
 pubDate: 2026-03-07
 image: "/blog/creativity.jpeg"
