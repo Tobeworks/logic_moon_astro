@@ -4,9 +4,8 @@ import portrait from "../assets/img/Logic Woods 3.webp";
 ---
 
 <section class="py-24 bg-secondary-500 text-primary-900" id="about">
-  <div
-    class="container mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr,0.9fr] gap-12 items-start">
-    <div>
+  <div class="container mx-auto flex flex-col lg:flex-row gap-12 items-start">
+    <div class="flex-1">
       <div
         class="font-mono text-xs tracking-[0.25em] uppercase text-accent-700"
         data-aos="fade-up">
@@ -75,13 +74,15 @@ import portrait from "../assets/img/Logic Woods 3.webp";
           <a
             href="/logic-moon-bio"
             class="hover:text-accent-600"
-            title="Logic Moon biographical info">Biographical Info</a
+            title="Logic Moon
+          biographical info">Biographical Info</a
           >
         </div>
-      </div>
+
+    </div>
     </div>
     <div
-      class="bg-secondary-100 border border-secondary-200/60 rounded-lg p-3 hidden sm:block">
+      class="flex-1 bg-secondary-100 border border-secondary-200/60 rounded-lg p-3 hidden sm:block">
       <Picture
         src={portrait}
         alt="portrait"

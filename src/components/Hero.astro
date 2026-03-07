@@ -17,7 +17,7 @@ import HeroAnimation from "./HeroAnimation.astro";
   </div>
 
   <div
-    class="w-full mx-auto px-4 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
+    class="w-full mx-auto px-0 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
     <div>
       <div
         class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 font-mono"
@@ -25,13 +25,13 @@ import HeroAnimation from "./HeroAnimation.astro";
         Ambient / Cinematic / Electronic
       </div>
       <h1
-        class="cinzel hero logic-moon-title text-secondary-200 text-[clamp(48px,7vw,72px)] leading-[1.05]"
+        class="text-secondary-200 mono uppercase font-thin"
         data-hero-anim>
         <span class="word" data-word="logic">Logic</span>
         <span class="word" data-word="moon">Moon</span>
       </h1>
       <h2
-        class="hero mt-4 mb-6 text-secondary-400 text-[clamp(18px,2.4vw,24px)]"
+        class="mt-4 mb-6 text-secondary-400 font-thin text-md uppercase"
         data-hero-anim>
         Soundscapes
       </h2>
@@ -101,5 +101,4 @@ import HeroAnimation from "./HeroAnimation.astro";
     });
   }
   runHeroAnim();
-
 </script>
