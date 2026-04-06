@@ -1,19 +1,24 @@
 ---
-title: "The Science of Creativity and why you should use less equipment and not more"
-description: "Creativity is not a mystical gift — it is a measurable neural process. Neuroscience, psychology, and practical triggers explored."
+title: "The Science of Creativity and how to make better music"
+description: "Creativity is not a mystical gift. It is a measurable neural process. Neuroscience, psychology, and practical triggers explored to get better results as a musican."
 pubDate: 2026-03-07
 image: "/blog/creativity.jpeg"
 ---
 
-**Creativity is not a mystical gift — it is a measurable neural process that can be deliberately triggered.** Research over the past decade has painted a remarkably clear picture of what happens in the brain when we think creatively, and which surprisingly simple means can bring about that state. From walking to boredom to quiet background music — science now offers concrete guidance for what artists have practiced intuitively for centuries. This article summarises the current state of research: neuroscience, psychology, and practical triggers of creative thinking.
+ I remember a session a while back where I spent the better part of an evening doing nothing. Not meditating, not sketching ideas, just opening plugins, auditioning reverbs, scrolling through presets I had already heard a hundred times. The DAW was open. The project was empty. At some point I gave up, closed everything down to a single drone, one reverb send, and a delay I had used a thousand times before. Within twenty minutes I had the foundation of a track I still consider one of the better things I have made as Logic Moon.
+
+That question has stayed with me: why do my best sessions so often happen when I strip everything back? When the flow finally arrives in an ambient session, it rarely feels like I am working hard. It feels like I got out of my own way. I started digging into the research behind that feeling — and it turns out the science is both fascinating and surprisingly practical.
+
+
+**Creativity is not a mystical gift. It is a measurable neural process that can be deliberately triggered.** Research over the past decade has painted a remarkably clear picture of what happens in the brain when we think creatively, and which surprisingly simple means can bring about that state. From walking to boredom to quiet background music, science now offers concrete guidance for what artists have practiced intuitively for centuries. This article summarises the current state of research: neuroscience, psychology, and practical triggers of creative thinking.
 
 ## When Networks That Usually Fight Each Other Start to Cooperate
 
-The brain consists of large functional networks that normally work against each other. The **Default Mode Network (DMN)** — active during daydreaming, memory recall, and mental wandering — and the **Executive Control Network (ECN)** — responsible for focused attention and analytical thinking — typically suppress one another. You are either focused or you are drifting.
+The brain consists of large functional networks that normally work against each other. The **Default Mode Network (DMN)**, active during daydreaming, memory recall, and mental wandering and the **Executive Control Network (ECN)**  responsible for focused attention and analytical thinking, typically suppress one another. You are either focused or you are drifting.
 
 During creative processes, something paradoxical occurs: **both networks cooperate simultaneously.** Roger Beaty and colleagues demonstrated in a landmark study that creative thinking requires exactly this unusual collaboration.<sup>[1](#fn1)</sup> The DMN generates spontaneous ideas and unexpected associations, while the ECN evaluates and refines them. In the largest neuroscientific creativity study to date (N=2,433 participants across five countries), researchers showed that the **frequency of dynamic switching between DMN and ECN** can predict a person's creative ability — but not their intelligence.<sup>[2](#fn2)</sup> Creativity and intelligence therefore rely on different neural signatures.
 
-Even more surprising: these differences are visible even at rest. Beaty et al. identified a connectivity pattern spanning the DMN, salience network, and ECN that reliably predicts creative ability — even in completely unknown test subjects and across cultural boundaries.<sup>[3](#fn3)</sup>
+Even more surprising: these differences are visible even at rest. Beaty et al. identified a connectivity pattern spanning the DMN, salience network, and ECN that reliably predicts creative ability,  even in completely unknown test subjects and across cultural boundaries.<sup>[3](#fn3)</sup>
 
 ## Alpha Waves: The Surprising Brainwave Pattern of Creativity
 
@@ -47,7 +52,7 @@ Especially fascinating is **hypnagogia** — the twilight state between waking a
 
 ## Why Ambient Music Could Be the Ideal Creative Companion
 
-The relationship between music and creativity does not follow a simple "music on = creative" equation. Mehta, Zhu & Cheema demonstrated that **moderate background noise around 70 decibels** — roughly the level of a busy café — improves creative thinking compared to silence, because it nudges the brain toward more abstract processing. Excessively loud sounds (85 dB) harm creativity.<sup>[22](#fn22)</sup>
+The relationship between music and creativity does not follow a simple "music on = creative" equation. Mehta, Zhu & Cheema demonstrated that **moderate background noise around 70 decibels** — roughly the level of a busy café improves creative thinking compared to silence, because it nudges the brain toward more abstract processing. Excessively loud sounds (85 dB) harm creativity.<sup>[22](#fn22)</sup>
 
 Systematic reviews consistently show: **music with lyrics impairs cognitive performance**, because lyrics recruit the same brain regions used for verbal processing.<sup>[23](#fn23)</sup><sup>[24](#fn24)</sup> **Instrumental music without vocals, by contrast, does not measurably disrupt cognition.**
 
@@ -57,7 +62,7 @@ Brian Eno articulated in the 1978 liner notes to *Ambient 1: Music for Airports*
 
 A question that preoccupies many music producers can now be answered scientifically: does music become more creative when made with fewer tools? When you limit yourself to five plugins instead of drawing on four hundred?
 
-The short answer: yes — and this has nothing to do with romanticism or nostalgia, but with clearly measurable cognitive mechanisms.
+The short answer: yes and this has nothing to do with romanticism or nostalgia, but with clearly measurable cognitive mechanisms.
 
 Barry Schwartz described in his influential book *The Paradox of Choice* (2004) the fundamental problem: too many options do not lead to better decisions, but to decision paralysis, higher stress levels, and lower satisfaction with the outcome.<sup>[27](#fn27)</sup> The iconic jam experiment by Iyengar & Lepper showed that shoppers at a stand offering six varieties of jam bought ten times more often than those at a stand with 24.<sup>[28](#fn28)</sup> A producer sitting in front of 400 plugins is spending cognitive energy navigating options — energy that is no longer available for actual creative thinking.
 
@@ -65,15 +70,15 @@ On top of this comes **decision fatigue** — the exhaustion that accumulates fr
 
 Creativity research shows that **constraints actively promote creative processes**. Acar et al. summarised in a meta-analysis that moderate constraints boost creativity because they block familiar solution paths and force the brain to forge new associative connections. The relationship follows an inverted U-curve: too little constraint leads to paralysis of choice, too much stifles creative space.<sup>[29](#fn29)</sup>
 
-An ethnographic study by Theel & Sydow observed professional songwriting teams and found that successful creative teams do not merely experience constraints passively, but actively utilise and reshape them.<sup>[30](#fn30)</sup> Brian Eno — the inventor of the ambient genre — developed with Peter Schmidt the *Oblique Strategies*, a card system containing over 100 creative constraints. The system was no mere novelty, but a serious tool for Eno and David Bowie during the making of *Heroes* and *Low*.
+An ethnographic study by Theel & Sydow observed professional songwriting teams and found that successful creative teams do not merely experience constraints passively, but actively utilise and reshape them.<sup>[30](#fn30)</sup> Brian Eno the inventor of the ambient genre, developed with Peter Schmidt the *Oblique Strategies*, a card system containing over 100 creative constraints. The system was no mere novelty, but a serious tool for Eno and David Bowie during the making of *Heroes* and *Low*.
 
-What does this mean in practice? A deliberately limited setup shifts cognitive energy from navigating to shaping. The constraint blocks the habitual route and forces genuine engagement with what the tool can actually do. The result is frequently unexpected sounds and structures — not in spite of the limitation, but because of it. The brain does not find solutions when all doors stand open. It finds them when it has to walk through the only one that does.
+What does this mean in practice? A deliberately limited setup shifts cognitive energy from navigating to shaping. The constraint blocks the habitual route and forces genuine engagement with what the tool can actually do. The result is frequently unexpected sounds and structures, not in spite of the limitation, but because of it. The brain does not find solutions when all doors stand open. It finds them when it has to walk through the only one that does.
 
 ## Understanding the Creative Spark Means Being Able to Use It
 
 Research presents a consistent overall picture: creativity emerges when the brain can oscillate between focused and diffuse thinking — between control and release. Three findings stand out as particularly surprising: **less control can mean more creativity**,<sup>[31](#fn31)</sup> **moderate constraints enhance creativity**,<sup>[29](#fn29)</sup> and **the "tortured artist" has an empirical basis** — emotionally sensitive individuals produced their most creative artistic work following social rejection.<sup>[32](#fn32)</sup>
 
-The most effective creativity strategy is not a single trick, but a **rhythm of intense preparation and deliberate release** — supported by the right environmental conditions. A walk, a nap, a period of intentional idleness, or an ambient soundscape at moderate volume are not procrastination. They are, scientifically speaking, the opposite: active investments in the creative process. The brain keeps working — it simply needs, sometimes, the freedom to do so without our conscious interference.
+The most effective creativity strategy is not a single trick, but a **rhythm of intense preparation and deliberate release** — supported by the right environmental conditions. A walk, a nap, a period of intentional idleness, or an ambient soundscape at moderate volume are not procrastination. They are, scientifically speaking, the opposite: active investments in the creative process. The brain keeps working, it simply needs, sometimes, the freedom to do so without our conscious interference.
 
 ---
 

@@ -381,6 +381,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/it-may-never-coming-back'
     },
+    {
+        id: 51,
+        cover: 'clockworks.jpg',
+        year: '2026',
+        release_id: '1624891467',
+        title: 'Logic Moon - Clockworks',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/clockworks'
+    },
 
 ];
 export default releases;
