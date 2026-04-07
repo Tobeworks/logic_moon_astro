@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vue": "^5.1.4",
     "@fontsource-variable/assistant": "^5.0.17",
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.7",
@@ -21,7 +20,6 @@
     "@tailwindcss/vite": "^4.2.0",
     "animejs": "^4.3.6",
     "aos": "^2.3.4",
-    "astro": "^5.17.3",
     "astro-imagetools": "^0.9.0",
     "astro-seo": "^0.8.3",
     "axios": "^1.6.8",
@@ -31,5 +29,9 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.0",
     "vue": "^3.4.22"
+  },
+  "devDependencies": {
+    "@astrojs/vue": "^5.0.11",
+    "astro": "^5.17.3"
   }
 }
