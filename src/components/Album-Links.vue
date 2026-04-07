@@ -48,7 +48,7 @@ const fetchSongLink = async () => {
 
         const apiUrl = isDev
             ? `https://api.song.link/v1-alpha.1/links?url=${encodeURIComponent(props.url)}`
-            : `https://twapi1-358632560159.europe-west6.run.app/public/songlink-proxy?url=${encodeURIComponent(props.url)}`
+            : `https://api.tobeworks.de/public/songlink-proxy?url=${encodeURIComponent(props.url)}`
 
         const response = await fetch(apiUrl)
 
