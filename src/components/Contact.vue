@@ -88,7 +88,7 @@ const msg_success = ref(false);
 function sendForm() {
     form_disabled.value = true;
 
-    axios.post('https://api.tobeworks.de/sendmail', {
+    axios.post('https://api.tobeworks.de/send', {
         name: form_name.value,
         email: form_email.value,
         message: form_message.value,

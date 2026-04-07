@@ -209,7 +209,7 @@ function sendForm() {
 
     form_disabled.value = true;
 
-    axios.post('https://api.tobeworks.de/sendmail', {
+    axios.post('https://api.tobeworks.de/send', {
         name: form_name.value,
         email: form_email.value,
         message: form_message.value,
@@ -337,7 +337,7 @@ const getLatestRelease = () => {
 //         //     // alert('Oops! Something went wrong.');
 //         // });
 
-//         XHR.open("POST", "https://api.tobeworks.de/sendmail");
+//         XHR.open("POST", "https://api.tobeworks.de/send");
 //         XHR.send(FD);
 //     };
 
