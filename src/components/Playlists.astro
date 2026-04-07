@@ -5,63 +5,94 @@ import dark from "../assets/img/playlists/dark cover.jpg";
 import home from "../assets/img/playlists/home_cover_01.jpg";
 ---
 
-<section class="py-24 bg-primary-600 text-secondary-200" id="playlists">
+<section class="py-32 px-8 md:px-16 bg-surface-container-lowest" id="playlists">
   <div class="container mx-auto">
-    <div class="mb-8" data-aos="fade-up">
-      <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Playlists</div>
-      <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] leading-tight font-thin">I am currently curating mainly three ambient playlists exclusively on Spotify.</h2>
+    <div class="mb-24" data-aos="fade-up">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+        CURATED SOUNDS
+      </span>
+      <h2 class="text-4xl font-bold tracking-tight">
+        SPOTIFY PLAYLISTS
+      </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
-      <div class="bg-primary-800 border border-primary-700 rounded-[10px] p-5 text-secondary-200">
-        <a
-          href="/spotify-playlist/aeterna-ambient-soundscapes"
-          class="group relative overflow-hidden transition-transform duration-300 hover:scale-105 block">
-          <div class="relative">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- AETERNA -->
+      <div class="group cursor-pointer" data-aos="fade-up">
+        <a href="/spotify-playlist/aeterna-ambient-soundscapes" class="block">
+          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
             <Image
               src={aeterna}
               alt="AETERNA - Ambient Soundscapes"
-              class="aspect-square w-full brightness-75 transition-all duration-300 group-hover:brightness-100"
+              class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
               width="500"
               height="500"
             />
           </div>
         </a>
-        <div class="mt-4 font-semibold">AETERNA - Ambient Soundscapes</div>
-        <p class="text-secondary-500 leading-relaxed">From classic ambient to neoclassical soundscape and ethereal drone with evolving intensity.</p>
+        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
+          <a href="/spotify-playlist/aeterna-ambient-soundscapes" class="no-underline">
+            AETERNA
+          </a>
+        </h3>
+        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
+          AMBIENT SOUNDSCAPES
+        </p>
+        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
+          From classic ambient to neoclassical soundscapes and ethereal drone with evolving intensity.
+        </p>
       </div>
-      <div class="bg-primary-800 border border-primary-700 rounded-[10px] p-5 text-secondary-200">
-        <a
-          href="/spotify-playlist/dark-ambient-drone"
-          class="group relative overflow-hidden transition-transform duration-300 hover:scale-105 block">
-          <div class="relative">
+
+      <!-- DARK -->
+      <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+        <a href="/spotify-playlist/dark-ambient-drone" class="block">
+          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
             <Image
               src={dark}
               alt="DARK - Dark Ambient"
-              class="aspect-square w-full brightness-75 transition-all duration-300 group-hover:brightness-100"
+              class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
               width="500"
               height="500"
             />
           </div>
         </a>
-        <div class="mt-4 font-semibold">DARK -Dark Ambient</div>
-        <p class="text-secondary-500 leading-relaxed">Drone, Melancholia, Blackness, Fog, Abyss, Gloom, Escape</p>
+        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
+          <a href="/spotify-playlist/dark-ambient-drone" class="no-underline">
+            DARK
+          </a>
+        </h3>
+        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
+          DARK AMBIENT DRONE
+        </p>
+        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
+          Drone, Melancholia, Blackness, Abyss, Gloom, Escape
+        </p>
       </div>
-      <div class="bg-primary-800 border border-primary-700 rounded-[10px] p-5 text-secondary-200">
-        <a
-          href="/spotify-playlist/home-ambient-fieldrecordings"
-          class="group relative overflow-hidden transition-transform duration-300 hover:scale-105 block">
-          <div class="relative">
+
+      <!-- HOME -->
+      <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+        <a href="/spotify-playlist/home-ambient-fieldrecordings" class="block">
+          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
             <Image
               src={home}
               alt="HOME"
-              class="aspect-square w-full brightness-75 transition-all duration-300 group-hover:brightness-100"
+              class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
               width="500"
               height="500"
             />
           </div>
         </a>
-        <div class="mt-4 font-semibold">HOME</div>
-        <p class="text-secondary-500 leading-relaxed">Ambient, Lofi, Cassette, Fieldrecording, Texture, Experimental, Ambience, Asian</p>
+        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
+          <a href="/spotify-playlist/home-ambient-fieldrecordings" class="no-underline">
+            HOME
+          </a>
+        </h3>
+        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
+          AMBIENT FIELD RECORDINGS
+        </p>
+        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
+          Ambient, Lofi, Cassette, Fieldrecording, Texture, Experimental
+        </p>
       </div>
     </div>
   </div>

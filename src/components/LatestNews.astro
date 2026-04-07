@@ -10,68 +10,57 @@ const latestPosts = posts.slice(0, 3);
 
 {
   latestPosts.length > 0 && (
-    <div
-      class="">
-      <section class="py-24 bg-primary-600 text-secondary-200" id="news">
-        <div class="container mx-auto">
-          <div data-aos="fade-up">
-            <div class="mb-8">
-              <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">
-                Latest News
-              </div>
-              <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] font-light leading-tight">
-                New releases, updates and features.
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {latestPosts.map((post) => (
-                <article class="bg-primary-500 border border-primary-700 rounded-[10px] p-5 text-secondary-200 flex flex-col">
-                  {post.data.image && (
-                    <div class="h-64 bg-primary-900 rounded-md mb-4 overflow-hidden">
-                      <img
-                        src={post.data.image}
-                        alt={post.data.title}
-                        class="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
-                  <div class="flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-3 gap-3">
-                      <h3 class="font-semibold mb-1 text-secondary-200 leading-tight">
-                        <a
-                          href={`/news/${post.slug}`}
-                          class=" hover:text-accent-500 transition-colors duration-200">
-                          {post.data.title}
-                        </a>
-                      </h3>
-                      <time
-                        datetime={post.data.pubDate.toISOString()}
-                        class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-accent-700 whitespace-nowrap">
-                        {post.data.pubDate.toLocaleDateString("en-EN", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}
-                      </time>
-                    </div>
-
-                    <p class="text-secondary-500 leading-relaxed mb-6 min-h-[72px] max-h-[72px] overflow-hidden">
-                      {post.data.description}
-                    </p>
-
-                    <a
-                      href={`/news/${post.slug}`}
-                      class="mt-auto text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline font-mono uppercase tracking-[0.25em] text-xs">
-                      read the post
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+    <section class="py-32 px-8 md:px-16 bg-surface" id="news">
+      <div class="container mx-auto">
+        <div class="mb-24" data-aos="fade-up">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+            NEWSFEED
+          </span>
+          <h2 class="text-4xl font-bold tracking-tight">
+            RECENT DEVELOPMENTS
+          </h2>
         </div>
-      </section>
-    </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {latestPosts.map((post) => (
+            <article class="group cursor-pointer" data-aos="fade-up">
+              {post.data.image && (
+                <div class="h-64 bg-surface-container-lowest rounded-none mb-6 overflow-hidden">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+              )}
+              <span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">
+                {post.data.pubDate.toLocaleDateString("en-EN", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+              <h3 class="text-2xl md:text-3xl font-bold tracking-tighter leading-none group-hover:text-primary transition-colors duration-500 mb-4">
+                <a href={`/news/${post.slug}`} class="no-underline">
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
+                {post.data.description}
+              </p>
+              <a href={`/news/${post.slug}`} class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300 no-underline">
+                READ <span>→</span>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="flex justify-center mt-16">
+          <a href="/news" class="uppercase text-[10px] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all no-underline">
+            VIEW ALL NEWS →
+          </a>
+        </div>
+      </div>
+    </section>
   )
 }

@@ -14,6 +14,7 @@
     "@fontsource-variable/assistant": "^5.0.17",
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.7",
+    "@fontsource-variable/inter": "^5.2.8",
     "@headlessui/vue": "^1.7.20",
     "@heroicons/vue": "^2.1.3",
     "@studio-freight/lenis": "^1.0.42",

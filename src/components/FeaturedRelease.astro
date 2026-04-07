@@ -6,30 +6,38 @@ const coverPath = latest?.cover ? `/images/covers/${latest.cover}` : null;
 const primaryLink = latest?.bandcamp || latest?.spotify || latest?.apple || latest?.amazon || "#";
 ---
 
-<div class="relative bg-primary-800 border border-primary-700 rounded-2xl p-5 shadow-2xl" id="featured-release">
-  <button class="absolute top-2 right-3 w-7 h-7 rounded-full border border-primary-700 bg-primary-900 text-secondary-500 text-lg leading-none grid place-items-center" type="button" aria-label="Close featured release">×</button>
-  <div class="text-xs uppercase text-secondary-500 mb-4 font-mono">Featured</div>
-  <div class="bg-primary-900 border border-primary-700 rounded-xl overflow-hidden mb-4">
+<div class="relative bg-surface-container border border-outline-variant/20 p-5" id="featured-release">
+  <button class="absolute top-2 right-3 w-7 h-7 grid place-items-center text-on-surface hover:text-primary transition-colors" type="button" aria-label="Close featured release" style="font-size: 24px; line-height: 1;">×</button>
+  
+  <div class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4">FEATURED</div>
+  
+  <div class="bg-surface-container-lowest overflow-hidden mb-4">
     {coverPath ? (
-      <img src={coverPath} alt={latest?.title ?? "Latest release"} class="w-full aspect-square object-cover block" loading="lazy" />
+      <img src={coverPath} alt={latest?.title ?? "Latest release"} class="w-full aspect-square object-cover block grayscale-[50%] hover:grayscale-0 transition-all duration-700" loading="lazy" />
     ) : (
-      <div class="w-full aspect-square grid place-items-center text-xs uppercase tracking-[0.2em] text-secondary-500 font-mono">Visual / Artwork</div>
+      <div class="w-full aspect-square grid place-items-center text-xs uppercase tracking-[0.2em] text-on-surface/40">VISUAL / ARTWORK</div>
     )}
   </div>
-  <div class="text-lg text-secondary-200 font-semibold mb-2">Latest Release</div>
-  <div class="text-secondary-500 text-sm mb-4">
+  
+  <div class="text-lg font-bold text-on-surface mb-2">Latest Release</div>
+  <div class="text-on-surface-variant text-sm mb-4">
     {latest?.title ?? "New release"}
   </div>
+  
   <div class="flex gap-3">
-    <a href={primaryLink} class="bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-4 py-2 rounded text-sm hover:no-underline font-mono uppercase">Listen</a>
-    <a href="#disco" class="border border-accent-500 text-secondary-300 px-4 py-2 rounded text-sm hover:no-underline font-mono uppercase">Discography</a>
+    <a href={primaryLink} class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-4 py-2 text-xs uppercase tracking-widest hover:no-underline transition-all">
+      Listen
+    </a>
+    <a href="#disco" class="border border-outline-variant/20 text-on-surface px-4 py-2 text-xs uppercase tracking-widest hover:text-primary hover:no-underline transition-colors">
+      Discography
+    </a>
   </div>
 </div>
 
 <script>
   const KEY = "lm_featured_release_hidden_until";
   const el = document.getElementById("featured-release");
-  const btn = el?.querySelector(".featured-close");
+  const btn = el?.querySelector("button");
 
   if (el) {
     const hiddenUntil = Number(localStorage.getItem(KEY) || 0);

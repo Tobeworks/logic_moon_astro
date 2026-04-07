@@ -15,66 +15,64 @@ const currentPagePosts = posts.slice(0, postsPerPage);
 
 <Layout title="News - Logic Moon">
   <Navigation client:visible />
-  <main class="min-h-screen bg-primary-600">
-    <section class="py-24 bg-primary-600 text-secondary-200">
+  <main class="min-h-screen bg-surface text-on-surface">
+    <section class="py-32 px-8 md:px-16">
       <div class="container mx-auto">
-        <div class="mb-8">
-          <div class="font-mono text-xs tracking-[0.25em] uppercase text-accent-500">Latest News</div>
-          <h2 class="mt-2 text-[clamp(22px,3.2vw,30px)] leading-tight font-light">New releases, updates and features.</h2>
+        <div class="mb-24">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+            NEWSFEED
+          </span>
+          <h1 class="text-4xl font-bold tracking-tight">
+            RECENT DEVELOPMENTS
+          </h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {
-            currentPagePosts.map((post) => (
-              <article class="bg-primary-500 border border-primary-500 rounded-[10px] p-5 text-secondary-200 flex flex-col">
-                {post.data.image && (
-                  <div class="h-64 bg-primary-900 rounded-md mb-4 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {currentPagePosts.map((article) => (
+            <a href={`/news/${article.slug}`} class="group block no-underline" data-aos="fade-up">
+              <article>
+                {article.data.image && (
+                  <div class="h-64 bg-surface-container-lowest mb-6 overflow-hidden">
                     <img
-                      src={post.data.image}
-                      alt={post.data.title}
-                      class="w-full h-full object-cover"
+                      src={article.data.image}
+                      alt={article.data.title}
+                      class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
                     />
                   </div>
                 )}
-                <div class="flex flex-col h-full">
-                  <div class="flex justify-between items-start mb-3 gap-3">
-                    <h3 class="font-semibold mb-1 text-secondary-200 leading-tight">
-                      <a href={`/news/${post.slug}`} class="hover:text-accent-500 transition-colors duration-200">
-                        {post.data.title}
-                      </a>
-                    </h3>
-                    <time class="font-mono text-xs tracking-[0.2em] uppercase text-secondary-500 whitespace-nowrap">
-                      {post.data.pubDate.toLocaleDateString("en-EN", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </time>
-                  </div>
-                  <p class="text-secondary-500 leading-relaxed mb-6 min-h-[72px] max-h-[72px] overflow-hidden">
-                    {post.data.description}
-                  </p>
-                  <a href={`/news/${post.slug}`} class="mt-auto text-accent-700 hover:text-accent-600 transition-colors duration-200 inline-block hover:no-underline font-mono uppercase tracking-[0.25em] text-xs">
-                    read the post
-                  </a>
-                </div>
+                <span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">
+                  {article.data.pubDate.toLocaleDateString("en-EN", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+                <h3 class="text-2xl md:text-3xl font-bold tracking-tighter leading-none text-on-surface group-hover:text-primary transition-colors duration-500 mb-4">
+                  {article.data.title}
+                </h3>
+                <p class="text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
+                  {article.data.description}
+                </p>
+                <span class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                  READ <span>→</span>
+                </span>
               </article>
-            ))
-          }
+            </a>
+          ))}
         </div>
 
         {
           totalPages > 1 && (
-            <nav class="flex items-center justify-center gap-4 mt-16" aria-label="Pagination">
+            <nav class="flex items-center justify-center gap-4 mt-24" aria-label="Pagination">
               <div class="flex gap-2">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                   (num) => (
                     <a
                       href={num === 1 ? "/news" : `/news/page/${num}`}
-                      class={`w-10 h-10 flex items-center justify-center transition-colors duration-200 ${
+                      class={`w-10 h-10 flex items-center justify-center transition-colors duration-200 text-xs uppercase tracking-widest ${
                         num === 1
-                          ? "bg-accent-500 text-primary-900"
-                          : "bg-secondary-150 text-accent-700 hover:bg-accent-50"
+                          ? "bg-primary text-on-primary"
+                          : "border border-outline-variant/20 text-on-surface hover:border-primary hover:text-primary"
                       }`}
                       aria-label={`Go to page ${num}`}
                       aria-current={num === 1 ? "page" : undefined}>
@@ -87,18 +85,17 @@ const currentPagePosts = posts.slice(0, postsPerPage);
               {totalPages > 1 && (
                 <a
                   href="/news/page/2"
-                  class="bg-accent-500 hover:bg-accent-600 text-primary-900 px-6 py-2 transition-colors duration-200 font-mono uppercase tracking-[0.2em]"
+                  class="border border-outline-variant/20 text-on-surface px-6 py-2 text-xs uppercase tracking-widest hover:border-primary hover:text-primary transition-colors no-underline"
                   aria-label="Go to next page">
-                  Nächste →
+                  NEXT →
                 </a>
               )}
             </nav>
           )
         }
 
-        <p class="text-center text-secondary-500 mt-8 font-mono uppercase tracking-[0.2em] text-xs">
-          Page 1 from {totalPages}
-          (1-{Math.min(postsPerPage, posts.length)} of {posts.length})
+        <p class="text-center text-on-surface/40 mt-16 font-mono uppercase tracking-[0.2em] text-[10px]">
+          PAGE 1 OF {totalPages} (1-{Math.min(postsPerPage, posts.length)} OF {posts.length})
         </p>
       </div>
     </section>

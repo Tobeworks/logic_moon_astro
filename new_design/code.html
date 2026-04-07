@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LOGIC MOON | ARCHIVE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f4dfc9",
+                    "primary-container": "#c6ac8f",
+                    "on-background": "#e6e1df",
+                    "secondary-fixed": "#ebe1d6",
+                    "error-container": "#93000a",
+                    "surface-dim": "#141312",
+                    "surface-tint": "#ddc2a4",
+                    "outline-variant": "#4d453d",
+                    "inverse-surface": "#e6e1df",
+                    "on-surface": "#e6e1df",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#dcc8b3",
+                    "tertiary-fixed-dim": "#d7c3ae",
+                    "secondary-container": "#4c463e",
+                    "on-primary-fixed": "#271906",
+                    "on-secondary-fixed-variant": "#4c463e",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#524534",
+                    "secondary": "#cec5ba",
+                    "inverse-on-surface": "#32302f",
+                    "on-primary-container": "#524029",
+                    "inverse-primary": "#6f5b42",
+                    "primary-fixed": "#fbdebf",
+                    "outline": "#9a8f85",
+                    "surface-container-high": "#2b2a28",
+                    "surface-container-highest": "#363433",
+                    "primary": "#e3c7a9",
+                    "on-secondary-container": "#bdb4a9",
+                    "on-secondary": "#353028",
+                    "surface-container-lowest": "#0f0e0d",
+                    "on-secondary-fixed": "#1f1b14",
+                    "on-tertiary-fixed": "#241a0c",
+                    "surface-variant": "#363433",
+                    "surface": "#141312",
+                    "on-tertiary-container": "#4e4131",
+                    "on-primary-fixed-variant": "#56432d",
+                    "primary-fixed-dim": "#ddc2a4",
+                    "background": "#141312",
+                    "tertiary-container": "#c0ad98",
+                    "on-primary": "#3e2d18",
+                    "surface-bright": "#3b3937",
+                    "surface-container": "#211f1e",
+                    "on-surface-variant": "#d1c4b9",
+                    "on-tertiary": "#3a2e1f",
+                    "secondary-fixed-dim": "#cec5ba",
+                    "surface-container-low": "#1d1b1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #eae0d5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px #eae0d5;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 flex justify-between items-center w-full px-8 py-10 max-w-full bg-[#141312] z-50">
+<div class="text-xl font-bold tracking-tighter text-[#eae0d5]">LOGIC MOON</div>
+<div class="hidden md:flex gap-12">
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium text-[#e3c7a9] border-b border-[#e3c7a9] pb-1 hover:opacity-100 transition-opacity duration-300" href="#">DISCOGRAPHY</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium text-[#eae0d5] opacity-60 hover:opacity-100 transition-opacity duration-300" href="#">NEWS</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium text-[#eae0d5] opacity-60 hover:opacity-100 transition-opacity duration-300" href="#">ARCHIVE</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium text-[#eae0d5] opacity-60 hover:opacity-100 transition-opacity duration-300" href="#">CONTACT</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#eae0d5] Active: scale-95 transition-transform">menu</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="min-h-[819px] flex flex-col justify-center px-8 md:px-16 mb-32">
+<h1 class="text-[12vw] md:text-[15vw] font-black leading-[0.8] tracking-tighter text-[#eae0d5] uppercase">
+                LOGIC<br/>MOON
+            </h1>
+<div class="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<p class="max-w-md text-lg font-light leading-relaxed opacity-80">
+                    AN ARCHITECTURAL EXPLORATION OF AMBIENT SOUNDSCAPES AND GEOMETRIC SOUND DESIGN BY TOBIAS LORSBACH.
+                </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                        LATEST RELEASE
+                    </button>
+<button class="border border-outline-variant/20 text-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-surface-container transition-colors">
+                        EXPLORE SOUND
+                    </button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-surface-container-low py-32 px-8 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<div class="md:col-span-5">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-8 block">THE ARCHITECT</span>
+<h2 class="text-4xl md:text-6xl font-bold mb-12 tracking-tight">TOBIAS LORSBACH</h2>
+<div class="space-y-6 text-on-surface-variant font-light leading-relaxed max-w-sm">
+<p>Based in Mainz, Germany, Logic Moon is the main project of composer Tobias Lorsbach.</p>
+<p>His work bridges the gap between neoclassical textures and industrial weight, creating immersive environments that reward deep listening and spatial awareness.</p>
+</div>
+</div>
+<div class="md:col-span-7 flex justify-end">
+<div class="w-full max-w-2xl bg-surface-container-lowest">
+<img alt="Tobias Lorsbach" class="w-full grayscale brightness-90 hover:grayscale-0 transition-all duration-700 aspect-[4/5] object-cover" data-alt="high-contrast black and white portrait of a male musician in a minimalist studio setting with dramatic shadows and hard lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Qe9VbwImp85Wt1dtsSZ4oqDTlA3HHqAk9vA8Vajcm5zwDTilPbz4kkrTdKe9ITFNSU63_E-iULt6fduBv5nC-M8XppaJDI6b7lm9Raz7v-lfnecfB0nRc_72lGyFOIJCgVlmuf6HfqdmHcNng50Z8CUbz9S9-R1Sr6-bbaBWvagUzlvEw2iyPZv6XTBbJH1uGKxf2sCwQHUObVpiYc-19MZ3TBrk8Fhd1UhNlV1rAooYECieyJFgt5qBigYAQQ67sOWHKxd2vrw"/>
+</div>
+</div>
+</section>
+<!-- Latest News Section (Editorial) -->
+<section class="py-32 px-8 md:px-16">
+<div class="mb-24">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-4 block">NEWSFEED</span>
+<h2 class="text-4xl font-bold tracking-tight">RECENT DEVELOPMENTS</h2>
+</div>
+<div class="group cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-outline-variant/10 pb-16">
+<div class="md:col-span-8">
+<span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">October 2023</span>
+<h3 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none group-hover:text-primary transition-colors duration-500 italic">NEW ARCHIVE: "FRACTURED GEOMETRY" NOW LIVE</h3>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<span class="material-symbols-outlined text-6xl group-hover:translate-x-4 transition-transform duration-500">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Discography Section -->
+<section class="py-32 px-8 md:px-16 bg-surface">
+<div class="flex justify-between items-end mb-24">
+<div>
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-4 block">COLLECTION</span>
+<h2 class="text-4xl md:text-6xl font-bold tracking-tight">DISCOGRAPHY</h2>
+</div>
+<button class="uppercase text-[10px] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all">VIEW ALL</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Album 1 -->
+<div class="flex flex-col gap-6">
+<div class="aspect-square bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="minimalist album cover art featuring abstract geometric shapes in muted earth tones on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmvd3XVlKGgNUbNMfVH1FfIaEAgIEjivAOIO9eiPYU8WU171nIf0d8EOQI5YRc7darFGGF6qGdm0hxGaeW-qGjz6FZ70t1zjwYbEVxJqe9Yo4znoZi-_-jQy6iUCdLLIxLzgMl1khhJAoZja3QWPkcqsOca0Y64zTp4uAvnlR6ZGCsdZN1CxaqziLl-sDUxU7xUx9lhv6acIzyjDDqlkma-fqKSm2wg-Wvb6uK6uLKUM8Hgg6CKSAiVUDOyYN3yWA28A0Ifib3lzM"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">DUSK ARCHIVE</h4>
+<p class="text-xs opacity-50 uppercase tracking-widest mt-1">2023 • DIGITAL/VINYL</p>
+</div>
+</div>
+<!-- Album 2 -->
+<div class="flex flex-col gap-6 mt-12 md:mt-0">
+<div class="aspect-square bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="abstract architectural photography of concrete structures with sharp angles and dramatic shadows, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf_sTF3HY7RcGBfg0sJLCYG8T9Aq7WqN3ptJz02z6zz_xfcc0W4fPu67v6XbLRBkzlo7dUfpierBbcYFM7xc_TH-ton9_ZE1noPLhcLsi6W1U2Gj938H_L1nb1vh0M59CQwXKCVqjx0BK9LzJV2zHBMVpammasBPOOxRWEP2DTDKU1y4MSUcOFnOJovQ0QMJfKXkdSQXkDBebvuNS3pohuMXJ_-3aGEFXLykPtanh7peygV1P367G2AAAi3xjibb1oO6aLDzDFmrQ"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">MONOLITHIC SPACE</h4>
+<p class="text-xs opacity-50 uppercase tracking-widest mt-1">2022 • DIGITAL</p>
+</div>
+</div>
+<!-- Album 3 -->
+<div class="flex flex-col gap-6">
+<div class="aspect-square bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="dark atmospheric landscape photography of a lone building in a vast foggy plain under a dim moon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADErQie1Qa2E19e0wdrOjbCzwhNYalNC2W_4-oDSxQQdhljcW8ABiaxzQyB1DvWhYZ05R3DvtMLMNPaYohIdfHvjCXBjofXWkn9Xs0lqzZf8TjL7LZFj655PeubIE53RBmHUURKLWhtJoEHChkvgNIh8MgCj0ArSXxKFTYxuzyQM69Xq3k86IBSi3DXF6AMb2XWdhl7xKtgTVBc_mkbo2k2Q2wT8TgHIj8n_2uqqNUIQkU7-ICUVuOb6dgaCgiRbWuE17-4vDKXe4"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">GHOST THEORY</h4>
+<p class="text-xs opacity-50 uppercase tracking-widest mt-1">2021 • VINYL</p>
+</div>
+</div>
+<!-- Album 4 -->
+<div class="flex flex-col gap-6 mt-12 md:mt-0">
+<div class="aspect-square bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="minimalist texture of dark scratched metal surface with subtle bronze highlights and industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9tA_mrk7oWU8m8SCelSgv4mwhUNi7x6odqNilmocYE1-jgPpECzkMqDLVCyT8Mj9SeWCLRkxsYTtuzEGpeVY6gRU4Z4LsRkdcEyGHORAP1AVmuD0PAcSCV9eq-P8-Xx7yaWKn1Mo1hL0ADMyZsLe1KEL4kSJt0D8K6rJkLEaRHuTkgstUEtaTX1K2eB8WRR-IASjW6zIT6qykLOflF2K0fkdU_cHOxG7iSw2qLdPpXX1Zc7ZAK4G-ZcSOVMJjerKIdG92DKzAEWw"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">REDUCED FORM</h4>
+<p class="text-xs opacity-50 uppercase tracking-widest mt-1">2020 • DIGITAL</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Media Section (YouTube/Playlists) -->
+<section class="py-32 px-8 md:px-16 bg-surface-container-lowest grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+<div class="bg-surface-container-lowest p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-8 block">CURATED SOUNDS</span>
+<h2 class="text-5xl font-black italic tracking-tighter">SPOTIFY<br/>PLAYLISTS</h2>
+</div>
+<div class="space-y-4">
+<a class="flex justify-between items-center py-4 border-b border-outline-variant/10 group" href="#">
+<span class="text-lg opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all">AMBIENT ARCHIVE</span>
+<span class="material-symbols-outlined">north_east</span>
+</a>
+<a class="flex justify-between items-center py-4 border-b border-outline-variant/10 group" href="#">
+<span class="text-lg opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all">DARK NEOCLASSICAL</span>
+<span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-8 block">MOTION DESIGN</span>
+<h2 class="text-5xl font-black italic tracking-tighter">YOUTUBE<br/>CHANNEL</h2>
+</div>
+<div class="relative w-full aspect-video bg-surface overflow-hidden">
+<img class="w-full h-full object-cover opacity-50" data-alt="blurry motion photography of city lights at night, creating a cinematic and atmospheric bokeh effect for a music video" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbK_m1CnwboD1DORm7XlOby4BhIks8f_0VGJGq0ri73_l0v9pUL6eduqXsrE115qCYKVU7mLjKmS8BQ9KQ2X4c6PgFi2J2sGsIgQDk3KKsnyHbT5KfPkMsStlHbJUigz_o0KDGMrzH0MQ8cecBRhHCOw7mEC8qJa94apOAPC_VD1RCJ3dgMzF3w-3PJ995ysPVHe8ovywJLfUxt73nDXvbEhCUFWDXAvazVyBlAyBfYj1KynZOGrOJzpLloW39vu72FgqDKeoB6I"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-48 px-8 md:px-16">
+<div class="max-w-4xl mx-auto">
+<div class="mb-24 text-center">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary mb-4 block">COMMUNICATION</span>
+<h2 class="text-4xl md:text-7xl font-bold tracking-tight uppercase">GET IN TOUCH</h2>
+</div>
+<form class="space-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-colors text-sm uppercase tracking-widest placeholder:text-outline-variant/50" placeholder="NAME" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-colors text-sm uppercase tracking-widest placeholder:text-outline-variant/50" placeholder="EMAIL" type="email"/>
+</div>
+</div>
+<div class="relative group">
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-colors text-sm uppercase tracking-widest placeholder:text-outline-variant/50 resize-none" placeholder="MESSAGE" rows="4"></textarea>
+</div>
+<div class="flex justify-center">
+<button class="group relative flex items-center gap-4 text-xs font-black tracking-[0.3em] uppercase" type="submit">
+<span>SEND TRANSMISSION</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0f0e0d] border-t border-[#eae0d5]/10 flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-8">
+<div class="text-sm font-bold text-[#eae0d5]">LOGIC MOON</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-[10px] text-[#eae0d5]/40 hover:text-[#e3c7a9] transition-colors duration-300" href="#">INSTAGRAM</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-[10px] text-[#eae0d5]/40 hover:text-[#e3c7a9] transition-colors duration-300" href="#">SPOTIFY</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-[10px] text-[#eae0d5]/40 hover:text-[#e3c7a9] transition-colors duration-300" href="#">BANDCAMP</a>
+<a class="font-['Inter'] uppercase tracking-[0.05em] text-[10px] text-[#eae0d5]/40 hover:text-[#e3c7a9] transition-colors duration-300" href="#">EMAIL</a>
+</div>
+<div class="font-['Inter'] uppercase tracking-[0.05em] text-[10px] text-[#eae0d5]/40">
+            © LOGIC MOON ARCHIVE. UNCOMPROMISING GEOMETRY.
+        </div>
+</footer>
+</body></html>

@@ -1,104 +1,52 @@
 ---
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
-import HeroAnimation from "./HeroAnimation.astro";
 ---
 
-<section class="min-h-screen w-full relative overflow-hidden">
+<section class="min-h-screen w-full relative overflow-hidden flex flex-col justify-center px-8 md:px-16">
+  <!-- Subtle Background Image -->
   <div
-    id="anime-demo"
-    class="absolute top-6 right-6 w-3 h-3 rounded-full bg-accent-500"
-    aria-hidden="true">
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-10">
   </div>
+  
+  <!-- Gradient Overlay -->
   <div
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-25">
-  </div>
-  <div
-    class="absolute inset-0 bg-gradient-to-b from-primary-500/80 via-primary-500/70 to-primary-500">
+    class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/70 to-surface">
   </div>
 
-  <div
-    class="w-full mx-auto px-0 md:px-8 max-w-6xl min-h-screen relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr,0.9fr] py-24 md:py-28">
-    <div>
-      <div
-        class="text-xs tracking-[0.35em] uppercase text-accent-500 font-semibold mb-4 font-mono"
-        data-hero-anim>
-        Ambient / Cinematic / Electronic
-      </div>
-      <h1
-        class="text-secondary-200 mono uppercase font-thin"
-        data-hero-anim>
-        <span class="word" data-word="logic">Logic</span>
-        <span class="word" data-word="moon">Moon</span>
-      </h1>
-      <h2
-        class="mt-4 mb-6 text-secondary-400 font-thin text-md uppercase"
-        data-hero-anim>
-        Soundscapes
-      </h2>
-      <div
-        class="mt-16 flex items-center gap-6 text-secondary-500 text-xs uppercase tracking-[0.25em] font-mono"
-        data-hero-anim>
-        <span>Mainz</span>
-        <span class="h-px w-12 bg-secondary-700"></span>
-        <span>Since 2011</span>
+  <!-- Content -->
+  <div class="w-full mx-auto max-w-6xl relative z-10" data-aos="fade-up">
+    <h1
+      class="text-[12vw] md:text-[15vw] font-black leading-[0.8] tracking-tighter text-on-surface uppercase">
+      LOGIC<br/>MOON
+    </h1>
+    
+    <div class="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <p class="max-w-md text-lg font-light leading-relaxed opacity-80 uppercase">
+        AN ARCHITECTURAL EXPLORATION OF SOUNDSCAPES AND GEOMETRIC SOUND DESIGN.
+      </p>
+      
+      <div class="flex gap-4">
+        <a href="#disco" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline">
+          LATEST RELEASE
+        </a>
+        <a href="#disco" class="border border-outline-variant/20 text-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-surface-container transition-colors no-underline">
+          EXPLORE SOUND
+        </a>
       </div>
     </div>
+  </div>
 
-    <div
-      class="absolute bottom-12 left-1/2 -translate-x-1/2"
-      data-aos="fade-down"
-      data-aos-delay="800">
-      <a href="#about" class="scroller" title="scrolldown" aria-label="about">
-        <ChevronDownIcon class="w-10 text-accent-500" />
-      </a>
-    </div>
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-12 left-1/2 -translate-x-1/2"
+    data-aos="fade-down"
+    data-aos-delay="800">
+    <a href="#about" class="scroller" title="Scroll down" aria-label="About">
+      <ChevronDownIcon class="w-10 text-primary" />
+    </a>
   </div>
 </section>
-<HeroAnimation />
 
 <script type="module" is:inline>
-  import { animate } from "animejs/animation";
-  import { stagger } from "animejs/utils";
-
-  window.__heroAnimLoaded = true;
-
-  function runHeroAnim() {
-    const demo = document.getElementById("anime-demo");
-    if (demo) {
-      animate(demo, {
-        translateY: [0, -14],
-        direction: "alternate",
-        loop: true,
-        duration: 800,
-        easing: "easeInOutSine",
-      });
-    }
-
-    const items = document.querySelectorAll("[data-hero-anim]");
-    if (!items.length) return;
-
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReduced) return;
-
-    requestAnimationFrame(() => {
-      items.forEach((el) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(12px)";
-      });
-
-      requestAnimationFrame(() => {
-        animate(items, {
-          opacity: [0, 1],
-          translateY: [12, 0],
-          scale: [0.98, 1],
-          duration: 900,
-          easing: "easeOutCubic",
-          delay: stagger(140, { start: 1500 }),
-        });
-      });
-    });
-  }
-  runHeroAnim();
+  // Hero animation removed per design spec - minimalistic approach
 </script>
