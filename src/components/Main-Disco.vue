@@ -1,5 +1,5 @@
 <template>
-    <section class="main-section bg-dark" id="disco">
+    <section class="py-20 bg-primary-600" id="disco">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div class="mobile-bg">
@@ -10,7 +10,7 @@
                         To listen to the release, click the cover to open the player.
                     </p>
                     <div id="discogrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 justify-start">
-                        <a href="#!" class="grid-item m-2 pointer" data-year="2022" :data-release-id="release.release_id" v-for="release in releases.sort((a, b) => (a.id > b.id) ? -1 : 1)" :key="release.id">
+                        <a href="#!" class="m-2 block overflow-hidden transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0" data-year="2022" :data-release-id="release.release_id" v-for="release in releases.sort((a, b) => (a.id > b.id) ? -1 : 1)" :key="release.id">
                             <img :src="require(`@/assets/img/covers/${release.cover}`)" :alt="release.title" />
                         </a>
                         <div class="js-shuffle-sizer"></div>

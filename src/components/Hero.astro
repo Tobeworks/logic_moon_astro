@@ -1,0 +1,52 @@
+---
+import { ChevronDownIcon } from "@heroicons/vue/24/solid";
+---
+
+<section class="min-h-screen w-full relative overflow-hidden flex flex-col justify-center px-8 md:px-16">
+  <!-- Subtle Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-bg opacity-10">
+  </div>
+  
+  <!-- Gradient Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/70 to-surface">
+  </div>
+
+  <!-- Content -->
+  <div class="w-full mx-auto max-w-6xl relative z-10" data-aos="fade-up">
+    <h1
+      class="text-[12vw] md:text-[15vw] font-black leading-[0.8] tracking-tighter text-on-surface uppercase">
+      LOGIC<br/>MOON
+    </h1>
+    
+    <div class="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <p class="max-w-md text-lg font-light leading-relaxed opacity-80 uppercase">
+        AN ARCHITECTURAL EXPLORATION OF SOUNDSCAPES AND GEOMETRIC SOUND DESIGN.
+      </p>
+      
+      <div class="flex gap-4">
+        <a href="#disco" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline">
+          LATEST RELEASE
+        </a>
+        <a href="#disco" class="border border-outline-variant/20 text-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-surface-container transition-colors no-underline">
+          EXPLORE SOUND
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-12 left-1/2 -translate-x-1/2"
+    data-aos="fade-down"
+    data-aos-delay="800">
+    <a href="#about" class="scroller" title="Scroll down" aria-label="About">
+      <ChevronDownIcon class="w-10 text-primary" />
+    </a>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  // Hero animation removed per design spec - minimalistic approach
+</script>

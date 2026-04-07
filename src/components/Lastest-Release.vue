@@ -1,5 +1,5 @@
 <template>
-    <section class="main-section" id="latest_release">
+    <section class="py-20" id="latest_release">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div>

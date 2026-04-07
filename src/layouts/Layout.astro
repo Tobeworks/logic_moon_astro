@@ -1,8 +1,9 @@
 ---
-import "@fontsource-variable/assistant";
-import "@fontsource-variable/cinzel";
-import { SEO } from "astro-seo";
-import "../assets/style.css";
+import "../styles/global.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/geist-mono";
+//import { SEO } from "astro-seo";
+//import "../assets/style.css";
 import "aos/dist/aos.css";
 
 interface Props {
@@ -23,7 +24,7 @@ const {
 
 const canonicalURL = new URL(
   Astro.url.pathname,
-  Astro.site || "https://logic-moon.de"
+  Astro.site || "https://logic-moon.de",
 );
 const imageURL = new URL(image, Astro.site || "https://logic-moon.de");
 ---

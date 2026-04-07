@@ -5,79 +5,62 @@ const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const latestPost = posts[0];
+const latestPosts = posts.slice(0, 3);
 ---
 
 {
-  latestPost && (
-    <section class="p-4 md:p-20 bg-secondary text-secondary-400" id="news">
+  latestPosts.length > 0 && (
+    <section class="py-32 px-8 md:px-16 bg-surface" id="news">
       <div class="container mx-auto">
-        <div
-          class="grid grid-cols-1 w-full md:w-2/3 mx-auto"
-          data-aos="fade-up">
-          <h2 class="block text-3xl md:text-5xl text-start md:mb-12 mx-0 text-primary">
-            Latest News
+        <div class="mb-24" data-aos="fade-up">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+            NEWSFEED
+          </span>
+          <h2 class="text-4xl font-bold tracking-tight">
+            RECENT DEVELOPMENTS
           </h2>
+        </div>
 
-          <div class="mx-auto">
-            <article class="bg-secondary-300  overflow-hidden">
-              {latestPost.data.image && (
-                <div class="aspect-video overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {latestPosts.map((post) => (
+            <article class="group cursor-pointer" data-aos="fade-up">
+              {post.data.image && (
+                <div class="h-64 bg-surface-container-lowest rounded-none mb-6 overflow-hidden">
                   <img
-                    src={latestPost.data.image}
-                    alt={latestPost.data.title}
-                    class="w-full h-full object-cover"
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
               )}
-              <div class="p-4 md:p-8">
-                <div class="flex justify-between items-start mb-4">
-                  <h3 class="text-2xl md:text-3xl font-semibold text-primary-500 leading-tight">
-                    <a
-                      href={`/news/${latestPost.slug}`}
-                      class="hover:text-primary-400 transition-colors duration-200">
-                      {latestPost.data.title}
-                    </a>
-                  </h3>
-                  <time
-                    datetime={latestPost.data.pubDate.toISOString()}
-                    class="text-grey-500 text-sm whitespace-nowrap ml-4">
-                    {latestPost.data.pubDate.toLocaleDateString("en-EN", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </time>
-                </div>
-
-                <p class="text-grey-700 text-lg leading-relaxed mb-6">
-                  {latestPost.data.description}
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
-                  <a
-                    href={`/news/${latestPost.slug}`}
-                    class="bg-primary-500 hover:bg-primary-400 text-secondary-50 font-bold py-2 px-4 rounded transition-colors duration-200 inline-block hover:no-underline">
-                    read the post
-                  </a>
-
-                  {/* <a
-                  href="/news"
-                  class="text-primary-500 hover:text-primary-400 transition-colors duration-200 font-medium">
-                  Show all →
-                </a> */}
-                </div>
-              </div>
+              <span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">
+                {post.data.pubDate.toLocaleDateString("en-EN", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+              <h3 class="text-2xl md:text-3xl font-bold tracking-tighter leading-none group-hover:text-primary transition-colors duration-500 mb-4">
+                <a href={`/news/${post.slug}`} class="no-underline">
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
+                {post.data.description}
+              </p>
+              <a href={`/news/${post.slug}`} class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300 no-underline">
+                READ <span>→</span>
+              </a>
             </article>
-          </div>
+          ))}
+        </div>
+
+        <div class="flex justify-center mt-16">
+          <a href="/news" class="uppercase text-[10px] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all no-underline">
+            VIEW ALL NEWS →
+          </a>
         </div>
       </div>
     </section>
   )
 }
-
-<style>
-  .main-section {
-    min-height: 60vh;
-  }
-</style>

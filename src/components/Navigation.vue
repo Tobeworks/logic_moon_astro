@@ -1,46 +1,42 @@
 <template>
     <div class="">
-        <header class="fixed md:shadow-xl inset-x-0 top-0 z-50 bg-primary-600 bg-opacity-0 md:bg-opacity-50 md:backdrop-blur-sm text-secondary-500" data-aos="fade-down">
+        <header class="fixed inset-x-0 top-0 z-50 bg-surface/90 backdrop-blur-md text-on-surface" data-aos="fade-down">
 
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Main">
-                <div class=" hidden md:flex md:flex-1 md:justify-center">
-                    <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" class="flex items-center text-base font-semibold leading-6 text-secondary-500 uppercase ml-3 hover:text-secondary-100 scroller hover:no-underline">
-                        <span>{{ item.name }}</span>
-                        <div v-if="index < navigation.length - 1" class=" h-5 ml-3"></div>
+            <nav class="flex items-center justify-between px-8 py-10" aria-label="Main">
+                <a href="/" class="text-xl font-bold tracking-tighter text-on-surface hover:text-primary transition-colors no-underline">
+                    LOGIC MOON
+                </a>
+                <div class="hidden md:flex md:flex-1 md:justify-end gap-12">
+                    <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" 
+                       class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium transition-opacity duration-300 hover:no-underline"
+                       :class="isActive(item.href) ? 'text-primary border-b border-primary pb-1' : 'text-on-surface opacity-60 hover:opacity-100'">
+                        {{ item.name }}
                     </a>
                 </div>
             </nav>
 
-            <div class="w-10 h-10 absolute md:hidden top-6 right-6">
-                <button type="button" class="ring-0 border-0" @click="mobileMenuOpen = true" aria-label="Open main menu">
-                    <svg viewBox="0 0 16 16" fill="currentColor" class="bi bi-list text-light w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            <div class="w-10 h-10 absolute md:hidden top-5 right-6">
+                <button type="button" class="ring-0 border-0 text-on-surface hover:text-primary transition-colors" @click="mobileMenuOpen = true" aria-label="Open main menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="square" stroke-linejoin="miter" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
 
             <TransitionRoot :show="mobileMenuOpen" as="template">
-                <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false">
+                <Dialog as="div" class="lg:hidden fixed inset-0 z-50 flex items-center justify-center" @close="mobileMenuOpen = false">
                     <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-                        <div class="fixed inset-0 bg-gray-900/80" />
+                        <div class="fixed inset-0 bg-surface-dim" />
                     </TransitionChild>
-                    <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-
-                        <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-primary-600 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                            <DialogTitle class="sr-only">Main Menu</DialogTitle>
-                            <div class="w-10 h-10 absolute md:hidden top-6 right-6">
-                                <button type="button" @click="mobileMenuOpen = false" class="mb-4 inline-flex items-center justify-center p-2 rounded-full text-secondary-500 hover:text-secondary-200 ring-0 border-0" aria-label="Close menu">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="flex flex-col items-center justify-center text-center h-screen">
-                                <div class="-my-6 divide-y divide-gray-500/10">
-                                    <div class="py-6">
-                                        <a v-for="item in navigation" :key="item.name" :href="item.href" class="scroller -mx-3 block rounded-lg px-3 py-2 font-semibold text-secondary-600 hover:text-secondary-200 uppercase text-lg" @click="mobileMenuOpen = false">{{ item.name }}</a>
-                                    </div>
-                                </div>
+                    <TransitionChild as="template" enter="transition-transform ease-out duration-300" enter-from="scale-95 opacity-0" enter-to="scale-100 opacity-100" leave="transition-transform ease-in duration-200" leave-from="scale-100 opacity-100" leave-to="scale-95 opacity-0">
+                        <DialogPanel class="relative w-full h-full flex flex-col items-center justify-center px-8 py-16 bg-surface-dim">
+                            <button type="button" @click="mobileMenuOpen = false" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors p-2" aria-label="Close menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8" aria-hidden="true">
+                                    <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                            <div class="text-center space-y-8">
+                                <a v-for="item in navigation" :key="item.name" :href="item.href" class="block py-4 font-bold text-on-surface opacity-70 hover:opacity-100 hover:text-primary uppercase text-2xl tracking-[0.1em] transition-all" @click="mobileMenuOpen = false">{{ item.name }}</a>
                             </div>
                         </DialogPanel>
                     </TransitionChild>
@@ -61,15 +57,20 @@ const prefix = ref('')
 const navigation = computed(() => [
     { name: 'Home', href: `/` },
     { name: 'News', href: '/news' },
-    { name: 'About', href: `${prefix.value}#about` },
-    // { name: 'Music', href: `${prefix.value}#music` },
+    { name: 'About', href: `/logic-moon-bio` },
+    { name: 'Discography', href: `/discography` },
     { name: 'Playlists', href: `${prefix.value}#playlists` },
-    { name: 'Discography', href: `${prefix.value}#disco` },
     { name: 'Cover Art', href: `/cover-art` },
     { name: 'Sounds', href: `/sounds` },
-    { name: 'Label', href: `/label/the-moon-records` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
+
+const isActive = (href) => {
+    if (typeof window === 'undefined') return false
+    const currentPath = window.location.pathname
+    if (href === '/') return currentPath === '/'
+    return currentPath.startsWith(href)
+}
 
 onMounted(() => {
     const currentPath = window.location.pathname;

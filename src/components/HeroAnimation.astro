@@ -1,0 +1,42 @@
+<script>
+  import { animate } from "animejs/animation";
+  import { stagger } from "animejs/utils";
+
+  function runHeroAnim() {
+    if (window.__heroAnimRan) return;
+    window.__heroAnimRan = true;
+
+    const items = document.querySelectorAll("[data-hero-anim]");
+    if (!items.length) return;
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReduced) return;
+
+    requestAnimationFrame(() => {
+      items.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(12px)";
+      });
+
+      requestAnimationFrame(() => {
+        animate(items, {
+          opacity: [0, 1],
+          translateY: [12, 0],
+          scale: [0.98, 1],
+          duration: 900,
+          easing: "easeOutCubic",
+          delay: stagger(140, { start: 1500 }),
+        });
+      });
+    });
+  }
+
+  if (document.readyState !== "loading") {
+    runHeroAnim();
+  } else {
+    document.addEventListener("DOMContentLoaded", runHeroAnim);
+  }
+  document.addEventListener("astro:page-load", runHeroAnim);
+</script>

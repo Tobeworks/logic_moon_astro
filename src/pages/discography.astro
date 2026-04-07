@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.vue";
+import Footer from "../components/Footer.astro";
+import Discography from "../components/Discography.vue";
+---
+
+<Layout title="Discography - Logic Moon">
+  <Navigation client:visible />
+  
+  <main class="bg-surface text-on-surface">
+    <!-- Hero Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
+      <div class="container mx-auto text-center">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+          COMPLETE COLLECTION
+        </span>
+        <h1 class="text-[clamp(48px,7vw,72px)] font-black tracking-tighter mb-4 text-on-surface uppercase">
+          DISCOGRAPHY
+        </h1>
+        <p class="text-on-surface-variant font-light leading-relaxed mt-6 max-w-3xl mx-auto">
+          All releases by Logic Moon from 2011 to present. Click on any album to view details and listen via Bandcamp.
+        </p>
+      </div>
+    </section>
+
+    <!-- Full Discography with Modal Player -->
+    <Discography 
+      client:load 
+      is-full-page 
+      section-id="full-discography"
+      header-label="COMPLETE COLLECTION"
+      title="ALL RELEASES"
+      :show-header="false"
+    />
+  </main>
+  
+  <Footer />
+</Layout>

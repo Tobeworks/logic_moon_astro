@@ -25,20 +25,50 @@ const images = Object.entries(coverArtModules).map(([path, module], index) => {
 
 <Layout title="Logic Moon Cover Art Gallery">
   <Navigation client:visible />
-  <main class="max-w-6xl md:mx-auto text-secondary-200 my-20 mx-4">
-    <section>
-      <h1
-        class="text-4xl font-bold text-center mb-8 text-gray-800"
-        data-aos="fade-up">
-        Cover Art Collection
-      </h1>
-      <p class="text-center" data-aos="fade-up">
-        Sometimes I`m designing cover arts for other artists and labels, too.
-        If you’re interested in a cover design for your project, just get in
-        touch with me.
-      </p>
-      <CoverArtGallery images={images} client:load />
+  
+  <main class="min-h-screen bg-surface text-on-surface">
+    <!-- Hero Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+          PORTFOLIO
+        </span>
+        <h1 class="text-[clamp(48px,7vw,72px)] font-black tracking-tighter mb-4 text-on-surface uppercase">
+          COVER ART
+        </h1>
+        <p class="text-on-surface-variant font-light leading-relaxed mt-6 max-w-2xl mx-auto">
+          Cover art designs for other artists and labels. Interested in a cover design for your project? Get in touch.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <CoverArtGallery images={images} client:load />
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+          GET IN TOUCH
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          INTERESTED IN A COVER DESIGN?
+        </h2>
+        <p class="text-on-surface-variant font-light leading-relaxed mb-12">
+          I create custom cover art for music releases across all genres.
+        </p>
+        <a 
+          href="/#contact" 
+          class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline inline-block">
+          CONTACT ME
+        </a>
+      </div>
     </section>
   </main>
+  
   <Footer />
 </Layout>
