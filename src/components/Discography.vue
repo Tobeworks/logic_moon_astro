@@ -31,7 +31,7 @@
                             <AlbumLinks :url="last_release.bandcamp" />
                         </div>
                         <div v-if="last_release.release_id" class="bg-surface-container-lowest p-4">
-                            <iframe class="border-0 w-full" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=none/transparent=true/`" style="height: 120px;" seamless title="Bandcamp Player"></iframe>
+                            <iframe class="border-0 w-full" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=none/transparent=true/`" style="height: 220px;" seamless title="Bandcamp Player"></iframe>
                         </div>
                     </div>
                 </div>
