@@ -11,13 +11,13 @@
                   v-if="!showAllReleases && !isFullPage"
                   @click="scrollToGrid" 
                   class="uppercase text-[10px] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all">
-                    VIEW ALL →
+                    View all →
                 </button>
             </div>
 
             <!-- Latest Release Section (only on homepage) -->
             <div class="mb-24" v-if="last_release && !showAllReleases && !isFullPage" data-aos="fade-up">
-                <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">LATEST RELEASE</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Latest Release</span>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <div class="bg-surface-container-lowest overflow-hidden">
                         <img :src="`/images/covers/${last_release.cover}`" :alt="last_release.title" class="w-full aspect-square object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
