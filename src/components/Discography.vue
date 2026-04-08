@@ -64,7 +64,7 @@
                     <div>
                         <h4 class="font-bold text-lg text-on-surface">{{ release.title }}</h4>
                         <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
-                            {{ release.year }} • DIGITAL/VINYL
+                            {{ release.year }}
                         </p>
                     </div>
                 </div>

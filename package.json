@@ -1,7 +1,7 @@
 {
   "name": "logicmoon_astro",
   "type": "module",
-  "version": "5.0.0",
+  "version": "5.0.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
