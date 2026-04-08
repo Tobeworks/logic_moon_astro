@@ -1,51 +1,62 @@
 ---
-import { ChevronDownIcon } from "@heroicons/vue/24/solid";
-import portrait from "../assets/img/portrait.webp";
 import Navigation from "../components/Navigation.vue";
-import Discography from "../components/Discography.vue";
 import Contact from "../components/Contact.vue";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Logic Moon">
-  <main>
-    <Navigation client:load />
-    <section class="py-20 bg-secondary-500 mt-16" id="impressum">
-      <div>
-        <div>
-          <div>
-            <div class="modal-header">
-              <h1 class="modal-title" id="impressumLabel">Impressum</h1>
-            </div>
-            <div class="modal-body">
-              <img
-                src="/images/TWBlack.png"
-                alt="Tobeworks Logo"
-                width="120"
-              /><br />
-              <strong>Tobeworks - Tobias Lorsbach<br /> </strong>
-              Neue Universitätsstraße 7<br />
-              55116 Mainz<br /><br />
-              Mobil: 0179/1259004 <br />
-              <p class="reverseaddr">ed.skrowebot@ollah</p>
+<Layout title="Impressum - Logic Moon">
+  <Navigation client:visible />
+  
+  <main class="min-h-screen bg-surface text-on-surface">
+    <!-- Hero Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+          LEGAL
+        </span>
+        <h1 class="text-[clamp(48px,7vw,72px)] font-black tracking-tighter mb-4 text-on-surface uppercase">
+          IMPRESSUM
+        </h1>
+      </div>
+    </section>
 
-              Geschäftsführung: Tobias Lorsbach<br />
-
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-              Umsatzsteuergesetz: DE 021 843 01420<br />
-              <br />
-              Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen
-              wir keine Haftung für die Inhalte externer Links.<br />
-              Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber
-              verantwortlich.<p></p>
-              <br />
+    <!-- Content Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12">
+          <!-- Tobeworks Logo / Info -->
+          <div class="mb-12">
+            <div class="text-lg font-bold text-on-surface mb-2">Tobeworks - Tobias Lorsbach</div>
+            <div class="text-on-surface-variant font-light leading-relaxed space-y-4">
+              <p>
+                Neue Universitätsstraße 7<br />
+                55116 Mainz
+              </p>
+              <p>
+                Mobil: 0179/1259004<br />
+                <span class="reverseaddr">ed.skrowebot@ollah</span>
+              </p>
+              <p>
+                Geschäftsführung: Tobias Lorsbach<br />
+                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 021 843 01420
+              </p>
             </div>
+          </div>
+
+          <!-- Haftungshinweis -->
+          <div class="border-t border-outline-variant/10 pt-8">
+            <h2 class="text-xl font-bold text-on-surface mb-4">Haftungshinweis</h2>
+            <p class="text-on-surface-variant font-light leading-relaxed">
+              Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
+              Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+            </p>
           </div>
         </div>
       </div>
     </section>
   </main>
+  
   <Contact client:load />
   <Footer />
 </Layout>

@@ -169,7 +169,8 @@ const displayedReleases = computed(() => {
     if (props.isFullPage || showAllReleases.value) {
         return sortedReleases.value;
     }
-    return sortedReleases.value.slice(0, showitems);
+    // On homepage: skip the latest release (already shown in Latest Release section) + show next 8
+    return sortedReleases.value.slice(1, showitems + 1);
 });
 
 const scrollToGrid = () => {

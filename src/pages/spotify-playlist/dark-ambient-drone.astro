@@ -6,71 +6,99 @@ import { Image } from "astro:assets";
 import cover from "../../assets/img/playlists/dark cover.jpg";
 ---
 
-<Layout title="Logic Moon">
-    <main>
-        <Navigation client:visible />
-
-        <section class="py-20 bg-secondary-500" id="playlists">
-            <div class="flex flex-col w-full md:w-2/3 mx-auto">
-                <h1 class="text-center text-4xl" id="g" data-aos="fade-up">
-                    DARK - Dark Ambient
-                </h1>
-                <h2 class="text-xl text-center assistant font-mono uppercase tracking-[0.2em]">Spotify Playlist</h2>
-                <div class="flex text-center justify-center">
-                    <Image
-                        src={cover}
-                        alt="DARK - Dark Ambient"
-                        class="aspect-square"
-                        width="500"
-                        height="500"
-                    />
-                </div>
-                <div class="my-6 text-center">
-                    Immerse yourself in the depths of darkness with DARK - Dark
-                    Ambient, a handselected curated playlist that explores the
-                    shadowy realms of atmospheric music. From haunting drones to
-                    melancholic soundscapes, this handselected collection delves
-                    into the essence of blackness, fog, abyss, and gloom.
-                    Experience a sonic journey that offers both introspection
-                    and escape, as you navigate through layers of dark ambient
-                    textures and emotionally charged compositions.
-
-                    <section>
-                        <h3 class="font-medium">Key Features</h3>
-                        <ul>
-                            <li>
-                                Expertly and handselected curated selection of
-                                top tier dark ambient tracks
-                            </li>
-                            <li>
-                                Encompasses drone, melancholia, and atmospheric
-                                gloom genres
-                            </li>
-                            <li>
-                                Immersive soundscapes that evoke feelings of
-                                darkness and introspection
-                            </li>
-                            <li>
-                                Ideal for deep focus, nighttime reflection,
-                                creative inspiration, and atmospheric
-                                enhancement
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-
-                <div>
-                    <iframe
-                        style="border-radius:12px"
-                        src="https://open.spotify.com/embed/playlist/0Hz6L9elW1DN4fPTVvb1uz?utm_source=generator&theme=0"
-                        width="100%"
-                        height="600"
-                        allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
-                </div>
+<Layout title="DARK - Dark Ambient | Logic Moon">
+  <Navigation client:visible />
+  
+  <main class="min-h-screen bg-surface text-on-surface">
+    <!-- Hero Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Cover Image -->
+          <div class="flex justify-center md:justify-start" data-aos="fade-right">
+            <div class="w-full max-w-md aspect-square bg-surface-container-lowest overflow-hidden">
+              <Image
+                src={cover}
+                alt="DARK - Dark Ambient"
+                class="w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-700"
+                width="500"
+                height="500"
+              />
             </div>
-        </section>
-        <Footer />
-    </main>
+          </div>
+          
+          <!-- Content -->
+          <div class="flex flex-col justify-center" data-aos="fade-left">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+              SPOTIFY PLAYLIST
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-on-surface uppercase">
+              DARK
+            </h1>
+            <p class="text-on-surface-variant font-light leading-relaxed mb-8">
+              Immerse yourself in the depths of darkness with DARK - Dark Ambient, a curated playlist that explores the shadowy realms of atmospheric music. From haunting drones to melancholic soundscapes.
+            </p>
+            
+            <!-- Key Features -->
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-lg">•</span>
+                <span class="text-on-surface-variant font-light text-sm">Expertly curated selection of dark ambient tracks</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-lg">•</span>
+                <span class="text-on-surface-variant font-light text-sm">Encompasses drone, melancholia, and atmospheric gloom</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-lg">•</span>
+                <span class="text-on-surface-variant font-light text-sm">Immersive soundscapes that evoke darkness and introspection</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-lg">•</span>
+                <span class="text-on-surface-variant font-light text-sm">Ideal for deep focus, nighttime reflection, and creative inspiration</span>
+              </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <a 
+              href="https://open.spotify.com/playlist/0Hz6L9elW1DN4fPTVvb1uz" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline inline-block text-center max-w-xs"
+            >
+              Listen on Spotify
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotify Player Section -->
+    <section class="py-32 px-8 md:px-16 bg-surface">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+            NOW PLAYING
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            FULL PLAYLIST
+          </h2>
+        </div>
+        
+        <div class="bg-surface-container-lowest border border-outline-variant/10 overflow-hidden" data-aos="fade-up">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/0Hz6L9elW1DN4fPTVvb1uz?utm_source=generator&theme=0"
+            width="100%"
+            height="600"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            class="border-0"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
 </Layout>

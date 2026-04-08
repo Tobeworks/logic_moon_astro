@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Custom Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 @theme {
   /* Font Families */
   --font-family-sans: "Inter Variable", sans-serif;
