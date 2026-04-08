@@ -2,7 +2,7 @@
     <TransitionRoot :show="isOpen" as="template">
         <Dialog as="div" class="relative z-50" @close="handleClose">
             <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-                <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" @click="handleClose" />
+                <div class="fixed inset-0 bg-black/90 backdrop-blur-sm transition-opacity" @click="handleClose" />
             </TransitionChild>
 
             <div class="fixed inset-0 z-50 overflow-hidden">
@@ -10,7 +10,7 @@
                     <TransitionChild as="template" enter="ease-out duration-500" enter-from="translate-y-full" enter-to="translate-y-0" leave="ease-in duration-300" leave-from="translate-y-0" leave-to="translate-y-full">
                         <DialogPanel class="relative w-full bg-primary-500 shadow-2xl transform transition-all h-[95vh] md:h-[85vh] md:rounded-t-3xl overflow-hidden flex flex-col">
 
-                            <button type="button" class="absolute right-4 top-4 md:right-6 md:top-6 z-10 rounded-full border border-secondary-400 bg-primary-500 p-3 md:p-2 text-secondary-400 hover:bg-secondary-400 hover:text-primary-500 transition-all shadow-lg" @click="handleClose" aria-label="Close modal">
+                            <button type="button" class="absolute right-4 top-4 md:right-6 md:top-6 z-10 rounded-full border border-secondary-400 bg-primary-500 p-3 md:p-2 text-secondary-400 hover:bg-secondary-400 hover:text-primary-500 transition-all shadow-lg cursor-pointer" @click="handleClose" aria-label="Close modal">
                                 <XMarkIcon class="h-7 w-7 md:h-6 md:w-6" />
                             </button>
 

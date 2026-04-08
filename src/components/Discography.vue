@@ -45,7 +45,7 @@
                     :class="index % 4 === 1 || index % 4 === 3 ? 'mt-12 md:mt-0' : ''"
                     class="flex flex-col gap-6"
                     data-aos="fade-up"
-                    :data-aos-delay="index * 50"
+                    :data-aos-delay="index * 10"
                 >
                     <button 
                         type="button" 
@@ -92,7 +92,7 @@
 
             <div class="order-2 flex flex-col space-y-6">
                 <div>
-                    <div class="text-xs text-on-surface/40 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
+                    <div class="text-sm text-on-surface/60 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
                     <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ selectedRelease.title }}</h2>
 
                     <div v-if="selectedRelease.bandcamp" class="mb-6">

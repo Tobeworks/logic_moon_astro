@@ -10,7 +10,7 @@
             {{ error }}
         </div>
 
-        <a v-else-if="pageUrl" :href="pageUrl" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-4 py-3 bg-accent-500 border border-accent-700 text-primary-900 rounded-lg font-medium text-sm hover:bg-accent-600 transition-all group">
+        <a v-else-if="pageUrl" :href="pageUrl" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-4 py-3 bg-accent-500 borde text-primary-900 font-medium text-sm hover:bg-accent-600 transition-all group">
             <Music class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
             <span>Stream on all platforms</span>
             <ExternalLink class="w-4 h-4 ml-auto flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
