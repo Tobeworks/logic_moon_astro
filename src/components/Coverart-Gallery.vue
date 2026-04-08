@@ -19,9 +19,6 @@
                       loading="lazy" 
                     />
                 </div>
-                <div class="py-4">
-                    <p class="text-sm font-bold text-on-surface truncate">{{ image.title }}</p>
-                </div>
             </button>
         </div>
 
@@ -58,15 +55,6 @@
               class="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain" 
               @click.stop 
             />
-
-            <!-- Title -->
-            <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center">
-                <div class="bg-surface-container px-8 py-4">
-                    <p class="text-lg font-bold text-on-surface tracking-tight" :id="`lightbox-title-${currentIndex}`">
-                        {{ images[currentIndex].title }}
-                    </p>
-                </div>
-            </div>
 
             <!-- Previous Button -->
             <button 

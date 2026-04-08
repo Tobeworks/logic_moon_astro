@@ -216,7 +216,7 @@ input[type='submit']:hover {
 
 /* Footer */
 footer {
-  background-color: #0f0e0d;
+  background-color: var(--color-surface-container-lowest);
   background-size: cover;
   background-attachment: fixed;
   min-height: 300px;
@@ -233,7 +233,7 @@ footer {
   margin: 4px;
   overflow: visible;
   transform: matrix(1, 0, 0, 1, 0, 0);
-  color: #141312;
+  color: var(--color-surface);
 }
 
 /* Reverse Address (Spam Protection) */
@@ -284,12 +284,18 @@ footer {
 
 /* Utility: Text Stroke (for special effects) */
 .text-stroke {
-  -webkit-text-stroke: 1px #eae0d5;
+  -webkit-text-stroke: 1px var(--color-on-surface);
   color: transparent;
 }
 
 /* Selection Color */
 ::selection {
-  background-color: #e3c7a9;
-  color: #3e2d18;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
