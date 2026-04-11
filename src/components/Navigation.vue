@@ -26,21 +26,22 @@
             </div>
 
             <TransitionRoot :show="mobileMenuOpen" as="template">
-                <Dialog as="div" class="lg:hidden fixed inset-0 z-50 flex items-center justify-center" @close="mobileMenuOpen = false">
+                <Dialog as="div" class="fixed inset-0 z-[100]" @close="mobileMenuOpen = false">
                     <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-                        <div class="fixed inset-0 bg-surface-dim" />
+                        <div class="fixed inset-0 bg-black/50" />
                     </TransitionChild>
-                    <TransitionChild as="template" enter="transition-transform ease-out duration-300" enter-from="scale-95 opacity-0" enter-to="scale-100 opacity-100" leave="transition-transform ease-in duration-200" leave-from="scale-100 opacity-100" leave-to="scale-95 opacity-0">
-                        <DialogPanel class="relative w-full h-full flex flex-col items-center justify-center px-8 py-16 bg-surface-dim">
+                    <TransitionChild as="template" enter="transition-transform ease-out duration-300" enter-from="translate-x-full" enter-to="translate-x-0" leave="transition-transform ease-in duration-300" leave-from="translate-x-0" leave-to="translate-x-full">
+                        <DialogPanel class="fixed inset-0 overflow-y-auto flex flex-col items-center justify-center px-8 bg-surface-dim">
                             <button type="button" @click="mobileMenuOpen = false" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors p-2" aria-label="Close menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8" aria-hidden="true">
                                     <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
                             </button>
-                            <div class="text-center space-y-8">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href"
-                                   class="block py-4 font-bold uppercase text-2xl tracking-[0.1em] transition-all"
+                            <div class="text-center space-y-1">
+                                <a v-for="(item, index) in navigation" :key="item.name" :href="item.href"
+                                   class="nav-item block py-3 font-bold uppercase text-2xl tracking-[0.1em] transition-colors"
                                    :class="isActive(item.href) ? 'text-primary' : 'text-on-surface opacity-70 hover:opacity-100 hover:text-primary'"
+                                   :style="{ animationDelay: `${100 + index * 50}ms` }"
                                    @click="mobileMenuOpen = false">{{ item.name }}</a>
                             </div>
                         </DialogPanel>
@@ -118,6 +119,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@keyframes nav-item-enter {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-item {
+    animation: nav-item-enter 0.35s ease-out both;
+}
+
 .logo-slide-enter-active {
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
