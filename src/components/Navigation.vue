@@ -10,7 +10,7 @@
                 </Transition>
                 <div class="hidden md:flex md:flex-1 md:justify-end gap-12 h-8 items-center">
                     <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" 
-                       class="font-['Inter'] uppercase tracking-[0.05em] text-sm font-medium transition-opacity duration-300 hover:no-underline"
+                       class="uppercase tracking-[0.05em] text-sm font-medium transition-opacity duration-300 hover:no-underline"
                        :class="isActive(item.href) ? 'text-primary border-b border-primary pb-1' : 'text-on-surface opacity-60 hover:opacity-100'">
                         {{ item.name }}
                     </a>
@@ -26,7 +26,7 @@
             </div>
 
             <TransitionRoot :show="mobileMenuOpen" as="template">
-                <Dialog as="div" class="fixed inset-0 z-[100]" @close="mobileMenuOpen = false">
+                <Dialog as="div" class="fixed inset-0 z-100" @close="mobileMenuOpen = false">
                     <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
                         <div class="fixed inset-0 bg-black/50" />
                     </TransitionChild>
@@ -39,7 +39,7 @@
                             </button>
                             <div class="text-center space-y-1">
                                 <a v-for="(item, index) in navigation" :key="item.name" :href="item.href"
-                                   class="nav-item block py-3 font-bold uppercase text-2xl tracking-[0.1em] transition-colors"
+                                   class="nav-item block py-3 font-bold uppercase text-2xl tracking-widest transition-colors"
                                    :class="isActive(item.href) ? 'text-primary' : 'text-on-surface opacity-70 hover:opacity-100 hover:text-primary'"
                                    :style="{ animationDelay: `${100 + index * 50}ms` }"
                                    @click="mobileMenuOpen = false">{{ item.name }}</a>
