@@ -32,7 +32,7 @@
                     </TransitionChild>
                     <TransitionChild as="template" enter="transition-transform ease-out duration-300" enter-from="translate-x-full" enter-to="translate-x-0" leave="transition-transform ease-in duration-300" leave-from="translate-x-0" leave-to="translate-x-full">
                         <DialogPanel class="fixed inset-0 overflow-y-auto flex flex-col items-center justify-center px-8 bg-surface-dim">
-                            <button type="button" @click="mobileMenuOpen = false" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors p-2" aria-label="Close menu">
+                            <button type="button" @click="mobileMenuOpen = false" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors p-2 focus:outline-none focus-visible:outline-none" aria-label="Close menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8" aria-hidden="true">
                                     <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
