@@ -3,19 +3,21 @@
         <header class="fixed inset-x-0 top-0 z-50 bg-surface/90 backdrop-blur-md text-on-surface" data-aos="fade-down">
 
             <nav class="flex items-center justify-between px-8 py-10" aria-label="Main">
-                <a href="/" class="text-xl font-bold tracking-tighter text-on-surface hover:text-primary transition-colors no-underline">
-                    LOGIC MOON
-                </a>
-                <div class="hidden md:flex md:flex-1 md:justify-end gap-12">
+                <Transition name="logo-slide">
+                    <a v-if="logoVisible" href="/" class="text-xl font-bold tracking-tighter text-on-surface hover:text-primary no-underline uppercase" id="navigation-logo">
+                        Logic Moon
+                    </a>
+                </Transition>
+                <div class="hidden md:flex md:flex-1 md:justify-end gap-12 h-8 items-center">
                     <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" 
-                       class="font-['Inter'] uppercase tracking-[0.05em] text-xs font-medium transition-opacity duration-300 hover:no-underline"
+                       class="font-['Inter'] uppercase tracking-[0.05em] text-sm font-medium transition-opacity duration-300 hover:no-underline"
                        :class="isActive(item.href) ? 'text-primary border-b border-primary pb-1' : 'text-on-surface opacity-60 hover:opacity-100'">
                         {{ item.name }}
                     </a>
                 </div>
             </nav>
 
-            <div class="w-10 h-10 absolute md:hidden top-5 right-6">
+            <div class="w-10 h-10 absolute md:hidden top-9 right-6">
                 <button type="button" class="ring-0 border-0 text-on-surface hover:text-primary transition-colors" @click="mobileMenuOpen = true" aria-label="Open main menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="square" stroke-linejoin="miter" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -36,7 +38,10 @@
                                 </svg>
                             </button>
                             <div class="text-center space-y-8">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href" class="block py-4 font-bold text-on-surface opacity-70 hover:opacity-100 hover:text-primary uppercase text-2xl tracking-[0.1em] transition-all" @click="mobileMenuOpen = false">{{ item.name }}</a>
+                                <a v-for="item in navigation" :key="item.name" :href="item.href"
+                                   class="block py-4 font-bold uppercase text-2xl tracking-[0.1em] transition-all"
+                                   :class="isActive(item.href) ? 'text-primary' : 'text-on-surface opacity-70 hover:opacity-100 hover:text-primary'"
+                                   @click="mobileMenuOpen = false">{{ item.name }}</a>
                             </div>
                         </DialogPanel>
                     </TransitionChild>
@@ -53,6 +58,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } fro
 
 const mobileMenuOpen = ref(false)
 const prefix = ref('')
+const logoVisible = ref(true)
+const currentPath = ref('')
 
 const navigation = computed(() => [
     { name: 'Home', href: `/` },
@@ -66,22 +73,60 @@ const navigation = computed(() => [
 ])
 
 const isActive = (href) => {
-    if (typeof window === 'undefined') return false
-    const currentPath = window.location.pathname
-    if (href === '/') return currentPath === '/'
-    return currentPath.startsWith(href)
+    if (!currentPath.value) return false
+    if (href === '/') return currentPath.value === '/'
+    if (href.startsWith('#') || href.startsWith('/#')) return false
+    return currentPath.value.startsWith(href)
 }
 
 onMounted(() => {
-    const currentPath = window.location.pathname;
+    currentPath.value = window.location.pathname;
 
-    if (currentPath !== '/') {
+    if (currentPath.value !== '/') {
         prefix.value = '/';
-    }
-    else {
+    } else {
         prefix.value = ''
+    }
+
+    // On homepage mobile: hide logo until hero heading scrolls out of viewport
+    if (currentPath.value === '/') {
+
+        const isMobile = () => true
+
+        if (isMobile()) {
+            logoVisible.value = false
+        }
+
+        const heroHeading = document.querySelector('h1')
+        if (heroHeading) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (!isMobile()) {
+                        logoVisible.value = true
+                        return
+                    }
+                    logoVisible.value = !entry.isIntersecting
+                },
+                { threshold: 0 }
+            )
+            observer.observe(heroHeading)
+        }
     }
 })
 
 
 </script>
+
+<style scoped>
+.logo-slide-enter-active {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.logo-slide-enter-from {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+.logo-slide-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
