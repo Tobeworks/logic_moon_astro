@@ -1,6 +1,6 @@
 ---
 title: "I Started a Label. Here's Why."
-description: "The Moon Records is live — an independent beatless music label born out of necessity, curiosity, and a quiet obsession with the dark side of sound."
+description: "The Moon Records is live - an independent beatless music label born out of necessity, curiosity, and a quiet obsession with the deep side of sound."
 pubDate: 2026-04-18
 image: "/blog/the-moon.webp"
 draft: false
@@ -8,7 +8,7 @@ draft: false
 
 There's a question I've been asked more than once over the past few years: *"Why don't you just start your own label?"*
 
-My usual answer was something vague about complexity, about not wanting the overhead, about being perfectly happy releasing through existing channels. And I meant it — mostly.
+My usual answer was something vague about complexity, about not wanting the overhead, about being perfectly happy releasing through existing channels. And I meant it - mostly.
 
 But something shifted. Quietly, the way most important things do.
 
