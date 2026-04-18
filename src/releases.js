@@ -390,6 +390,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/clockworks'
     },
+    {
+        id: 52,
+        cover: 'cover_logic_moon_stellar_refuge.jpg',
+        year: '2026',
+        release_id: '1710582439',
+        title: 'Logic Moon - Stellar Refuge',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/stellar-refuge'
+    },
 
 ];
 export default releases;

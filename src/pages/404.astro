@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 — Logic Moon" description="Signal lost.">
+  <div class="page-404">
+    <div class="page-404__inner">
+
+      <span class="page-404__eyebrow">// SIGNAL_LOST</span>
+
+      <h1 class="page-404__title">404</h1>
+
+      <p class="page-404__body">
+        This transmission does not exist.
+      </p>
+
+      <a href="/" class="page-404__link">← Return to base</a>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-404 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+  }
+
+  .page-404__inner {
+    width: 100%;
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .page-404__eyebrow {
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .page-404__title {
+    font-family: var(--font-family-sans);
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--color-on-surface);
+    margin: 0;
+    /* text-stroke effect available in global.css */
+  }
+
+  .page-404__body {
+    font-family: var(--font-family-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.625;
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  .page-404__link {
+    font-family: var(--font-family-sans);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+    align-self: center;
+  }
+
+  .page-404__link:hover {
+    opacity: 0.7;
+  }
+</style>
