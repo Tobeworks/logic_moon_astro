@@ -18,7 +18,7 @@ I've been making music under the Logic Moon name for a while now. Cinematic ambi
 
 Both projects have found their audiences. Both have found homes on other labels, on streaming platforms, in playlists. That's been genuinely wonderful.
 
-But there was always a category of music I kept making that didn't quite fit anywhere. Music that was purely beatless, deeply minimal, not quite drone and not quite classical. Music that felt more like a place than a composition. I kept these recordings on hard drives, unsure what to do with them.
+But it was always a category of music I kept making that didn't quite fit anywhere. Music that was purely beatless, deeply minimal, not quite drone and not quite classical. Music that felt more like a place than a composition.
 
 Eventually I stopped asking where they belonged and started asking: *what if I just build the place?*
 
@@ -39,6 +39,18 @@ Honestly? Because the tools finally made it possible to do it properly without a
 The website is built from scratch. The infrastructure runs on Kubernetes. The promo system lets me send music to journalists and listeners directly, collect feedback, and build relationships. It's lean and it's mine, and I find that more exciting than I expected.
 
 There's something about owning the whole chain — from the recording to the release page to the email that lands in someone's inbox — that changes how you think about the music. Every decision is intentional. Nothing is there by default.
+
+## Not Just My Music
+
+Here's the part that excites me most: The Moon Records isn't just for my own work.
+
+One of the real reasons I started this — the reason I kept coming back to the idea when I tried to talk myself out of it — is that I wanted a home for other artists too. There are so many people making beautiful, quiet, beatless music who deserve a proper release, a proper page, a proper context. Music that gets lost in the noise because it doesn't fit neatly into the algorithmic boxes.
+
+I want to change that, in a small way.
+
+The plan is to carefully invite artists whose sound feels right — not because they sound like me, but because they belong in the same room. The same atmosphere. I'm not looking for a style, I'm looking for a feeling.
+
+If that sounds like you, the door is open. Reach out.
 
 ## What It Means for Logic Moon and Aethery Fields
 
