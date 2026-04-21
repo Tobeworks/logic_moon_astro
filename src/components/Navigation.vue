@@ -70,6 +70,7 @@ const navigation = computed(() => [
     { name: 'Playlists', href: `${prefix.value}#playlists` },
     { name: 'Cover Art', href: `/cover-art` },
     { name: 'Sounds', href: `/sounds` },
+    { name: 'Shop', href: `/shop` },
     { name: 'Contact', href: `${prefix.value}#contact` },
 ])
 
