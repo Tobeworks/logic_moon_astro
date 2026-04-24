@@ -1,0 +1,113 @@
+---
+import { ChevronDownIcon } from "@heroicons/vue/24/solid";
+import bgVideoMp4 from "../assets/hero-bg.mp4";
+import bgVideoWebm from "../assets/hero-bg.webm";
+---
+
+<section
+  class="min-h-screen w-full relative overflow-hidden flex flex-col justify-center px-8 md:px-16">
+  <!-- Video Background -->
+  <video
+    id="hero-video"
+    class="absolute inset-0 z-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+    muted
+    loop
+    playsinline
+    preload="none"
+    data-src-mp4={bgVideoMp4}
+    data-src-webm={bgVideoWebm}>
+  </video>
+
+  <!-- Gradient Overlay (wie beim alten Hero) -->
+  <div
+    class="absolute inset-0 z-10 bg-gradient-to-b from-surface/80 via-surface/70 to-surface">
+  </div>
+
+  <!-- Content -->
+  <div class="w-full mx-auto max-w-6xl relative z-20" data-aos="fade-up">
+    <h1
+      class="text-[12vw] md:text-[15vw] font-black leading-[0.8] tracking-tighter text-on-surface uppercase">
+      <span class="tracking-wide">LOGIC</span><br />MOON
+    </h1>
+
+    <div
+      class="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <p
+        class="max-w-2xl text-lg font-light leading-relaxed opacity-80 uppercase">
+        AN ARCHITECTURAL EXPLORATION OF SOUNDSCAPES <br
+          class="hidden sm:inline"
+        />
+        and Geometric Audio Design.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <a
+          href="#disco"
+          class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline text-center min-w-[200px] sm:min-w-[auto]">
+          Latest Release
+        </a>
+        <a
+          href="/logic-moon-bio"
+          class="border border-outline-variant/20 text-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-surface-container transition-colors no-underline text-center min-w-[200px] sm:min-w-[auto]">
+          Explore Sound
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Indicator -->
+<div
+  class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20"
+  data-aos="fade-down"
+  data-aos-delay="800">
+  <a href="#about" class="scroller" title="Scroll down" aria-label="About">
+    <ChevronDownIcon class="w-10 text-primary" />
+  </a>
+</div>
+
+<script>
+  function initHeroVideo() {
+    const video = document.getElementById(
+      "hero-video",
+    ) as HTMLVideoElement | null;
+    if (!video) return;
+
+    const load = () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (video.src) return;
+      const webm = video.dataset.srcWebm;
+      const mp4 = video.dataset.srcMp4;
+      if (webm) {
+        const s = document.createElement("source");
+        s.src = webm;
+        s.type = "video/webm";
+        video.appendChild(s);
+      }
+      if (mp4) {
+        const s = document.createElement("source");
+        s.src = mp4;
+        s.type = "video/mp4";
+        video.appendChild(s);
+      }
+      video.load();
+      video.play().catch(() => {});
+      video.addEventListener(
+        "canplay",
+        () => {
+          video.classList.remove("opacity-0");
+        },
+        { once: true },
+      );
+    };
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(load, { timeout: 2000 });
+    } else {
+      setTimeout(load, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initHeroVideo);
+  document.addEventListener("astro:page-load", initHeroVideo);
+</script>
