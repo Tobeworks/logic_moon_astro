@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  label?: string;
+}
+
+const {
+  title = "License My Music",
+  subtitle = "Looking for the perfect sound for your film, game, or project? Tracks and sounds available for sync, commercial and personal use.",
+  label = "Licensing Information",
+} = Astro.props;
+---
+
+<section class="py-32 px-8 md:px-16 bg-surface-container" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center">
+
+      <div>
+        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+          Licensing
+        </span>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight uppercase text-on-surface mb-6">
+          {title}
+        </h2>
+        <p class="text-on-surface/60 font-light leading-relaxed max-w-xl">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4 shrink-0">
+        <a
+          href="/licensing"
+          class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline text-center whitespace-nowrap">
+          {label}
+        </a>
+        <a
+          href="/licensing#contact"
+          class="border border-outline-variant/20 text-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-surface transition-colors no-underline text-center whitespace-nowrap">
+          Get in Touch
+        </a>
+      </div>
+
+    </div>
+
+    <div class="mt-16 grid grid-cols-3 gap-px bg-on-surface/10">
+      <div class="bg-surface-container px-6 py-5 text-center">
+        <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-1">Personal</p>
+        <p class="text-sm font-light text-on-surface/70">Art & Non-Commercial</p>
+      </div>
+      <div class="bg-surface-container px-6 py-5 text-center">
+        <p class="text-xs uppercase tracking-widest text-primary mb-1">Indie</p>
+        <p class="text-sm font-light text-on-surface/70">YouTube, Games & Film</p>
+      </div>
+      <div class="bg-surface-container px-6 py-5 text-center">
+        <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-1">Sync</p>
+        <p class="text-sm font-light text-on-surface/70">TV, Broadcast & Ads</p>
+      </div>
+    </div>
+
+  </div>
+</section>

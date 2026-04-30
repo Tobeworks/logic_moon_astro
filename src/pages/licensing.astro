@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.vue";
+import Contact from "../components/Contact.vue";
+---
+
+<Layout title="Logic Moon - Licensing">
+  <Navigation client:visible />
+
+  <main class="bg-surface text-on-surface min-h-screen">
+
+    <!-- Header -->
+    <section class="px-8 md:px-16 py-20">
+      <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <div class="w-1 h-20 bg-primary mx-auto mb-8"></div>
+        <h1 class="text-6xl md:text-8xl font-light tracking-wider mb-6 text-on-surface uppercase">
+          Licensing
+        </h1>
+        <p class="text-xl font-light text-on-surface/60 tracking-wide max-w-2xl mx-auto">
+          Use any of my tracks or sounds in your film, video, game or creative project.
+        </p>
+        <div class="w-32 h-px bg-on-surface/20 mx-auto mt-8"></div>
+      </div>
+
+      <!-- Intro -->
+      <div class="max-w-2xl mx-auto text-center mb-24">
+        <p class="text-on-surface/70 font-light leading-relaxed">
+          All tracks and sounds are available for licensing —
+          whether for sync placements, background music, games, installations,
+          or commercial productions. Each license is tailored to your project's needs.
+          Get in touch with a brief description and we'll find the right fit.
+        </p>
+      </div>
+
+      <!-- License Tiers -->
+      <div class="mb-24">
+        <p class="text-xs uppercase tracking-widest text-on-surface/40 text-center mb-12">License Types</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-on-surface/10">
+
+          <!-- Free -->
+          <div class="bg-surface p-8 flex flex-col">
+            <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-4">Free</p>
+            <p class="text-3xl font-light text-on-surface mb-2">€ 0</p>
+            <p class="text-xs text-on-surface/40 mb-6 uppercase tracking-wide">Creative Commons</p>
+            <ul class="space-y-3 text-sm font-light text-on-surface/70 flex-1">
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Non-commercial use</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Personal projects & art</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Attribution required</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Unlimited use</li>
+            </ul>
+          </div>
+
+          <!-- Indie -->
+          <div class="bg-surface-container p-8 flex flex-col border-t-2 border-primary">
+            <p class="text-xs uppercase tracking-widest text-primary mb-4">Indie</p>
+            <p class="text-3xl font-light text-on-surface mb-2">€ 15</p>
+            <p class="text-xs text-on-surface/40 mb-6 uppercase tracking-wide">per track / sound</p>
+            <ul class="space-y-3 text-sm font-light text-on-surface/70 flex-1">
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> YouTube & Social Media</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Podcasts & short films</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Indie games & apps</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Unlimited use</li>
+            </ul>
+          </div>
+
+          <!-- Commercial -->
+          <div class="bg-surface p-8 flex flex-col">
+            <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-4">Commercial</p>
+            <p class="text-3xl font-light text-on-surface mb-2">€ 49</p>
+            <p class="text-xs text-on-surface/40 mb-6 uppercase tracking-wide">per track / sound</p>
+            <ul class="space-y-3 text-sm font-light text-on-surface/70 flex-1">
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Advertising & branding</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Commercial apps & games</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Larger productions</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Unlimited use</li>
+            </ul>
+          </div>
+
+          <!-- Sync / Broadcast -->
+          <div class="bg-surface p-8 flex flex-col">
+            <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-4">Sync / Broadcast</p>
+            <p class="text-3xl font-light text-on-surface mb-2">auf Anfrage</p>
+            <p class="text-xs text-on-surface/40 mb-6 uppercase tracking-wide">custom</p>
+            <ul class="space-y-3 text-sm font-light text-on-surface/70 flex-1">
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> TV, Film & Streaming</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Worldwide clearance</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Exclusive options available</li>
+              <li class="flex items-start gap-2"><span class="text-primary mt-0.5">—</span> Unlimited use</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="text-center text-xs text-on-surface/30 font-light mt-6 tracking-wide">
+          All prices on request — custom arrangements possible for every project size.
+        </p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mb-32">
+        <p class="text-xs uppercase tracking-widest text-on-surface/40 text-center mb-20">Frequently Asked Questions</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">Can I use tracks in a YouTube video?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Yes — an Indie license covers YouTube and social media use without any limits. Just mention Logic Moon in the video description and you're good to go.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">Are Freesound uploads available for commercial use?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Sounds on Freesound are published under Creative Commons and free for non-commercial use with attribution. For commercial use beyond those terms, simply grab an Indie or Commercial license here.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">What's the difference between Indie and Commercial?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">It's about the nature and scale of your project — not the number of plays or views. Indie covers smaller, independent productions. Commercial covers advertising, larger apps, and professional productions with a direct revenue model.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">Do I need to credit Logic Moon?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">For the Free / CC tier, yes — attribution is required. For Indie and Commercial licenses, attribution is appreciated but not mandatory.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">Can I use the same license for multiple projects?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Each license covers one track or sound for unlimited use within a single project. If you need the same audio across multiple projects, you'll need a separate license per project — or get in touch for a bundle arrangement.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widests text-on-surface mb-4">Can I get an exclusive license?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Yes — exclusive licenses are available for Sync / Broadcast projects. This means the track would no longer be licensed to other parties after the agreement. Reach out to discuss terms and pricing.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">Can I license a full album or multiple tracks at once?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Absolutely. If you're looking to license several tracks or an entire release, get in touch directly and we'll work out a custom package.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">How fast do I get a reply?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Usually within 1–3 business days. For urgent requests, mention it in your message and I'll do my best to get back to you sooner.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 border-b md:border-b-0 py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">What format will I receive after purchase?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">After confirming your license, you'll receive a download link for the track or sound in high-quality WAV format, along with a simple license document for your records.</p>
+          </div>
+
+          <div class="border-t border-on-surface/10 border-b py-10">
+            <p class="text-base uppercase tracking-widest text-on-surface mb-4">I'm not sure which license I need — what should I do?</p>
+            <p class="font-light text-on-surface/60 leading-relaxed">Just reach out via the form below with a brief description of your project. I'll point you in the right direction — no commitment required.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div></section>
+
+    <!-- Contact Form -->
+    <Contact client:visible />
+
+    <Footer />
+  </main>
+</Layout>
