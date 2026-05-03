@@ -8,7 +8,7 @@
                         Logic Moon
                     </a>
                 </Transition>
-                <div class="hidden md:flex md:flex-1 md:justify-end gap-12 h-8 items-center">
+                <div class="hidden md:flex md:flex-1 md:justify-end gap-6 h-8 items-center">
                     <a v-for="(item, index) in navigation" :key="item.name" :href="item.href" 
                        class="uppercase tracking-[0.05em] text-sm font-medium transition-opacity duration-300 hover:no-underline"
                        :class="isActive(item.href) ? 'text-primary border-b border-primary pb-1' : 'text-on-surface opacity-60 hover:opacity-100'">
