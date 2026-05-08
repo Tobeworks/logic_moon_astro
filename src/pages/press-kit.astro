@@ -6,6 +6,7 @@ import Contact from "../components/Contact.vue";
 import press01 from "../assets/press-kit/logic moon_press01.jpg";
 import press02 from "../assets/press-kit/logic moon_press02.jpg";
 import press03 from "../assets/press-kit/logic moon_press03.jpg";
+import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
 ---
 
 <Layout title="Press Kit - Logic Moon">
@@ -87,37 +88,10 @@ import press03 from "../assets/press-kit/logic moon_press03.jpg";
           </h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-on-surface/10">
-          <div class="bg-surface-container-low p-10 space-y-6">
-            <p class="font-light text-on-surface/70 leading-relaxed">
-              Tobias Lorsbach is a Mainz, Germany-based artist known as <strong
-                class="text-on-surface font-medium">Logic Moon</strong
-              > and <strong class="text-on-surface font-medium"
-                >Aethery Fields</strong
-              >. His releases have appeared on internationally recognized labels
-              such as Whitelabrecs, Archives, Archipel, DRONARIVM,
-              Ambientologist, Shimmering Moods, Chitra and his own <a href="https://the-moon-records.de" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">The Moon Records</a>
-              imprint across both physical and digital formats.
-            </p>
-            <p class="font-light text-on-surface/70 leading-relaxed">
-              He spent many years in the minimal techno scenes since the early
-              2000s, and whilst out on a field recording excursion, he fell upon
-              the idea of layering some ambient drones. From here, his debut
-              album as Logic Moon was born — "Herbst11".
-            </p>
+          <div class="bg-surface-container-low p-10">
+            <ArtistBioParagraphs class="space-y-6 font-light text-on-surface/70 leading-relaxed" highlight="link" />
           </div>
-          <div class="bg-surface-container-low p-10 space-y-6">
-            <p class="font-light text-on-surface/70 leading-relaxed">
-              Tobias' musical background spans a widescreen of genres — from
-              performing guitar in a death metal band to a DJ career rooted in
-              techno, and now establishing himself as a prominent voice in
-              ambient music. His varied experiences are clearly evident in his
-              acclaimed albums.
-            </p>
-            <p class="font-light text-on-surface/70 leading-relaxed">
-              Logic Moon has also become well known for his mastering and
-              post-production work for internationally recognized labels like
-              Whitelabrecs, DRONARIVM, Archives, and artists all over the globe.
-            </p>
+          <div class="bg-surface-container-low p-10">
             <a
               href="/logic-moon-bio"
               class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all block">

@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation.vue";
 import { Picture } from "astro:assets";
 import portrait from "../assets/img/Logic-Woods-3.webp";
 import releases from '../releases.js';
+import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
 ---
 
 <Layout title="Logic Moon Biography">
@@ -39,18 +40,7 @@ import releases from '../releases.js';
               TOBIAS LORSBACH
             </h2>
             <div class="text-on-surface-variant font-light leading-relaxed space-y-6">
-              <p>
-                Tobias Lorsbach is a Mainz, Germany-based artist known as <span class="font-medium text-on-surface">Logic Moon</span> and <span class="font-medium text-on-surface">Aethery Fields</span>. His previous releases have appeared on internationally recognized labels such as Whitelabrecs, Archives, Archipel, DRONARIVM, Ambientologist, Shimmering Moods, and his own <span class="font-medium text-on-surface">The Moon Records</span> imprint across both physical and digital formats.
-              </p>
-              <p>
-                He spent many years in the minimal techno scenes since the early 2000s, and whilst out on a field recording excursion, he fell upon the idea of layering some ambient drones. From here, his debut album as Logic Moon was born - "Herbst11".
-              </p>
-              <p>
-                Tobias' musical background has drawn in a widescreen of genres, with him having performed guitar in a death metal band, embarked on a DJ career, and now established himself as an ambient musician. His varied experiences have only served to give birth to a range of ideas which are evident in his acclaimed albums.
-              </p>
-              <div class="bg-surface-container border border-outline-variant/10 p-8 my-8">
-                Logic Moon has become well known for his mastering and post-production work for internationally recognized labels like Whitelabrecs, DRONARIVM, Archives, and many artists all over the globe.
-              </div>
+              <ArtistBioParagraphs class="space-y-6" highlight="link" />
               <p>
                 Recent collaborative projects include works with Swedish cellist Henrik Meierkord on albums such as "Inseln" (2022) and "Ewiger Wald" (2024), as well as partnerships with artists like Sven Laux and Scarless Arms.
               </p>
