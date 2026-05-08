@@ -2,157 +2,125 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.vue";
 import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.vue";
+import press01 from "../assets/press-kit/logic moon_press01.jpg";
+import press02 from "../assets/press-kit/logic moon_press02.jpg";
+import press03 from "../assets/press-kit/logic moon_press03.jpg";
 ---
 
 <Layout title="Press Kit - Logic Moon">
   <Navigation client:visible />
-  
+
   <main class="min-h-screen bg-surface text-on-surface">
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="py-32 px-8 md:px-16 bg-surface-container-low">
-      <div class="max-w-4xl mx-auto text-center">
-        <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-          MEDIA RESOURCES
-        </span>
-        <h1 class="text-[clamp(48px,7vw,72px)] font-black tracking-tighter mb-4 text-on-surface uppercase">
-          PRESS KIT
+      <div class="container mx-auto text-center">
+        <span
+          class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block"
+          >Media Resources</span
+        >
+        <h1
+          class="text-[clamp(48px,7vw,96px)] font-black tracking-tighter mb-6 text-on-surface uppercase">
+          Press Kit
         </h1>
-        <p class="text-on-surface-variant font-light leading-relaxed mt-6 max-w-2xl mx-auto">
-          Official assets and resources for media professionals. All materials available for download and use in press coverage.
+        <p
+          class="text-on-surface/60 font-light leading-relaxed max-w-2xl mx-auto">
+          Official assets and resources for media professionals, journalists,
+          and publications. All materials available for editorial use.
         </p>
       </div>
     </section>
 
-    <!-- Press Contact Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            CONTACT
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            PRESS CONTACT
-          </h2>
-        </div>
-        
-        <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12">
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-sm font-bold text-on-surface uppercase tracking-widest mb-2">Management</h3>
-              <p class="text-on-surface-variant font-light leading-relaxed">
-                Tobias Lorsbach<br />
-                <a href="mailto:hello@tobeworks.de" class="text-primary hover:underline">hello@tobeworks.de</a>
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="text-sm font-bold text-on-surface uppercase tracking-widest mb-2">Location</h3>
-              <p class="text-on-surface-variant font-light leading-relaxed">
-                Mainz, Germany
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="text-sm font-bold text-on-surface uppercase tracking-widest mb-2">Social Media</h3>
-              <div class="flex flex-wrap gap-4">
-                <a href="https://www.instagram.com/logicmoonmusic/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Instagram</a>
-                <a href="https://logicmoon.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Bandcamp</a>
-                <a href="https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Spotify</a>
-                <a href="https://www.youtube.com/@LogicMoonMusic" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">YouTube</a>
-              </div>
+    <!-- Artists -->
+    <section class="py-24 px-8 md:px-16 bg-surface">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-on-surface/10">
+
+          <!-- Logic Moon -->
+          <div class="bg-surface p-10 flex flex-col">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Artist</span>
+            <h2 class="text-4xl font-bold tracking-tight uppercase mb-8">Logic Moon</h2>
+            <p class="text-lg font-light text-on-surface/80 leading-relaxed mb-4">
+              Logic Moon is the cinematic ambient project of Tobias Lorsbach, built around slow-moving soundscapes rooted in space, isolation, and introspection with a touch of arthouse cinema.
+            </p>
+            <p class="font-light text-on-surface/60 leading-relaxed mb-8">
+              Influenced by Sakamoto, Aphex Twin, FSOL, and classic space ambient, the music sits at the intersection of drone, texture, and atmosphere. Made for deep listening, late nights, and quiet contemplation.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {["Ambient", "Drone", "Cinematic", "Space", "Experimental"].map((tag) => (
+                <span class="text-xs uppercase tracking-widest px-3 py-1 border border-on-surface/20 text-on-surface/50">{tag}</span>
+              ))}
             </div>
           </div>
+
+          <!-- Aethery Fields -->
+          <div class="bg-surface-container p-10 flex flex-col">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Artist</span>
+            <h2 class="text-4xl font-bold tracking-tight uppercase mb-8">Aethery Fields</h2>
+            <p class="text-lg font-light text-on-surface/80 leading-relaxed mb-4">
+              Aethery Fields is the experimental and deeply introspective counterpart to Logic Moon — shaped by Japanese ambient, lo-fi aesthetics, cassette culture, and meditative drone.
+            </p>
+            <p class="font-light text-on-surface/60 leading-relaxed mb-8">
+              Influenced by the quiet intensity of Chihei Hatakeyama and the textural minimalism of Taylor Deupree, Aethery Fields lives in the space between silence and sound — warm, worn, and unhurried. Music that breathes slowly and leaves room for the listener to exist within it.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {["Asian Ambient", "Lo-Fi", "Cassette", "Drone", "Experimental", "Field Recording"].map((tag) => (
+                <span class="text-xs uppercase tracking-widest px-3 py-1 border border-on-surface/20 text-on-surface/50">{tag}</span>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Logo Assets Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
-      <div class="max-w-4xl mx-auto">
+    <!-- Biography -->
+    <section class="py-24 px-8 md:px-16 bg-surface-container-low">
+      <div class="container mx-auto">
         <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            BRANDING
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            LOGO ASSETS
+          <span
+            class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block"
+            >Background</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight uppercase">
+            Biography
           </h2>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-surface-container border border-outline-variant/10 p-8">
-            <div class="aspect-square bg-surface-container-lowest mb-6 flex items-center justify-center">
-              <img src="/images/TWBlack.png" alt="Tobeworks Logo Black" class="max-h-48 object-contain" />
-            </div>
-            <h3 class="text-lg font-bold text-on-surface mb-2">Tobeworks Logo (Black)</h3>
-            <p class="text-on-surface-variant font-light text-sm mb-4">Official Tobeworks logo in black</p>
-            <a href="/images/TWBlack.png" download="logic-moon-logo-black.png" class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all">
-              Download PNG <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Press Photos Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            IMAGERY
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            PRESS PHOTOS
-          </h2>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-surface-container border border-outline-variant/10 p-8">
-            <div class="aspect-square bg-surface-container-lowest mb-6 overflow-hidden">
-              <img src="/images/Logic-Woods-3.avif" alt="Logic Moon Portrait" class="w-full h-full object-cover grayscale-[50%]" />
-            </div>
-            <h3 class="text-lg font-bold text-on-surface mb-2">Artist Portrait</h3>
-            <p class="text-on-surface-variant font-light text-sm mb-4">Official press photo of Tobias Lorsbach (Logic Moon)</p>
-            <a href="/images/Logic-Woods-3.avif" download="logic-moon-portrait.avif" class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all">
-              Download AVIF <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Biography Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            BACKGROUND
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            BIOGRAPHY
-          </h2>
-        </div>
-        
-        <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12">
-          <div class="prose prose-lg max-w-none">
-            <p class="text-on-surface-variant font-light leading-relaxed">
-              Tobias Lorsbach is a Mainz, Germany-based artist known as <strong>Logic Moon</strong> and <strong>Aethery Fields</strong>. His previous releases have appeared on internationally recognized labels such as Whitelabrecs, Archives, Archipel, DRONARIVM, Ambientologist, Shimmering Moods, and his own The Moon Records imprint across both physical and digital formats.
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-on-surface/10">
+          <div class="bg-surface-container-low p-10 space-y-6">
+            <p class="font-light text-on-surface/70 leading-relaxed">
+              Tobias Lorsbach is a Mainz, Germany-based artist known as <strong
+                class="text-on-surface font-medium">Logic Moon</strong
+              > and <strong class="text-on-surface font-medium"
+                >Aethery Fields</strong
+              >. His releases have appeared on internationally recognized labels
+              such as Whitelabrecs, Archives, Archipel, DRONARIVM,
+              Ambientologist, Shimmering Moods, and his own <a href="https://the-moon-records.de" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">The Moon Records</a>
+              imprint across both physical and digital formats.
             </p>
-            
-            <p class="text-on-surface-variant font-light leading-relaxed">
-              He spent many years in the minimal techno scenes since the early 2000s, and whilst out on a field recording excursion, he fell upon the idea of layering some ambient drones. From here, his debut album as Logic Moon was born - "Herbst11".
-            </p>
-            
-            <p class="text-on-surface-variant font-light leading-relaxed">
-              Tobias' musical background has drawn in a widescreen of genres, with him having performed guitar in a death metal band, embarked on a DJ career, and now established himself as an ambient musician. His varied experiences have only served to give birth to a range of ideas which are evident in his acclaimed albums.
-            </p>
-            
-            <p class="text-on-surface-variant font-light leading-relaxed">
-              Logic Moon has become well known for his mastering and post-production work for internationally recognized labels like Whitelabrecs, DRONARIVM, Archives, and many artists all over the globe.
+            <p class="font-light text-on-surface/70 leading-relaxed">
+              He spent many years in the minimal techno scenes since the early
+              2000s, and whilst out on a field recording excursion, he fell upon
+              the idea of layering some ambient drones. From here, his debut
+              album as Logic Moon was born — "Herbst11".
             </p>
           </div>
-          
-          <div class="mt-8">
-            <a href="/logic-moon-bio" class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all">
+          <div class="bg-surface-container-low p-10 space-y-6">
+            <p class="font-light text-on-surface/70 leading-relaxed">
+              Tobias' musical background spans a widescreen of genres — from
+              performing guitar in a death metal band to a DJ career rooted in
+              techno, and now establishing himself as a prominent voice in
+              ambient music. His varied experiences are clearly evident in his
+              acclaimed albums.
+            </p>
+            <p class="font-light text-on-surface/70 leading-relaxed">
+              Logic Moon has also become well known for his mastering and
+              post-production work for internationally recognized labels like
+              Whitelabrecs, DRONARIVM, Archives, and artists all over the globe.
+            </p>
+            <a
+              href="/logic-moon-bio"
+              class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all block">
               Read Full Biography <span>→</span>
             </a>
           </div>
@@ -160,117 +128,369 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Music Assets Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            AUDIO
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            MUSIC & RELEASES
-          </h2>
+    <!-- Facts -->
+    <section class="px-8 md:px-16 bg-surface">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-on-surface/10">
+          <div class="bg-surface p-8">
+            <p
+              class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">
+              Based in
+            </p>
+            <p class="text-lg font-light text-on-surface">Mainz, Germany</p>
+          </div>
+          <div class="bg-surface p-8">
+            <p
+              class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">
+              Active since
+            </p>
+            <p class="text-lg font-light text-on-surface">2011</p>
+          </div>
+          <div class="bg-surface p-8">
+            <p
+              class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">
+              Label
+            </p>
+            <a href="https://the-moon-records.de" target="_blank" rel="noopener noreferrer" class="text-lg font-light text-primary hover:underline">The Moon Records</a>
+          </div>
+          <div class="bg-surface p-8">
+            <p
+              class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">
+              Genres
+            </p>
+            <p class="text-lg font-light text-on-surface">
+              Ambient · Drone · Cinematic
+            </p>
+          </div>
         </div>
-        
-        <div class="space-y-8">
-          <div class="bg-surface-container border border-outline-variant/10 p-8">
-            <h3 class="text-lg font-bold text-on-surface mb-4">Streaming Platforms</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <a href="https://logicmoon.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
-                <span class="text-primary font-bold">BANDCAMP</span>
-                <span class="text-on-surface-variant text-sm">Full discography available</span>
-              </a>
-              <a href="https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
-                <span class="text-primary font-bold">SPOTIFY</span>
-                <span class="text-on-surface-variant text-sm">Streaming & playlists</span>
-              </a>
-              <a href="https://www.youtube.com/@LogicMoonMusic" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
-                <span class="text-primary font-bold">YOUTUBE</span>
-                <span class="text-on-surface-variant text-sm">Music videos & visuals</span>
-              </a>
-              <a href="https://soundcloud.com/logic-moon" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
-                <span class="text-primary font-bold">SOUNDCLOUD</span>
-                <span class="text-on-surface-variant text-sm">Exclusive tracks</span>
+      </div>
+    </section>
+
+    <!-- Press Photos — Logic Moon -->
+    <section class="py-24 px-8 md:px-16 bg-surface-container-low">
+      <div class="container mx-auto">
+        <div class="mb-16 flex items-end justify-between">
+          <div>
+            <span
+              class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block"
+              >Imagery</span
+            >
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight uppercase">
+              Press Photos
+            </h2>
+            <p class="text-on-surface/40 font-light mt-4 text-sm">
+              High-resolution images for editorial use. Credit: Logic Moon /
+              Tobias Lorsbach
+            </p>
+          </div>
+          <button
+            id="download-all"
+            class="shrink-0 border cursor-pointer border-on-surface/20 text-on-surface/60 hover:text-on-surface hover:border-on-surface/40 px-6 py-3 text-xs uppercase tracking-widest transition-colors flex items-center gap-2">
+            Download All <span>↓</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-on-surface/10">
+          <div class="bg-surface-container-low group">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src={press01.src}
+                alt="Logic Moon — Press Photo 01"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex items-center justify-between">
+              <div>
+                <p class="text-sm text-on-surface font-medium">
+                  Press Photo 01
+                </p>
+                <p class="text-xs text-on-surface/40 mt-1">
+                  JPG · High Resolution
+                </p>
+              </div>
+              <a
+                href={press01.src}
+                download="logic-moon-press01.jpg"
+                class="text-xs uppercase tracking-widest text-primary hover:text-on-surface transition-colors flex items-center gap-2">
+                Download <span>↓</span>
               </a>
             </div>
           </div>
-          
-          <div class="bg-surface-container border border-outline-variant/10 p-8">
-            <h3 class="text-lg font-bold text-on-surface mb-4">Latest Release</h3>
-            <p class="text-on-surface-variant font-light leading-relaxed mb-4">
-              For press review and coverage, the latest release is available on all major platforms. High-quality audio files available upon request.
+          <div class="bg-surface-container-low group">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src={press02.src}
+                alt="Logic Moon — Press Photo 02"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex items-center justify-between">
+              <div>
+                <p class="text-sm text-on-surface font-medium">
+                  Press Photo 02
+                </p>
+                <p class="text-xs text-on-surface/40 mt-1">
+                  JPG · High Resolution
+                </p>
+              </div>
+              <a
+                href={press02.src}
+                download="logic-moon-press02.jpg"
+                class="text-xs uppercase tracking-widest text-primary hover:text-on-surface transition-colors flex items-center gap-2">
+                Download <span>↓</span>
+              </a>
+            </div>
+          </div>
+          <div class="bg-surface-container-low group">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src={press03.src}
+                alt="Logic Moon — Press Photo 03"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex items-center justify-between">
+              <div>
+                <p class="text-sm text-on-surface font-medium">
+                  Press Photo 03
+                </p>
+                <p class="text-xs text-on-surface/40 mt-1">
+                  JPG · High Resolution
+                </p>
+              </div>
+              <a
+                href={press03.src}
+                download="logic-moon-press03.jpg"
+                class="text-xs uppercase tracking-widest text-primary hover:text-on-surface transition-colors flex items-center gap-2">
+                Download <span>↓</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Music & Releases -->
+    <section class="py-24 px-8 md:px-16 bg-surface-container-low">
+      <div class="container mx-auto">
+        <div class="mb-16">
+          <span
+            class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block"
+            >Audio</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight uppercase">
+            Music & Releases
+          </h2>
+        </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-px bg-on-surface/10 mb-8">
+          <a
+            href="https://logicmoon.bandcamp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors group">
+            <p class="text-xs uppercase tracking-widest text-primary mb-2">
+              Bandcamp
             </p>
-            <a href="/discography" class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all">
-              View Complete Discography <span>→</span>
+            <p
+              class="text-sm font-light text-on-surface/60 group-hover:text-on-surface/80 transition-colors">
+              Full discography
+            </p>
+          </a>
+          <a
+            href="https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors group">
+            <p class="text-xs uppercase tracking-widest text-primary mb-2">
+              Spotify
+            </p>
+            <p
+              class="text-sm font-light text-on-surface/60 group-hover:text-on-surface/80 transition-colors">
+              Streaming & playlists
+            </p>
+          </a>
+          <a
+            href="https://www.youtube.com/@LogicMoonMusic"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors group">
+            <p class="text-xs uppercase tracking-widest text-primary mb-2">
+              YouTube
+            </p>
+            <p
+              class="text-sm font-light text-on-surface/60 group-hover:text-on-surface/80 transition-colors">
+              Music & visuals
+            </p>
+          </a>
+          <a
+            href="https://soundcloud.com/logic-moon"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors group">
+            <p class="text-xs uppercase tracking-widests text-primary mb-2">
+              SoundCloud
+            </p>
+            <p
+              class="text-sm font-light text-on-surface/60 group-hover:text-on-surface/80 transition-colors">
+              Exclusive tracks
+            </p>
+          </a>
+        </div>
+        <div
+          class="border-t border-on-surface/10 pt-8 flex items-center justify-between">
+          <p class="text-on-surface/50 font-light text-sm">
+            High-quality audio files available upon request for press review.
+          </p>
+          <a
+            href="/discography"
+            class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all">
+            Full Discography <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press Contact + Usage -->
+    <section class="py-24 px-8 md:px-16 bg-surface">
+      <div class="container mx-auto">
+        <div class="mb-16">
+          <span
+            class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block"
+            >Contact</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight uppercase">
+            Press Contact
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-on-surface/10">
+          <div class="bg-surface p-10 space-y-8">
+            <div>
+              <p
+                class="text-xs uppercase tracking-widest text-on-surface/40 mb-2">
+                Management
+              </p>
+              <p class="text-on-surface font-light">Tobias Lorsbach</p>
+              <a
+                href="mailto:hello@tobeworks.de"
+                class="text-primary hover:underline font-light"
+                >tobias@logic-moon.de</a
+              >
+            </div>
+            <div>
+              <p
+                class="text-xs uppercase tracking-widest text-on-surface/40 mb-2">
+                Location
+              </p>
+              <p class="text-on-surface font-light">Mainz, Germany</p>
+            </div>
+            <div>
+              <p
+                class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">
+                Social Media
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="https://www.instagram.com/logicmoonmusic/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:underline font-light text-sm"
+                  >Instagram</a
+                >
+                <a
+                  href="https://logicmoon.bandcamp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:underline font-light text-sm"
+                  >Bandcamp</a
+                >
+                <a
+                  href="https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:underline font-light text-sm"
+                  >Spotify</a
+                >
+                <a
+                  href="https://www.youtube.com/@LogicMoonMusic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:underline font-light text-sm"
+                  >YouTube</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface p-10 space-y-6">
+            <p
+              class="text-xs uppercase tracking-widest text-on-surface/40 mb-4">
+              Usage Guidelines
+            </p>
+            <p class="font-light text-on-surface/60 leading-relaxed text-sm">
+              All assets are available for use by media professionals,
+              journalists, and publications for editorial purposes. Please
+              credit <strong class="text-on-surface font-medium"
+                >Logic Moon / Tobias Lorsbach</strong
+              > when using these materials.
+            </p>
+            <p class="font-light text-on-surface/60 leading-relaxed text-sm">
+              All music, images, and branding materials are © Logic Moon /
+              Tobias Lorsbach. All rights reserved. For commercial use beyond
+              editorial coverage, please contact for licensing.
+            </p>
+            <a
+              href="/licensing"
+              class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all block mt-4">
+              Licensing Information <span>→</span>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Usage Guidelines Section -->
-    <section class="py-32 px-8 md:px-16 bg-surface-container-low">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
-            LEGAL
-          </span>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
-            USAGE GUIDELINES
-          </h2>
-        </div>
-        
-        <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12">
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-lg font-bold text-on-surface mb-3">Press & Media Use</h3>
-              <p class="text-on-surface-variant font-light leading-relaxed">
-                All assets provided in this press kit are available for use by media professionals, journalists, and publications for editorial purposes. Please credit "Logic Moon / Tobias Lorsbach" when using these materials.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="text-lg font-bold text-on-surface mb-3">Copyright</h3>
-              <p class="text-on-surface-variant font-light leading-relaxed">
-                All music, images, and branding materials are © Logic Moon / Tobias Lorsbach. All rights reserved. For commercial use beyond editorial coverage, please contact for licensing.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="text-lg font-bold text-on-surface mb-3">Questions?</h3>
-              <p class="text-on-surface-variant font-light leading-relaxed">
-                For additional assets, high-resolution files, or specific requests, please contact <a href="mailto:hello@tobeworks.de" class="text-primary hover:underline">hello@tobeworks.de</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Contact client:visible />
   </main>
-  
+
   <Footer />
 </Layout>
 
-<style>
-  .prose :global(p) {
-    color: #d1c4b9;
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-  }
+<script
+  define:vars={{
+    press01src: press01.src,
+    press02src: press02.src,
+    press03src: press03.src,
+  }}
+>
+  document.getElementById("download-all")?.addEventListener("click", async () => {
+    const btn = document.getElementById("download-all");
+    if (btn) btn.textContent = "Preparing ZIP…";
 
-  .prose :global(strong) {
-    color: #eae0d5;
-    font-weight: 600;
-  }
+    const JSZip = (await import("https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm")).default;
+    const zip = new JSZip();
 
-  .prose :global(a) {
-    color: #e3c7a9;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
+    const files = [
+      { src: press01src, name: "logic-moon-press01.jpg" },
+      { src: press02src, name: "logic-moon-press02.jpg" },
+      { src: press03src, name: "logic-moon-press03.jpg" },
+    ];
 
-  .prose :global(a:hover) {
-    color: #fbdebf;
-  }
-</style>
+    await Promise.all(
+      files.map(async ({ src, name }) => {
+        const res = await fetch(src);
+        const blob = await res.blob();
+        zip.file(name, blob);
+      })
+    );
+
+    const zipBlob = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(zipBlob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "logic-moon-press-photos.zip";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    if (btn) btn.textContent = "Download All ↓";
+  });
+</script>
