@@ -64,7 +64,7 @@ const currentPath = ref('')
 
 const navigation = computed(() => [
     { name: 'Home', href: `/` },
-    { name: 'News', href: '/news' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: `/logic-moon-bio` },
     { name: 'Discography', href: `/discography` },
     { name: 'Playlists', href: `${prefix.value}#playlists` },

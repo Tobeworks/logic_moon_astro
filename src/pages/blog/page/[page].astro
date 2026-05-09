@@ -1,0 +1,118 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Navigation from "../../../components/Navigation.vue";
+import Footer from "../../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+  const postsPerPage = 18;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    return {
+      params: { page: String(page) },
+      props: {
+        posts: posts.slice((page - 1) * postsPerPage, page * postsPerPage),
+        currentPage: page,
+        totalPages,
+        totalPosts: posts.length,
+      },
+    };
+  });
+}
+
+const { posts, currentPage, totalPages, totalPosts } = Astro.props;
+---
+
+<Layout title={`Blog — Page ${currentPage} - Logic Moon`}>
+  <Navigation client:visible />
+  <main class="min-h-screen bg-surface text-on-surface">
+    <section class="py-32 px-8 md:px-16">
+      <div class="container mx-auto">
+        <div class="mb-24">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Blog</span>
+          <h1 class="text-4xl font-bold tracking-tight uppercase">Latest Posts</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {posts.map((article) => (
+            <a href={`/blog/${article.slug}`} class="group block no-underline" data-aos="fade-up">
+              <article>
+                {article.data.image && (
+                  <div class="h-64 bg-surface-container-lowest mb-6 overflow-hidden">
+                    <img
+                      src={article.data.image}
+                      alt={article.data.title}
+                      class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  </div>
+                )}
+                <span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">
+                  {article.data.pubDate.toLocaleDateString("en-EN", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+                <h3 class="text-2xl md:text-3xl font-bold tracking-tighter leading-none text-on-surface group-hover:text-primary transition-colors duration-500 mb-4">
+                  {article.data.title}
+                </h3>
+                <p class="text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
+                  {article.data.description}
+                </p>
+                <span class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                  READ <span>→</span>
+                </span>
+              </article>
+            </a>
+          ))}
+        </div>
+
+        <nav class="flex items-center justify-center gap-4 mt-24" aria-label="Pagination">
+          <div class="flex gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
+              <a
+                href={num === 1 ? "/blog" : `/blog/page/${num}`}
+                class={`w-10 h-10 flex items-center justify-center transition-colors duration-200 text-xs uppercase tracking-widest ${
+                  num === currentPage
+                    ? "bg-primary text-on-primary"
+                    : "border border-outline-variant/20 text-on-surface hover:border-primary hover:text-primary"
+                }`}
+                aria-label={`Page ${num}`}
+                aria-current={num === currentPage ? "page" : undefined}>
+                {num}
+              </a>
+            ))}
+          </div>
+
+          <div class="flex gap-2">
+            {currentPage > 1 && (
+              <a
+                href={currentPage === 2 ? "/blog" : `/blog/page/${currentPage - 1}`}
+                class="border border-outline-variant/20 text-on-surface px-6 py-2 text-xs uppercase tracking-widest hover:border-primary hover:text-primary transition-colors no-underline">
+                ← PREV
+              </a>
+            )}
+            {currentPage < totalPages && (
+              <a
+                href={`/blog/page/${currentPage + 1}`}
+                class="border border-outline-variant/20 text-on-surface px-6 py-2 text-xs uppercase tracking-widest hover:border-primary hover:text-primary transition-colors no-underline">
+                NEXT →
+              </a>
+            )}
+          </div>
+        </nav>
+
+        <p class="text-center text-on-surface/40 mt-8 font-mono uppercase tracking-[0.2em] text-[10px]">
+          Page {currentPage} of {totalPages} — {totalPosts} Posts
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
