@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# generated social media assets
+output/
+
 # generated types
 .astro/
 

@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "blog:instagram": "python3 scripts/blog_instagram.py"
   },
   "dependencies": {
     "@fontsource-variable/assistant": "^5.0.17",
