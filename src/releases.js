@@ -399,6 +399,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/stellar-refuge'
     },
+    {
+        id: 53,
+        cover: 'sublacuna.webp',
+        year: '2026',
+        release_id: '3710705581',
+        title: 'Aethery Fields - Sub Lacuna',
+        text: '',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/sub-lacuna'
+    },
 
 ];
 export default releases;
