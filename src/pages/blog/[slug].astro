@@ -55,7 +55,7 @@ const { Content } = await post.render();
               {post.data.title}
             </h1>
             <div
-              class="flex justify-center items-center gap-4 text-on-surface/40 font-mono uppercase tracking-[0.2em] text-[10px] mb-6">
+              class="flex justify-center items-center gap-4 text-on-surface/40 font-mono uppercase tracking-[0.2em] text-[0.625rem] mb-6">
               <time datetime={post.data.pubDate.toISOString()}>
                 {
                   post.data.pubDate.toLocaleDateString("en-EN", {

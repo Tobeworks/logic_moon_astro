@@ -28,7 +28,7 @@ import Hero from "../components/HeroVideo.astro";
     })();
   </script>
 
-  <Navigation client:visible />
+  <Navigation client:idle />
   <main class="bg-surface text-on-surface">
     <Hero />
     <About />
@@ -38,7 +38,7 @@ import Hero from "../components/HeroVideo.astro";
     <Youtube />
     <LicensingCTA />
     <LabelCTA />
-    <Contact client:load />
+    <Contact client:visible />
     <Footer />
   </main>
 </Layout>

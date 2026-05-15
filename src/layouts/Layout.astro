@@ -2,9 +2,6 @@
 import "../styles/global.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/geist-mono";
-//import { SEO } from "astro-seo";
-//import "../assets/style.css";
-import "aos/dist/aos.css";
 
 interface Props {
   title: string;
@@ -33,6 +30,7 @@ const imageURL = new URL(image, Astro.site || "https://logic-moon.de");
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
     <meta
       name="keywords"
       content="Logic Moon, Tobias Lorsbach, Ambient music, Drone, Neoclassical, texture, music"
@@ -41,11 +39,7 @@ const imageURL = new URL(image, Astro.site || "https://logic-moon.de");
     <meta name="author" content="Tobias Lorsbach" />
     <meta name="viewport" content="width=device-width" />
     <link rel="canonical" href={canonicalURL} />
-    <link
-      href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAXFxcAP///wC6uroAhYWFAEJCQgDe3t4AGhoaANbW1gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcHBwcHBwcHBwcHBwcHAAcHBwcHBwcHBwcHBwcHBwcHBQcFBwUHBQcFBwUHBQcFBQUFBQUFBQUFBQUFBQUFBQEFAQUBBQEFAQUBBQEFAQUBAQEBAQEBAQEBAQEBAQEBBAEEAQQBBAEEAQQBBAEEAQQEBAQEBAQEBAQEBAQEBAQDBAMEAwQDBAMEAwQDBAMEAwMDAwMDAwMDAwMDAwMDAwgDCAMIAwgDCAMIAwgDCAMICAgICAgICAgICAgICAgIBggGCAYIBggGCAYIBggGCAYGBgYGBgYGBgYGBgYGBgYCBgIGAgYCBgIGAgYCBgIGAAICAgICAgICAgICAgICAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAA="
-      rel="icon"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
 
     <meta property="og:type" content={type} />
@@ -76,22 +70,42 @@ const imageURL = new URL(image, Astro.site || "https://logic-moon.de");
     <meta name="twitter:creator" content="@logicmoon" />
 
     <script>
-      import AOS from "aos";
       import Lenis from "@studio-freight/lenis";
       const lenis = new Lenis();
 
-      function raf(time) {
+      function raf(time: number) {
         lenis.raf(time);
         requestAnimationFrame(raf);
       }
-
       requestAnimationFrame(raf);
-      document.onreadystatechange = function () {
-        AOS.init();
-      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05 },
+      );
+
+      function initObserver() {
+        document.querySelectorAll("[data-animate]").forEach((el) =>
+          observer.observe(el),
+        );
+      }
+
+      if (document.readyState === "complete") {
+        initObserver();
+      } else {
+        window.addEventListener("load", initObserver);
+      }
     </script>
 
     <script>
+      // @ts-ignore
       var _paq = (window._paq = window._paq || []);
       _paq.push(["trackPageView"]);
       _paq.push(["enableLinkTracking"]);
@@ -104,7 +118,7 @@ const imageURL = new URL(image, Astro.site || "https://logic-moon.de");
           s = d.getElementsByTagName("script")[0];
         g.async = true;
         g.src = u + "matomo.js";
-        s.parentNode.insertBefore(g, s);
+        if (s && s.parentNode) s.parentNode.insertBefore(g, s);
       })();
     </script>
   </head>

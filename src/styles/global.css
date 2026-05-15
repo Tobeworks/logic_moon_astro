@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
+
 /* Custom Animations */
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes hero-slide-up {
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0); }
 }
 
 .animate-spin {
@@ -86,6 +92,28 @@
   --radius-full: 0px;
 }
 
+/* Animate on scroll — driven by IntersectionObserver in Layout.astro */
+@layer base {
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  [data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  [data-animate][data-delay="1"] { transition-delay: 0.1s; }
+  [data-animate][data-delay="2"] { transition-delay: 0.2s; }
+  [data-animate][data-delay="3"] { transition-delay: 0.3s; }
+  [data-animate][data-delay="4"] { transition-delay: 0.4s; }
+  [data-animate][data-delay="5"] { transition-delay: 0.5s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] { opacity: 1; transform: none; transition: none; }
+  }
+}
+
 /* Base Styles */
 body {
   font-family: 'Inter Variable', sans-serif;
@@ -106,32 +134,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2rem, 4vw, 5rem);
   line-height: 0.9;
 } */
-h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 300;
-  line-height: 1.625;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-}
-
 h2 {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
@@ -208,17 +210,10 @@ input[type='submit']:hover {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover,
-button:hover,
-input[type='submit']:hover {
-  transition: all 0.3s ease-in-out;
-}
-
 /* Footer */
 footer {
   background-color: var(--color-surface-container-lowest);
   background-size: cover;
-  background-attachment: fixed;
   min-height: 300px;
   padding: 50px 0;
 }
@@ -288,13 +283,6 @@ footer {
   color: transparent;
 }
 
-/* Selection Color */
-::selection {
-  background-color: var(--color-primary);
-  color: var(--color-on-primary);
-}
-
-/* Selection Color */
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-on-primary);

@@ -11,7 +11,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site:'https://logic-moon.de',
+  site: 'https://logic-moon.de',
+  build: {
+    inlineStylesheets: 'always',
+  },
   markdown: {
     rehypePlugins: [rehypeRaw]
   }

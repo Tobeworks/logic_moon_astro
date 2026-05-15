@@ -7,8 +7,8 @@
               :key="index" 
               @click="openLightbox(index)" 
               class="bg-surface-container-lowest group cursor-pointer text-left p-0 border-0" 
-              data-aos="fade-up" 
-              :data-aos-delay="index * 10"
+              data-animate 
+             
               :aria-label="`View image ${image.title}`"
             >
                 <div class="aspect-square overflow-hidden">

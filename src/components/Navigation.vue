@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <header class="fixed inset-x-0 top-0 z-50 bg-surface/90 backdrop-blur-md text-on-surface" data-aos="fade-down">
+        <header class="fixed inset-x-0 top-0 z-50 bg-surface/90 backdrop-blur-md text-on-surface" data-animate>
 
             <nav class="flex items-center justify-between px-8 py-10" aria-label="Main">
                 <Transition name="logo-slide">

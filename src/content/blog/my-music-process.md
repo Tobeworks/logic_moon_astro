@@ -20,7 +20,7 @@ Before I play a single note, I ask myself: what kind of piece do I want to make?
 
 Once I know the answer to that question, I choose my instruments and machines. Not the other way around.
 
-This is where most people get it backwards. They open their entire studio, look at everything available, and hope that something inspires them. Sometimes that works. More often, it leads to paralysis. Too much choice is not a luxury — it is a creativity killer. I have written about this in my post on the science of creativity, but the practical implication is simple: **more options do not lead to better results. They lead to fewer results.**
+This is where most people get it backwards. They open their entire studio, look at everything available, and hope that something inspires them. Sometimes that works. More often, it leads to paralysis. Too much choice is not a luxury — it is a creativity killer. I have written about this in my post on [the science of creativity](/blog/creativity-science), but the practical implication is simple: **more options do not lead to better results. They lead to fewer results.**
 
 For Logic Moon, the starting point is almost always a tape loop with guitar, running through heavy reverb and resonators to create a drone. That is it. That is the foundation. Everything else grows from there.
 

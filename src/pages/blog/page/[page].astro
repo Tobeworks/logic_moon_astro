@@ -35,13 +35,13 @@ const { posts, currentPage, totalPages, totalPosts } = Astro.props;
     <section class="py-32 px-8 md:px-16">
       <div class="container mx-auto">
         <div class="mb-24">
-          <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Blog</span>
+          <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">Blog</span>
           <h1 class="text-4xl font-bold tracking-tight uppercase">Latest Posts</h1>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           {posts.map((article) => (
-            <a href={`/blog/${article.slug}`} class="group block no-underline" data-aos="fade-up">
+            <a href={`/blog/${article.slug}`} class="group block no-underline" data-animate>
               <article>
                 {article.data.image && (
                   <div class="h-64 bg-surface-container-lowest mb-6 overflow-hidden">
@@ -108,7 +108,7 @@ const { posts, currentPage, totalPages, totalPosts } = Astro.props;
           </div>
         </nav>
 
-        <p class="text-center text-on-surface/40 mt-8 font-mono uppercase tracking-[0.2em] text-[10px]">
+        <p class="text-center text-on-surface/40 mt-8 font-mono uppercase tracking-[0.2em] text-[0.625rem]">
           Page {currentPage} of {totalPages} — {totalPosts} Posts
         </p>
       </div>

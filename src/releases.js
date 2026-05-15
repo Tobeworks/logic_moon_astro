@@ -1,168 +1,168 @@
 const releases = [
     {
         id: 1,
-        cover: 'polygon.jpg',
+        cover: 'polygon.webp',
         year: '2011',
         release_id: '',
         title: 'Polygon Garden'
     },
     {
         id: 2,
-        cover: '2011.jpg',
+        cover: '2011.webp',
         year: '2012',
         release_id: '',
         title: '2011'
     },
     {
         id: 3,
-        cover: 'altrhein.jpg',
+        cover: 'altrhein.webp',
         year: '2013',
         release_id: '',
         title: 'Altrhein'
     },
     {
         id: 4,
-        cover: 'quitecity.jpg',
+        cover: 'quitecity.webp',
         year: '2014',
         release_id: '',
         title: 'Quiet City'
     },
     {
         id: 5,
-        cover: 'silentpath.jpg',
+        cover: 'silentpath.webp',
         year: '2015',
         release_id: '',
         title: 'Silent Path'
     },
     {
         id: 6,
-        cover: 'debut.jpg',
+        cover: 'debut.webp',
         year: '2016',
         release_id: '',
         title: 'Logic Moon & Fiction Surprise - Debut'
     },
     {
         id: 7,
-        cover: 'oblivion.jpg',
+        cover: 'oblivion.webp',
         year: '2016',
         release_id: '',
         title: 'Logic Moon - Oblivion'
     },
     {
         id: 8,
-        cover: 'groundzero.jpg',
+        cover: 'groundzero.webp',
         year: '2016',
         release_id: '',
         title: 'Logic Moon - Ground Zero'
     },
     {
         id: 9,
-        cover: 'cascadian.jpg',
+        cover: 'cascadian.webp',
         year: '2017',
         release_id: '',
         title: 'Logic Moon - Cascadian Mind'
     },
     {
         id: 10,
-        cover: 'pheni1.jpg',
+        cover: 'pheni1.webp',
         year: '2018',
         release_id: '',
         title: 'Logic Moon - Phenibut 01'
     },
     {
         id: 11,
-        cover: 'pheni2.jpg',
+        cover: 'pheni2.webp',
         year: '2018',
         release_id: '',
         title: 'Logic Moon - Phenibut 02'
     },
     {
         id: 12,
-        cover: 'pheni3.jpg',
+        cover: 'pheni3.webp',
         year: '2018',
         release_id: '',
         title: 'Logic Moon - Phenibut 03'
     },
     {
         id: 14,
-        cover: 'iseeplanets.jpg',
+        cover: 'iseeplanets.webp',
         year: '2019',
         release_id: '',
         title: 'Logic Moon - I See Planets'
     },
     {
         id: 13,
-        cover: 'phoenix.jpg',
+        cover: 'phoenix.webp',
         year: '2019',
         release_id: '507144744',
         title: 'Logic Moon - I See Planets'
     },
     {
         id: 15,
-        cover: 'tales.jpg',
+        cover: 'tales.webp',
         year: '2019',
         release_id: '1154938275',
         title: 'Logic Moon - Tales'
     },
     {
         id: 16,
-        cover: '2017.jpg',
+        cover: '2017.webp',
         year: '2020',
         release_id: '1133451006',
         title: 'Logic Moon - 2017'
     },
     {
         id: 17,
-        cover: 'coherence.jpg',
+        cover: 'coherence.webp',
         year: '2020',
         release_id: '1851075121',
         title: 'Logic Moon - Coherence'
     },
     {
         id: 18,
-        cover: 'starmapping.jpg',
+        cover: 'starmapping.webp',
         year: '2021',
         release_id: '1634816459',
         title: 'Logic Moon - Starmapping'
     },
     {
         id: 19,
-        cover: 'fading_cover_500.jpg',
+        cover: 'fading_cover_500.webp',
         year: '2021',
         release_id: '4142953595',
         title: 'Logic Moon & Atmøsphäre - Fading'
     },
     {
         id: 20,
-        cover: 'Aeterna_Cover01_efx_500.jpg',
+        cover: 'Aeterna_Cover01_efx_500.webp',
         year: '2021',
         release_id: '144584733',
         title: 'Logic Moon - Aeterna'
     },
     {
         id: 21,
-        cover: 'death.jpg',
+        cover: 'death.webp',
         year: '2022',
         release_id: '2589416976',
         title: 'Sven Laux & Logic Moon- The Unavoidable Death of Loneliness'
     },
     {
         id: 22,
-        cover: 'Terrforming_cover_400.jpg',
+        cover: 'Terrforming_cover_400.webp',
         year: '2022',
         release_id: '2179910319',
         title: 'Logic Moon & Atmøsphäre - Terraforming'
     },
     {
         id: 23,
-        cover: 'golden_dawn.jpg',
+        cover: 'golden_dawn.webp',
         year: '2022',
         release_id: '3725758464',
         title: 'Logic Moon - The Golden Dawn'
     },
     {
         id: 24,
-        cover: 'inseln.jpg',
+        cover: 'inseln.webp',
         year: '2022',
         release_id: '443653520',
         title: 'Logic Moon & Henrik Meierkord - Inseln'
@@ -190,35 +190,35 @@ const releases = [
     } ,
     {
         id: 28,
-        cover: 'ikarus.jpg',
+        cover: 'ikarus.webp',
         year: '2023',
         release_id: '1087783645',
         title: 'Logic Moon - Ikrarus'
     },
     {
         id: 29,
-        cover: 'moonchild.jpg',
+        cover: 'moonchild.webp',
         year: '2023',
         release_id: '3179587971',
         title: 'Logic Moon - Moonchild'
     },
     {
         id: 30,
-        cover: 'tqc.jpg',
+        cover: 'tqc.webp',
         year: '2023',
         release_id: '468805382',
         title: ' Sven Laux & Logic Moon - The Quiet Companion'
     },
     {
         id: 31,
-        cover: 'lux.jpg',
+        cover: 'lux.webp',
         year: '2023',
         release_id: '2740630108',
         title: ' Logic Moon - Lux'
     },
     {
         id: 32,
-        cover: 'ewiger_wald.jpg',
+        cover: 'ewiger_wald.webp',
         year: '2024',
         release_id: '3324823902',
         title: 'Logic Moon & Henrik Meierkord - Ewiger Wald',
@@ -227,7 +227,7 @@ const releases = [
 
     {
         id: 34,
-        cover: 'ewiger_wald2.jpg',
+        cover: 'ewiger_wald2.webp',
         year: '2024',
         release_id: '1881628841',
         title: 'Logic Moon & Henrik Meierkord - Ewiger Wald Addendum',
@@ -235,7 +235,7 @@ const releases = [
         bandcamp:'https://logicmoon.bandcamp.com/album/logic-moon-henrik-meierkord-ewiger-wald-addendum'
     }, {
         id: 35,
-        cover: 'floating_garden.jpg',
+        cover: 'floating_garden.webp',
         year: '2024',
         release_id: '1648869892',
         title: 'Logic Moon - The Floating Garden',
@@ -244,7 +244,7 @@ const releases = [
     },
     {
         id: 36,
-        cover: 'last_days.jpg',
+        cover: 'last_days.webp',
         year: '2024',
         release_id: '856601488',
         title: 'Logic Moon - Last Days',
@@ -254,7 +254,7 @@ const releases = [
     },
     {
         id: 37,
-        cover: 'lifelines.jpg',
+        cover: 'lifelines.webp',
         year: '2024',
         release_id: '1549285738',
         title: 'Logic Moon - Lifelines',
@@ -266,7 +266,7 @@ const releases = [
     },
     {
         id: 38,
-        cover: 'tothesea.jpg',
+        cover: 'tothesea.webp',
         year: '2024',
         release_id: '1600080049',
         title: 'Logic Moon - To The Sea',
@@ -275,7 +275,7 @@ const releases = [
     },
     {
         id: 39,
-        cover: 'this_is_not_the_end.jpg',
+        cover: 'this_is_not_the_end.webp',
         year: '2024',
         release_id: '1198976225',
         title: 'Logic Moon - This Is Not The End',
@@ -284,7 +284,7 @@ const releases = [
     },
     {
         id: 40,
-        cover: 'music for film.jpg',
+        cover: 'music for film.webp',
         year: '2024',
         release_id: '2996898458',
         title: 'Logic Moon - Music For Film Vol.1',
@@ -320,7 +320,7 @@ const releases = [
     },
     {
         id: 44,
-        cover: 'memories of tomorow_sm.jpg',
+        cover: 'memories of tomorow_sm.webp',
         year: '2025',
         release_id: '3392045544',
         title: 'Logic Moon - Memories Of Tomorrow',
@@ -365,7 +365,7 @@ const releases = [
     },
     {
         id: 49,
-        cover: 'hello.jpg',
+        cover: 'hello.webp',
         year: '2025',
         release_id: '2635118830',
         title: 'Aethery Fields - hello.',
@@ -374,7 +374,7 @@ const releases = [
     },
     {
         id: 50,
-        cover: 'imncb.jpg',
+        cover: 'imncb.webp',
         year: '2026',
         release_id: '3902752845',
         title: 'Logic Moon - It May Never Coming Back',
@@ -383,7 +383,7 @@ const releases = [
     },
     {
         id: 51,
-        cover: 'clockworks.jpg',
+        cover: 'clockworks.webp',
         year: '2026',
         release_id: '1624891467',
         title: 'Logic Moon - Clockworks',
@@ -392,7 +392,7 @@ const releases = [
     },
     {
         id: 52,
-        cover: 'cover_logic_moon_stellar_refuge.jpg',
+        cover: 'cover_logic_moon_stellar_refuge.webp',
         year: '2026',
         release_id: '1710582439',
         title: 'Logic Moon - Stellar Refuge',

@@ -1,8 +1,8 @@
 <template>
     <section class="py-48 px-8 md:px-16 bg-surface" id="contact" aria-labelledby="contact-heading">
         <div class="max-w-4xl mx-auto">
-            <div class="mb-24 text-center" data-aos="fade-up">
-                <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">
+            <div class="mb-24 text-center" data-animate>
+                <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">
                     COMMUNICATION
                 </span>
                 <h2 id="contact-heading" class="text-4xl md:text-7xl font-bold tracking-tight uppercase">
@@ -12,7 +12,7 @@
 
             <form class="space-y-16" name="contact-form" @submit.prevent="sendForm" action="#contact" method="post" aria-label="Contact form">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div class="relative group" data-aos="fade-up">
+                    <div class="relative group" data-animate>
                         <label for="email" class="sr-only">Email Address</label>
                         <input 
                             type="email" 
@@ -27,7 +27,7 @@
                             aria-required="true"
                         />
                     </div>
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="50">
+                    <div class="relative group" data-animate>
                         <label for="name" class="sr-only">Name</label>
                         <input 
                             type="text" 
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative group" data-animate>
                     <label for="message" class="sr-only">Message</label>
                     <textarea 
                         rows="4" 
@@ -59,7 +59,7 @@
                     ></textarea>
                 </div>
 
-                <div class="flex justify-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="flex justify-center" data-animate>
                     <button 
                         type="submit" 
                         class="flex items-center gap-4 text-sm font-bold tracking-wide text-primary transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface"

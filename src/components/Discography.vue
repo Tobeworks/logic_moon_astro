@@ -2,22 +2,22 @@
     <section class="py-32 px-8 md:px-16 bg-surface" :id="sectionId">
         <div class="container mx-auto">
             <!-- Header -->
-            <div class="flex justify-between items-end mb-24" data-aos="fade-up" v-if="showHeader">
+            <div class="flex justify-between items-end mb-24" data-animate v-if="showHeader">
                 <div>
-                    <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">{{ headerLabel }}</span>
+                    <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">{{ headerLabel }}</span>
                     <h2 class="text-4xl md:text-6xl font-bold tracking-tight">{{ title }}</h2>
                 </div>
                 <button 
                   v-if="!showAllReleases && !isFullPage"
                   @click="scrollToGrid" 
-                  class="uppercase text-[10px] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all">
+                  class="uppercase text-[0.625rem] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all">
                     View all →
                 </button>
             </div>
 
             <!-- Latest Release Section (only on homepage) -->
-            <div class="mb-24" v-if="last_release && !showAllReleases && !isFullPage" data-aos="fade-up">
-                <span class="text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block">Latest Release</span>
+            <div class="mb-24" v-if="last_release && !showAllReleases && !isFullPage" data-animate>
+                <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">Latest Release</span>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <div class="bg-surface-container-lowest overflow-hidden">
                         <img :src="`/images/covers/${last_release.cover}`" :alt="last_release.title" class="w-full aspect-square object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
@@ -44,8 +44,8 @@
                     :key="release.id"
                     :class="index % 4 === 1 || index % 4 === 3 ? 'mt-12 md:mt-0' : ''"
                     class="flex flex-col gap-6"
-                    data-aos="fade-up"
-                    :data-aos-delay="index * 10"
+                    data-animate
+                   
                 >
                     <button 
                         type="button" 
@@ -71,7 +71,7 @@
             </div>
 
             <!-- View All Button (only on homepage) -->
-            <div class="flex justify-center mt-16" v-if="!showAllReleases && !isFullPage" data-aos="fade-up">
+            <div class="flex justify-center mt-16" v-if="!showAllReleases && !isFullPage" data-animate>
                 <a 
                   href="/discography" 
                   class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline">

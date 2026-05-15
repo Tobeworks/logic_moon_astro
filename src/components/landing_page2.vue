@@ -66,7 +66,7 @@
             <div class="container">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <img src="../assets/img/portrait.jpg" alt="portrait" class="img-fluid hidden sm:block">
+                        <img src="../assets/img/portrait.webp" alt="portrait" class="img-fluid hidden sm:block">
                     </div>
                     <div>
                         <h2 class="text-right xl:text-end" id="headline-about">About</h2>
