@@ -20,7 +20,7 @@
                 <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">Latest Release</span>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <div class="bg-surface-container-lowest overflow-hidden">
-                        <img :src="`/images/covers/${last_release.cover}`" :alt="last_release.title" class="w-full aspect-square object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
+                        <img :src="`/images/covers/${last_release.cover}`" :alt="last_release.title" loading="lazy" class="w-full aspect-square object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
                     </div>
                     <div class="flex flex-col justify-end space-y-6">
                         <div>
@@ -54,10 +54,11 @@
                         :aria-label="`Play album ${release.title}`"
                         :disabled="!release.release_id"
                     >
-                        <img 
-                            :src="`/images/covers/${release.cover}`" 
-                            :alt="release.title" 
-                            class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
+                        <img
+                            :src="`/images/covers/${release.cover}`"
+                            :alt="release.title"
+                            loading="lazy"
+                            class="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
                             :class="{ 'brightness-75': !release.release_id }"
                         />
                     </button>

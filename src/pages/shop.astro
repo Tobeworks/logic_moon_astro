@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.vue";
+import { Image } from "astro:assets";
+import dronesCover from "../assets/drones cover.jpg";
 ---
 
 <Layout title="Logic Moon - Shop">
@@ -38,6 +40,58 @@ import Navigation from "../components/Navigation.vue";
           <p class="text-on-surface/80 font-light leading-relaxed text-sm">
             High resolution wallpapers up to 10,000px — direct from the cover art of Logic Moon releases.
           </p>
+        </div>
+      </div>
+
+      <!-- Drones Vol. 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-16 items-center" data-animate>
+        <div class="overflow-hidden aspect-square">
+          <Image
+            src={dronesCover}
+            alt="Drones Vol. 1 Cover"
+            densities={[1, 2]}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="bg-surface p-10 flex flex-col justify-between gap-8">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-on-surface/40 mb-3">Sounds</p>
+            <h2 class="text-3xl font-light tracking-wide text-on-surface mb-6">Drones Vol. 1</h2>
+            <p class="text-on-surface/70 font-light leading-relaxed text-sm mb-6">
+              Carefully handcrafted raw Guitar Drones for your Ambient Productions in two different
+              scales (A minor and E minor) as 24bit WAV samples.
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-center gap-3 text-xs text-on-surface/50 uppercase tracking-widest">
+                <span class="w-px h-3 bg-on-surface/30"></span>
+                100% Royalty Free
+              </li>
+              <li class="flex items-center gap-3 text-xs text-on-surface/50 uppercase tracking-widest">
+                <span class="w-px h-3 bg-on-surface/30"></span>
+                24bit WAV · 20 Samples · 830 MB
+              </li>
+              <li class="flex items-center gap-3 text-xs text-on-surface/50 uppercase tracking-widest">
+                <span class="w-px h-3 bg-on-surface/30"></span>
+                A minor &amp; E minor
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+            <a
+              href="https://soundcloud.com/logic-moon/drone-vol1-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-center px-8 py-3 border border-on-surface/20 text-on-surface/60 uppercase tracking-widest text-xs font-light hover:border-on-surface/50 hover:text-on-surface transition-colors duration-300">
+              Listen to Demo
+            </a>
+            <a
+              href="https://ko-fi.com/s/27381b17d7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-center px-8 py-3 bg-primary text-on-primary uppercase tracking-widest text-xs font-light hover:brightness-110 transition-all duration-300">
+              Buy on Ko-fi
+            </a>
+          </div>
         </div>
       </div>
 
