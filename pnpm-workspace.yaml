@@ -1,8 +1,4 @@
 allowBuilds:
-  esbuild: false
-  scrollreveal: false
-  sharp: false
-ignoredBuiltDependencies:
-  - esbuild
-  - sharp
-  - workerd
+  esbuild: true
+  scrollreveal: true
+  sharp: true
