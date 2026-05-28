@@ -1,0 +1,19 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Logic Moon",
+  "url": "https://logic-moon.de",
+  "description": "Logic Moon is the ambient music project of Tobias Lorsbach. His music is a blend of ambient, drone, and neoclassical music.",
+  "genre": ["Ambient", "Drone", "Neoclassical"],
+  "founder": {
+    "@type": "Person",
+    "name": "Tobias Lorsbach"
+  },
+  "sameAs": [
+    "https://logicmoon.bandcamp.com",
+    "https://soundcloud.com/logicmoon"
+  ]
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

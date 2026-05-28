@@ -11,11 +11,12 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import LatestNews from "../components/LatestNews.astro";
+import JsonLd from "../components/JsonLd.astro";
 //import FeaturedRelease from "../components/FeaturedRelease.astro";
 import Hero from "../components/HeroVideo.astro";
 ---
 
-<Layout title="Logic Moon">
+<Layout title="Logic Moon — Ambient & Drone">
   <script is:inline>
     (function () {
       try {
@@ -28,6 +29,7 @@ import Hero from "../components/HeroVideo.astro";
     })();
   </script>
 
+  <JsonLd />
   <Navigation client:idle />
   <main class="bg-surface text-on-surface">
     <Hero />
