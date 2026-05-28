@@ -1,98 +1,105 @@
 #!/usr/bin/env bash
-# Runs a Lighthouse audit against the local Astro preview server.
-# Usage: ./scripts/lighthouse.sh [url-path]
-# Example: ./scripts/lighthouse.sh /blog
+# Lighthouse audit via Docker + nginx (production-like, HTTPS).
+#
+# Usage:
+#   bash scripts/lighthouse.sh [path]           — audit homepage
+#   bash scripts/lighthouse.sh /blog            — audit specific path
+#   bash scripts/lighthouse.sh --no-build       — skip Docker build, reuse existing image
+#   bash scripts/lighthouse.sh --no-build /blog — skip build + specific path
+#
+# Prerequisites: Docker, lighthouse CLI (npm i -g lighthouse), Chrome
 
 set -euo pipefail
 
-PORT=4321
-PATH_TO_AUDIT="${1:-/}"
+# --- Parse args ---
+NO_BUILD=false
+PATH_TO_AUDIT="/"
+
+for arg in "$@"; do
+  case "$arg" in
+    --no-build) NO_BUILD=true ;;
+    /*) PATH_TO_AUDIT="$arg" ;;
+  esac
+done
+
+PROJECT_NAME=$(node -p "require('./package.json').name")
+DOCKER_PORT=8443
+DOCKER_IMAGE="${PROJECT_NAME}-lighthouse"
+DOCKER_CONTAINER="${PROJECT_NAME}-lh-test"
 REPORT_DIR="lighthouse-reports"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 REPORT_BASE="${REPORT_DIR}/report_${TIMESTAMP}"
 LATEST_JSON="${REPORT_DIR}/latest.json"
-PREVIEW_PID=""
 
 mkdir -p "$REPORT_DIR"
 
 cleanup() {
-  if [ -n "$PREVIEW_PID" ] && kill -0 "$PREVIEW_PID" 2>/dev/null; then
-    kill "$PREVIEW_PID" 2>/dev/null || true
-  fi
+  docker rm -f "$DOCKER_CONTAINER" 2>/dev/null || true
 }
 trap cleanup EXIT
 
-# Kill anything on our port
 kill_port() {
   local pids
   pids=$(lsof -ti tcp:"$1" 2>/dev/null || true)
   if [ -n "$pids" ]; then
-    echo "Killing existing processes on port $1: $pids"
+    echo "Killing existing processes on port $1"
     echo "$pids" | xargs kill -9 2>/dev/null || true
     sleep 1
   fi
 }
 
-echo "Building project..."
-pnpm build --silent 2>&1 | tail -3
+# --- Build ---
+if $NO_BUILD; then
+  echo "Skipping build (--no-build)"
+else
+  echo "Building project..."
+  pnpm build --silent 2>&1 | tail -3
+  echo "Building Docker image..."
+  docker build -t "$DOCKER_IMAGE" -f Dockerfile.lighthouse . --quiet
+fi
 
-kill_port $PORT
-kill_port $((PORT+1))
-kill_port $((PORT+2))
-kill_port $((PORT+3))
+# --- Start container ---
+kill_port $DOCKER_PORT
+docker rm -f "$DOCKER_CONTAINER" 2>/dev/null || true
 
-echo "Starting preview server on port ${PORT}..."
-pnpm preview --port "${PORT}" --host 2>&1 &
-PREVIEW_PID=$!
+echo "Starting nginx container on port ${DOCKER_PORT}..."
+docker run -d --name "$DOCKER_CONTAINER" -p "${DOCKER_PORT}:443" "$DOCKER_IMAGE" > /dev/null
 
-# Wait for server with timeout
-echo "Waiting for server..."
-READY=0
-for i in $(seq 1 30); do
-  if curl -sf "http://localhost:${PORT}" > /dev/null 2>&1; then
-    echo "Server ready on port ${PORT}."
-    READY=1
+URL="https://localhost:${DOCKER_PORT}${PATH_TO_AUDIT}"
+echo "Waiting for nginx..."
+for i in $(seq 1 20); do
+  if curl -sfk "$URL" > /dev/null 2>&1; then
+    echo "nginx ready."
     break
   fi
   sleep 1
 done
 
-if [ "$READY" -eq 0 ]; then
-  echo "ERROR: Server did not start within 30 seconds."
-  exit 1
-fi
-
-URL="http://localhost:${PORT}${PATH_TO_AUDIT}"
+# --- Run Lighthouse ---
 echo "Running Lighthouse on ${URL}..."
-
 lighthouse "$URL" \
   --output=json,html \
   --output-path="${REPORT_BASE}" \
-  --chrome-flags="--headless --no-sandbox --disable-gpu" \
+  --chrome-flags="--headless --no-sandbox --disable-gpu --ignore-certificate-errors" \
+  --throttling-method=provided \
   --quiet \
   --only-categories=performance,accessibility,best-practices,seo
 
-# Lighthouse appends .report.json / .report.html when using multiple outputs
 ACTUAL_JSON="${REPORT_BASE}.report.json"
 ACTUAL_HTML="${REPORT_BASE}.report.html"
 
-if [ ! -f "$ACTUAL_JSON" ]; then
-  echo "ERROR: Report not found at ${ACTUAL_JSON}"
-  ls "${REPORT_DIR}/"
-  exit 1
-fi
-
+[ -f "$ACTUAL_JSON" ] || { echo "ERROR: Report not found at ${ACTUAL_JSON}"; exit 1; }
 cp "$ACTUAL_JSON" "$LATEST_JSON"
 
+# --- Print results ---
 echo ""
 echo "=== Lighthouse Scores ==="
 node -e "
 const r = require('./${LATEST_JSON}');
 const cats = r.categories;
-const score = (s) => Math.round(s.score * 100);
 const icon = (n) => n >= 90 ? '✅' : n >= 50 ? '⚠️ ' : '❌';
 const fmt = (label, cat) => {
-  const n = score(cat);
+  const n = Math.round(cat.score * 100);
   console.log(icon(n) + ' ' + label.padEnd(16) + n);
 };
 fmt('Performance', cats.performance);
@@ -105,13 +112,13 @@ echo ""
 echo "Key Metrics:"
 node -e "
 const r = require('./${LATEST_JSON}');
-const audits = r.audits;
-const ms = (v) => v >= 1000 ? (v/1000).toFixed(1) + 's' : Math.round(v) + 'ms';
-if (audits['largest-contentful-paint']) console.log('  LCP:   ' + ms(audits['largest-contentful-paint'].numericValue));
-if (audits['first-contentful-paint'])   console.log('  FCP:   ' + ms(audits['first-contentful-paint'].numericValue));
-if (audits['total-blocking-time'])      console.log('  TBT:   ' + ms(audits['total-blocking-time'].numericValue));
-if (audits['cumulative-layout-shift'])  console.log('  CLS:   ' + audits['cumulative-layout-shift'].numericValue.toFixed(3));
-if (audits['speed-index'])              console.log('  SI:    ' + ms(audits['speed-index'].numericValue));
+const a = r.audits;
+const ms = (v) => v >= 1000 ? (v/1000).toFixed(1)+'s' : Math.round(v)+'ms';
+if (a['largest-contentful-paint']) console.log('  LCP:  ', ms(a['largest-contentful-paint'].numericValue));
+if (a['first-contentful-paint'])   console.log('  FCP:  ', ms(a['first-contentful-paint'].numericValue));
+if (a['total-blocking-time'])      console.log('  TBT:  ', ms(a['total-blocking-time'].numericValue));
+if (a['cumulative-layout-shift'])  console.log('  CLS:  ', a['cumulative-layout-shift'].numericValue.toFixed(3));
+if (a['speed-index'])              console.log('  SI:   ', ms(a['speed-index'].numericValue));
 "
 
 echo ""
@@ -122,10 +129,10 @@ const ops = Object.values(r.audits)
   .filter(a => a.details?.type === 'opportunity' && a.score !== null && a.score < 1)
   .sort((a,b) => (b.details?.overallSavingsMs||0) - (a.details?.overallSavingsMs||0))
   .slice(0, 5);
-if (ops.length === 0) { console.log('  None found'); }
+if (!ops.length) { console.log('  None — great job!'); }
 ops.forEach(a => {
   const save = a.details?.overallSavingsMs ? ' (~' + Math.round(a.details.overallSavingsMs) + 'ms)' : '';
-  console.log('  - ' + a.title + save);
+  console.log('  -', a.title + save);
 });
 "
 
@@ -134,9 +141,9 @@ echo "Failed Audits (score < 0.9):"
 node -e "
 const r = require('./${LATEST_JSON}');
 const failed = Object.values(r.audits)
-  .filter(a => a.score !== null && a.score < 0.9 && a.score !== undefined)
+  .filter(a => a.score !== null && a.score < 0.9)
   .sort((a,b) => a.score - b.score)
-  .slice(0, 10);
+  .slice(0, 8);
 failed.forEach(a => {
   const icon = a.score < 0.5 ? '❌' : '⚠️ ';
   console.log(icon + ' [' + Math.round(a.score*100) + '] ' + a.title);
@@ -144,6 +151,4 @@ failed.forEach(a => {
 "
 
 echo ""
-echo "Reports:"
-echo "  JSON: ${ACTUAL_JSON}"
-echo "  HTML: ${ACTUAL_HTML}"
+echo "Reports: ${ACTUAL_HTML}"
