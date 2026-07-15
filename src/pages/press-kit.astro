@@ -6,7 +6,6 @@ import Contact from "../components/Contact.vue";
 import press01 from "../assets/press-kit/logic moon_press01.jpg";
 import press02 from "../assets/press-kit/logic moon_press02.jpg";
 import press03 from "../assets/press-kit/logic moon_press03.jpg";
-import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
 ---
 
 <Layout title="Press Kit - Logic Moon">
@@ -87,17 +86,70 @@ import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
             Biography
           </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-on-surface/10">
-          <div class="bg-surface-container-low p-10">
-            <ArtistBioParagraphs class="space-y-6 font-light text-on-surface/70 leading-relaxed" highlight="link" />
+        <p class="text-on-surface/50 font-light text-sm mb-8 max-w-2xl">
+          Ready-to-use bio copy for articles, liner notes, and event listings.
+          Pick a length and copy it directly — no rewriting needed.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-on-surface/10">
+          <!-- Short -->
+          <div class="bg-surface-container-low p-8 flex flex-col">
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="text-xs uppercase tracking-widest text-primary">Short · ~50 words</span>
+              <button
+                type="button"
+                data-copy-target="bio-short"
+                class="copy-bio-btn shrink-0 border cursor-pointer border-on-surface/20 text-on-surface/60 hover:text-on-surface hover:border-on-surface/40 px-4 py-2 text-xs uppercase tracking-widest transition-colors">
+                Copy
+              </button>
+            </div>
+            <p id="bio-short" class="font-light text-on-surface/70 leading-relaxed text-sm">Logic Moon is the cinematic ambient project of Mainz, Germany-based artist Tobias Lorsbach, built around slow-moving soundscapes rooted in space, isolation, and introspection. Active since 2011, his ambient, drone, and neoclassical-tinged music has been released on labels including Whitelabrecs, DRONARIVM, Ambientologist, Shimmering Moods, and his own imprint The Moon Records.</p>
           </div>
-          <div class="bg-surface-container-low p-10">
-            <a
-              href="/logic-moon-bio"
-              class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all block">
-              Read Full Biography <span>→</span>
-            </a>
+
+          <!-- Medium -->
+          <div class="bg-surface-container-low p-8 flex flex-col">
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="text-xs uppercase tracking-widest text-primary">Medium · ~130 words</span>
+              <button
+                type="button"
+                data-copy-target="bio-medium"
+                class="copy-bio-btn shrink-0 border cursor-pointer border-on-surface/20 text-on-surface/60 hover:text-on-surface hover:border-on-surface/40 px-4 py-2 text-xs uppercase tracking-widest transition-colors">
+                Copy
+              </button>
+            </div>
+            <div id="bio-medium" class="space-y-4 font-light text-on-surface/70 leading-relaxed text-sm">
+              <p>Tobias Lorsbach is a Mainz, Germany-based artist known as Logic Moon and Aethery Fields. His releases have appeared on internationally recognized labels such as Whitelabrecs, Archives, Archipel, DRONARIVM, Ambientologist, Shimmering Moods, Chitra, and his own The Moon Records imprint across both physical and digital formats.</p>
+              <p>Tobias' musical background spans a wide range of genres — from performing guitar in a death metal band to a DJ career rooted in techno, and now establishing himself as a prominent voice in ambient music. He spent many years in the minimal techno scenes since the early 2000s, and while out on a field recording excursion, he fell upon the idea of layering ambient drones — the origin of his debut album as Logic Moon, "Herbst11".</p>
+            </div>
           </div>
+
+          <!-- Long -->
+          <div class="bg-surface-container-low p-8 flex flex-col">
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="text-xs uppercase tracking-widest text-primary">Long · ~330 words</span>
+              <button
+                type="button"
+                data-copy-target="bio-long"
+                class="copy-bio-btn shrink-0 border cursor-pointer border-on-surface/20 text-on-surface/60 hover:text-on-surface hover:border-on-surface/40 px-4 py-2 text-xs uppercase tracking-widest transition-colors">
+                Copy
+              </button>
+            </div>
+            <div id="bio-long" class="space-y-4 font-light text-on-surface/70 leading-relaxed text-sm">
+              <p>Tobias Lorsbach is a Mainz, Germany-based artist known as Logic Moon and Aethery Fields. His releases have appeared on internationally recognized labels such as Whitelabrecs, Archives, Archipel, DRONARIVM, Ambientologist, Shimmering Moods, Chitra, and his own The Moon Records imprint across both physical and digital formats.</p>
+              <p>He spent many years in the minimal techno scenes since the early 2000s, and while out on a field recording excursion, he fell upon the idea of layering some ambient drones. From here, his debut album as Logic Moon was born — "Herbst11".</p>
+              <p>Tobias' musical background spans a wide range of genres — from performing guitar in a death metal band to a DJ career rooted in techno, and now establishing himself as a prominent voice in ambient music. His varied experiences are clearly evident in his acclaimed albums.</p>
+              <p>Logic Moon has also become well known for his mastering and post-production work for internationally recognized labels like Whitelabrecs, DRONARIVM, Archives, and artists all over the globe.</p>
+              <p>Musically, Logic Moon merges ambient, drone, and neoclassical influences into sound-painterly, cinematic soundscapes that combine electronic and acoustic elements. His pieces often begin with guitar or piano motifs, overlaid with flowing synthesizer drones, strings, and field recordings.</p>
+              <p>Logic Moon frequently collaborates with other artists and labels. His newest release, "Musica Universalis" (2026, Ambient Cat), is a deep drone and space ambient collaboration with Piscean Daydreams (JJ Rogalski), conceived as the soundtrack to an imagined science-fiction film in the vein of Blade Runner. With composer Sven Laux, he released "The Unavoidable Death of Loneliness" (2022, Ambientologist) and "The Quiet Companion" (2023, Shimmering Moods). With Swedish cellist Henrik Meierkord, he released "Inseln" (2022) and the mini albums "Ewiger Wald" and "Ewiger Wald Addendum" (2024), blending electronic drones with cello into neoclassical ambient studies. With producer Scarless Arms, he released the six-track "Moon Scars" EP (2023) in a cinematic ambient style.</p>
+              <p>Active since 2011 and based in Mainz, Germany, Logic Moon continues to release music internationally on labels including Whitelabrecs, DRONARIVM, Ambientologist, Shimmering Moods, Archipel, Archives, and his own imprint The Moon Records.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end mt-8">
+          <a
+            href="/logic-moon-bio"
+            class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all no-underline text-center">
+            Read Full Biography →
+          </a>
         </div>
       </div>
     </section>
@@ -466,5 +518,16 @@ import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
     URL.revokeObjectURL(url);
 
     if (btn) btn.textContent = "Download All ↓";
+  });
+
+  document.querySelectorAll(".copy-bio-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const target = document.getElementById(btn.dataset.copyTarget);
+      if (!target) return;
+      await navigator.clipboard.writeText(target.innerText.trim());
+      const original = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
   });
 </script>

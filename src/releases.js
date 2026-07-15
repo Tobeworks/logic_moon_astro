@@ -408,6 +408,15 @@ const releases = [
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/sub-lacuna'
     },
+    {
+        id: 54,
+        cover: 'musica-universalis.jpg',
+        year: '2026',
+        release_id: '900360428',
+        title: 'Logic Moon & Piscean Daydreams - Musica Universalis',
+        text: 'A deep drone and space ambient collaboration with Piscean Daydreams, conceived as the soundtrack to an imagined science-fiction film in the vein of Blade Runner.',
+        bandcamp: 'https://ambientcat.bandcamp.com/album/musica-universalis'
+    },
 
 ];
 export default releases;
