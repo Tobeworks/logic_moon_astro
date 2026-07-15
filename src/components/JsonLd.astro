@@ -1,5 +1,9 @@
 ---
-const schema = {
+interface Props {
+  schema?: Record<string, unknown>;
+}
+
+const defaultSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   "name": "Logic Moon",
@@ -15,5 +19,7 @@ const schema = {
     "https://soundcloud.com/logicmoon"
   ]
 };
+
+const { schema = defaultSchema } = Astro.props;
 ---
 <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

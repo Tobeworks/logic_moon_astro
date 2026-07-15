@@ -6,9 +6,53 @@ import { Picture } from "astro:assets";
 import portrait from "../assets/img/Logic-Woods-3.webp";
 import releases from '../releases.js';
 import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
+import JsonLd from "../components/JsonLd.astro";
+
+const bioSchema = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Logic Moon",
+  "alternateName": "Aethery Fields",
+  "url": "https://logic-moon.de/logic-moon-bio",
+  "description": "Logic Moon is the cinematic ambient project of Mainz, Germany-based artist Tobias Lorsbach, blending ambient, drone, and neoclassical influences into slow-moving, sound-painterly soundscapes.",
+  "genre": ["Ambient", "Drone", "Neoclassical", "Cinematic", "Space Ambient"],
+  "foundingDate": "2011",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Mainz, Germany"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Tobias Lorsbach",
+    "sameAs": [
+      "https://logicmoon.bandcamp.com",
+      "https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8",
+      "https://www.youtube.com/@LogicMoonMusic",
+      "https://www.instagram.com/logicmoonmusic/",
+      "https://soundcloud.com/logic-moon"
+    ]
+  },
+  "sameAs": [
+    "https://logicmoon.bandcamp.com",
+    "https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8",
+    "https://www.youtube.com/@LogicMoonMusic",
+    "https://www.instagram.com/logicmoonmusic/",
+    "https://soundcloud.com/logic-moon"
+  ],
+  "album": releases.map((release) => {
+    const url = release.bandcamp || release.spotify || release.apple || release.amazon;
+    return {
+      "@type": "MusicAlbum",
+      "name": release.title,
+      "datePublished": release.year,
+      ...(url ? { url } : {})
+    };
+  })
+};
 ---
 
 <Layout title="Logic Moon Biography">
+  <JsonLd schema={bioSchema} />
   <Navigation client:visible />
 
   <main class="bg-surface text-on-surface">
@@ -141,7 +185,7 @@ import ArtistBioParagraphs from "../components/ArtistBioParagraphs.astro";
             <div class="border-l border-outline-variant/20 pl-8">
               <h3 class="font-bold text-on-surface mb-3 text-lg">LABELS</h3>
               <p class="text-sm leading-relaxed">
-                In addition to the already mentioned labels Ambientologist and Shimmering Moods, he released on Archipel (D DR), Archives (GB), DE_ST_REC, Dronarivm (D), Whitelabrecs (JP) and his own label Logic Moon Records or spontanMusik.
+                In addition to the already mentioned labels Ambientologist and Shimmering Moods, he released on Archipel (D DR), Archives (GB), DE_ST_REC, Dronarivm (D), Whitelabrecs (JP), Siril Records, Respite Records and his own label Logic Moon Records or spontanMusik.
               </p>
             </div>
           </div>
