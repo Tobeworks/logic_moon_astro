@@ -134,7 +134,7 @@
                         required
                         :disabled="form_disabled"
                         id="planned_use"
-                        placeholder="Planned Use — describe how you intend to use the track"
+                        placeholder="Planned Use: describe how you intend to use the track"
                         class="w-full bg-transparent border-0 border-b-2 border-outline py-3 px-0 focus:ring-0 focus:border-primary transition-colors text-base tracking-normal placeholder:text-on-surface/50 text-on-surface resize-none"
                         aria-required="true"
                     ></textarea>
@@ -153,7 +153,7 @@
                         aria-required="true"
                     >
                         <option value="" disabled>Select a license type</option>
-                        <option value="free">Free — Non-Commercial (€0)</option>
+                        <option value="free">Free, Non-Commercial (€0)</option>
                         <option value="indie">Indie License (€15)</option>
                         <option value="commercial">Commercial License (€49)</option>
                         <option value="sync">Sync / Broadcast (on request)</option>

@@ -92,7 +92,7 @@
   --radius-full: 0px;
 }
 
-/* Animate on scroll — driven by IntersectionObserver in Layout.astro */
+/* Animate on scroll, driven by IntersectionObserver in Layout.astro */
 @layer base {
   [data-animate] {
     opacity: 0;
