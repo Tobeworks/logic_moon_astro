@@ -118,7 +118,7 @@
                             id="freesound_ref"
                             required
                             :disabled="form_disabled"
-                            placeholder="Freesound URL(s) or ID(s)"
+                            placeholder="Freesound URL(s) or ID(s) of the sound(s)"
                             class="w-full bg-transparent border-0 border-b-2 border-outline py-3 px-0 focus:ring-0 focus:border-primary transition-colors text-base tracking-normal placeholder:text-on-surface/50 text-on-surface"
                             aria-required="true"
                         />
