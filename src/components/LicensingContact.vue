@@ -154,8 +154,8 @@
                     >
                         <option value="" disabled>Select a license type</option>
                         <option value="free">Free, Non-Commercial (€0)</option>
-                        <option value="indie">Indie License (€15)</option>
-                        <option value="commercial">Commercial License (€49)</option>
+                        <option value="indie">Indie License (€20)</option>
+                        <option value="commercial">Commercial License (€60)</option>
                         <option value="sync">Sync / Broadcast (on request)</option>
                     </select>
                 </div>
