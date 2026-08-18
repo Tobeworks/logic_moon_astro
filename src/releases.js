@@ -417,6 +417,24 @@ const releases = [
         text: 'A deep drone and space ambient collaboration with Piscean Daydreams, conceived as the soundtrack to an imagined science-fiction film in the vein of Blade Runner.',
         bandcamp: 'https://ambientcat.bandcamp.com/album/musica-universalis'
     },
+    {
+        id: 55,
+        cover: 'Logic Moon Diogene_miracles.jpg',
+        year: '2026',
+        release_id: '',
+        title: 'Logic Moon & Diogene - Miracles',
+        text: '',
+        spotify: 'https://too.fm/2mozry1'
+    },
+    {
+        id: 56,
+        cover: 'cover_logic_moon_spelrum.jpg',
+        year: '2026',
+        release_id: '1889885305',
+        title: 'Logic Moon & Henrik Meierkord - Spelrum',
+        text: 'Two restrained, atmospheric tracks exploring the space between control and drift, with cello overtones bowing through the mix.',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/spelrum'
+    },
 
 ];
 export default releases;
