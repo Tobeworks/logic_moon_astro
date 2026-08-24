@@ -71,8 +71,8 @@
         <div>
           <div class="text-sm text-on-surface/60 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
           <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ selectedRelease.title }}</h2>
-          <div v-if="selectedRelease.bandcamp" class="mb-6">
-            <AlbumLinks :url="selectedRelease.bandcamp" />
+          <div class="mb-6">
+            <PlatformLinks :links="selectedRelease" />
           </div>
           <p v-if="selectedRelease.text" class="text-on-surface-variant font-light leading-relaxed">{{ selectedRelease.text }}</p>
         </div>
@@ -88,7 +88,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import releases from '../releases.js';
 import Modal from './Modal.vue';
-import AlbumLinks from './Album-Links.vue';
+import PlatformLinks from './PlatformLinks.vue';
 
 const props = defineProps({
   isFullPage: { type: Boolean, default: false },

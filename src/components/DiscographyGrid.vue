@@ -12,9 +12,7 @@
                         <h3 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ last_release.title }}</h3>
                         <p v-if="last_release.text" class="text-on-surface-variant font-light leading-relaxed mb-6">{{ last_release.text }}</p>
                     </div>
-                    <div v-if="last_release.bandcamp">
-                        <AlbumLinks :url="last_release.bandcamp" />
-                    </div>
+                    <PlatformLinks :links="last_release" />
                     <div v-if="last_release.release_id" class="bg-surface-container-lowest p-4">
                         <iframe class="border-0 w-full" :src="`https://bandcamp.com/EmbeddedPlayer/album=${last_release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=none/transparent=true/`" style="height: 220px;" seamless title="Bandcamp Player"></iframe>
                     </div>
@@ -75,8 +73,8 @@
                 <div>
                     <div class="text-sm text-on-surface/60 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
                     <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ selectedRelease.title }}</h2>
-                    <div v-if="selectedRelease.bandcamp" class="mb-6">
-                        <AlbumLinks :url="selectedRelease.bandcamp" />
+                    <div class="mb-6">
+                        <PlatformLinks :links="selectedRelease" />
                     </div>
                     <p v-if="selectedRelease.text" class="text-on-surface-variant font-light leading-relaxed">{{ selectedRelease.text }}</p>
                 </div>
@@ -92,7 +90,7 @@
 import { ref, computed } from 'vue';
 import releases from '../releases.js';
 import Modal from './Modal.vue';
-import AlbumLinks from './Album-Links.vue';
+import PlatformLinks from './PlatformLinks.vue';
 
 const props = defineProps({
     isFullPage: { type: Boolean, default: false },
