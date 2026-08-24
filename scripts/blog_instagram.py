@@ -3,10 +3,11 @@
 Generate Instagram post images for Logic Moon blog posts.
 
 Usage:
-  pnpm blog:instagram <slug> [quote]
+  pnpm blog:instagram <slug> [quote] [--only 1x1|4x5]
 
   Without quote: Claude generates 5 hook suggestions, you pick one.
   With quote:    Skips generation, renders immediately.
+  --only:        Render just one aspect ratio instead of both.
 
 Output:
   public/social/<slug>_1x1.jpg   (1080×1080)
@@ -15,6 +16,7 @@ Output:
 Examples:
   pnpm blog:instagram my-music-process
   pnpm blog:instagram my-music-process "Constraints are the engine of creativity."
+  pnpm blog:instagram my-music-process --only 4x5
 """
 
 import sys
@@ -251,8 +253,18 @@ def main():
         print(__doc__)
         sys.exit(1)
 
-    slug         = sys.argv[1]
-    quote        = sys.argv[2] if len(sys.argv) >= 3 else None
+    args = sys.argv[1:]
+    only = None
+    if "--only" in args:
+        i = args.index("--only")
+        only = args[i + 1]
+        if only not in ("1x1", "4x5"):
+            print(f"✗ --only must be 1x1 or 4x5, got: {only}")
+            sys.exit(1)
+        del args[i:i + 2]
+
+    slug         = args[0]
+    quote        = args[1] if len(args) >= 2 else None
     skip_refine  = quote is not None  # direct quote → skip refiner
 
     script_dir   = os.path.dirname(os.path.abspath(__file__))
@@ -328,8 +340,10 @@ def main():
     print(f'\nUsing: "{quote}"\n')
 
     # ── render ────────────────────────────────────────────────────────────────
-    render(src, quote, slug, 1080, 1080, "1x1")
-    render(src, quote, slug, 1080, 1350, "4x5")
+    if only in (None, "1x1"):
+        render(src, quote, slug, 1080, 1080, "1x1")
+    if only in (None, "4x5"):
+        render(src, quote, slug, 1080, 1350, "4x5")
 
     # ── generate caption summary ──────────────────────────────────────────────
     if api_key:
