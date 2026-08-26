@@ -19,7 +19,11 @@ const releases = [
         year: '2013',
         release_id: '2867871407',
         title: 'Altrhein',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/altrhein'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/altrhein',
+        spotify: 'https://open.spotify.com/album/06hOGtl48rzi7MEAGTyZMt',
+        apple: 'https://music.apple.com/us/album/altrhein/1528048002',
+        amazon: 'https://music.amazon.com/albums/B08G1TF3MN',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/altrhein'
     },
     {
         id: 4,
@@ -27,7 +31,8 @@ const releases = [
         year: '2014',
         release_id: '1074886078',
         title: 'Quiet City',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/quiet-city'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/quiet-city',
+        soundcloud: 'https://soundcloud.com/logic-moon/quiet-city-lp-preview-release-on-24122014'
     },
     {
         id: 5,
@@ -42,7 +47,11 @@ const releases = [
         year: '2016',
         release_id: '2665743749',
         title: 'Logic Moon & Fiction Surprise - Debut',
-        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/debut'
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/debut',
+        spotify: 'https://open.spotify.com/album/79sr99zDWDCtxFRHWbiaYP',
+        apple: 'https://music.apple.com/us/album/debut/1105260803',
+        amazon: 'https://music.amazon.com/albums/B0BDMFXJ5D',
+        beatport: 'https://www.beatport.com/release/debut/1755478'
     },
     {
         id: 7,
@@ -50,7 +59,12 @@ const releases = [
         year: '2016',
         release_id: '596669401',
         title: 'Logic Moon - Oblivion',
-        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/oblivion'
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/oblivion',
+        spotify: 'https://open.spotify.com/album/3CfVUxbUW9ddwdhHRQ93Jf',
+        apple: 'https://music.apple.com/us/album/oblivion/1249803853',
+        amazon: 'https://music.amazon.com/albums/B0BCGHTJ2J',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/oblivion-lp-archives-2017',
+        beatport: 'https://www.beatport.com/release/oblivion/2050922'
     },
     {
         id: 8,
@@ -58,7 +72,12 @@ const releases = [
         year: '2016',
         release_id: '2442300750',
         title: 'Logic Moon - Ground Zero',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/ground-zero'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/ground-zero',
+        spotify: 'https://open.spotify.com/album/3K3MP0Y8XHlawa7W3XW7a7',
+        apple: 'https://music.apple.com/us/album/ground-zero-ep/1513618301',
+        amazon: 'https://music.amazon.com/albums/B088LVKMYS',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/ground-zero-1',
+        beatport: 'https://www.beatport.com/release/ground-zero/5789667'
     },
     {
         id: 9,
@@ -66,7 +85,10 @@ const releases = [
         year: '2017',
         release_id: '2970478282',
         title: 'Logic Moon - Cascadian Mind',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/cascadian-mind'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/cascadian-mind',
+        apple: 'https://music.apple.com/us/album/cascadian-mind/1513654498',
+        amazon: 'https://music.amazon.com/albums/B088JVMXJ5',
+        soundcloud: 'https://soundcloud.com/logic-moon/cascadian-mind-1'
     },
     {
         id: 10,
@@ -74,7 +96,11 @@ const releases = [
         year: '2018',
         release_id: '1544573505',
         title: 'Logic Moon - Phenibut 01',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-01'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-01',
+        spotify: 'https://open.spotify.com/album/6HMgTOSv6a9S6MC8C1aHGY',
+        apple: 'https://music.apple.com/us/album/phenibut-01-single/1513592529',
+        amazon: 'https://music.amazon.com/albums/B088GQ4TLN',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/phenibut-01'
     },
     {
         id: 11,
@@ -82,7 +108,11 @@ const releases = [
         year: '2018',
         release_id: '585997865',
         title: 'Logic Moon - Phenibut 02',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-02'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-02',
+        spotify: 'https://open.spotify.com/album/0waOwJnBQwEeNibV4dlebP',
+        apple: 'https://music.apple.com/us/album/phenibut-02-single/1513698687',
+        amazon: 'https://music.amazon.com/albums/B088JF1NJK',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/phenibut-02'
     },
     {
         id: 12,
@@ -90,7 +120,11 @@ const releases = [
         year: '2018',
         release_id: '1836081134',
         title: 'Logic Moon - Phenibut 03',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-03'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-03',
+        spotify: 'https://open.spotify.com/album/2MgZtTa0LaDsosSzr3hg5V',
+        apple: 'https://music.apple.com/us/album/phenibut-03-single/1513333400',
+        amazon: 'https://music.amazon.com/albums/B088JC172S',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/phenibut-03'
     },
     {
         id: 14,
@@ -98,7 +132,11 @@ const releases = [
         year: '2019',
         release_id: '1418443806',
         title: 'Logic Moon - I See Planets',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/i-see-planets'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/i-see-planets',
+        spotify: 'https://open.spotify.com/album/47CuA46ie2peLoB4Xb4yS0',
+        apple: 'https://music.apple.com/us/album/i-see-planets/1513192726',
+        amazon: 'https://music.amazon.com/albums/B088GRFYVG',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/i-see-planets'
     },
     {
         id: 13,
@@ -106,7 +144,11 @@ const releases = [
         year: '2019',
         release_id: '507144744',
         title: 'Logic Moon - I See Planets',
-        bandcamp: 'https://whitelabrecs.bandcamp.com/album/i-see-planets'
+        bandcamp: 'https://whitelabrecs.bandcamp.com/album/i-see-planets',
+        spotify: 'https://open.spotify.com/album/47CuA46ie2peLoB4Xb4yS0',
+        apple: 'https://music.apple.com/us/album/i-see-planets/1513192726',
+        amazon: 'https://music.amazon.com/albums/B088GRFYVG',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/i-see-planets'
     },
     {
         id: 15,
@@ -114,7 +156,11 @@ const releases = [
         year: '2019',
         release_id: '1154938275',
         title: 'Logic Moon - Tales',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/tales'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/tales',
+        spotify: 'https://open.spotify.com/album/3OeJ004MkEwXUdqxAvwsAO',
+        apple: 'https://music.apple.com/us/album/tales-single/1513276795',
+        amazon: 'https://music.amazon.com/albums/B088GV6XX8',
+        soundcloud: 'https://soundcloud.com/logic-moon/tales'
     },
     {
         id: 16,
@@ -122,7 +168,11 @@ const releases = [
         year: '2020',
         release_id: '1133451006',
         title: 'Logic Moon - 2017',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/2017'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/2017',
+        spotify: 'https://open.spotify.com/album/63679kBvEAwlS5OFGZqqTj',
+        apple: 'https://music.apple.com/us/album/2017/1516069162',
+        amazon: 'https://music.amazon.com/albums/B089DZK9RY',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/2017-ep'
     },
     {
         id: 17,
@@ -130,7 +180,11 @@ const releases = [
         year: '2020',
         release_id: '1851075121',
         title: 'Logic Moon - Coherence',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/coherence'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/coherence',
+        spotify: 'https://open.spotify.com/album/17rek9cMhKeza89Rsc2qS1',
+        apple: 'https://music.apple.com/us/album/coherence-ep/1535341640',
+        amazon: 'https://music.amazon.com/albums/B08L1CM3VP',
+        soundcloud: 'https://soundcloud.com/logic-moon/coherence'
     },
     {
         id: 18,
@@ -138,7 +192,11 @@ const releases = [
         year: '2021',
         release_id: '1634816459',
         title: 'Logic Moon - Starmapping',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/star-mapping'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/star-mapping',
+        spotify: 'https://open.spotify.com/album/6zU82nQwufPrKiFLyS0Vjk',
+        apple: 'https://music.apple.com/us/album/star-mapping-single/1557899474',
+        amazon: 'https://music.amazon.com/albums/B08YSB7NRC',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/star-mapping'
     },
     {
         id: 19,
@@ -146,7 +204,12 @@ const releases = [
         year: '2021',
         release_id: '4142953595',
         title: 'Logic Moon & Atmøsphäre - Fading',
-        bandcamp: 'https://ambientologist.bandcamp.com/album/fading'
+        bandcamp: 'https://ambientologist.bandcamp.com/album/fading',
+        spotify: 'https://open.spotify.com/album/18VRx3mdfScIJgjXADB4pV',
+        apple: 'https://music.apple.com/us/album/fading-ep/1853982435',
+        amazon: 'https://music.amazon.com/albums/B0G31H8873',
+        soundcloud: 'https://soundcloud.com/ambientologist/sets/logic-moon-atmosphare-fading',
+        beatport: 'https://www.beatport.com/release/fading/3365134'
     },
     {
         id: 20,
@@ -154,7 +217,11 @@ const releases = [
         year: '2021',
         release_id: '144584733',
         title: 'Logic Moon - Aeterna',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/aeterna'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/aeterna',
+        spotify: 'https://open.spotify.com/album/6AMUy2aKF60z0bu6Kr7pll',
+        apple: 'https://music.apple.com/us/album/aeterna/1591790775',
+        amazon: 'https://music.amazon.com/albums/B09K6FDV8N',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/aeterna'
     },
     {
         id: 21,
@@ -162,7 +229,12 @@ const releases = [
         year: '2022',
         release_id: '2589416976',
         title: 'Sven Laux & Logic Moon- The Unavoidable Death of Loneliness',
-        bandcamp: 'https://ambientologist.bandcamp.com/album/the-unavoidable-death-of-loneliness'
+        bandcamp: 'https://ambientologist.bandcamp.com/album/the-unavoidable-death-of-loneliness',
+        spotify: 'https://open.spotify.com/album/0V70amBIP2y6nOHdjDG0Ll',
+        apple: 'https://music.apple.com/us/album/the-unavoidable-death-of-loneliness/1853969867',
+        amazon: 'https://music.amazon.com/albums/B0G316YTQZ',
+        soundcloud: 'https://soundcloud.com/ambientologist/sets/sven-laux-logic-moon-the-unavoidable-death-of-loneliness',
+        beatport: 'https://www.beatport.com/release/the-unavoidable-death-of-loneliness/3606435'
     },
     {
         id: 22,
@@ -170,7 +242,11 @@ const releases = [
         year: '2022',
         release_id: '2179910319',
         title: 'Logic Moon & Atmøsphäre - Terraforming',
-        bandcamp: 'https://faintmusic.bandcamp.com/album/terraforming'
+        bandcamp: 'https://faintmusic.bandcamp.com/album/terraforming',
+        spotify: 'https://open.spotify.com/album/3PjmjZu5ll2uSnYZ2R3UdR',
+        apple: 'https://music.apple.com/us/album/terraforming/1611207960',
+        amazon: 'https://music.amazon.com/albums/B0B2C88VVZ',
+        beatport: 'https://www.beatport.com/release/terraforming/3664945'
     },
     {
         id: 23,
@@ -178,7 +254,11 @@ const releases = [
         year: '2022',
         release_id: '3725758464',
         title: 'Logic Moon - The Golden Dawn',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/the-golden-dawn'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/the-golden-dawn',
+        spotify: 'https://open.spotify.com/track/7kTKqDWQ3z5XR8HIahtGBa',
+        apple: 'https://music.apple.com/us/album/the-order-single/1627276193',
+        amazon: 'https://music.amazon.com/albums/B0B2X1RFFD',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/the-golden-dawn'
     },
     {
         id: 24,
@@ -186,7 +266,11 @@ const releases = [
         year: '2022',
         release_id: '443653520',
         title: 'Logic Moon & Henrik Meierkord - Inseln',
-        bandcamp: 'https://whitelabrecs.bandcamp.com/album/inseln'
+        bandcamp: 'https://whitelabrecs.bandcamp.com/album/inseln',
+        spotify: 'https://open.spotify.com/album/7t8oHrAOtCbRJtWNMyQNvk',
+        apple: 'https://music.apple.com/us/album/inseln/1637812929',
+        amazon: 'https://music.amazon.com/albums/B0B8HB3115',
+        soundcloud: 'https://soundcloud.com/logic-moon/logic-moon-henrik-meierkord-06-inseln'
     },
     {
         id: 25,
@@ -194,7 +278,11 @@ const releases = [
         year: '2023',
         release_id: '3004939609',
         title: 'Logic Moon - Lumen',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/lumen'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/lumen',
+        spotify: 'https://open.spotify.com/album/0adneusl56OBGW6QIMjLGk',
+        apple: 'https://music.apple.com/us/album/lumen-single/1693954922',
+        amazon: 'https://music.amazon.com/albums/B0C9575C1H',
+        soundcloud: 'https://soundcloud.com/logic-moon/lumen-track'
     },
     {
         id: 26,
@@ -202,7 +290,11 @@ const releases = [
         year: '2023',
         release_id: '3818893430',
         title: 'Logic Moon & Scarless Arms - Moon Scars',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/moon-scars'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/moon-scars',
+        spotify: 'https://open.spotify.com/album/4UEDwS2sBWm9x6Uffjz7e0',
+        apple: 'https://music.apple.com/us/album/moon-scars-ep/1670787670',
+        amazon: 'https://music.amazon.com/albums/B0BV98MFZF',
+        soundcloud: 'https://soundcloud.com/logic-moon/logic-moon-scarless-arms-moon-scars'
     },
     {
         id: 27,
@@ -210,7 +302,11 @@ const releases = [
         year: '2023',
         release_id: '2159767475',
         title: 'Logic Moon - Sun',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/sun'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/sun',
+        spotify: 'https://open.spotify.com/album/2nKkRNVDOlZJaFYPnx5iQl',
+        apple: 'https://music.apple.com/us/album/sun-single/1686368426',
+        amazon: 'https://music.amazon.com/albums/B0C3VFFZY5',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/sun-ep'
     } ,
     {
         id: 28,
@@ -218,7 +314,11 @@ const releases = [
         year: '2023',
         release_id: '1087783645',
         title: 'Logic Moon - Ikrarus',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/ikarus'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/ikarus',
+        spotify: 'https://open.spotify.com/album/2nrvnyqSpvnruH1gRcAb3P',
+        apple: 'https://music.apple.com/us/album/ikarus-ep/1714757488',
+        amazon: 'https://music.amazon.com/albums/B0CMCP3K65',
+        beatport: 'https://www.beatport.com/release/ikarus/3991819'
     },
     {
         id: 29,
@@ -226,7 +326,12 @@ const releases = [
         year: '2023',
         release_id: '3179587971',
         title: 'Logic Moon - Moonchild',
-        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/moonchild'
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/moonchild',
+        spotify: 'https://open.spotify.com/album/48NFFYMHxLc4fdUxEsSDV3',
+        apple: 'https://music.apple.com/us/album/moonchild/1703545007',
+        amazon: 'https://music.amazon.com/albums/B0CG66XSGT',
+        deezer: 'https://www.deezer.com/de/album/479123245',
+        beatport: 'https://www.beatport.com/release/moonchild/4238897'
     },
     {
         id: 30,
@@ -234,7 +339,10 @@ const releases = [
         year: '2023',
         release_id: '468805382',
         title: ' Sven Laux & Logic Moon - The Quiet Companion',
-        bandcamp: 'https://shimmeringmoodsrecords.bandcamp.com/album/the-quiet-companion'
+        bandcamp: 'https://shimmeringmoodsrecords.bandcamp.com/album/the-quiet-companion',
+        spotify: 'https://open.spotify.com/album/6NujhIGUOLLgaMWt9ZOxpd',
+        apple: 'https://music.apple.com/us/album/the-quiet-companion/1714775426',
+        amazon: 'https://music.amazon.com/albums/B0CMD2SP5M'
     },
     {
         id: 31,
@@ -242,7 +350,11 @@ const releases = [
         year: '2023',
         release_id: '2740630108',
         title: ' Logic Moon - Lux',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/lux'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/lux',
+        spotify: 'https://open.spotify.com/album/4fpw25hxh3GhZ6k2tNSUmS',
+        apple: 'https://music.apple.com/us/album/lux-ep/1735538652',
+        amazon: 'https://music.amazon.com/albums/B0CXTQ8T8T',
+        soundcloud: 'https://soundcloud.com/logic-moon/lux'
     },
     {
         id: 32,
