@@ -18,9 +18,14 @@ interface Links {
 interface Props {
   links: Links;
   class?: string;
+  /** "badge" (default): bordered 44px square buttons, for detail views.
+   *  "bare": small plain marks in a row, for dense lists. */
+  variant?: "badge" | "bare";
+  /** Icon height in "bare" variant, as a Tailwind height class. Default h-4. */
+  size?: string;
 }
 
-const { links, class: className = "" } = Astro.props;
+const { links, class: className = "", variant = "badge", size = "h-4" } = Astro.props;
 
 const PLATFORMS = [
   { key: "bandcamp", label: "Bandcamp", icon: bandcampIcon },
@@ -35,7 +40,7 @@ const PLATFORMS = [
 const active = PLATFORMS.filter((platform) => links[platform.key]);
 ---
 
-{active.length > 0 && (
+{active.length > 0 && variant === "badge" && (
   <div class={`flex flex-wrap items-center gap-2 ${className}`}>
     {active.map((platform) => (
       <a
@@ -46,7 +51,27 @@ const active = PLATFORMS.filter((platform) => links[platform.key]);
         aria-label={platform.label}
         class="flex items-center justify-center w-11 h-11 border border-on-surface/15 text-on-surface/50 hover:text-primary hover:border-primary/40 transition-colors">
         {platform.icon ? (
-          <span class="w-4 h-4" set:html={platform.icon} />
+          <span class="w-4 h-4 overflow-hidden [&>svg]:h-full [&>svg]:w-auto [&>svg]:block [&>svg]:mx-auto" set:html={platform.icon} />
+        ) : (
+          <span class="text-[0.5rem] font-bold uppercase tracking-wider">{platform.label.slice(0, 2)}</span>
+        )}
+      </a>
+    ))}
+  </div>
+)}
+
+{active.length > 0 && variant === "bare" && (
+  <div class={`flex flex-wrap items-center gap-3 ${className}`}>
+    {active.map((platform) => (
+      <a
+        href={links[platform.key]}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={platform.label}
+        aria-label={platform.label}
+        class="inline-flex items-center text-on-surface/20 hover:text-primary transition-colors">
+        {platform.icon ? (
+          <span class={`${size} aspect-square block overflow-hidden [&>svg]:h-full [&>svg]:w-full [&>svg]:block`} set:html={platform.icon} />
         ) : (
           <span class="text-[0.5rem] font-bold uppercase tracking-wider">{platform.label.slice(0, 2)}</span>
         )}

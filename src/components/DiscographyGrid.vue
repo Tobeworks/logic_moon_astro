@@ -47,6 +47,7 @@
                 <div>
                     <h4 class="font-bold text-lg text-on-surface leading-6">{{ release.title }}</h4>
                     <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</p>
+                    <PlatformLinks :links="release" variant="bare" class="mt-2" />
                 </div>
             </div>
         </div>

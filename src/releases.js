@@ -17,15 +17,17 @@ const releases = [
         id: 3,
         cover: 'altrhein.webp',
         year: '2013',
-        release_id: '',
-        title: 'Altrhein'
+        release_id: '2867871407',
+        title: 'Altrhein',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/altrhein'
     },
     {
         id: 4,
         cover: 'quitecity.webp',
         year: '2014',
-        release_id: '',
-        title: 'Quiet City'
+        release_id: '1074886078',
+        title: 'Quiet City',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/quiet-city'
     },
     {
         id: 5,
@@ -38,183 +40,209 @@ const releases = [
         id: 6,
         cover: 'debut.webp',
         year: '2016',
-        release_id: '',
-        title: 'Logic Moon & Fiction Surprise - Debut'
+        release_id: '2665743749',
+        title: 'Logic Moon & Fiction Surprise - Debut',
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/debut'
     },
     {
         id: 7,
         cover: 'oblivion.webp',
         year: '2016',
-        release_id: '',
-        title: 'Logic Moon - Oblivion'
+        release_id: '596669401',
+        title: 'Logic Moon - Oblivion',
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/oblivion'
     },
     {
         id: 8,
         cover: 'groundzero.webp',
         year: '2016',
-        release_id: '',
-        title: 'Logic Moon - Ground Zero'
+        release_id: '2442300750',
+        title: 'Logic Moon - Ground Zero',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/ground-zero'
     },
     {
         id: 9,
         cover: 'cascadian.webp',
         year: '2017',
-        release_id: '',
-        title: 'Logic Moon - Cascadian Mind'
+        release_id: '2970478282',
+        title: 'Logic Moon - Cascadian Mind',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/cascadian-mind'
     },
     {
         id: 10,
         cover: 'pheni1.webp',
         year: '2018',
-        release_id: '',
-        title: 'Logic Moon - Phenibut 01'
+        release_id: '1544573505',
+        title: 'Logic Moon - Phenibut 01',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-01'
     },
     {
         id: 11,
         cover: 'pheni2.webp',
         year: '2018',
-        release_id: '',
-        title: 'Logic Moon - Phenibut 02'
+        release_id: '585997865',
+        title: 'Logic Moon - Phenibut 02',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-02'
     },
     {
         id: 12,
         cover: 'pheni3.webp',
         year: '2018',
-        release_id: '',
-        title: 'Logic Moon - Phenibut 03'
+        release_id: '1836081134',
+        title: 'Logic Moon - Phenibut 03',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/phenibut-03'
     },
     {
         id: 14,
         cover: 'iseeplanets.webp',
         year: '2019',
-        release_id: '',
-        title: 'Logic Moon - I See Planets'
+        release_id: '1418443806',
+        title: 'Logic Moon - I See Planets',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/i-see-planets'
     },
     {
         id: 13,
         cover: 'phoenix.webp',
         year: '2019',
         release_id: '507144744',
-        title: 'Logic Moon - I See Planets'
+        title: 'Logic Moon - I See Planets',
+        bandcamp: 'https://whitelabrecs.bandcamp.com/album/i-see-planets'
     },
     {
         id: 15,
         cover: 'tales.webp',
         year: '2019',
         release_id: '1154938275',
-        title: 'Logic Moon - Tales'
+        title: 'Logic Moon - Tales',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/tales'
     },
     {
         id: 16,
         cover: '2017.webp',
         year: '2020',
         release_id: '1133451006',
-        title: 'Logic Moon - 2017'
+        title: 'Logic Moon - 2017',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/2017'
     },
     {
         id: 17,
         cover: 'coherence.webp',
         year: '2020',
         release_id: '1851075121',
-        title: 'Logic Moon - Coherence'
+        title: 'Logic Moon - Coherence',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/coherence'
     },
     {
         id: 18,
         cover: 'starmapping.webp',
         year: '2021',
         release_id: '1634816459',
-        title: 'Logic Moon - Starmapping'
+        title: 'Logic Moon - Starmapping',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/star-mapping'
     },
     {
         id: 19,
         cover: 'fading_cover_500.webp',
         year: '2021',
         release_id: '4142953595',
-        title: 'Logic Moon & Atmøsphäre - Fading'
+        title: 'Logic Moon & Atmøsphäre - Fading',
+        bandcamp: 'https://ambientologist.bandcamp.com/album/fading'
     },
     {
         id: 20,
         cover: 'Aeterna_Cover01_efx_500.webp',
         year: '2021',
         release_id: '144584733',
-        title: 'Logic Moon - Aeterna'
+        title: 'Logic Moon - Aeterna',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/aeterna'
     },
     {
         id: 21,
         cover: 'death.webp',
         year: '2022',
         release_id: '2589416976',
-        title: 'Sven Laux & Logic Moon- The Unavoidable Death of Loneliness'
+        title: 'Sven Laux & Logic Moon- The Unavoidable Death of Loneliness',
+        bandcamp: 'https://ambientologist.bandcamp.com/album/the-unavoidable-death-of-loneliness'
     },
     {
         id: 22,
         cover: 'Terrforming_cover_400.webp',
         year: '2022',
         release_id: '2179910319',
-        title: 'Logic Moon & Atmøsphäre - Terraforming'
+        title: 'Logic Moon & Atmøsphäre - Terraforming',
+        bandcamp: 'https://faintmusic.bandcamp.com/album/terraforming'
     },
     {
         id: 23,
         cover: 'golden_dawn.webp',
         year: '2022',
         release_id: '3725758464',
-        title: 'Logic Moon - The Golden Dawn'
+        title: 'Logic Moon - The Golden Dawn',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/the-golden-dawn'
     },
     {
         id: 24,
         cover: 'inseln.webp',
         year: '2022',
         release_id: '443653520',
-        title: 'Logic Moon & Henrik Meierkord - Inseln'
+        title: 'Logic Moon & Henrik Meierkord - Inseln',
+        bandcamp: 'https://whitelabrecs.bandcamp.com/album/inseln'
     },
     {
         id: 25,
         cover: 'lumen.webp',
         year: '2023',
         release_id: '3004939609',
-        title: 'Logic Moon - Lumen'
+        title: 'Logic Moon - Lumen',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/lumen'
     },
     {
         id: 26,
         cover: 'moonscars.webp',
         year: '2023',
         release_id: '3818893430',
-        title: 'Logic Moon & Scarless Arms - Moon Scars'
+        title: 'Logic Moon & Scarless Arms - Moon Scars',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/moon-scars'
     },
     {
         id: 27,
         cover: 'sun.webp',
         year: '2023',
         release_id: '2159767475',
-        title: 'Logic Moon - Sun'
+        title: 'Logic Moon - Sun',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/sun'
     } ,
     {
         id: 28,
         cover: 'ikarus.webp',
         year: '2023',
         release_id: '1087783645',
-        title: 'Logic Moon - Ikrarus'
+        title: 'Logic Moon - Ikrarus',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/ikarus'
     },
     {
         id: 29,
         cover: 'moonchild.webp',
         year: '2023',
         release_id: '3179587971',
-        title: 'Logic Moon - Moonchild'
+        title: 'Logic Moon - Moonchild',
+        bandcamp: 'https://archivesdubmusic.bandcamp.com/album/moonchild'
     },
     {
         id: 30,
         cover: 'tqc.webp',
         year: '2023',
         release_id: '468805382',
-        title: ' Sven Laux & Logic Moon - The Quiet Companion'
+        title: ' Sven Laux & Logic Moon - The Quiet Companion',
+        bandcamp: 'https://shimmeringmoodsrecords.bandcamp.com/album/the-quiet-companion'
     },
     {
         id: 31,
         cover: 'lux.webp',
         year: '2023',
         release_id: '2740630108',
-        title: ' Logic Moon - Lux'
+        title: ' Logic Moon - Lux',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/lux'
     },
     {
         id: 32,
