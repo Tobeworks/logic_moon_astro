@@ -160,6 +160,24 @@
                     </select>
                 </div>
 
+                <div class="relative group" data-animate>
+                    <label class="flex items-start gap-3 text-sm font-light text-on-surface/70 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            name="privacy_consent"
+                            v-model="form.privacy_consent"
+                            required
+                            :disabled="form_disabled"
+                            class="mt-1 accent-primary"
+                            aria-required="true"
+                        />
+                        <span>
+                            I agree to the processing of my data as described in the
+                            <a href="/datenschutz" class="underline text-primary" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+                        </span>
+                    </label>
+                </div>
+
                 <div class="flex justify-center" data-animate>
                     <button
                         type="submit"
@@ -186,16 +204,62 @@
             </div>
         </div>
     </section>
+
+    <Modal :is-open="free_modal_open" @close="free_modal_open = false">
+        <div class="max-w-xl mx-auto text-on-surface py-8">
+            <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">License Granted</span>
+            <h3 class="text-3xl md:text-4xl font-bold tracking-tight uppercase mb-8">Free / Non-Commercial License</h3>
+
+            <div class="grid grid-cols-2 gap-6 text-sm mb-10">
+                <div>
+                    <div class="text-xs uppercase tracking-widest opacity-60 mb-1">Licensee</div>
+                    <div>{{ granted.first_name }} {{ granted.last_name }}</div>
+                </div>
+                <div>
+                    <div class="text-xs uppercase tracking-widest opacity-60 mb-1">Email</div>
+                    <div>{{ granted.email }}</div>
+                </div>
+                <div>
+                    <div class="text-xs uppercase tracking-widest opacity-60 mb-1">Track</div>
+                    <div>{{ granted.track_name }}</div>
+                </div>
+                <div>
+                    <div class="text-xs uppercase tracking-widest opacity-60 mb-1">Freesound Reference</div>
+                    <div class="break-all">{{ granted.freesound_ref }}</div>
+                </div>
+                <div>
+                    <div class="text-xs uppercase tracking-widest opacity-60 mb-1">Date</div>
+                    <div>{{ granted.date }}</div>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <div class="text-xs uppercase tracking-widest opacity-60 mb-3">Terms</div>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-start gap-2"><span class="mt-0.5">•</span> Non-commercial use</li>
+                    <li class="flex items-start gap-2"><span class="mt-0.5">•</span> Personal projects & art</li>
+                    <li class="flex items-start gap-2"><span class="mt-0.5">•</span> Attribution required</li>
+                    <li class="flex items-start gap-2"><span class="mt-0.5">•</span> Unlimited use</li>
+                </ul>
+            </div>
+
+            <p class="text-sm opacity-80">
+                This license is granted effective immediately, no further action needed. Full terms at <a href="/licensing" class="underline">logic-moon.de/licensing</a>. Please keep this confirmation for your records.
+            </p>
+        </div>
+    </Modal>
 </template>
 
 <script setup>
 import axios from 'axios'
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { ArrowPathIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
+import Modal from './Modal.vue'
 
 const form_disabled = ref(false)
 const msg_error = ref(false)
 const msg_success = ref(false)
+const free_modal_open = ref(false)
 
 const form = reactive({
     first_name: '',
@@ -207,6 +271,16 @@ const form = reactive({
     freesound_ref: '',
     planned_use: '',
     license_type: '',
+    privacy_consent: false,
+})
+
+const granted = reactive({
+    first_name: '',
+    last_name: '',
+    email: '',
+    track_name: '',
+    freesound_ref: '',
+    date: '',
 })
 
 function resetForm() {
@@ -214,9 +288,28 @@ function resetForm() {
 }
 
 function sendForm() {
-    form_disabled.value = true
     msg_error.value = false
     msg_success.value = false
+
+    if (form.license_type === 'free') {
+        Object.assign(granted, {
+            first_name: form.first_name,
+            last_name: form.last_name,
+            email: form.email,
+            track_name: form.track_name,
+            freesound_ref: form.freesound_ref,
+            date: new Date().toLocaleDateString('en-EN', { year: 'numeric', month: 'long', day: 'numeric' }),
+        })
+        // Free license is granted instantly in the UI; still send the request
+        // so it lands in the admin dashboard like any other request. Fire and
+        // forget, since the grant doesn't depend on the request succeeding.
+        axios.post('https://api.tobeworks.de/logic-moon/licensing', { ...form }).catch(() => {})
+        free_modal_open.value = true
+        resetForm()
+        return
+    }
+
+    form_disabled.value = true
 
     axios.post('https://api.tobeworks.de/logic-moon/licensing', { ...form })
         .then(response => {
@@ -234,4 +327,19 @@ function sendForm() {
             form_disabled.value = false
         })
 }
+
+onMounted(() => {
+    const pending = sessionStorage.getItem('lm_license_type')
+    if (pending) {
+        form.license_type = pending
+        sessionStorage.removeItem('lm_license_type')
+    }
+
+    // client:visible may hydrate before the CTA is clicked, so also listen
+    // live instead of relying only on the sessionStorage read above.
+    window.addEventListener('lm-license-select', (e) => {
+        form.license_type = e.detail
+        sessionStorage.removeItem('lm_license_type')
+    })
+})
 </script>

@@ -70,6 +70,12 @@ import LicensingContact from "../components/LicensingContact.vue";
                   <span class="text-primary mt-0.5">•</span> Unlimited use
                 </li>
               </ul>
+              <a
+                href="#contact"
+                data-license="free"
+                class="license-cta inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all mt-6 pt-6 border-t border-on-surface/10">
+                Get This License <span>→</span>
+              </a>
             </div>
 
             <!-- Indie -->
@@ -98,6 +104,12 @@ import LicensingContact from "../components/LicensingContact.vue";
                   <span class="text-primary mt-0.5">•</span> Unlimited use
                 </li>
               </ul>
+              <a
+                href="#contact"
+                data-license="indie"
+                class="license-cta inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all mt-6 pt-6 border-t border-on-surface/10">
+                Choose Indie <span>→</span>
+              </a>
             </div>
 
             <!-- Commercial -->
@@ -126,6 +138,12 @@ import LicensingContact from "../components/LicensingContact.vue";
                   <span class="text-primary mt-0.5">•</span> Unlimited use
                 </li>
               </ul>
+              <a
+                href="#contact"
+                data-license="commercial"
+                class="license-cta inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all mt-6 pt-6 border-t border-on-surface/10">
+                Choose Commercial <span>→</span>
+              </a>
             </div>
 
             <!-- Sync / Broadcast -->
@@ -154,6 +172,12 @@ import LicensingContact from "../components/LicensingContact.vue";
                   <span class="text-primary mt-0.5">•</span> Unlimited use
                 </li>
               </ul>
+              <a
+                href="#contact"
+                data-license="sync"
+                class="license-cta inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all mt-6 pt-6 border-t border-on-surface/10">
+                Request Sync License <span>→</span>
+              </a>
             </div>
           </div>
 
@@ -307,3 +331,17 @@ import LicensingContact from "../components/LicensingContact.vue";
     <Footer />
   </main>
 </Layout>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>(".license-cta").forEach((link) => {
+    link.addEventListener("click", () => {
+      const type = link.dataset.license;
+      if (!type) return;
+      sessionStorage.setItem("lm_license_type", type);
+      // LicensingContact.vue may already be hydrated (client:visible can fire
+      // before this click), so also notify it live instead of relying only
+      // on its onMounted read.
+      window.dispatchEvent(new CustomEvent("lm-license-select", { detail: type }));
+    });
+  });
+</script>

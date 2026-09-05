@@ -94,6 +94,14 @@
 
 /* Animate on scroll, driven by IntersectionObserver in Layout.astro */
 @layer base {
+  :root {
+    --scroll-margin: 5rem;
+  }
+
+  [id] {
+    scroll-margin-top: var(--scroll-margin);
+  }
+
   [data-animate] {
     opacity: 0;
     transform: translateY(1.75rem);
