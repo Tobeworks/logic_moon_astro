@@ -656,6 +656,15 @@ const releases = [
         text: 'Two restrained, atmospheric tracks exploring the space between control and drift, with cello overtones bowing through the mix.',
         bandcamp: 'https://logicmoon.bandcamp.com/album/spelrum'
     },
+    {
+        id: 57,
+        cover: 'cover_logic_moon_the_north.jpg',
+        year: '2026',
+        release_id: '2606556841',
+        title: 'Logic Moon - The North',
+        text: 'Two pieces from Logic Moon that face away from the light. The North is not a place on a map, it is a direction of travel.',
+        bandcamp: 'https://logicmoon.bandcamp.com/album/the-north'
+    },
 
 ];
 export default releases;
