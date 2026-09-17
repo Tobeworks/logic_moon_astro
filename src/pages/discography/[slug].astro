@@ -1,0 +1,111 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.vue";
+import Footer from "../../components/Footer.astro";
+import PlatformLinks from "../../components/PlatformLinks.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import releases from "../../releases.js";
+
+export function getStaticPaths() {
+  return releases.map((release) => ({
+    params: { slug: release.slug },
+    props: { release },
+  }));
+}
+
+interface Release {
+  id: number;
+  slug: string;
+  cover: string;
+  year: string;
+  release_id?: string;
+  title: string;
+  text?: string;
+  bandcamp?: string;
+  spotify?: string;
+  apple?: string;
+  amazon?: string;
+  soundcloud?: string;
+  deezer?: string;
+  beatport?: string;
+}
+
+const { release } = Astro.props as { release: Release };
+
+const cleanTitle = release.title.trim();
+const pageTitle = cleanTitle.toLowerCase().includes("logic moon")
+  ? cleanTitle
+  : `${cleanTitle} - Logic Moon`;
+
+const description = release.text?.trim()
+  ? release.text.trim().slice(0, 160)
+  : `Listen to "${cleanTitle}" (${release.year}) by Logic Moon.`;
+
+const PLATFORM_KEYS = ["bandcamp", "spotify", "apple", "amazon", "soundcloud", "deezer", "beatport"] as const;
+const sameAs = PLATFORM_KEYS.map((k) => release[k]).filter(Boolean);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MusicAlbum",
+  name: cleanTitle,
+  byArtist: { "@type": "MusicGroup", name: "Logic Moon" },
+  image: new URL(`/images/covers/${release.cover}`, Astro.site).toString(),
+  datePublished: release.year,
+  ...(sameAs.length ? { sameAs } : {}),
+};
+
+const hasBelowFold = Boolean(release.text || release.release_id);
+---
+
+<Layout title={pageTitle} description={description} image={`/images/covers/${release.cover}`}>
+  <JsonLd schema={schema} />
+  <Navigation client:visible />
+
+  <main class="bg-surface text-on-surface">
+    <section class="flex flex-col items-center justify-center gap-6 px-8 mx-auto max-w-lg text-center pt-[var(--header-height)] min-h-[calc(100dvh-var(--header-height))]">
+      <a
+        href="/discography"
+        class="self-start inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all no-underline">
+        <span>&larr;</span> Discography
+      </a>
+
+      <div class="w-[min(85vw,42dvh)] aspect-square bg-surface-container-lowest overflow-hidden">
+        <img
+          src={`/images/covers/${release.cover}`}
+          alt={cleanTitle}
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div>
+        <p class="text-xs uppercase tracking-widest text-on-surface/50 mb-2">{release.year}</p>
+        <h1 class="text-[clamp(1.25rem,6vw,2rem)] font-bold uppercase tracking-tight leading-tight line-clamp-2">
+          {cleanTitle}
+        </h1>
+      </div>
+
+      <PlatformLinks links={release} />
+    </section>
+
+    {hasBelowFold && (
+      <section class="px-8 md:px-16 py-20 max-w-2xl mx-auto text-center">
+        {release.text && (
+          <p class="text-on-surface-variant font-light leading-relaxed mb-10">{release.text}</p>
+        )}
+        {release.release_id && (
+          <div class="bg-surface-container-lowest p-4">
+            <iframe
+              class="w-full border-0"
+              style="height: 300px;"
+              seamless
+              title="Bandcamp Player"
+              src={`https://bandcamp.com/EmbeddedPlayer/album=${release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=small/transparent=true/`}
+            ></iframe>
+          </div>
+        )}
+      </section>
+    )}
+  </main>
+
+  <Footer />
+</Layout>

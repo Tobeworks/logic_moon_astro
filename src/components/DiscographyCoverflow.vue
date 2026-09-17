@@ -8,13 +8,16 @@
       @touchstart.passive="onTouchStart"
       @touchend.passive="onTouchEnd"
     >
-      <div
+      <!-- Full discography page: real link to the release's landing page. Homepage preview: opens the quick-look modal, as before. -->
+      <component
+        :is="isFullPage ? 'a' : 'div'"
         v-for="(release, i) in visibleReleases"
         :key="release.id"
-        class="absolute cursor-pointer select-none"
+        :href="isFullPage ? `/discography/${release.slug}` : null"
+        class="absolute cursor-pointer select-none block"
         style="width: 260px; transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;"
         :style="cardStyle(i)"
-        @click="onCardClick(i, release)"
+        @click="onCardClick(i, release, $event)"
       >
         <div class="aspect-square overflow-hidden">
           <img
@@ -32,7 +35,7 @@
           <h4 class="font-bold text-sm text-on-surface truncate px-2">{{ release.title }}</h4>
           <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</p>
         </div>
-      </div>
+      </component>
     </div>
 
     <!-- Navigation -->
@@ -59,7 +62,7 @@
     </div>
   </div>
 
-  <!-- Modal Player -->
+  <!-- Modal Player (homepage preview only, see isFullPage branch above) -->
   <Modal :is-open="openPlayer" @close="openPlayer = false">
     <div v-if="selectedRelease" class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="order-1">
@@ -169,12 +172,14 @@ function onKeyDown(e) {
   if (e.key === 'ArrowRight') next();
 }
 
-function onCardClick(i, release) {
+function onCardClick(i, release, e) {
   const offset = i - centerIndex.value;
   if (offset !== 0) {
+    if (props.isFullPage) e.preventDefault(); // don't follow the href, just re-center
     currentIndex.value += offset;
     return;
   }
+  if (props.isFullPage) return; // centered card: real navigation via the anchor's href
   if (!release.release_id) return;
   selectedRelease.value = release;
   openPlayer.value = true;

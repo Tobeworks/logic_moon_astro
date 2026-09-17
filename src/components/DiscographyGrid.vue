@@ -29,7 +29,22 @@
                 class="flex flex-col gap-6"
                 data-animate
             >
+                <!-- Full discography page: real link to the release's landing page. Homepage preview: opens the quick-look modal, as before. -->
+                <a
+                    v-if="isFullPage"
+                    :href="`/discography/${release.slug}`"
+                    class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer block"
+                    :aria-label="`View release ${release.title}`"
+                >
+                    <img
+                        :src="`/images/covers/${release.cover}`"
+                        :alt="release.title"
+                        loading="lazy"
+                        class="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
+                    />
+                </a>
                 <button
+                    v-else
                     type="button"
                     class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer text-left"
                     @click="openModalPlayer(release)"
@@ -45,7 +60,10 @@
                     />
                 </button>
                 <div>
-                    <h4 class="font-bold text-lg text-on-surface leading-6">{{ release.title }}</h4>
+                    <h4 class="font-bold text-lg text-on-surface leading-6">
+                        <a v-if="isFullPage" :href="`/discography/${release.slug}`" class="no-underline hover:text-primary transition-colors">{{ release.title }}</a>
+                        <template v-else>{{ release.title }}</template>
+                    </h4>
                     <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</p>
                     <PlatformLinks :links="release" variant="bare" class="mt-2" />
                 </div>
@@ -62,7 +80,7 @@
         </div>
     </div>
 
-    <!-- Modal Player -->
+    <!-- Modal Player (homepage preview only, see isFullPage branch above) -->
     <Modal :is-open="openPlayer" @close="openPlayer = false">
         <div v-if="selectedRelease" class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div class="order-1">

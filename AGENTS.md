@@ -27,7 +27,12 @@ Project/tech-stack overview is in [README.md](README.md) — read that first. Th
    ```
    Checks Spotify, Apple Music, Deezer, Amazon Music, SoundCloud, Beatport by fuzzy title/artist match against a confidence threshold.
    **Always spot-check before trusting a match** — false positives happen (e.g. a same-artist match on an unrelated track). Reject: a `matched_title` that doesn't actually match, a `confidence` sitting right at the 70.0 threshold with no artist confirmation, or anything you can't verify (Beatport/Spotify pages often 403 bot-blockers, WebFetch and curl-with-UA included). When in doubt, leave the field off rather than add an unverified link.
-3. Add the new entry to `releases.js` (next `id`, `cover`, `year`, `release_id`, `title`, `text: ''` unless a bio blurb is warranted, plus whichever platform links survived step 2's check).
+3. Add the new entry to `releases.js` (next `id`, `slug`, `cover`, `year`, `release_id`, `title`, `text: ''` unless a bio blurb is warranted, plus whichever platform links survived step 2's check).
+4. **Generate the `slug`** with the `slugify(title)` helper exported from `releases.js` (drops the "Artist - " prefix, e.g. `slugify('Logic Moon - The North')` → `'the-north'`):
+   ```
+   node -e "import('./src/releases.js').then(m => console.log(m.slugify('<title>')))"
+   ```
+   Check the result doesn't already exist as a `slug` elsewhere in the file — if it does, append `-<id>` to disambiguate (same pattern used for the two existing collisions, `i-see-planets-13` and `debut-47`).
 - `Modal.vue` is the shared modal component (HeadlessUI `Dialog`, bottom-sheet style, `isOpen`/`@close` props, `<slot />` for content). Reuse it instead of building new modals. Its `DialogPanel` uses `bg-primary-500`/`border-secondary-400`/etc. — numbered color-scale classes that aren't defined in this theme's `@theme` block (`global.css` only defines flat tokens like `--color-primary`, no `-500`/`-400` variants), so they resolve to no background/text color and the dark page background shows through. Any content slotted into it needs explicit light text (`text-on-surface`, `text-primary`), not `text-on-primary` or similar dark tokens.
 - Cross-island communication between plain Astro-rendered HTML and a separately-hydrated Vue component (`client:visible`/`client:load`) should not rely on `onMounted` alone reading `sessionStorage` — `client:visible` can hydrate before or after the triggering interaction. Pair a one-time read on mount with a live `window` custom-event listener so it works regardless of hydration timing.
 - SVG icons: if a wrapping `<span>`/`<a>` around an SVG has no explicit `display` (defaults to `inline`), Tailwind width/height classes on it are inert. Use `inline-flex`/`inline-block` first.

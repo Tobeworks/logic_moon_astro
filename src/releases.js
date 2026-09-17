@@ -1,6 +1,7 @@
 const releases = [
     {
         id: 1,
+        slug: 'polygon-garden',
         cover: 'polygon.webp',
         year: '2011',
         release_id: '',
@@ -8,6 +9,7 @@ const releases = [
     },
     {
         id: 2,
+        slug: '2011',
         cover: '2011.webp',
         year: '2012',
         release_id: '',
@@ -15,6 +17,7 @@ const releases = [
     },
     {
         id: 3,
+        slug: 'altrhein',
         cover: 'altrhein.webp',
         year: '2013',
         release_id: '2867871407',
@@ -27,6 +30,7 @@ const releases = [
     },
     {
         id: 4,
+        slug: 'quiet-city',
         cover: 'quitecity.webp',
         year: '2014',
         release_id: '1074886078',
@@ -36,6 +40,7 @@ const releases = [
     },
     {
         id: 5,
+        slug: 'silent-path',
         cover: 'silentpath.webp',
         year: '2015',
         release_id: '',
@@ -43,6 +48,7 @@ const releases = [
     },
     {
         id: 6,
+        slug: 'debut',
         cover: 'debut.webp',
         year: '2016',
         release_id: '2665743749',
@@ -55,6 +61,7 @@ const releases = [
     },
     {
         id: 7,
+        slug: 'oblivion',
         cover: 'oblivion.webp',
         year: '2016',
         release_id: '596669401',
@@ -68,6 +75,7 @@ const releases = [
     },
     {
         id: 8,
+        slug: 'ground-zero',
         cover: 'groundzero.webp',
         year: '2016',
         release_id: '2442300750',
@@ -81,6 +89,7 @@ const releases = [
     },
     {
         id: 9,
+        slug: 'cascadian-mind',
         cover: 'cascadian.webp',
         year: '2017',
         release_id: '2970478282',
@@ -92,6 +101,7 @@ const releases = [
     },
     {
         id: 10,
+        slug: 'phenibut-01',
         cover: 'pheni1.webp',
         year: '2018',
         release_id: '1544573505',
@@ -104,6 +114,7 @@ const releases = [
     },
     {
         id: 11,
+        slug: 'phenibut-02',
         cover: 'pheni2.webp',
         year: '2018',
         release_id: '585997865',
@@ -116,6 +127,7 @@ const releases = [
     },
     {
         id: 12,
+        slug: 'phenibut-03',
         cover: 'pheni3.webp',
         year: '2018',
         release_id: '1836081134',
@@ -128,6 +140,7 @@ const releases = [
     },
     {
         id: 14,
+        slug: 'i-see-planets',
         cover: 'iseeplanets.webp',
         year: '2019',
         release_id: '1418443806',
@@ -140,6 +153,7 @@ const releases = [
     },
     {
         id: 13,
+        slug: 'i-see-planets-13',
         cover: 'phoenix.webp',
         year: '2019',
         release_id: '507144744',
@@ -152,6 +166,7 @@ const releases = [
     },
     {
         id: 15,
+        slug: 'tales',
         cover: 'tales.webp',
         year: '2019',
         release_id: '1154938275',
@@ -164,6 +179,7 @@ const releases = [
     },
     {
         id: 16,
+        slug: '2017',
         cover: '2017.webp',
         year: '2020',
         release_id: '1133451006',
@@ -176,6 +192,7 @@ const releases = [
     },
     {
         id: 17,
+        slug: 'coherence',
         cover: 'coherence.webp',
         year: '2020',
         release_id: '1851075121',
@@ -188,6 +205,7 @@ const releases = [
     },
     {
         id: 18,
+        slug: 'starmapping',
         cover: 'starmapping.webp',
         year: '2021',
         release_id: '1634816459',
@@ -200,6 +218,7 @@ const releases = [
     },
     {
         id: 19,
+        slug: 'fading',
         cover: 'fading_cover_500.webp',
         year: '2021',
         release_id: '4142953595',
@@ -213,6 +232,7 @@ const releases = [
     },
     {
         id: 20,
+        slug: 'aeterna',
         cover: 'Aeterna_Cover01_efx_500.webp',
         year: '2021',
         release_id: '144584733',
@@ -225,6 +245,7 @@ const releases = [
     },
     {
         id: 21,
+        slug: 'the-unavoidable-death-of-loneliness',
         cover: 'death.webp',
         year: '2022',
         release_id: '2589416976',
@@ -238,6 +259,7 @@ const releases = [
     },
     {
         id: 22,
+        slug: 'terraforming',
         cover: 'Terrforming_cover_400.webp',
         year: '2022',
         release_id: '2179910319',
@@ -250,6 +272,7 @@ const releases = [
     },
     {
         id: 23,
+        slug: 'the-golden-dawn',
         cover: 'golden_dawn.webp',
         year: '2022',
         release_id: '3725758464',
@@ -262,6 +285,7 @@ const releases = [
     },
     {
         id: 24,
+        slug: 'inseln',
         cover: 'inseln.webp',
         year: '2022',
         release_id: '443653520',
@@ -274,6 +298,7 @@ const releases = [
     },
     {
         id: 25,
+        slug: 'lumen',
         cover: 'lumen.webp',
         year: '2023',
         release_id: '3004939609',
@@ -286,6 +311,7 @@ const releases = [
     },
     {
         id: 26,
+        slug: 'moon-scars',
         cover: 'moonscars.webp',
         year: '2023',
         release_id: '3818893430',
@@ -298,6 +324,7 @@ const releases = [
     },
     {
         id: 27,
+        slug: 'sun',
         cover: 'sun.webp',
         year: '2023',
         release_id: '2159767475',
@@ -310,6 +337,7 @@ const releases = [
     } ,
     {
         id: 28,
+        slug: 'ikrarus',
         cover: 'ikarus.webp',
         year: '2023',
         release_id: '1087783645',
@@ -322,6 +350,7 @@ const releases = [
     },
     {
         id: 29,
+        slug: 'moonchild',
         cover: 'moonchild.webp',
         year: '2023',
         release_id: '3179587971',
@@ -335,6 +364,7 @@ const releases = [
     },
     {
         id: 30,
+        slug: 'the-quiet-companion',
         cover: 'tqc.webp',
         year: '2023',
         release_id: '468805382',
@@ -346,6 +376,7 @@ const releases = [
     },
     {
         id: 31,
+        slug: 'lux',
         cover: 'lux.webp',
         year: '2023',
         release_id: '2740630108',
@@ -358,6 +389,7 @@ const releases = [
     },
     {
         id: 32,
+        slug: 'ewiger-wald',
         cover: 'ewiger_wald.webp',
         year: '2024',
         release_id: '3324823902',
@@ -372,6 +404,7 @@ const releases = [
 
     {
         id: 34,
+        slug: 'ewiger-wald-addendum',
         cover: 'ewiger_wald2.webp',
         year: '2024',
         release_id: '1881628841',
@@ -384,6 +417,7 @@ const releases = [
         soundcloud: 'https://soundcloud.com/dronarivm/sets/logic-moon-henrik-meierkord-ewiger-wald'
     }, {
         id: 35,
+        slug: 'the-floating-garden',
         cover: 'floating_garden.webp',
         year: '2024',
         release_id: '1648869892',
@@ -397,6 +431,7 @@ const releases = [
     },
     {
         id: 36,
+        slug: 'last-days',
         cover: 'last_days.webp',
         year: '2024',
         release_id: '856601488',
@@ -410,6 +445,7 @@ const releases = [
     },
     {
         id: 37,
+        slug: 'lifelines',
         cover: 'lifelines.webp',
         year: '2024',
         release_id: '1549285738',
@@ -423,6 +459,7 @@ const releases = [
     },
     {
         id: 38,
+        slug: 'to-the-sea',
         cover: 'tothesea.webp',
         year: '2024',
         release_id: '1600080049',
@@ -436,6 +473,7 @@ const releases = [
     },
     {
         id: 39,
+        slug: 'this-is-not-the-end',
         cover: 'this_is_not_the_end.webp',
         year: '2024',
         release_id: '1198976225',
@@ -449,6 +487,7 @@ const releases = [
     },
     {
         id: 40,
+        slug: 'music-for-film-vol-1',
         cover: 'music for film.webp',
         year: '2024',
         release_id: '2996898458',
@@ -463,6 +502,7 @@ const releases = [
     },
     {
         id: 41,
+        slug: 'glow',
         cover: 'glow.webp',
         year: '2025',
         release_id: '3316897320',
@@ -477,6 +517,7 @@ const releases = [
     },
     {
         id: 42,
+        slug: 'atlas',
         cover: 'atlas.webp',
         year: '2025',
         release_id: '638784917',
@@ -491,6 +532,7 @@ const releases = [
     },
     {
         id: 43,
+        slug: 'metamorphosis',
         cover: 'metamorphosis_cover.webp',
         year: '2025',
         release_id: '3345105927',
@@ -504,6 +546,7 @@ const releases = [
     },
     {
         id: 44,
+        slug: 'memories-of-tomorrow',
         cover: 'memories of tomorow_sm.webp',
         year: '2025',
         release_id: '3392045544',
@@ -519,6 +562,7 @@ const releases = [
     },
     {
         id: 45,
+        slug: 'ashes',
         cover: 'ashes_cover.webp',
         year: '2025',
         release_id: '2147690593',
@@ -534,6 +578,7 @@ const releases = [
     },
     {
         id: 46,
+        slug: 'reminiscence',
         cover: 'Reminiscence_sm.webp',
         year: '2025',
         release_id: '2754878701',
@@ -547,6 +592,7 @@ const releases = [
     },
     {
         id: 47,
+        slug: 'debut-47',
         cover: 'aethery_fields_debut.webp',
         year: '2025',
         release_id: '1921716763',
@@ -559,6 +605,7 @@ const releases = [
     },
     {
         id: 48,
+        slug: 'heim',
         cover: 'cover_helheim_sm.webp',
         year: '2025',
         release_id: '2930370107',
@@ -572,6 +619,7 @@ const releases = [
     },
     {
         id: 49,
+        slug: 'hello',
         cover: 'hello.webp',
         year: '2025',
         release_id: '2635118830',
@@ -584,16 +632,21 @@ const releases = [
     },
     {
         id: 50,
+        slug: 'it-may-never-coming-back',
         cover: 'imncb.webp',
         year: '2026',
         release_id: '3902752845',
         title: 'Logic Moon - It May Never Coming Back',
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/it-may-never-coming-back',
-        soundcloud: 'https://soundcloud.com/logic-moon/imncb'
+        spotify: 'https://open.spotify.com/album/5cRFOsGT9aFprlVqCbRstu',
+        apple: 'https://music.apple.com/us/album/it-may-never-coming-back-single/6804971310',
+        amazon: 'https://music.amazon.com/albums/B0HGFG1CWK',
+        soundcloud: 'https://soundcloud.com/logic-moon/sets/it-may-never-coming-back'
     },
     {
         id: 51,
+        slug: 'clockworks',
         cover: 'clockworks.webp',
         year: '2026',
         release_id: '1624891467',
@@ -604,6 +657,7 @@ const releases = [
     },
     {
         id: 52,
+        slug: 'stellar-refuge',
         cover: 'cover_logic_moon_stellar_refuge.webp',
         year: '2026',
         release_id: '1710582439',
@@ -614,6 +668,7 @@ const releases = [
     },
     {
         id: 53,
+        slug: 'sub-lacuna',
         cover: 'sublacuna.webp',
         year: '2026',
         release_id: '3710705581',
@@ -626,6 +681,7 @@ const releases = [
     },
     {
         id: 54,
+        slug: 'musica-universalis',
         cover: 'musica-universalis.jpg',
         year: '2026',
         release_id: '900360428',
@@ -640,6 +696,7 @@ const releases = [
     },
     {
         id: 55,
+        slug: 'miracles',
         cover: 'Logic Moon Diogene_miracles.jpg',
         year: '2026',
         release_id: '',
@@ -649,6 +706,7 @@ const releases = [
     },
     {
         id: 56,
+        slug: 'spelrum',
         cover: 'cover_logic_moon_spelrum.jpg',
         year: '2026',
         release_id: '1889885305',
@@ -658,6 +716,7 @@ const releases = [
     },
     {
         id: 57,
+        slug: 'the-north',
         cover: 'cover_logic_moon_the_north.jpg',
         year: '2026',
         release_id: '2606556841',
@@ -667,4 +726,14 @@ const releases = [
     },
 
 ];
+
+export function slugify(title) {
+    const parts = title.trim().replace(/-/g, ' - ').replace(/\s+/g, ' ').split(' - ');
+    const name = parts[parts.length - 1].trim();
+    return name.toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
 export default releases;
