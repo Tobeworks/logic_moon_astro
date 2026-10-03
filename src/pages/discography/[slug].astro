@@ -54,6 +54,10 @@ const schema = {
   ...(sameAs.length ? { sameAs } : {}),
 };
 
+const others = releases
+  .filter((r) => r.id !== release.id)
+  .map((r) => ({ slug: r.slug, title: r.title, cover: r.cover, year: r.year }));
+
 const hasBelowFold = Boolean(release.text || release.release_id);
 ---
 
@@ -105,7 +109,48 @@ const hasBelowFold = Boolean(release.text || release.release_id);
         )}
       </section>
     )}
+
+    <section id="more-releases" class="px-8 md:px-16 pb-20 max-w-5xl mx-auto" hidden>
+      <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-6 block">More releases</span>
+      <div id="more-releases-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
+
+<script is:inline define:vars={{ others }}>
+  const section = document.getElementById("more-releases");
+  const grid = document.getElementById("more-releases-grid");
+  const pool = others.slice();
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  pool.slice(0, 4).forEach((r) => {
+    const a = document.createElement("a");
+    a.href = "/discography/" + r.slug;
+    a.className = "group block no-underline";
+    a.setAttribute("aria-label", "View release " + r.title);
+
+    const box = document.createElement("div");
+    box.className = "aspect-square bg-surface-container-lowest overflow-hidden";
+    const img = document.createElement("img");
+    img.src = "/images/covers/" + r.cover;
+    img.alt = r.title;
+    img.loading = "lazy";
+    img.className = "w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700";
+    box.appendChild(img);
+
+    const title = document.createElement("p");
+    title.className = "font-bold text-sm text-on-surface leading-5 mt-3";
+    title.textContent = r.title;
+    const year = document.createElement("p");
+    year.className = "text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface";
+    year.textContent = r.year;
+
+    a.append(box, title, year);
+    grid.appendChild(a);
+  });
+  if (grid.children.length) section.hidden = false;
+</script>
