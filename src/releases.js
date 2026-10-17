@@ -702,7 +702,9 @@ const releases = [
         release_id: '',
         title: 'Logic Moon & Diogene - Miracles',
         text: '',
-        spotify: 'https://too.fm/2mozry1'
+        spotify:'https://open.spotify.com/intl-de/album/5eWWBbvppe4J2ZgKd2yLDV?si=ck4ei6EsSaG1PUETB77f0w',
+        apple: 'https://music.apple.com/us/album/miracles-ep/1895325249',
+        amazon: 'https://music.amazon.com/albums/B0GY5W4M3J'
     },
     {
         id: 56,

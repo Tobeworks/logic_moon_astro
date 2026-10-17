@@ -8,12 +8,12 @@
       @touchstart.passive="onTouchStart"
       @touchend.passive="onTouchEnd"
     >
-      <!-- Full discography page: real link to the release's landing page. Homepage preview: opens the quick-look modal, as before. -->
+      <!-- Full discography page or no Bandcamp player yet: real link to the release's landing page. Homepage preview with a player: opens the quick-look modal. -->
       <component
-        :is="isFullPage ? 'a' : 'div'"
+        :is="isLink(release) ? 'a' : 'div'"
         v-for="(release, i) in visibleReleases"
         :key="release.id"
-        :href="isFullPage ? `/discography/${release.slug}` : null"
+        :href="isLink(release) ? `/discography/${release.slug}` : null"
         class="absolute cursor-pointer select-none block"
         style="width: 260px; transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;"
         :style="cardStyle(i)"
@@ -107,6 +107,9 @@ const WINDOW = 3;
 
 const sortedReleases = computed(() => [...releases].sort((a, b) => b.id - a.id));
 
+// Releases without a Bandcamp release_id have no embedded player, so they link to their landing page instead.
+const isLink = (release) => props.isFullPage || !release.release_id;
+
 const centerIndex = computed(() => Math.min(WINDOW, currentIndex.value));
 
 const visibleReleases = computed(() => {
@@ -175,11 +178,11 @@ function onKeyDown(e) {
 function onCardClick(i, release, e) {
   const offset = i - centerIndex.value;
   if (offset !== 0) {
-    if (props.isFullPage) e.preventDefault(); // don't follow the href, just re-center
+    if (isLink(release)) e.preventDefault(); // don't follow the href, just re-center
     currentIndex.value += offset;
     return;
   }
-  if (props.isFullPage) return; // centered card: real navigation via the anchor's href
+  if (isLink(release)) return; // centered card: real navigation via the anchor's href
   if (!release.release_id) return;
   selectedRelease.value = release;
   openPlayer.value = true;

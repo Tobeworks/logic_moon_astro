@@ -14,7 +14,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/markdown-remark": "^7.3.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/assistant": "^5.0.17",
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.7",
@@ -36,11 +37,11 @@
     "vue": "^3.5.16"
   },
   "devDependencies": {
-    "@astrojs/vue": "^5.0.11",
+    "@astrojs/vue": "^7.1.0",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "@release-it/conventional-changelog": "^11.0.0",
-    "astro": "^5.17.3",
+    "astro": "^7.4.0",
     "husky": "^9.1.7",
     "release-it": "^20.0.1"
   }

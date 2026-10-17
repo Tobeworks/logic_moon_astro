@@ -29,9 +29,9 @@
                 class="flex flex-col gap-6"
                 data-animate
             >
-                <!-- Full discography page: real link to the release's landing page. Homepage preview: opens the quick-look modal, as before. -->
+                <!-- Full discography page or no Bandcamp player yet: real link to the release's landing page. Homepage preview with a player: opens the quick-look modal. -->
                 <a
-                    v-if="isFullPage"
+                    v-if="isLink(release)"
                     :href="`/discography/${release.slug}`"
                     class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer block"
                     :aria-label="`View release ${release.title}`"
@@ -49,19 +49,17 @@
                     class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer text-left"
                     @click="openModalPlayer(release)"
                     :aria-label="`Play album ${release.title}`"
-                    :disabled="!release.release_id"
                 >
                     <img
                         :src="`/images/covers/${release.cover}`"
                         :alt="release.title"
                         loading="lazy"
                         class="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
-                        :class="{ 'brightness-75': !release.release_id }"
                     />
                 </button>
                 <div>
                     <h4 class="font-bold text-lg text-on-surface leading-6">
-                        <a v-if="isFullPage" :href="`/discography/${release.slug}`" class="no-underline hover:text-primary transition-colors">{{ release.title }}</a>
+                        <a v-if="isLink(release)" :href="`/discography/${release.slug}`" class="no-underline hover:text-primary transition-colors">{{ release.title }}</a>
                         <template v-else>{{ release.title }}</template>
                     </h4>
                     <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</p>
@@ -126,6 +124,9 @@ const last_release   = computed(() => sortedReleases.value[0]);
 const displayedReleases = computed(() =>
     props.isFullPage ? sortedReleases.value : sortedReleases.value.slice(1, showitems + 1)
 );
+
+// Releases without a Bandcamp release_id have no embedded player, so they link to their landing page instead.
+const isLink = (release) => props.isFullPage || !release.release_id;
 
 const openModalPlayer = (release) => {
     if (!release.release_id) return;
