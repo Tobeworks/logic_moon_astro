@@ -704,7 +704,8 @@ const releases = [
         text: '',
         spotify:'https://open.spotify.com/intl-de/album/5eWWBbvppe4J2ZgKd2yLDV?si=ck4ei6EsSaG1PUETB77f0w',
         apple: 'https://music.apple.com/us/album/miracles-ep/1895325249',
-        amazon: 'https://music.amazon.com/albums/B0GY5W4M3J'
+        amazon: 'https://music.amazon.com/albums/B0GY5W4M3J',
+        deezer: 'https://www.deezer.com/album/970004381'
     },
     {
         id: 56,
