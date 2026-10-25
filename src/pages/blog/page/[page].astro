@@ -41,7 +41,7 @@ const { posts, currentPage, totalPages, totalPosts } = Astro.props;
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           {posts.map((article) => (
-            <a href={`/blog/${article.slug}`} class="group block no-underline" data-animate>
+            <a href={`/blog/${article.id}`} class="group block no-underline" data-animate>
               <article>
                 {article.data.image && (
                   <div class="h-64 bg-surface-container-lowest mb-6 overflow-hidden">
