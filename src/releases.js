@@ -727,6 +727,16 @@ const releases = [
         text: 'Two pieces from Logic Moon that face away from the light. The North is not a place on a map, it is a direction of travel.',
         bandcamp: 'https://logicmoon.bandcamp.com/album/the-north'
     },
+    {
+        id: 58,
+        slug: 'sea-of-grey',
+        cover: 'cover_whitelabrecs_sea_of_grey.jpg',
+        year: '2026',
+        release_id: '1130805378',
+        title: 'Sven Laux & Logic Moon - Sea of Grey',
+        text: '',
+        bandcamp: 'https://whitelabrecs.bandcamp.com/album/sea-of-grey'
+    },
 
 ];
 
