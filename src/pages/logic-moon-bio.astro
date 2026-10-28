@@ -209,8 +209,8 @@ const bioSchema = {
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4" role="list">
-          {[...releases].sort((a, b) => parseInt(a.year) - parseInt(b.year) || a.id - b.id).map((release, index) => {
-            const link = release.bandcamp || release.spotify || release.apple || release.amazon;
+          {[...releases].sort((a, b) => parseInt(b.year) - parseInt(a.year) || b.id - a.id).map((release) => {
+            const link = `/discography/${release.slug}`;
             const coverPath = `/images/covers/${release.cover}`;
 
             return (
@@ -218,34 +218,21 @@ const bioSchema = {
                 class="flex items-center gap-4 py-3 px-4 rounded-none hover:bg-surface-container transition-colors" 
                 role="listitem"
                 data-animate
-               
               >
                 <div class="w-14 h-14 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
-                  {link ? (
-                    <a href={link} target="_blank" rel="noopener noreferrer" class="block">
-                      <img 
-                        src={coverPath} 
-                        alt={`Cover for ${release.title}`} 
-                        class="w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-700" 
-                      />
-                    </a>
-                  ) : (
+                  <a href={link} class="block" aria-label={`View release ${release.title}`}>
                     <img 
                       src={coverPath} 
                       alt={`Cover for ${release.title}`} 
-                      class="w-full h-full object-cover grayscale-[50%]" 
+                      class="w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-700" 
                     />
-                  )}
+                  </a>
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="text-[0.625rem] uppercase tracking-[0.2em] text-on-surface/40 mb-1">{release.year}</div>
-                  {link ? (
-                    <a href={link} target="_blank" rel="noopener noreferrer" class="font-bold text-on-surface hover:text-primary transition-colors no-underline line-clamp-2">
-                      {release.title}
-                    </a>
-                  ) : (
-                    <span class="font-bold text-on-surface line-clamp-2">{release.title}</span>
-                  )}
+                  <a href={link} class="font-bold text-on-surface hover:text-primary transition-colors no-underline line-clamp-2">
+                    {release.title}
+                  </a>
                 </div>
               </div>
             );
