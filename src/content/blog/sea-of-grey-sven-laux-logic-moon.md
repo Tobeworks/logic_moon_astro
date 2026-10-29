@@ -1,6 +1,6 @@
 ---
 title: "Sea of Grey: Our Third Album, Two Years in the Making"
-description: "Sea of Grey by Sven Laux & Logic Moon is out on Whitelabrecs. Eight pieces of cinematic ambient, a limited CD in a gatefold sleeve, and a few things I shared in the interview about how it came together."
+description: "Sea of Grey by Sven Laux & Logic Moon is out on Whitelabrecs. Eight pieces of cinematic ambient, a limited CD in a gatefold sleeve and a vinyl version as well, and a few things I shared in the interview about how it came together."
 pubDate: 2026-10-25
 image: "/blog/sea-of-grey-cd-gatefold.webp"
 draft: false
