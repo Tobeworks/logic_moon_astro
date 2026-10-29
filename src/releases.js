@@ -715,7 +715,11 @@ const releases = [
         release_id: '1889885305',
         title: 'Logic Moon & Henrik Meierkord - Spelrum',
         text: 'Two restrained, atmospheric tracks exploring the space between control and drift, with cello overtones bowing through the mix.',
-        bandcamp: 'https://logicmoon.bandcamp.com/album/spelrum'
+        bandcamp: 'https://logicmoon.bandcamp.com/album/spelrum',
+        spotify: 'https://open.spotify.com/album/3n44fuZZ3eyZNR66oAcwNI',
+        apple: 'https://music.apple.com/us/album/spelrum-single/6817846373',
+        amazon: 'https://music.amazon.com/albums/B0HLLSZLCP',
+        soundcloud: 'https://soundcloud.com/logic-moon/spelrum'
     },
     {
         id: 57,
