@@ -34,9 +34,7 @@
                 class="flex flex-col gap-3 md:gap-6"
                 data-animate
             >
-                <!-- Full discography page or no Bandcamp player yet: real link to the release's landing page. Homepage preview with a player: opens the quick-look modal. -->
                 <a
-                    v-if="isLink(release)"
                     :href="`/discography/${release.slug}`"
                     class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer block"
                     :aria-label="`View release ${release.title}`"
@@ -48,24 +46,9 @@
                         class="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
                     />
                 </a>
-                <button
-                    v-else
-                    type="button"
-                    class="aspect-square bg-surface-container-lowest overflow-hidden group cursor-pointer text-left"
-                    @click="openModalPlayer(release)"
-                    :aria-label="`Play album ${release.title}`"
-                >
-                    <img
-                        :src="`/images/covers/${release.cover}`"
-                        :alt="release.title"
-                        loading="lazy"
-                        class="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
-                    />
-                </button>
                 <div>
                     <h4 class="font-bold text-sm md:text-lg text-on-surface leading-5 md:leading-6">
-                        <a v-if="isLink(release)" :href="`/discography/${release.slug}`" class="font-bold no-underline hover:text-primary transition-colors">{{ release.title }}</a>
-                        <template v-else>{{ release.title }}</template>
+                        <a :href="`/discography/${release.slug}`" class="font-bold no-underline hover:text-primary transition-colors">{{ release.title }}</a>
                     </h4>
                     <div class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</div>
                     <div class="hidden md:block">
@@ -84,36 +67,11 @@
             </a>
         </div>
     </div>
-
-    <!-- Modal Player (homepage preview only, see isFullPage branch above) -->
-    <Modal :is-open="openPlayer" @close="openPlayer = false">
-        <div v-if="selectedRelease" class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="order-1">
-                <div class="bg-surface-container-lowest overflow-hidden">
-                    <img :src="`/images/covers/${selectedRelease.cover}`" :alt="selectedRelease.title" class="w-full aspect-square object-cover" />
-                </div>
-            </div>
-            <div class="order-2 flex flex-col space-y-6">
-                <div>
-                    <div class="text-sm text-on-surface/60 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ selectedRelease.title }}</h2>
-                    <div class="mb-6">
-                        <PlatformLinks :links="selectedRelease" />
-                    </div>
-                    <p v-if="selectedRelease.text" class="text-on-surface-variant font-light leading-relaxed">{{ selectedRelease.text }}</p>
-                </div>
-                <div v-if="selectedRelease.release_id" class="bg-surface-container-lowest p-4">
-                    <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${selectedRelease.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=small/transparent=true/`" class="w-full border-0" style="height: 300px;" seamless title="Bandcamp Player"></iframe>
-                </div>
-            </div>
-        </div>
-    </Modal>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import releases from '../releases.js';
-import Modal from './Modal.vue';
 import PlatformLinks from './PlatformLinks.vue';
 
 const props = defineProps({
@@ -121,8 +79,6 @@ const props = defineProps({
     sectionId:  { type: String,  default: 'disco' },
 });
 
-const openPlayer      = ref(false);
-const selectedRelease = ref(null);
 const showitems       = 8;
 
 const sortedReleases = computed(() => [...releases].sort((a, b) => b.id - a.id));
@@ -131,13 +87,4 @@ const last_release   = computed(() => sortedReleases.value[0]);
 const displayedReleases = computed(() =>
     props.isFullPage ? sortedReleases.value : sortedReleases.value.slice(1, showitems + 1)
 );
-
-// Releases without a Bandcamp release_id have no embedded player, so they link to their landing page instead.
-const isLink = (release) => props.isFullPage || !release.release_id;
-
-const openModalPlayer = (release) => {
-    if (!release.release_id) return;
-    selectedRelease.value = release;
-    openPlayer.value = true;
-};
 </script>

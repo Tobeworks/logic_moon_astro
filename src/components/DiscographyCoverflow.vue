@@ -8,12 +8,10 @@
       @touchstart.passive="onTouchStart"
       @touchend.passive="onTouchEnd"
     >
-      <!-- Full discography page or no Bandcamp player yet: real link to the release's landing page. Homepage preview with a player: opens the quick-look modal. -->
-      <component
-        :is="isLink(release) ? 'a' : 'div'"
+      <a
         v-for="(release, i) in visibleReleases"
         :key="release.id"
-        :href="isLink(release) ? `/discography/${release.slug}` : null"
+        :href="`/discography/${release.slug}`"
         class="absolute cursor-pointer select-none block"
         style="width: 260px; transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;"
         :style="cardStyle(i)"
@@ -35,7 +33,7 @@
           <h4 class="font-bold text-sm text-on-surface truncate px-2">{{ release.title }}</h4>
           <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">{{ release.year }}</p>
         </div>
-      </component>
+      </a>
     </div>
 
     <!-- Navigation -->
@@ -61,37 +59,11 @@
       </button>
     </div>
   </div>
-
-  <!-- Modal Player (homepage preview only, see isFullPage branch above) -->
-  <Modal :is-open="openPlayer" @close="openPlayer = false">
-    <div v-if="selectedRelease" class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <div class="order-1">
-        <div class="bg-surface-container-lowest overflow-hidden">
-          <img :src="`/images/covers/${selectedRelease.cover}`" :alt="selectedRelease.title" class="w-full aspect-square object-cover" />
-        </div>
-      </div>
-      <div class="order-2 flex flex-col space-y-6">
-        <div>
-          <div class="text-sm text-on-surface/60 mb-2 font-mono uppercase tracking-[0.2em]">{{ selectedRelease.year }}</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-4">{{ selectedRelease.title }}</h2>
-          <div class="mb-6">
-            <PlatformLinks :links="selectedRelease" />
-          </div>
-          <p v-if="selectedRelease.text" class="text-on-surface-variant font-light leading-relaxed">{{ selectedRelease.text }}</p>
-        </div>
-        <div v-if="selectedRelease.release_id" class="bg-surface-container-lowest p-4">
-          <iframe :src="`https://bandcamp.com/EmbeddedPlayer/album=${selectedRelease.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=small/transparent=true/`" class="w-full border-0" style="height: 300px;" seamless title="Bandcamp Player"></iframe>
-        </div>
-      </div>
-    </div>
-  </Modal>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import releases from '../releases.js';
-import Modal from './Modal.vue';
-import PlatformLinks from './PlatformLinks.vue';
 
 const props = defineProps({
   isFullPage: { type: Boolean, default: false },
@@ -100,15 +72,10 @@ const props = defineProps({
 });
 
 const currentIndex    = ref(0);
-const openPlayer      = ref(false);
-const selectedRelease = ref(null);
 
 const WINDOW = 3;
 
 const sortedReleases = computed(() => [...releases].sort((a, b) => b.id - a.id));
-
-// Releases without a Bandcamp release_id have no embedded player, so they link to their landing page instead.
-const isLink = (release) => props.isFullPage || !release.release_id;
 
 const centerIndex = computed(() => Math.min(WINDOW, currentIndex.value));
 
@@ -175,17 +142,12 @@ function onKeyDown(e) {
   if (e.key === 'ArrowRight') next();
 }
 
+// Side cards only re-center; the centered card follows its href to the landing page.
 function onCardClick(i, release, e) {
   const offset = i - centerIndex.value;
-  if (offset !== 0) {
-    if (isLink(release)) e.preventDefault(); // don't follow the href, just re-center
-    currentIndex.value += offset;
-    return;
-  }
-  if (isLink(release)) return; // centered card: real navigation via the anchor's href
-  if (!release.release_id) return;
-  selectedRelease.value = release;
-  openPlayer.value = true;
+  if (offset === 0) return;
+  e.preventDefault();
+  currentIndex.value += offset;
 }
 
 onMounted(()   => window.addEventListener('keydown', onKeyDown));

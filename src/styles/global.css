@@ -96,9 +96,15 @@
 @layer base {
   :root {
     --scroll-margin: 5rem;
-    /* Navigation.vue's fixed header has no fixed height class or CSS var of its own (py-10 + content
-       line-height) -- estimated here, verify against the real rendered header at 375px width and correct if off. */
-    --header-height: 6.75rem;
+    /* Navigation.vue's fixed header has no fixed height class or CSS var of its own (py-5 md:py-10 + content
+       line-height) -- estimated here, verify against the real rendered header and correct if off. */
+    --header-height: 4.5rem;
+  }
+
+  @media (min-width: 48rem) {
+    :root {
+      --header-height: 6.75rem;
+    }
   }
 
   [id] {

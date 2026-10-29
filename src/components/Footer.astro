@@ -1,88 +1,62 @@
 ---
+import { siBandcamp, siFacebook, siInstagram, siSoundcloud, siSpotify, siYoutube } from "simple-icons";
 import pack from "../../package.json";
+
+const socials = [
+  { label: "YouTube", href: "https://www.youtube.com/@LogicMoonMusic", icon: siYoutube },
+  { label: "SoundCloud", href: "https://soundcloud.com/logic-moon", icon: siSoundcloud },
+  { label: "Facebook", href: "https://www.facebook.com/logicmoonmusic/", icon: siFacebook },
+  { label: "Spotify", href: "https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8?si=C5rFleDOTPmw6Dww9ffq_g", icon: siSpotify },
+  { label: "Bandcamp", href: "https://logicmoon.bandcamp.com/", icon: siBandcamp },
+  { label: "Instagram", href: "https://www.instagram.com/logicmoonmusic/", icon: siInstagram },
+];
+
+const links = [
+  { label: "Press Kit", href: "/press-kit" },
+  { label: "Cover Art", href: "/cover-art" },
+  { label: "Impressum", href: "/impressum" },
+  { label: "Datenschutz", href: "/datenschutz" },
+];
+
+const linkClass =
+  "text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300 no-underline";
 ---
 
-<!-- Footer -->
-<footer
-  class="bg-surface-container-lowest border-t border-outline-variant/20"
-  id="footer">
+<!-- Footer: mobile stacks brand, social icons, links, credits; md+ puts brand | links | icons in one row -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20" id="footer">
   <div class="container mx-auto px-5 md:px-16 py-8 md:py-12">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
-      <!-- Logo -->
+    <div class="grid gap-y-5 md:grid-cols-[1fr_auto_auto] md:items-center md:gap-x-12">
       <div class="text-sm font-bold text-on-surface">LOGIC MOON</div>
 
-      <!-- Social Links -->
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-8">
-        <a
-          href="https://www.youtube.com/@LogicMoonMusic"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="YouTube">
-          Youtube
-        </a>
-        <a
-          href="https://soundcloud.com/logic-moon"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="SoundCloud">
-          Soundcloud
-        </a>
-        <a
-          href="https://www.facebook.com/logicmoonmusic/"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="Facebook">
-          Facebook
-        </a>
-        <a
-          href="https://open.spotify.com/artist/3cqJW0hZR5efv5YWJKVMw8?si=C5rFleDOTPmw6Dww9ffq_g"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="Spotify">
-          Spotify
-        </a>
-        <a
-          href="https://logicmoon.bandcamp.com/"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="Bandcamp">
-          Bandcamp
-        </a>
-        <a
-          href="https://www.instagram.com/logicmoonmusic/"
-          target="_blank"
-          class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300"
-          aria-label="Instagram">
-          Instamoon
-        </a>
-      </div>
+      <nav aria-label="Footer" class="order-3 md:order-2 flex flex-wrap gap-x-5 md:gap-x-8">
+        {links.map((link) => (
+          <a href={link.href} class={`${linkClass} inline-flex items-center min-h-11`}>{link.label}</a>
+        ))}
+      </nav>
 
-      <!-- Credits -->
-      <div class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40">
-        © The Moon Records (soon)
-      </div>
+      <ul class="order-2 md:order-3 flex gap-1 -ml-3 md:ml-0">
+        {socials.map((social) => (
+          <li>
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={social.label}
+              aria-label={social.label}
+              class="flex items-center justify-center w-11 h-11 text-on-surface/40 hover:text-primary transition-colors duration-300">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
+                <path d={social.icon.path}></path>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
 
-    <!-- Legal Links -->
-    <div
-      class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 md:gap-4 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-outline-variant/10">
-      <a
-        href="/press-kit"
-        class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300 no-underline">
-        Press Kit
-      </a>
-      <a
-        href="/impressum"
-        class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300 no-underline">
-        Impressum
-      </a>
-      <a
-        href="/datenschutz"
-        class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40 hover:text-primary transition-colors duration-300 no-underline">
-        Datenschutz
-      </a>
-      <span class="text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40">
-        Made with ❤ by <a href="https://tobeworks.de">Tobeworks Websolutions</a> (v {pack.version})
+    <div class="order-last mt-5 pt-5 border-t border-outline-variant/10 flex flex-col md:flex-row md:justify-between gap-2 text-[0.625rem] uppercase tracking-[0.05em] text-on-surface/40">
+      <span>© The Moon Records (soon)</span>
+      <span>
+        Made with ❤ by <a href="https://tobeworks.de" class="hover:text-primary transition-colors">Tobeworks Websolutions</a> (v {pack.version})
       </span>
     </div>
   </div>

@@ -2,7 +2,7 @@
     <div class="">
         <header class="fixed inset-x-0 top-0 z-50 bg-surface/90 backdrop-blur-md text-on-surface" data-animate>
 
-            <nav class="flex items-center justify-between px-8 py-10" aria-label="Main">
+            <nav class="flex items-center justify-between px-5 py-5 md:px-8 md:py-10" aria-label="Main">
                 <Transition name="logo-slide">
                     <a v-if="logoVisible" href="/" class="text-xl font-bold tracking-tighter text-on-surface hover:text-primary no-underline uppercase" id="navigation-logo">
                         Logic Moon
@@ -17,7 +17,7 @@
                 </div>
             </nav>
 
-            <div class="w-10 h-10 absolute md:hidden top-9 right-6">
+            <div class="w-10 h-10 absolute md:hidden top-3.5 right-3">
                 <button type="button" class="ring-0 border-0 text-on-surface hover:text-primary transition-colors" @click="mobileMenuOpen = true" aria-label="Open main menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="square" stroke-linejoin="miter" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -31,15 +31,15 @@
                         <div class="fixed inset-0 bg-black/50" />
                     </TransitionChild>
                     <TransitionChild as="template" enter="transition-transform ease-out duration-300" enter-from="translate-x-full" enter-to="translate-x-0" leave="transition-transform ease-in duration-300" leave-from="translate-x-0" leave-to="translate-x-full">
-                        <DialogPanel class="fixed inset-0 overflow-y-auto flex flex-col items-center justify-center px-8 bg-surface-dim">
-                            <button type="button" @click="mobileMenuOpen = false" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors p-2 focus:outline-none focus-visible:outline-none" aria-label="Close menu">
+                        <DialogPanel class="fixed inset-0 overflow-y-auto flex flex-col items-center justify-center px-5 bg-surface-dim">
+                            <button type="button" @click="mobileMenuOpen = false" class="absolute top-2.5 right-3 text-on-surface hover:text-primary transition-colors p-2 focus:outline-none focus-visible:outline-none" aria-label="Close menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8" aria-hidden="true">
                                     <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
                             </button>
                             <div class="text-center space-y-1">
                                 <a v-for="(item, index) in navigation" :key="item.name" :href="item.href"
-                                   class="nav-item block py-3 font-bold uppercase text-2xl tracking-widest transition-colors"
+                                   class="nav-item block py-2 font-bold uppercase text-xl tracking-[0.15em] transition-colors"
                                    :class="isActive(item.href) ? 'text-primary' : 'text-on-surface opacity-70 hover:opacity-100 hover:text-primary'"
                                    :style="{ animationDelay: `${100 + index * 50}ms` }"
                                    @click="mobileMenuOpen = false">{{ item.name }}</a>
@@ -68,7 +68,6 @@ const navigation = computed(() => [
     { name: 'About', href: `/logic-moon-bio` },
     { name: 'Discography', href: `/discography` },
     { name: 'Playlists', href: `${prefix.value}#playlists` },
-    { name: 'Cover Art', href: `/cover-art` },
     { name: 'Sounds', href: `/sounds` },
     { name: 'Licensing', href: `/licensing` },
     { name: 'Shop', href: `/shop` },

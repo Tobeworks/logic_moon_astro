@@ -15,7 +15,7 @@
         </a>
     </div>
 
-    <div v-if="active.length > 0 && variant === 'bare'" class="flex flex-wrap items-center gap-3">
+    <div v-if="active.length > 0 && variant === 'bare'" class="flex flex-wrap items-center gap-3 mt-4">
         <a
             v-for="platform in active"
             :key="platform.key"
