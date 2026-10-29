@@ -19,7 +19,7 @@ Eight pieces, built from classical piano motifs, strings, ambient textures and e
 3. Follow The Waves
 4. The Lighthouse
 5. All Is Not Lost
-6. Embrace The Solitude
+6. Embrace The Solitude at Some Point
 7. Sea of Grey
 8. The Arrival
 
@@ -54,7 +54,7 @@ For everyone who likes to hold their music: Whitelabrecs made a limited deluxe e
 
 ![Sea of Grey back sleeve with credits](/blog/sea-of-grey-cd-back.webp)
 
-A real vinyl edition is available through [ElasticStage](https://elasticstage.com/whitelabrecs/releases/sea-of-grey-album).
+There is also a proper 12" vinyl edition, sold through [ElasticStage](https://elasticstage.com/whitelabrecs/releases/sea-of-grey-album). The first four pieces make up Side A, the other four Side B, and the estimated dispatch date is 20 November.
 
 ## What's Next
 
