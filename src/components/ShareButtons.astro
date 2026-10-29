@@ -1,6 +1,7 @@
 ---
 import { siFacebook, siInstagram } from "simple-icons";
 import { platformIconSvgs } from "../platformIcons";
+import { splitTitle } from "../releases.js";
 
 interface Props {
   links: Record<string, string | undefined>;
@@ -15,6 +16,7 @@ const { links, slug, title, cover, year, class: className = "" } = Astro.props;
 
 // Logos of the platforms this release is on, drawn onto the story image.
 const platformIcons = platformIconSvgs(links);
+const { artist, name } = splitTitle(title);
 
 const pageUrl = new URL(`/discography/${slug}`, Astro.site ?? "https://logic-moon.de").toString();
 const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
@@ -30,7 +32,8 @@ const buttonClass =
       class={buttonClass}
       data-share-story
       data-slug={slug}
-      data-title={title}
+      data-artist={artist}
+      data-name={name}
       data-cover={`/images/covers/${cover}`}
       data-year={year}
       data-url={pageUrl}
@@ -88,7 +91,7 @@ const buttonClass =
     return lines;
   };
 
-  const render = async (cover: string, fullTitle: string, year: string, icons: string[]) => {
+  const render = async (cover: string, artist: string, name: string, year: string, icons: string[]) => {
     await Promise.all([
       document.fonts.load('700 72px "Inter Variable"'),
       document.fonts.load('400 32px "Inter Variable"'),
@@ -107,11 +110,6 @@ const buttonClass =
     const size = 880;
     const x = (W - size) / 2;
     ctx.drawImage(img, x, 250, size, size);
-
-    // "Artist - Title" -> artist label above, title below, same split as slugify()
-    const parts = fullTitle.trim().split(/\s*-\s+/);
-    const name = parts.pop() ?? fullTitle;
-    const artist = parts.join(" - ") || "Logic Moon";
 
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
@@ -167,8 +165,8 @@ const buttonClass =
   // PNG must already exist when the button is pressed. Web Share needs https, over plain
   // http (dev server via LAN IP) canShare() is missing and the file is downloaded instead.
   const prepare = (button: HTMLButtonElement) => {
-    const { slug = "", title = "", cover = "", year = "", icons = "[]" } = button.dataset;
-    return render(cover, title, year, JSON.parse(icons)).then(
+    const { slug = "", artist = "", name = "", cover = "", year = "", icons = "[]" } = button.dataset;
+    return render(cover, artist, name, year, JSON.parse(icons)).then(
       (blob) => new File([blob], `${slug}-story.jpg`, { type: "image/jpeg" }),
     );
   };

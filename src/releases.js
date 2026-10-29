@@ -567,6 +567,7 @@ const releases = [
         year: '2025',
         release_id: '2147690593',
         title: 'Logic Moon - Ashes',
+        post: 'ashes-album',
         text: '',
         bandcamp: 'https://chitrarecords.bandcamp.com/album/ashes',
         spotify: 'https://open.spotify.com/album/3MFTBAAYAhRDtNt8peP2pL',
@@ -624,6 +625,7 @@ const releases = [
         year: '2025',
         release_id: '2635118830',
         title: 'Aethery Fields - hello.',
+        post: 'aethery-fields-hello-album',
         text: '',
         bandcamp: 'https://logicmoon.bandcamp.com/album/hello',
         spotify: 'https://open.spotify.com/album/6WtFQ5S4DW3gFrb1SUHgeZ',
@@ -738,11 +740,20 @@ const releases = [
         year: '2026',
         release_id: '1130805378',
         title: 'Sven Laux & Logic Moon - Sea of Grey',
+        post: 'sea-of-grey-sven-laux-logic-moon',
+        label: 'Whitelabrecs',
         text: '',
         bandcamp: 'https://whitelabrecs.bandcamp.com/album/sea-of-grey'
     },
 
 ];
+
+/** "Artist - Title" -> { artist, name }, artist falls back to Logic Moon. Also copes with "Artist- Title". */
+export function splitTitle(title) {
+    const parts = title.trim().split(/\s*-\s+/);
+    const name = parts.pop() ?? title.trim();
+    return { artist: parts.join(' - ') || 'Logic Moon', name };
+}
 
 export function slugify(title) {
     const parts = title.trim().replace(/-/g, ' - ').replace(/\s+/g, ' ').split(' - ');

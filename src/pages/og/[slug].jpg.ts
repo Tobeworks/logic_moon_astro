@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import satori from "satori";
 import sharp from "sharp";
-import releases from "../../releases.js";
+import releases, { splitTitle } from "../../releases.js";
 import { platformIconSvgs } from "../../platformIcons";
 
 // 1200x630 link preview (Facebook, Twitter, ...), same look as the Instagram story image:
@@ -32,10 +32,9 @@ export const getStaticPaths = (() =>
 export const GET: APIRoute = async ({ props }) => {
   const { release } = props as { release: (typeof releases)[number] };
 
-  // "Artist - Title", same split as the story image
-  const parts = release.title.trim().split(/\s*-\s+/);
-  const name = (parts.pop() ?? release.title).toUpperCase();
-  const artist = (parts.join(" - ") || "Logic Moon").toUpperCase();
+  const split = splitTitle(release.title);
+  const name = split.name.toUpperCase();
+  const artist = split.artist.toUpperCase();
   const titleSize = name.length <= 14 ? 64 : name.length <= 28 ? 52 : 42;
 
   const cover = await sharp(path.join(process.cwd(), "public", "images", "covers", release.cover))

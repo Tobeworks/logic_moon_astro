@@ -1,11 +1,12 @@
 ---
+import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.vue";
 import Footer from "../../components/Footer.astro";
 import PlatformLinks from "../../components/PlatformLinks.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import JsonLd from "../../components/JsonLd.astro";
-import releases from "../../releases.js";
+import releases, { splitTitle } from "../../releases.js";
 
 export function getStaticPaths() {
   return releases.map((release) => ({
@@ -22,6 +23,8 @@ interface Release {
   release_id?: string;
   title: string;
   text?: string;
+  post?: string;
+  label?: string;
   bandcamp?: string;
   spotify?: string;
   apple?: string;
@@ -38,28 +41,45 @@ const pageTitle = cleanTitle.toLowerCase().includes("logic moon")
   ? cleanTitle
   : `${cleanTitle} - Logic Moon`;
 
+const { artist, name } = splitTitle(cleanTitle);
+
 const description = release.text?.trim()
   ? release.text.trim().slice(0, 160)
-  : `Listen to "${cleanTitle}" (${release.year}) by Logic Moon.`;
+  : `Listen to "${name}" (${release.year}) by ${artist}.`;
 
 const PLATFORM_KEYS = ["bandcamp", "spotify", "apple", "amazon", "soundcloud", "deezer", "beatport"] as const;
 const sameAs = PLATFORM_KEYS.map((k) => release[k]).filter(Boolean);
 
+const byArtist = artist
+  .split(/\s*(?:&|,)\s*/)
+  .map((n) => ({ "@type": "MusicGroup", name: n }));
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "MusicAlbum",
-  name: cleanTitle,
-  byArtist: { "@type": "MusicGroup", name: "Logic Moon" },
+  name,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  byArtist: byArtist.length === 1 ? byArtist[0] : byArtist,
   image: new URL(`/images/covers/${release.cover}`, Astro.site).toString(),
   datePublished: release.year,
+  ...(release.text?.trim() ? { description: release.text.trim() } : {}),
+  ...(release.label ? { recordLabel: { "@type": "Organization", name: release.label } } : {}),
   ...(sameAs.length ? { sameAs } : {}),
 };
+
+// chronological neighbours (id order, same as the discography), real links in the static HTML
+const ordered = [...releases].sort((a, b) => a.id - b.id);
+const index = ordered.findIndex((r) => r.id === release.id);
+const prev = ordered[index - 1];
+const next = ordered[index + 1];
+
+const post = release.post ? await getEntry("blog", release.post) : undefined;
 
 const others = releases
   .filter((r) => r.id !== release.id)
   .map((r) => ({ slug: r.slug, title: r.title, cover: r.cover, year: r.year }));
 
-const hasBelowFold = Boolean(release.text || release.release_id);
+const hasBelowFold = Boolean(release.text || release.release_id || post);
 ---
 
 <Layout title={pageTitle} description={description} image={`/og/${release.slug}.jpg`}>
@@ -68,18 +88,19 @@ const hasBelowFold = Boolean(release.text || release.release_id);
 
   <main class="bg-surface text-on-surface">
     <section class="flex flex-col items-center justify-center gap-6 mx-auto max-w-lg text-center pt-[var(--header-height)] min-h-[calc(100dvh-var(--header-height))]">
-      <a
-        href="/discography"
-        class="self-start inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all no-underline">
-        <span>&larr;</span> Discography
-      </a>
-
-      <div class="w-[min(85vw,42dvh)] aspect-square bg-surface-container-lowest overflow-hidden">
-        <img
-          src={`/images/covers/${release.cover}`}
-          alt={cleanTitle}
-          class="w-full h-full object-cover"
-        />
+      <div class="w-[min(85vw,42dvh)] text-left">
+        <a
+          href="/discography"
+          class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all no-underline mb-6">
+          <span>&larr;</span> Discography
+        </a>
+        <div class="w-full aspect-square bg-surface-container-lowest overflow-hidden">
+          <img
+            src={`/images/covers/${release.cover}`}
+            alt={cleanTitle}
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       <div>
@@ -97,6 +118,12 @@ const hasBelowFold = Boolean(release.text || release.release_id);
       <section class="px-8 md:px-16 py-20 max-w-2xl mx-auto text-center">
         {release.text && (
           <p class="text-on-surface-variant font-light leading-relaxed mb-10">{release.text}</p>
+        )}
+        {post && (
+          <a href={`/blog/${post.id}`} class="group block no-underline mb-10">
+            <span class="block text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-2">From the blog</span>
+            <span class="block text-on-surface group-hover:text-primary transition-colors">{post.data.title}</span>
+          </a>
         )}
         {release.release_id && (
           <div class="bg-surface-container-lowest p-4">
@@ -116,6 +143,21 @@ const hasBelowFold = Boolean(release.text || release.release_id);
       <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-6 block">More releases</span>
       <div id="more-releases-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
     </section>
+
+    <nav aria-label="Release navigation" class="px-8 md:px-16 pb-20 max-w-5xl mx-auto flex justify-between gap-8">
+      {prev ? (
+        <a href={`/discography/${prev.slug}`} class="group block max-w-[45%] no-underline">
+          <span class="block text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-2">&larr; Previous release</span>
+          <span class="block text-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">{prev.title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/discography/${next.slug}`} class="group block max-w-[45%] text-right no-underline">
+          <span class="block text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-2">Next release &rarr;</span>
+          <span class="block text-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">{next.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
   </main>
 
   <Footer />
