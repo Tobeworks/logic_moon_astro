@@ -10,22 +10,22 @@ const latestPosts = posts.slice(0, 3);
 
 {
   latestPosts.length > 0 && (
-    <section class="py-32 px-8 md:px-16 bg-surface" id="news">
+    <section class="py-12 px-5 md:py-32 md:px-16 bg-surface" id="news">
       <div class="container mx-auto">
-        <div class="mb-24" data-animate>
+        <div class="mb-6 md:mb-24" data-animate>
           <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">
             NEWSFEED
           </span>
-          <h2 class="text-4xl font-bold tracking-tight">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
             RECENT DEVELOPMENTS
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12">
           {latestPosts.map((post) => (
-            <article class="group cursor-pointer" data-animate>
+            <article class="group relative flex gap-4 items-center md:block cursor-pointer" data-animate>
               {post.data.image && (
-                <div class="h-64 bg-surface-container-lowest rounded-none mb-6 overflow-hidden">
+                <div class="w-20 h-20 shrink-0 md:w-auto md:h-64 bg-surface-container-lowest rounded-none md:mb-6 overflow-hidden">
                   <img
                     src={post.data.image}
                     alt={post.data.title}
@@ -34,29 +34,31 @@ const latestPosts = posts.slice(0, 3);
                   />
                 </div>
               )}
-              <span class="text-xs opacity-40 mb-4 block uppercase tracking-widest">
+              <div class="min-w-0">
+              <span class="text-xs opacity-40 mb-1 md:mb-4 block uppercase tracking-widest">
                 {post.data.pubDate.toLocaleDateString("en-EN", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </span>
-              <h3 class="text-2xl md:text-3xl font-bold tracking-tighter leading-none group-hover:text-primary transition-colors duration-500 mb-4">
-                <a href={`/news/${post.id}`} class="no-underline">
+              <h3 class="text-base md:text-3xl font-bold tracking-tight md:tracking-tighter leading-snug md:leading-none group-hover:text-primary transition-colors duration-500 md:mb-4">
+                <a href={`/news/${post.id}`} class="no-underline after:absolute after:inset-0 md:after:hidden">
                   {post.data.title}
                 </a>
               </h3>
-              <p class="text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
+              <p class="hidden md:block text-on-surface-variant font-light leading-relaxed line-clamp-3 mb-6">
                 {post.data.description}
               </p>
-              <a href={`/news/${post.id}`} class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300 no-underline">
+              <a href={`/news/${post.id}`} class="hidden md:inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300 no-underline">
                 READ <span>→</span>
               </a>
+              </div>
             </article>
           ))}
         </div>
 
-        <div class="flex justify-center mt-16">
+        <div class="flex justify-center mt-8 md:mt-16">
           <a href="/blog" class="uppercase text-[0.625rem] tracking-widest border-b border-on-surface/20 pb-1 hover:border-primary hover:text-primary transition-all no-underline">
             VIEW ALL NEWS →
           </a>

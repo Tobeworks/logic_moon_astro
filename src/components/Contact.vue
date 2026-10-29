@@ -1,17 +1,17 @@
 <template>
-    <section class="py-48 px-8 md:px-16 bg-surface" id="contact" aria-labelledby="contact-heading">
+    <section class="py-12 px-5 md:py-48 md:px-16 bg-surface" id="contact" aria-labelledby="contact-heading">
         <div class="max-w-4xl mx-auto">
-            <div class="mb-24 text-center" data-animate>
+            <div class="mb-8 md:mb-24 text-center" data-animate>
                 <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">
                     COMMUNICATION
                 </span>
-                <h2 id="contact-heading" class="text-4xl md:text-7xl font-bold tracking-tight uppercase">
+                <h2 id="contact-heading" class="text-3xl md:text-7xl font-bold tracking-tight uppercase">
                     GET IN TOUCH
                 </h2>
             </div>
 
-            <form class="space-y-16" name="contact-form" @submit.prevent="sendForm" action="#contact" method="post" aria-label="Contact form">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <form class="space-y-8 md:space-y-16" name="contact-form" @submit.prevent="sendForm" action="#contact" method="post" aria-label="Contact form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                     <div class="relative group" data-animate>
                         <label for="email" class="sr-only">Email Address</label>
                         <input 

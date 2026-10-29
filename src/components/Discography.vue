@@ -1,12 +1,12 @@
 <template>
-  <section class="py-32 px-8 md:px-16 bg-surface" :id="sectionId">
+  <section class="py-12 px-5 md:py-32 md:px-16 bg-surface" :id="sectionId">
     <div class="container mx-auto">
 
       <!-- Header -->
-      <div class="flex justify-between items-end mb-24" data-animate>
+      <div class="flex justify-between items-end mb-6 md:mb-24" data-animate>
         <div v-if="showHeader">
           <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">{{ headerLabel }}</span>
-          <h2 class="text-4xl md:text-6xl font-bold tracking-tight">{{ title }}</h2>
+          <h2 class="text-3xl md:text-6xl font-bold tracking-tight">{{ title }}</h2>
         </div>
         <div v-else></div>
 

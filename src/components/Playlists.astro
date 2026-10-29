@@ -3,97 +3,73 @@ import { Image } from "astro:assets";
 import aeterna from "../assets/img/playlists/aeterna_cover2.jpg";
 import dark from "../assets/img/playlists/dark cover.jpg";
 import home from "../assets/img/playlists/home_cover_01.jpg";
+
+const playlists = [
+  {
+    href: "/spotify-playlist/aeterna-ambient-soundscapes",
+    src: aeterna,
+    alt: "AETERNA - Ambient Soundscapes",
+    title: "AETERNA",
+    subtitle: "AMBIENT SOUNDSCAPES",
+    text: "From classic ambient to neoclassical soundscapes and ethereal drone with evolving intensity.",
+  },
+  {
+    href: "/spotify-playlist/dark-ambient-drone",
+    src: dark,
+    alt: "DARK - Dark Ambient",
+    title: "DARK",
+    subtitle: "DARK AMBIENT DRONE",
+    text: "Drone, Melancholia, Blackness, Abyss, Gloom, Escape",
+  },
+  {
+    href: "/spotify-playlist/home-ambient-fieldrecordings",
+    src: home,
+    alt: "HOME",
+    title: "HOME",
+    subtitle: "AMBIENT FIELD RECORDINGS",
+    text: "Ambient, Lofi, Cassette, Fieldrecording, Texture, Experimental",
+  },
+];
 ---
 
-<section class="py-32 px-8 md:px-16 bg-surface-container-lowest" id="playlists">
+<section class="py-12 px-5 md:py-32 md:px-16 bg-surface-container-lowest" id="playlists">
   <div class="container mx-auto">
-    <div class="mb-24" data-animate>
+    <div class="mb-6 md:mb-24" data-animate>
       <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-4 block">
         CURATED SOUNDS
       </span>
-      <h2 class="text-4xl font-bold tracking-tight">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
         SPOTIFY PLAYLISTS
       </h2>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <!-- AETERNA -->
-      <div class="group cursor-pointer" data-animate>
-        <a href="/spotify-playlist/aeterna-ambient-soundscapes" class="block">
-          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
-            <Image
-              src={aeterna}
-              alt="AETERNA - Ambient Soundscapes"
-              class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
-              width="500"
-              height="500"
-            />
-          </div>
-        </a>
-        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
-          <a href="/spotify-playlist/aeterna-ambient-soundscapes" class="no-underline">
-            AETERNA
-          </a>
-        </h3>
-        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
-          AMBIENT SOUNDSCAPES
-        </p>
-        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
-          From classic ambient to neoclassical soundscapes and ethereal drone with evolving intensity.
-        </p>
-      </div>
 
-      <!-- DARK -->
-      <div class="group cursor-pointer" data-animate>
-        <a href="/spotify-playlist/dark-ambient-drone" class="block">
-          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
+      {playlists.map((playlist) => (
+        <div class="group relative flex items-center gap-4 md:block cursor-pointer" data-animate>
+          <div class="w-20 shrink-0 md:w-auto aspect-square bg-surface-container-lowest overflow-hidden md:mb-6">
             <Image
-              src={dark}
-              alt="DARK - Dark Ambient"
+              src={playlist.src}
+              alt={playlist.alt}
               class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
               width="500"
               height="500"
             />
           </div>
-        </a>
-        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
-          <a href="/spotify-playlist/dark-ambient-drone" class="no-underline">
-            DARK
-          </a>
-        </h3>
-        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
-          DARK AMBIENT DRONE
-        </p>
-        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
-          Drone, Melancholia, Blackness, Abyss, Gloom, Escape
-        </p>
-      </div>
-
-      <!-- HOME -->
-      <div class="group cursor-pointer" data-animate>
-        <a href="/spotify-playlist/home-ambient-fieldrecordings" class="block">
-          <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6">
-            <Image
-              src={home}
-              alt="HOME"
-              class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
-              width="500"
-              height="500"
-            />
+          <div class="min-w-0">
+            <h3 class="font-bold text-base md:text-lg text-on-surface group-hover:text-primary transition-colors">
+              <a href={playlist.href} class="no-underline after:absolute after:inset-0">
+                {playlist.title}
+              </a>
+            </h3>
+            <div class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
+              {playlist.subtitle}
+            </div>
+            <p class="hidden md:block text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
+              {playlist.text}
+            </p>
           </div>
-        </a>
-        <h3 class="font-bold text-lg text-on-surface group-hover:text-primary transition-colors">
-          <a href="/spotify-playlist/home-ambient-fieldrecordings" class="no-underline">
-            HOME
-          </a>
-        </h3>
-        <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface">
-          AMBIENT FIELD RECORDINGS
-        </p>
-        <p class="text-on-surface-variant font-light leading-relaxed mt-4 text-sm">
-          Ambient, Lofi, Cassette, Fieldrecording, Texture, Experimental
-        </p>
-      </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
