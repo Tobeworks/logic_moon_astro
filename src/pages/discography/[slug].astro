@@ -87,14 +87,15 @@ const hasBelowFold = Boolean(release.text || release.release_id || post);
   <Navigation client:visible />
 
   <main class="bg-surface text-on-surface">
-    <section class="flex flex-col items-center justify-center gap-6 mx-auto max-w-lg text-center pt-[var(--header-height)] min-h-[calc(100dvh-var(--header-height))]">
-      <div class="w-[min(85vw,42dvh)] text-left">
+    <!-- Mobile: compact card (cover + meta), then labelled "Listen on" and "Share" rows. md+: centered column. -->
+    <section class="grid grid-cols-[9rem_1fr] gap-x-4 gap-y-3 px-4 pt-[calc(var(--header-height)+0.5rem)] pb-6 mx-auto max-w-lg md:flex md:flex-col md:items-center md:justify-center md:gap-6 md:p-0 md:pt-[var(--header-height)] md:text-center md:min-h-[calc(100dvh-var(--header-height))]">
+      <div class="contents md:block md:w-[min(85vw,42dvh)] md:text-left">
         <a
           href="/discography"
-          class="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all no-underline mb-6">
+          class="col-span-2 row-start-1 justify-self-start inline-flex items-center gap-2 min-h-11 text-primary text-xs uppercase tracking-widest hover:gap-4 transition-all no-underline md:min-h-0 md:mb-6">
           <span>&larr;</span> Discography
         </a>
-        <div class="w-full aspect-square bg-surface-container-lowest overflow-hidden">
+        <div class="col-start-1 row-start-2 self-start w-full aspect-square bg-surface-container-lowest overflow-hidden">
           <img
             src={`/images/covers/${release.cover}`}
             alt={cleanTitle}
@@ -103,33 +104,45 @@ const hasBelowFold = Boolean(release.text || release.release_id || post);
         </div>
       </div>
 
-      <div>
-        <p class="text-xs uppercase tracking-widest text-on-surface/50 mb-2">{release.year}</p>
-        <h1 class="text-[clamp(1.25rem,6vw,2rem)] font-bold uppercase tracking-tight leading-tight line-clamp-2">
-          {cleanTitle}
+      <div class="col-start-2 row-start-2 flex flex-col min-w-0">
+        <div class="order-last mt-1 text-xs uppercase tracking-widest text-on-surface/50 md:order-first md:mt-0 md:mb-2">{release.year}</div>
+        <h1 class="font-bold uppercase tracking-tight leading-tight">
+          <span class="block mb-1 text-[0.625rem] font-normal tracking-[0.2em] text-primary md:mb-2 md:text-xs">{artist}</span>
+          <span class="block text-[clamp(1.125rem,5.5vw,1.5rem)] md:text-[2rem]">{name}</span>
         </h1>
       </div>
 
-      <PlatformLinks links={release} />
-      <ShareButtons links={release} slug={release.slug} title={cleanTitle} cover={release.cover} year={release.year} />
+      <div class="col-span-2 row-start-3 flex flex-col gap-2 mt-2 md:mt-0 md:items-center">
+        <span class="text-[0.625rem] uppercase tracking-[0.2em] text-on-surface/50 md:hidden">Listen on</span>
+        <PlatformLinks links={release} class="md:justify-center" />
+      </div>
+      <ShareButtons class="col-span-2 row-start-4" links={release} slug={release.slug} title={cleanTitle} cover={release.cover} year={release.year} />
     </section>
 
     {hasBelowFold && (
-      <section class="px-8 md:px-16 py-20 max-w-2xl mx-auto text-center">
+      <section class="px-4 py-6 md:px-16 md:py-20 max-w-2xl mx-auto md:text-center">
         {release.text && (
-          <p class="text-on-surface-variant font-light leading-relaxed mb-10">{release.text}</p>
+          <p class="text-on-surface-variant font-light leading-relaxed mb-6 md:mb-10">{release.text}</p>
         )}
         {post && (
-          <a href={`/blog/${post.id}`} class="group block no-underline mb-10">
+          <a href={`/blog/${post.id}`} class="group block no-underline mb-6 md:mb-10">
             <span class="block text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-2">From the blog</span>
             <span class="block text-on-surface group-hover:text-primary transition-colors">{post.data.title}</span>
           </a>
         )}
         {release.release_id && (
-          <div class="bg-surface-container-lowest p-4">
+          <div class="bg-surface-container-lowest p-2 md:p-4">
+            {/* slim player on phones (no tracklist), full player with tracklist from md up; hidden lazy iframes are not loaded */}
             <iframe
-              class="w-full border-0"
-              style="height: 300px;"
+              class="w-full h-[7.5rem] border-0 md:hidden"
+              loading="lazy"
+              seamless
+              title="Bandcamp Player"
+              src={`https://bandcamp.com/EmbeddedPlayer/album=${release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/tracklist=false/artwork=small/transparent=true/`}
+            ></iframe>
+            <iframe
+              class="hidden w-full h-[18.75rem] border-0 md:block"
+              loading="lazy"
               seamless
               title="Bandcamp Player"
               src={`https://bandcamp.com/EmbeddedPlayer/album=${release.release_id}/size=large/bgcol=141312/linkcol=e3c7a9/artwork=small/transparent=true/`}
@@ -139,12 +152,12 @@ const hasBelowFold = Boolean(release.text || release.release_id || post);
       </section>
     )}
 
-    <section id="more-releases" class="px-8 md:px-16 pb-20 max-w-5xl mx-auto" hidden>
-      <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-6 block">More releases</span>
-      <div id="more-releases-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+    <section id="more-releases" class="px-4 pb-6 md:px-16 md:pb-20 max-w-5xl mx-auto" hidden>
+      <span class="text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-3 md:mb-6 block">More releases</span>
+      <div id="more-releases-grid" class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-6"></div>
     </section>
 
-    <nav aria-label="Release navigation" class="px-8 md:px-16 pb-20 max-w-5xl mx-auto flex justify-between gap-8">
+    <nav aria-label="Release navigation" class="px-4 pb-8 md:px-16 md:pb-20 max-w-5xl mx-auto flex justify-between gap-4 md:gap-8">
       {prev ? (
         <a href={`/discography/${prev.slug}`} class="group block max-w-[45%] no-underline">
           <span class="block text-[0.625rem] uppercase tracking-[0.2em] text-primary mb-2">&larr; Previous release</span>
@@ -174,11 +187,11 @@ const hasBelowFold = Boolean(release.text || release.release_id || post);
   pool.slice(0, 4).forEach((r) => {
     const a = document.createElement("a");
     a.href = "/discography/" + r.slug;
-    a.className = "group block no-underline";
+    a.className = "group flex items-center gap-4 py-1 no-underline md:block md:py-0";
     a.setAttribute("aria-label", "View release " + r.title);
 
     const box = document.createElement("div");
-    box.className = "aspect-square bg-surface-container-lowest overflow-hidden";
+    box.className = "w-14 h-14 shrink-0 bg-surface-container-lowest overflow-hidden md:w-auto md:h-auto md:aspect-square";
     const img = document.createElement("img");
     img.src = "/images/covers/" + r.cover;
     img.alt = r.title;
@@ -186,14 +199,17 @@ const hasBelowFold = Boolean(release.text || release.release_id || post);
     img.className = "w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700";
     box.appendChild(img);
 
-    const title = document.createElement("p");
-    title.className = "font-bold text-sm text-on-surface leading-5 mt-3";
+    const info = document.createElement("div");
+    info.className = "min-w-0";
+    const title = document.createElement("div");
+    title.className = "font-bold text-sm text-on-surface leading-5 line-clamp-2 md:mt-3";
     title.textContent = r.title;
-    const year = document.createElement("p");
+    const year = document.createElement("div");
     year.className = "text-xs opacity-50 uppercase tracking-widest mt-1 text-on-surface";
     year.textContent = r.year;
+    info.append(title, year);
 
-    a.append(box, title, year);
+    a.append(box, info);
     grid.appendChild(a);
   });
   if (grid.children.length) section.hidden = false;
