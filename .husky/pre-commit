@@ -1,1 +1,2 @@
-# no pre-commit checks
+npm version patch --no-git-tag-version
+git add package.json
