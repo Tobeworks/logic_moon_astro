@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.vue";
 import Footer from "../../components/Footer.astro";
 import PlatformLinks from "../../components/PlatformLinks.astro";
+import ShareButtons from "../../components/ShareButtons.astro";
 import JsonLd from "../../components/JsonLd.astro";
 import releases from "../../releases.js";
 
@@ -61,7 +62,7 @@ const others = releases
 const hasBelowFold = Boolean(release.text || release.release_id);
 ---
 
-<Layout title={pageTitle} description={description} image={`/images/covers/${release.cover}`}>
+<Layout title={pageTitle} description={description} image={`/og/${release.slug}.jpg`}>
   <JsonLd schema={schema} />
   <Navigation client:visible />
 
@@ -89,6 +90,7 @@ const hasBelowFold = Boolean(release.text || release.release_id);
       </div>
 
       <PlatformLinks links={release} />
+      <ShareButtons links={release} slug={release.slug} title={cleanTitle} cover={release.cover} year={release.year} />
     </section>
 
     {hasBelowFold && (

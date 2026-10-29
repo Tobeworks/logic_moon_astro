@@ -21,11 +21,11 @@ interface Props {
   /** "badge" (default): bordered 44px square buttons, for detail views.
    *  "bare": small plain marks in a row, for dense lists. */
   variant?: "badge" | "bare";
-  /** Icon height in "bare" variant, as a Tailwind height class. Default h-4. */
+  /** Icon width and height in "bare" variant, as a Tailwind size class. Default size-4. */
   size?: string;
 }
 
-const { links, class: className = "", variant = "badge", size = "h-4" } = Astro.props;
+const { links, class: className = "", variant = "badge", size = "size-4" } = Astro.props;
 
 const PLATFORMS = [
   { key: "bandcamp", label: "Bandcamp", icon: bandcampIcon },
@@ -71,7 +71,7 @@ const active = PLATFORMS.filter((platform) => links[platform.key]);
         aria-label={platform.label}
         class="inline-flex items-center text-on-surface/20 hover:text-primary transition-colors">
         {platform.icon ? (
-          <span class={`${size} aspect-square block overflow-hidden [&>svg]:h-full [&>svg]:w-full [&>svg]:block`} set:html={platform.icon} />
+          <span class={`${size} block overflow-hidden [&>svg]:h-full [&>svg]:w-full [&>svg]:block`} set:html={platform.icon} />
         ) : (
           <span class="text-[0.5rem] font-bold uppercase tracking-wider">{platform.label.slice(0, 2)}</span>
         )}

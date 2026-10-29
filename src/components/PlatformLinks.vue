@@ -26,7 +26,7 @@
             :aria-label="platform.label"
             class="inline-flex items-center text-on-surface/20 hover:text-primary transition-colors"
         >
-            <span v-if="platform.icon" :class="[size, 'aspect-square block overflow-hidden [&>svg]:h-full [&>svg]:w-full [&>svg]:block']" v-html="platform.icon" />
+            <span v-if="platform.icon" :class="[size, 'block overflow-hidden [&>svg]:h-full [&>svg]:w-full [&>svg]:block']" v-html="platform.icon" />
             <span v-else class="text-[0.5rem] font-bold uppercase tracking-wider">{{ platform.label.slice(0, 2) }}</span>
         </a>
     </div>
@@ -43,7 +43,7 @@ import soundcloudIcon from '../assets/icons/soundcloud.svg?raw'
 const props = defineProps({
     links: { type: Object, required: true },
     variant: { type: String, default: 'badge' },
-    size: { type: String, default: 'h-4' },
+    size: { type: String, default: 'size-4' },
 })
 
 const PLATFORMS = [
